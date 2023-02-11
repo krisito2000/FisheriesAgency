@@ -1,0 +1,17 @@
+D:\codes\FisheriesAgency\bin\Debug\net6.0-windows\FisheriesAgency.exe
+D:\codes\FisheriesAgency\bin\Debug\net6.0-windows\FisheriesAgency.deps.json
+D:\codes\FisheriesAgency\bin\Debug\net6.0-windows\FisheriesAgency.runtimeconfig.json
+D:\codes\FisheriesAgency\bin\Debug\net6.0-windows\FisheriesAgency.dll
+D:\codes\FisheriesAgency\bin\Debug\net6.0-windows\FisheriesAgency.pdb
+D:\codes\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.csproj.AssemblyReference.cache
+D:\codes\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.loginPage.resources
+D:\codes\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.csproj.GenerateResource.cache
+D:\codes\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.GeneratedMSBuildEditorConfig.editorconfig
+D:\codes\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.AssemblyInfoInputs.cache
+D:\codes\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.AssemblyInfo.cs
+D:\codes\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.csproj.CoreCompileInputs.cache
+D:\codes\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.dll
+D:\codes\FisheriesAgency\obj\Debug\net6.0-windows\refint\FisheriesAgency.dll
+D:\codes\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.pdb
+D:\codes\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.genruntimeconfig.cache
+D:\codes\FisheriesAgency\obj\Debug\net6.0-windows\ref\FisheriesAgency.dll
