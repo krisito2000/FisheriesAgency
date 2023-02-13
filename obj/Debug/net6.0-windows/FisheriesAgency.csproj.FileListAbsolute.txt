@@ -15,3 +15,21 @@ D:\codes\FisheriesAgency\obj\Debug\net6.0-windows\refint\FisheriesAgency.dll
 D:\codes\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.pdb
 D:\codes\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.genruntimeconfig.cache
 D:\codes\FisheriesAgency\obj\Debug\net6.0-windows\ref\FisheriesAgency.dll
+C:\Users\gotin sam\Source\Repos\FisheriesAgency\bin\Debug\net6.0-windows\FisheriesAgency.exe
+C:\Users\gotin sam\Source\Repos\FisheriesAgency\bin\Debug\net6.0-windows\FisheriesAgency.deps.json
+C:\Users\gotin sam\Source\Repos\FisheriesAgency\bin\Debug\net6.0-windows\FisheriesAgency.runtimeconfig.json
+C:\Users\gotin sam\Source\Repos\FisheriesAgency\bin\Debug\net6.0-windows\FisheriesAgency.dll
+C:\Users\gotin sam\Source\Repos\FisheriesAgency\bin\Debug\net6.0-windows\FisheriesAgency.pdb
+C:\Users\gotin sam\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.csproj.AssemblyReference.cache
+C:\Users\gotin sam\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.loginPage.resources
+C:\Users\gotin sam\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.View.registerPage.resources
+C:\Users\gotin sam\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.csproj.GenerateResource.cache
+C:\Users\gotin sam\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gotin sam\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.AssemblyInfoInputs.cache
+C:\Users\gotin sam\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.AssemblyInfo.cs
+C:\Users\gotin sam\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.csproj.CoreCompileInputs.cache
+C:\Users\gotin sam\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.dll
+C:\Users\gotin sam\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\refint\FisheriesAgency.dll
+C:\Users\gotin sam\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.pdb
+C:\Users\gotin sam\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.genruntimeconfig.cache
+C:\Users\gotin sam\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\ref\FisheriesAgency.dll
