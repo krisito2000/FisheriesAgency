@@ -34,7 +34,7 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblRegisterNow = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtUsername
@@ -89,21 +89,21 @@
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblRegisterNow
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 334);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 15);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Don\'t have an account! Register now ";
+            this.lblRegisterNow.AutoSize = true;
+            this.lblRegisterNow.Location = new System.Drawing.Point(12, 334);
+            this.lblRegisterNow.Name = "lblRegisterNow";
+            this.lblRegisterNow.Size = new System.Drawing.Size(203, 15);
+            this.lblRegisterNow.TabIndex = 6;
+            this.lblRegisterNow.Text = "Don\'t have an account! Register now ";
             // 
             // loginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 464);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblRegisterNow);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblPassword);
@@ -126,6 +126,6 @@
         private Label lblPassword;
         private Button btnLogin;
         private Button btnRegister;
-        private Label label1;
+        private Label lblRegisterNow;
     }
 }

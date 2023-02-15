@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gotin sam\\Source\\Repos\\FisheriesAgency\\FisheriesAgency.csproj": {}
+    "C:\\Users\\gotin sam\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gotin sam\\Source\\Repos\\FisheriesAgency\\FisheriesAgency.csproj": {
+    "C:\\Users\\gotin sam\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gotin sam\\Source\\Repos\\FisheriesAgency\\FisheriesAgency.csproj",
+        "projectUniqueName": "C:\\Users\\gotin sam\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj",
         "projectName": "FisheriesAgency",
-        "projectPath": "C:\\Users\\gotin sam\\Source\\Repos\\FisheriesAgency\\FisheriesAgency.csproj",
+        "projectPath": "C:\\Users\\gotin sam\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj",
         "packagesPath": "C:\\Users\\gotin sam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gotin sam\\Source\\Repos\\FisheriesAgency\\obj\\",
+        "outputPath": "C:\\Users\\gotin sam\\source\\repos\\FisheriesAgency\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gotin sam\\AppData\\Roaming\\NuGet\\NuGet.Config",
