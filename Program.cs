@@ -6,7 +6,7 @@ namespace FisheriesAgency
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new loginPage());
+            Application.Run(new frmLogin());
         }
     }
 }

@@ -12,24 +12,24 @@ namespace FisheriesAgency.Controller
     {
         static string GetUser(string username)
         {
-            string password = "";
-            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\krisi\source\repos\FisheriesAgency\Controller\FisheriesAgencyDB.mdf;Integrated Security=True"))
-            {
-                con.Open();
-                string sqlquery = "SELECT * FROM Users WHERE username = @UName";
-                SqlCommand command = new SqlCommand(sqlquery, con);
+            //string password = "";
+            //using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\krisi\source\repos\FisheriesAgency\Controller\FisheriesAgencyDB.mdf;Integrated Security=True"))
+            //{
+            //    con.Open();
+            //    string sqlquery = "SELECT * FROM Users WHERE username = @UName";
+            //    SqlCommand command = new SqlCommand(sqlquery, con);
 
-                command.Parameters.AddWithValue("@UName", username);
-                SqlDataReader sReader = command.ExecuteReader();
+            //    command.Parameters.AddWithValue("@UName", username);
+            //    SqlDataReader sReader = command.ExecuteReader();
 
-                while (sReader.Read())
-                {
-                    username = sReader["username"].ToString();
-                    password = sReader["password"].ToString();
-                }
-                con.Close();
-            }
-            return password;
+            //    while (sReader.Read())
+            //    {
+            //        username = sReader["username"].ToString();
+            //        password = sReader["password"].ToString();
+            //    }
+            //    con.Close();
+            //}
+            //return password;
         }
     }
 }
