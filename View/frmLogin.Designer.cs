@@ -39,14 +39,14 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(156, 69);
+            this.txtUsername.Location = new System.Drawing.Point(171, 70);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(106, 23);
             this.txtUsername.TabIndex = 0;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(156, 131);
+            this.txtPassword.Location = new System.Drawing.Point(171, 132);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(106, 23);
@@ -57,7 +57,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblUsername.Location = new System.Drawing.Point(60, 69);
+            this.lblUsername.Location = new System.Drawing.Point(75, 70);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(87, 21);
             this.lblUsername.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPassword.Location = new System.Drawing.Point(60, 131);
+            this.lblPassword.Location = new System.Drawing.Point(75, 132);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(82, 21);
             this.lblPassword.TabIndex = 3;
@@ -78,7 +78,7 @@
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLogin.Location = new System.Drawing.Point(68, 198);
+            this.btnLogin.Location = new System.Drawing.Point(83, 199);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(194, 46);
             this.btnLogin.TabIndex = 4;
@@ -89,7 +89,7 @@
             // 
             this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnRegister.Location = new System.Drawing.Point(208, 302);
+            this.btnRegister.Location = new System.Drawing.Point(223, 303);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(80, 28);
             this.btnRegister.TabIndex = 5;
@@ -101,17 +101,17 @@
             // 
             this.lblRegisterNow.AutoSize = true;
             this.lblRegisterNow.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblRegisterNow.Location = new System.Drawing.Point(68, 309);
+            this.lblRegisterNow.Location = new System.Drawing.Point(83, 310);
             this.lblRegisterNow.Name = "lblRegisterNow";
             this.lblRegisterNow.Size = new System.Drawing.Size(134, 15);
             this.lblRegisterNow.TabIndex = 6;
             this.lblRegisterNow.Text = "Don\'t have an account!?";
             // 
-            // loginPage
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(365, 405);
+            this.ClientSize = new System.Drawing.Size(362, 388);
             this.Controls.Add(this.lblRegisterNow);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogin);
@@ -120,7 +120,7 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.HelpButton = true;
-            this.Name = "loginPage";
+            this.Name = "frmLogin";
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();

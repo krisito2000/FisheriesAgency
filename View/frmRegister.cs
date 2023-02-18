@@ -17,9 +17,11 @@ namespace FisheriesAgency.View
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-
+            this.Dispose();      
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
         }
     }
 }
