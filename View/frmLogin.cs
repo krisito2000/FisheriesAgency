@@ -11,8 +11,7 @@ namespace FisheriesAgency
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            //TODO: close frmLogin (when you close frmLogin everything will close)
-            //this.Dispose();      //this is the code for closing the login form
+            this.Hide();
             frmRegister frmRegister = new frmRegister();
             frmRegister.Show();
         }

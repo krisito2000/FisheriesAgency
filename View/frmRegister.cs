@@ -19,8 +19,8 @@ namespace FisheriesAgency.View
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Dispose();      
             frmLogin frmLogin = new frmLogin();
+            this.Hide();      
             frmLogin.Show();
         }
     }
