@@ -8,10 +8,10 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace FisheriesAgency.Model
 {
-    public class FisheriesContext : FisheriesAgencyDB
-    {
-        public FisheriesContext(FisheriesAgencyDBOptions<FisheriesContext> options): base(options)
-        {
-        }
-    }
+    //public class FisheriesContext : FisheriesAgencyDB
+    //{
+    //    public FisheriesContext(FisheriesAgencyDBOptions<FisheriesContext> options) : base(options)
+    //    {
+    //    }
+    //}
 }

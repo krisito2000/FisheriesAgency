@@ -15,5 +15,9 @@ namespace FisheriesAgency.Model
 
         public string Password { get; set; }
 
+        public RegisterModel()
+        {
+
+        }
     }
 }

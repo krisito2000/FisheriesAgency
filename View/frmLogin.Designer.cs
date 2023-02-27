@@ -35,6 +35,7 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.lblRegisterNow = new System.Windows.Forms.Label();
+            this.btnViewPassword = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtUsername
@@ -48,7 +49,6 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(171, 132);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(106, 23);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
@@ -84,6 +84,7 @@
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnRegister
             // 
@@ -107,11 +108,24 @@
             this.lblRegisterNow.TabIndex = 6;
             this.lblRegisterNow.Text = "Don\'t have an account!?";
             // 
+            // btnViewPassword
+            // 
+            this.btnViewPassword.BackColor = System.Drawing.Color.Transparent;
+            this.btnViewPassword.BackgroundImage = global::FisheriesAgency.Properties.Resources.ShowPasswordEyeIMG;
+            this.btnViewPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewPassword.Location = new System.Drawing.Point(283, 130);
+            this.btnViewPassword.Name = "btnViewPassword";
+            this.btnViewPassword.Size = new System.Drawing.Size(28, 28);
+            this.btnViewPassword.TabIndex = 7;
+            this.btnViewPassword.UseVisualStyleBackColor = false;
+            this.btnViewPassword.Click += new System.EventHandler(this.btnViewPassword_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 388);
+            this.Controls.Add(this.btnViewPassword);
             this.Controls.Add(this.lblRegisterNow);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogin);
@@ -136,5 +150,6 @@
         private Button btnLogin;
         private Button btnRegister;
         private Label lblRegisterNow;
+        private Button btnViewPassword;
     }
 }

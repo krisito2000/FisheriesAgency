@@ -36,6 +36,7 @@
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.btnViewPassword = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -101,6 +102,7 @@
             this.btnRegister.TabIndex = 7;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnBack
             // 
@@ -113,11 +115,24 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnViewPassword
+            // 
+            this.btnViewPassword.BackColor = System.Drawing.Color.Transparent;
+            this.btnViewPassword.BackgroundImage = global::FisheriesAgency.Properties.Resources.ShowPasswordEyeIMG;
+            this.btnViewPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewPassword.Location = new System.Drawing.Point(365, 102);
+            this.btnViewPassword.Name = "btnViewPassword";
+            this.btnViewPassword.Size = new System.Drawing.Size(28, 28);
+            this.btnViewPassword.TabIndex = 9;
+            this.btnViewPassword.UseVisualStyleBackColor = false;
+            this.btnViewPassword.Click += new System.EventHandler(this.btnViewPassword_Click);
+            // 
             // frmRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(429, 351);
+            this.Controls.Add(this.btnViewPassword);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.txtConfirmPassword);
@@ -143,5 +158,6 @@
         private TextBox txtConfirmPassword;
         private Button btnRegister;
         private Button btnBack;
+        private Button btnViewPassword;
     }
 }
