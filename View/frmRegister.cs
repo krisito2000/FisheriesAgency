@@ -81,25 +81,40 @@ namespace FisheriesAgency.View
 
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
             {
-                string sql = "INSERT INTO [User] (Username, Password) VALUES (@username, @password)";
-                using (SqlCommand command = new SqlCommand(sql, connection))
+                string selectSql = "SELECT COUNT(*) FROM [User] WHERE Username = @username";
+                string insertSql = "INSERT INTO [User] (Username, Password) VALUES (@username, @password)";
+
+                using (SqlCommand selectCommand = new SqlCommand(selectSql, connection))
+                using (SqlCommand insertCommand = new SqlCommand(insertSql, connection))
                 {
-                    command.Parameters.AddWithValue("@username", username);
-                    command.Parameters.AddWithValue("@password", password);
+                    selectCommand.Parameters.AddWithValue("@username", username);
+                    insertCommand.Parameters.AddWithValue("@username", username);
+                    insertCommand.Parameters.AddWithValue("@password", password);
+
                     connection.Open();
-                    int result = command.ExecuteNonQuery();
-                    connection.Close();
-                    if (result > 0)
+
+                    int count = (int)selectCommand.ExecuteScalar();
+                    int result = insertCommand.ExecuteNonQuery();
+
+                    if (count > 0)
                     {
-                        this.Hide();
-                        frmLogin frmLogin = new frmLogin();
-                        frmLogin.Show();
-                        MessageBox.Show("Register successful!");
+                        MessageBox.Show("Username already exists. Please choose a different username.");
                     }
                     else
                     {
-                        MessageBox.Show("Registration failed. Please try again.");
+                        if (result > 0)
+                        {
+                            this.Hide();
+                            frmLogin frmLogin = new frmLogin();
+                            frmLogin.Show();
+                            MessageBox.Show("Registration successful!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Registration failed. Please try again.");
+                        }
                     }
+                    connection.Close();
                 }
             }
         }
