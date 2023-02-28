@@ -1,3 +1,4 @@
+using System.Data.SqlClient;
 using FisheriesAgency.View;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -45,6 +46,30 @@ namespace FisheriesAgency
             else if (password == string.Empty)
             {
                 MessageBox.Show("Please enter your password");
+            }
+            else
+            {
+                SqlConnection connection = new SqlConnection(Program.connectionString);
+                SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM [User] WHERE Username = @username AND Password = @password", connection);
+
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
+
+                connection.Open();
+                int result = (int)command.ExecuteScalar();
+                connection.Close();
+
+                if (result > 0)
+                {
+                    MessageBox.Show("Login successful!");
+                    this.Hide();
+                    frmAdminsPanel frmAdminsPanel = new frmAdminsPanel();
+                    frmAdminsPanel.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password. Please try again.");
+                }
             }
         }
     }
