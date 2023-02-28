@@ -18,6 +18,8 @@ namespace FisheriesAgency
             frmRegister.Show();
         }
 
+        //Making password visible
+
         private void btnViewPassword_Click(object sender, EventArgs e)
         {
             if (txtPassword.UseSystemPasswordChar == true)
@@ -61,10 +63,10 @@ namespace FisheriesAgency
 
                 if (result > 0)
                 {
-                    MessageBox.Show("Login successful!");
                     this.Hide();
                     frmAdminsPanel frmAdminsPanel = new frmAdminsPanel();
                     frmAdminsPanel.Show();
+                    MessageBox.Show("Login successful!");
                 }
                 else
                 {

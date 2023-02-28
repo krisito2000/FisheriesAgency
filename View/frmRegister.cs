@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FisheriesAgency.Model;
 using FisheriesAgency.Controller;
+using System.Data.SqlClient;
 
 namespace FisheriesAgency.View
 {
@@ -25,6 +26,8 @@ namespace FisheriesAgency.View
             this.Hide();      
             frmLogin.Show();
         }
+
+        //Making password visible
 
         private void btnViewPassword_Click(object sender, EventArgs e)
         {
@@ -76,9 +79,29 @@ namespace FisheriesAgency.View
                 MessageBox.Show("Your password and confirm password must be the same");
             }
 
-            //User user = new User();
-            //user.Username = username;
-            //user.Password = password;
+            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            {
+                string sql = "INSERT INTO [User] (Username, Password) VALUES (@username, @password)";
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@username", username);
+                    command.Parameters.AddWithValue("@password", password);
+                    connection.Open();
+                    int result = command.ExecuteNonQuery();
+                    connection.Close();
+                    if (result > 0)
+                    {
+                        this.Hide();
+                        frmLogin frmLogin = new frmLogin();
+                        frmLogin.Show();
+                        MessageBox.Show("Register successful!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Registration failed. Please try again.");
+                    }
+                }
+            }
         }
     }
 }
