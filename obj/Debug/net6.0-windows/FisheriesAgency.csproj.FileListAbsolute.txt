@@ -149,3 +149,4 @@ C:\Users\krisi\Source\Repos\krisito2000\FisheriesAgency\obj\Debug\net6.0-windows
 C:\Users\krisi\Source\Repos\krisito2000\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.pdb
 C:\Users\krisi\source\repos\krisito2000\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.genruntimeconfig.cache
 C:\Users\krisi\source\repos\krisito2000\FisheriesAgency\obj\Debug\net6.0-windows\ref\FisheriesAgency.dll
+C:\Users\krisi\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.View.frmUser.resources

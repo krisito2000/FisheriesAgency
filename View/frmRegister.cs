@@ -98,7 +98,7 @@ namespace FisheriesAgency.View
 
                     if (count > 0)
                     {
-                        MessageBox.Show("Username already exists. Please choose a different username.");
+                        MessageBox.Show($"Username{username} already exists. Please choose a different username.");
                     }
                     else
                     {

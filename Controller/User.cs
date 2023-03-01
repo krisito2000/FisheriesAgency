@@ -12,8 +12,9 @@ namespace FisheriesAgency.Controller
     {
         static string GetUser(string username)
         {
+            //string connectionString = DatabaseHelper.GetLocalDbConnectionString("FisheriesAgencyDB");
             string password = "";
-            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\krisi\source\repos\FisheriesAgency\Controller\FisheriesAgencyDB.mdf;Integrated Security=True"))
+            using (SqlConnection con = new SqlConnection(Program.connectionString))
             {
                 con.Open();
                 string sqlquery = "SELECT * FROM Users WHERE username = @UName";

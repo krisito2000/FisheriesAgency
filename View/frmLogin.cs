@@ -70,14 +70,14 @@ namespace FisheriesAgency
                             this.Hide();
                             frmAdminsPanel frmAdminsPanel = new frmAdminsPanel();
                             frmAdminsPanel.Show();
-                            MessageBox.Show("Login successful as Administrator!");
+                            MessageBox.Show($"Login successful as {username}");
                         }
                         else
                         {
-                            MessageBox.Show("Login successful as User!");
-                            //this.Hide();
-                            //frmUser frmUser = new frmUser();
-                            //frmUser.Show();
+                            this.Hide();
+                            frmUser frmUser = new frmUser();
+                            frmUser.Show();
+                            MessageBox.Show($"Login successful as {username}");
                         }
                     }
                     else

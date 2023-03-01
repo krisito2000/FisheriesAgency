@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace FisheriesAgency.View
 {
-    public partial class Form1 : Form
+    public partial class frmUser : Form
     {
-        public Form1()
+        public frmUser()
         {
             InitializeComponent();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
         }
     }
 }
