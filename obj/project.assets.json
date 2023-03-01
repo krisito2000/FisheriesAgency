@@ -2189,19 +2189,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\krisi\\.nuget\\packages\\": {}
+    "C:\\Users\\gotin sam\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\krisi\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj",
+      "projectUniqueName": "C:\\Users\\gotin sam\\Source\\Repos\\FisheriesAgency\\FisheriesAgency.csproj",
       "projectName": "FisheriesAgency",
-      "projectPath": "C:\\Users\\krisi\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj",
-      "packagesPath": "C:\\Users\\krisi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\krisi\\source\\repos\\FisheriesAgency\\obj\\",
+      "projectPath": "C:\\Users\\gotin sam\\Source\\Repos\\FisheriesAgency\\FisheriesAgency.csproj",
+      "packagesPath": "C:\\Users\\gotin sam\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gotin sam\\Source\\Repos\\FisheriesAgency\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\krisi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gotin sam\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2265,7 +2265,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
