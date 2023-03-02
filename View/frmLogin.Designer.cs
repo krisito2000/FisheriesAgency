@@ -115,7 +115,7 @@
             this.btnViewPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnViewPassword.Location = new System.Drawing.Point(283, 130);
             this.btnViewPassword.Name = "btnViewPassword";
-            this.btnViewPassword.Size = new System.Drawing.Size(28, 28);
+            this.btnViewPassword.Size = new System.Drawing.Size(27, 27);
             this.btnViewPassword.TabIndex = 7;
             this.btnViewPassword.UseVisualStyleBackColor = false;
             this.btnViewPassword.Click += new System.EventHandler(this.btnViewPassword_Click);
