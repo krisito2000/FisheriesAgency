@@ -15,11 +15,11 @@ namespace FisheriesAgency.Model
         private string password;
 
         [DisplayName("ID")]
-        public int UserID { get => id; set => id = value; }
+        public int UserID { get => id;}
 
         [DisplayName("Username")]
         [Required(ErrorMessage = "Username is required.")]
-        [StringLength(50, MinimumLength = 2, ErrorMessage = "Username must be between 2 and 50 characters.")]
+        [StringLength(50, MinimumLength = 4, ErrorMessage = "Username must be between 2 and 50 characters.")]
         public string Username { get => username; set => username = value; }
 
         [DisplayName("Password")]

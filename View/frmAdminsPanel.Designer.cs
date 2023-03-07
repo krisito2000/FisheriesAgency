@@ -38,6 +38,7 @@
             this.dgvFisheriesAgencyDB = new System.Windows.Forms.DataGridView();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.cbAdmin = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFisheriesAgencyDB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,6 +60,7 @@
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // txtUsername
             // 
@@ -69,7 +71,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(557, 99);
+            this.txtPassword.Location = new System.Drawing.Point(557, 86);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(106, 23);
             this.txtPassword.TabIndex = 6;
@@ -89,7 +91,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPassword.Location = new System.Drawing.Point(469, 101);
+            this.lblPassword.Location = new System.Drawing.Point(469, 88);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(82, 21);
             this.lblPassword.TabIndex = 8;
@@ -100,7 +102,7 @@
             this.btnViewPassword.BackColor = System.Drawing.Color.Transparent;
             this.btnViewPassword.BackgroundImage = global::FisheriesAgency.Properties.Resources.ShowPasswordEyeIMG;
             this.btnViewPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnViewPassword.Location = new System.Drawing.Point(669, 99);
+            this.btnViewPassword.Location = new System.Drawing.Point(669, 86);
             this.btnViewPassword.Name = "btnViewPassword";
             this.btnViewPassword.Size = new System.Drawing.Size(27, 27);
             this.btnViewPassword.TabIndex = 9;
@@ -135,12 +137,25 @@
             this.btnEdit.TabIndex = 12;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // cbAdmin
+            // 
+            this.cbAdmin.AutoSize = true;
+            this.cbAdmin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbAdmin.Location = new System.Drawing.Point(568, 123);
+            this.cbAdmin.Name = "cbAdmin";
+            this.cbAdmin.Size = new System.Drawing.Size(75, 25);
+            this.cbAdmin.TabIndex = 13;
+            this.cbAdmin.Text = "Admin";
+            this.cbAdmin.UseVisualStyleBackColor = true;
             // 
             // frmAdminsPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(721, 281);
+            this.Controls.Add(this.cbAdmin);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.dgvFisheriesAgencyDB);
@@ -170,5 +185,6 @@
         private DataGridView dgvFisheriesAgencyDB;
         private Button btnLogout;
         private Button btnEdit;
+        private CheckBox cbAdmin;
     }
 }

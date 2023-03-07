@@ -45,78 +45,84 @@ namespace FisheriesAgency.View
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text;
+            string username = txtUsername.Text.Trim();
             string password = txtPassword.Text;
             string confirmPassword = txtConfirmPassword.Text;
 
-            if (username == string.Empty && password == string.Empty && confirmPassword == string.Empty)
+            if (string.IsNullOrWhiteSpace(username) && string.IsNullOrWhiteSpace(password) && string.IsNullOrWhiteSpace(confirmPassword))
             {
                 MessageBox.Show("Please enter your username, password and confirm password");
             }
-            else if (username == string.Empty && password == string.Empty)
+            else if (string.IsNullOrWhiteSpace(username) && string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Please enter your username and password");
             }
-            else if (username == string.Empty && confirmPassword == string.Empty)
+            else if (string.IsNullOrWhiteSpace(username) && string.IsNullOrWhiteSpace(confirmPassword))
             {
                 MessageBox.Show("Please enter your username and confirm password");
             }
-            else if (username == string.Empty)
+            else if (string.IsNullOrWhiteSpace(username))
             {
                 MessageBox.Show("Please enter your username");
             }
-            else if (password == string.Empty)
+            else if (string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Please enter your password");
             }
-            else if (confirmPassword == string.Empty)
+            else if (string.IsNullOrWhiteSpace(confirmPassword))
             {
                 MessageBox.Show("Please enter your confirm password");
             }
-
-            if (password != confirmPassword)
+            else if (password != confirmPassword)
             {
                 MessageBox.Show("Your password and confirm password must be the same");
             }
-
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            else
             {
-                string selectSql = "SELECT COUNT(*) FROM [User] WHERE Username = @username";
-                string insertSql = "INSERT INTO [User] (Username, Password) VALUES (@username, @password)";
-
-                using (SqlCommand selectCommand = new SqlCommand(selectSql, connection))
-                using (SqlCommand insertCommand = new SqlCommand(insertSql, connection))
+                try
                 {
-                    selectCommand.Parameters.AddWithValue("@username", username);
-                    insertCommand.Parameters.AddWithValue("@username", username);
-                    insertCommand.Parameters.AddWithValue("@password", password);
-
-                    connection.Open();
-
-                    int count = (int)selectCommand.ExecuteScalar();
-                    int result = insertCommand.ExecuteNonQuery();
-
-                    if (count > 0)
+                    using (SqlConnection connection = new SqlConnection(Program.connectionString))
                     {
-                        MessageBox.Show($"Username{username} already exists. Please choose a different username.");
-                    }
-                    else
-                    {
-                        if (result > 0)
+                        connection.Open();
+                        string selectSql = "SELECT COUNT(*) FROM [User] WHERE Username = @username";
+                        using (SqlCommand selectCommand = new SqlCommand(selectSql, connection))
                         {
-                            this.Hide();
-                            frmLogin frmLogin = new frmLogin();
-                            frmLogin.Show();
-                            MessageBox.Show("Registration successful!");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Registration failed. Please try again.");
+                            selectCommand.Parameters.AddWithValue("@username", username);
+                            int count = (int)selectCommand.ExecuteScalar();
+                            if (count > 0)
+                            {
+                                MessageBox.Show($"Username \"{username}\" already exists. Please choose a different username.");
+                            }
+                            else
+                            {
+                                string insertSql = "INSERT INTO [User] (Username, Password) VALUES (@username, @password)";
+                                using (SqlCommand insertCommand = new SqlCommand(insertSql, connection))
+                                {
+                                    insertCommand.Parameters.AddWithValue("@username", username);
+                                    insertCommand.Parameters.AddWithValue("@password", password);
+                                    int result = insertCommand.ExecuteNonQuery();
+                                    if (result > 0)
+                                    {
+                                        this.Hide();
+                                        frmLogin frmLogin = new frmLogin();
+                                        frmLogin.Show();
+                                        MessageBox.Show("Registration successful!");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Registration failed. Please try again.");
+                                    }
+                                }
+                            }
                         }
                     }
-                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while registering user: {ex.Message}");
                 }
             }
+
         }
     }
 }
