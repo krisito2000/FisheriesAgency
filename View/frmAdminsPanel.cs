@@ -33,6 +33,16 @@ namespace FisheriesAgency.View
             dgvFisheriesAgencyDB.DataSource = dt;
         }
 
+        private void dgvReset()
+        {
+            //dgvFisheriesAgencyDB.Refresh(); //why is this not working tf
+
+            //this is for now to refresh datagridview
+            this.Hide();
+            frmAdminsPanel frmAdminsPanel = new frmAdminsPanel();
+            frmAdminsPanel.Show();
+        }
+
         private void btnViewPassword_Click(object sender, EventArgs e)
         {
             if (txtPassword.UseSystemPasswordChar == true)
@@ -57,7 +67,7 @@ namespace FisheriesAgency.View
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-            string admin = cbAdmin.Text;
+            bool admin = cbAdmin.Checked;
 
             if (string.IsNullOrEmpty(username) && string.IsNullOrEmpty(password))
             {
@@ -102,7 +112,7 @@ namespace FisheriesAgency.View
                             int result = insertCommand.ExecuteNonQuery();
                             if (result > 0)
                             {
-                                MessageBox.Show("Registration successful!");
+                                dgvReset();
                             }
                             else
                             {
@@ -141,14 +151,8 @@ namespace FisheriesAgency.View
                 command.Parameters.AddWithValue("@UserId", userId);
 
                 command.ExecuteNonQuery();
-                //dgvFisheriesAgencyDB.Refresh(); //why is this not working tf
 
-                //this is for now to refresh datagridview
-                this.Hide();
-                frmAdminsPanel frmAdminsPanel = new frmAdminsPanel();
-                this.Hide();
-                frmAdminsPanel.Show();
-
+                dgvReset();
 
                 connection.Close();
             }
@@ -164,19 +168,6 @@ namespace FisheriesAgency.View
                 MessageBox.Show("Please select a row to update.");
                 return;
             }
-            //if (dgvFisheriesAgencyDB.SelectedRows.Count > 0)
-            //{
-            //    // Get the selected row
-            //    DataGridViewRow row2 = dgvFisheriesAgencyDB.SelectedRows[0];
-
-            //    // Get the username and password from the selected row
-            //    string username = row2.Cells["Username"].Value.ToString();
-            //    string password = row2.Cells["Password"].Value.ToString();
-
-            //    // Display the username and password in the textboxes
-            //    txtUsername.Text = username;
-            //    txtPassword.Text = password;
-            //}
 
             // Get the selected row
             DataGridViewRow row = dgvFisheriesAgencyDB.SelectedRows[0];
@@ -187,26 +178,55 @@ namespace FisheriesAgency.View
             // Get the new username and password from the textboxes
             string newUsername = txtUsername.Text.Trim();
             string newPassword = txtPassword.Text.Trim();
+            bool newAdmin = cbAdmin.Checked;
+
+            // Check if the new username already exists in the database
+            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            {
+                connection.Open();
+
+                SqlCommand checkCommand = new SqlCommand("SELECT COUNT(*) FROM [User] WHERE Username = @Username AND UserID <> @UserId", connection);
+                checkCommand.Parameters.AddWithValue("@Username", newUsername);
+                checkCommand.Parameters.AddWithValue("@UserId", userId);
+                int count = (int)checkCommand.ExecuteScalar();
+
+                if (count > 0)
+                {
+                    MessageBox.Show("Username already exists. Please choose a different username.");
+                    return;
+                }
+            }
 
             // Update the user in the local database
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
             {
                 connection.Open();
 
-                SqlCommand command = new SqlCommand("UPDATE [User] SET Username = @Username, Password = @Password WHERE UserID = @UserId", connection);
-                command.Parameters.AddWithValue("@Username", newUsername);
-                command.Parameters.AddWithValue("@Password", newPassword);
-                command.Parameters.AddWithValue("@UserId", userId);
-                command.ExecuteNonQuery();
+                SqlCommand updateCommand = new SqlCommand("UPDATE [User] SET Username = @Username, Password = @Password, isAdministrator = @newAdmin WHERE UserID = @UserId", connection);
+                updateCommand.Parameters.AddWithValue("@Username", newUsername);
+                updateCommand.Parameters.AddWithValue("@Password", newPassword);
+                updateCommand.Parameters.AddWithValue("@newAdmin", newAdmin);
+                updateCommand.Parameters.AddWithValue("@UserId", userId);
+                updateCommand.ExecuteNonQuery();
 
                 connection.Close();
             }
 
-            //this is for now to refresh datagridview
-            this.Hide();
-            frmAdminsPanel frmAdminsPanel = new frmAdminsPanel();
-            this.Hide();
-            frmAdminsPanel.Show();
+            dgvReset();
+        }
+        private void dgvFisheriesAgencyDB_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvFisheriesAgencyDB.Rows[e.RowIndex];
+                string username = row.Cells["Username"].Value.ToString().Trim();
+                string password = row.Cells["Password"].Value.ToString().Trim();
+                bool isAdmin = (bool)row.Cells["isAdministrator"].Value;
+
+                txtUsername.Text = username;
+                txtPassword.Text = password;
+                cbAdmin.Checked = isAdmin;
+            }
         }
     }
 }

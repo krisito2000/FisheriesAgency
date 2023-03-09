@@ -118,6 +118,7 @@
             this.dgvFisheriesAgencyDB.RowTemplate.Height = 25;
             this.dgvFisheriesAgencyDB.Size = new System.Drawing.Size(349, 202);
             this.dgvFisheriesAgencyDB.TabIndex = 10;
+            dgvFisheriesAgencyDB.CellClick += dgvFisheriesAgencyDB_CellClick;
             // 
             // btnLogout
             // 
