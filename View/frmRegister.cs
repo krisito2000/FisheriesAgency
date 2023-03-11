@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using FisheriesAgency.Model;
 using FisheriesAgency.Controller;
 using System.Data.SqlClient;
+using System.ComponentModel.Design;
 
 namespace FisheriesAgency.View
 {
@@ -122,6 +123,189 @@ namespace FisheriesAgency.View
                     MessageBox.Show($"An error occurred while registering user: {ex.Message}");
                 }
             }
+        }
+        private void btnRegister_MouseEnter(object sender, EventArgs e)
+        {
+            btnRegister.ForeColor = Color.Black;
+            btnRegister.BackColor = Color.Aqua;
+        }
+
+        private void btnRegister_MouseLeave(object sender, EventArgs e)
+        {
+            btnRegister.ForeColor = Color.Aqua;
+            btnRegister.BackColor = Color.DimGray;
+        }
+
+        private void btnBack_MouseEnter(object sender, EventArgs e)
+        {
+            btnBack.ForeColor = Color.Black;
+            btnBack.BackColor = Color.Aqua;
+        }
+
+        private void btnBack_MouseLeave(object sender, EventArgs e)
+        {
+            btnBack.ForeColor = Color.Aqua;
+            btnBack.BackColor = Color.DimGray;
+        }
+        private void btnRegister_Enter(object sender, EventArgs e)
+        {
+            btnRegister.ForeColor = Color.Black;
+            btnRegister.BackColor = Color.Aqua;
+        }
+
+        private void btnRegister_Leave(object sender, EventArgs e)
+        {
+            btnRegister.ForeColor = Color.Aqua;
+            btnRegister.BackColor = Color.DimGray;
+        }
+
+        private void btnBack_Enter(object sender, EventArgs e)
+        {
+            btnBack.ForeColor = Color.Black;
+            btnBack.BackColor = Color.Aqua;
+        }
+
+        private void btnBack_Leave(object sender, EventArgs e)
+        {
+            btnBack.ForeColor = Color.Aqua;
+            btnBack.BackColor = Color.DimGray;
+        }
+
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                btnBack.Focus();
+            }
+            else if (e.KeyCode == Keys.Down)
+            { 
+                txtPassword.Focus();
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                if (txtPassword.Text == string.Empty)
+                {
+                    txtPassword.Focus();
+                }
+                else if (txtConfirmPassword.Text == string.Empty)
+                {
+                    txtConfirmPassword.Focus();
+                }
+                else if (txtUsername.Text == string.Empty)
+                {
+                    txtUsername.Focus();
+                }
+                else
+                {
+                    btnRegister.Focus();
+                }
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                txtUsername.Focus();
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                txtConfirmPassword.Focus();
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                if (txtUsername.Text == string.Empty)
+                {
+                    txtUsername.Focus();
+                }
+                else if (txtConfirmPassword.Text == string.Empty)
+                {
+                    txtConfirmPassword.Focus();
+                }
+                else if (txtPassword.Text == string.Empty)
+                {
+                    txtPassword.Focus();
+                }
+                else
+                {
+                    btnRegister.Focus();
+                }
+            }
+        }
+
+        private void txtConfirmPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                txtPassword.Focus();
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                btnRegister.Focus();
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                if (txtUsername.Text == string.Empty)
+                {
+                    txtUsername.Focus();
+                }
+                else if (txtConfirmPassword.Text == string.Empty)
+                {
+                    txtConfirmPassword.Focus();
+                }
+                else if (txtPassword.Text == string.Empty)
+                {
+                    txtPassword.Focus();
+                }
+                else
+                {
+                    btnRegister.Focus();
+                }
+            }
+        }
+
+        private void btnRegister_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                txtConfirmPassword.Focus();
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                btnBack.Focus();
+            }
+        }
+
+        private void btnBack_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                btnRegister.Focus();
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                btnViewPassword.Focus();
+            }
+        }
+
+        private void btnViewPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                txtUsername.Focus();
+            }
+            else if (e.KeyCode == Keys.Left)
+            {
+                txtPassword.Focus();
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                btnRegister.Focus();
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

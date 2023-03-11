@@ -39,7 +39,9 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.cbAdmin = new System.Windows.Forms.CheckBox();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFisheriesAgencyDB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // btncreate
@@ -118,7 +120,6 @@
             this.dgvFisheriesAgencyDB.RowTemplate.Height = 25;
             this.dgvFisheriesAgencyDB.Size = new System.Drawing.Size(349, 202);
             this.dgvFisheriesAgencyDB.TabIndex = 10;
-            dgvFisheriesAgencyDB.CellClick += dgvFisheriesAgencyDB_CellClick;
             // 
             // btnLogout
             // 
@@ -151,6 +152,11 @@
             this.cbAdmin.Text = "Admin";
             this.cbAdmin.UseVisualStyleBackColor = true;
             // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
             // frmAdminsPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -170,6 +176,7 @@
             this.Name = "frmAdminsPanel";
             this.Text = "Admin Panel";
             ((System.ComponentModel.ISupportInitialize)(this.dgvFisheriesAgencyDB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +194,6 @@
         private Button btnLogout;
         private Button btnEdit;
         private CheckBox cbAdmin;
+        private FileSystemWatcher fileSystemWatcher1;
     }
 }
