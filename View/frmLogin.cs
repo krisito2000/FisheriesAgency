@@ -1,4 +1,5 @@
 using System.Data.SqlClient;
+using FisheriesAgency.Properties;
 using FisheriesAgency.View;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -56,14 +57,14 @@ namespace FisheriesAgency
                             this.Hide();
                             frmAdminsPanel frmAdminsPanel = new frmAdminsPanel();
                             frmAdminsPanel.Show();
-                            MessageBox.Show($"Login successful as {username}");
+                            MessageBox.Show($"Login successful as \"{username}\"");
                         }
                         else
                         {
                             this.Hide();
                             frmUser frmUser = new frmUser();
                             frmUser.Show();
-                            MessageBox.Show($"Login successful as {username}");
+                            MessageBox.Show($"Login successful as \"{username}\"");
                         }
                     }
                     else
@@ -81,10 +82,12 @@ namespace FisheriesAgency
             if (txtPassword.UseSystemPasswordChar == true)
             {
                 txtPassword.UseSystemPasswordChar = false;
+                btnViewPassword.BackColor = Color.Aqua;
             }
             else if (txtPassword.UseSystemPasswordChar == false)
             {
                 txtPassword.UseSystemPasswordChar = true;
+                btnViewPassword.BackColor = Color.DimGray;
             }
         }
 
@@ -229,11 +232,6 @@ namespace FisheriesAgency
             {
                 txtUsername.Focus();
             }
-        }
-
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

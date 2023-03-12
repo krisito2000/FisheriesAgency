@@ -48,10 +48,12 @@ namespace FisheriesAgency.View
             if (txtPassword.UseSystemPasswordChar == true)
             {
                 txtPassword.UseSystemPasswordChar = false;
+                btnViewPassword.BackColor = Color.Aqua;
             }
             else if (txtPassword.UseSystemPasswordChar == false)
             {
                 txtPassword.UseSystemPasswordChar = true;
+                btnViewPassword.BackColor = Color.DimGray;
             }
         }
 

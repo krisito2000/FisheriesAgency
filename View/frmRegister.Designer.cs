@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegister));
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblCofirmPassword = new System.Windows.Forms.Label();
@@ -36,8 +37,8 @@
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.btnViewPassword = new System.Windows.Forms.Button();
             this.pnlRegisterBAckground = new System.Windows.Forms.Panel();
+            this.btnViewPassword = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlUsernametxt = new System.Windows.Forms.Panel();
@@ -156,27 +157,14 @@
             this.btnBack.MouseEnter += new System.EventHandler(this.btnBack_MouseEnter);
             this.btnBack.MouseLeave += new System.EventHandler(this.btnBack_MouseLeave);
             // 
-            // btnViewPassword
-            // 
-            this.btnViewPassword.BackColor = System.Drawing.Color.Transparent;
-            this.btnViewPassword.BackgroundImage = global::FisheriesAgency.Properties.Resources.ShowPasswordEyeIMG;
-            this.btnViewPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnViewPassword.Location = new System.Drawing.Point(395, 155);
-            this.btnViewPassword.Name = "btnViewPassword";
-            this.btnViewPassword.Size = new System.Drawing.Size(27, 27);
-            this.btnViewPassword.TabIndex = 9;
-            this.btnViewPassword.UseVisualStyleBackColor = false;
-            this.btnViewPassword.Click += new System.EventHandler(this.btnViewPassword_Click);
-            this.btnViewPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnViewPassword_KeyDown);
-            // 
             // pnlRegisterBAckground
             // 
             this.pnlRegisterBAckground.BackColor = System.Drawing.Color.Black;
+            this.pnlRegisterBAckground.Controls.Add(this.btnViewPassword);
             this.pnlRegisterBAckground.Controls.Add(this.panel2);
             this.pnlRegisterBAckground.Controls.Add(this.panel1);
             this.pnlRegisterBAckground.Controls.Add(this.pnlUsernametxt);
             this.pnlRegisterBAckground.Controls.Add(this.lblRegister);
-            this.pnlRegisterBAckground.Controls.Add(this.btnViewPassword);
             this.pnlRegisterBAckground.Controls.Add(this.btnBack);
             this.pnlRegisterBAckground.Controls.Add(this.btnRegister);
             this.pnlRegisterBAckground.Controls.Add(this.txtConfirmPassword);
@@ -185,11 +173,24 @@
             this.pnlRegisterBAckground.Controls.Add(this.lblCofirmPassword);
             this.pnlRegisterBAckground.Controls.Add(this.lblPassword);
             this.pnlRegisterBAckground.Controls.Add(this.lblUsername);
-            this.pnlRegisterBAckground.Cursor = System.Windows.Forms.Cursors.Default;
             this.pnlRegisterBAckground.Location = new System.Drawing.Point(-19, -17);
             this.pnlRegisterBAckground.Name = "pnlRegisterBAckground";
             this.pnlRegisterBAckground.Size = new System.Drawing.Size(556, 454);
             this.pnlRegisterBAckground.TabIndex = 10;
+            // 
+            // btnViewPassword
+            // 
+            this.btnViewPassword.BackColor = System.Drawing.Color.DimGray;
+            this.btnViewPassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnViewPassword.BackgroundImage")));
+            this.btnViewPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnViewPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewPassword.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnViewPassword.Location = new System.Drawing.Point(390, 155);
+            this.btnViewPassword.Name = "btnViewPassword";
+            this.btnViewPassword.Size = new System.Drawing.Size(27, 27);
+            this.btnViewPassword.TabIndex = 13;
+            this.btnViewPassword.UseVisualStyleBackColor = false;
+            this.btnViewPassword.Click += new System.EventHandler(this.btnViewPassword_Click);
             // 
             // panel2
             // 
@@ -252,11 +253,11 @@
         private TextBox txtConfirmPassword;
         private Button btnRegister;
         private Button btnBack;
-        private Button btnViewPassword;
         private Panel pnlRegisterBAckground;
         private Label lblRegister;
         private Panel pnlUsernametxt;
         private Panel panel2;
         private Panel panel1;
+        private Button btnViewPassword;
     }
 }

@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminsPanel));
             this.btncreate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.btnViewPassword = new System.Windows.Forms.Button();
             this.dgvFisheriesAgencyDB = new System.Windows.Forms.DataGridView();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.cbAdmin = new System.Windows.Forms.CheckBox();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.btnViewPassword = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFisheriesAgencyDB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
@@ -99,22 +100,10 @@
             this.lblPassword.TabIndex = 8;
             this.lblPassword.Text = "Password";
             // 
-            // btnViewPassword
-            // 
-            this.btnViewPassword.BackColor = System.Drawing.Color.Transparent;
-            this.btnViewPassword.BackgroundImage = global::FisheriesAgency.Properties.Resources.ShowPasswordEyeIMG;
-            this.btnViewPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnViewPassword.Location = new System.Drawing.Point(669, 86);
-            this.btnViewPassword.Name = "btnViewPassword";
-            this.btnViewPassword.Size = new System.Drawing.Size(27, 27);
-            this.btnViewPassword.TabIndex = 9;
-            this.btnViewPassword.UseVisualStyleBackColor = false;
-            this.btnViewPassword.Click += new System.EventHandler(this.btnViewPassword_Click);
-            // 
             // dgvFisheriesAgencyDB
             // 
             this.dgvFisheriesAgencyDB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFisheriesAgencyDB.Location = new System.Drawing.Point(61, 26);
+            this.dgvFisheriesAgencyDB.Location = new System.Drawing.Point(62, 39);
             this.dgvFisheriesAgencyDB.Name = "dgvFisheriesAgencyDB";
             this.dgvFisheriesAgencyDB.RowHeadersWidth = 51;
             this.dgvFisheriesAgencyDB.RowTemplate.Height = 25;
@@ -157,16 +146,31 @@
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
+            // btnViewPassword
+            // 
+            this.btnViewPassword.BackColor = System.Drawing.Color.DimGray;
+            this.btnViewPassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnViewPassword.BackgroundImage")));
+            this.btnViewPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnViewPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewPassword.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnViewPassword.ForeColor = System.Drawing.Color.Black;
+            this.btnViewPassword.Location = new System.Drawing.Point(669, 88);
+            this.btnViewPassword.Name = "btnViewPassword";
+            this.btnViewPassword.Size = new System.Drawing.Size(27, 27);
+            this.btnViewPassword.TabIndex = 14;
+            this.btnViewPassword.UseVisualStyleBackColor = false;
+            this.btnViewPassword.Click += new System.EventHandler(this.btnViewPassword_Click);
+            // 
             // frmAdminsPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(721, 281);
+            this.Controls.Add(this.btnViewPassword);
             this.Controls.Add(this.cbAdmin);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.dgvFisheriesAgencyDB);
-            this.Controls.Add(this.btnViewPassword);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.txtPassword);
@@ -189,11 +193,11 @@
         private TextBox txtPassword;
         private Label lblUsername;
         private Label lblPassword;
-        private Button btnViewPassword;
         private DataGridView dgvFisheriesAgencyDB;
         private Button btnLogout;
         private Button btnEdit;
         private CheckBox cbAdmin;
         private FileSystemWatcher fileSystemWatcher1;
+        private Button btnViewPassword;
     }
 }

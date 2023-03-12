@@ -29,20 +29,22 @@ namespace FisheriesAgency.View
         }
 
         //Making password visible
-
         private void btnViewPassword_Click(object sender, EventArgs e)
         {
             if (txtPassword.UseSystemPasswordChar == true)
             {
                 txtPassword.UseSystemPasswordChar = false;
                 txtConfirmPassword.UseSystemPasswordChar = false;
+                btnViewPassword.BackColor = Color.Aqua;
             }
             else if (txtPassword.UseSystemPasswordChar == false)
             {
                 txtPassword.UseSystemPasswordChar = true;
                 txtConfirmPassword.UseSystemPasswordChar = true;
+                btnViewPassword.BackColor = Color.DimGray;
             }
         }
+
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
@@ -92,6 +94,8 @@ namespace FisheriesAgency.View
                             int count = (int)selectCommand.ExecuteScalar();
                             if (count > 0)
                             {
+                                txtUsername.Focus();
+                                txtUsername.Text = string.Empty;
                                 MessageBox.Show($"Username \"{username}\" already exists. Please choose a different username.");
                             }
                             else
@@ -302,11 +306,6 @@ namespace FisheriesAgency.View
             {
                 btnRegister.Focus();
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
