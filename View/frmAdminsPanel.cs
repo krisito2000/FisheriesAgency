@@ -64,7 +64,6 @@ namespace FisheriesAgency.View
             frmLogin.Show();
         }
 
-        //Create button is not working
         private void btncreate_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
@@ -153,10 +152,9 @@ namespace FisheriesAgency.View
                 command.Parameters.AddWithValue("@UserId", userId);
 
                 command.ExecuteNonQuery();
+                connection.Close();
 
                 dgvReset();
-
-                connection.Close();
             }
         }
 

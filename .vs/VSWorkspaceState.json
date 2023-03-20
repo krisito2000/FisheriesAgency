@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\View"
   ],
-  "SelectedNode": "\\FisheriesAgency.sln",
+  "SelectedNode": "\\View\\frmAdminsPanel.cs",
   "PreviewInSolutionExplorer": false
 }
