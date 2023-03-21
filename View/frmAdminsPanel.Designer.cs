@@ -29,161 +29,172 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminsPanel));
-            btncreate = new Button();
-            btnDelete = new Button();
-            txtUsername = new TextBox();
-            txtPassword = new TextBox();
-            lblUsername = new Label();
-            lblPassword = new Label();
-            dgvFisheriesAgencyDB = new DataGridView();
-            btnLogout = new Button();
-            btnEdit = new Button();
-            cbAdmin = new CheckBox();
-            fileSystemWatcher1 = new FileSystemWatcher();
-            btnViewPassword = new Button();
-            ((System.ComponentModel.ISupportInitialize)dgvFisheriesAgencyDB).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
-            SuspendLayout();
+            this.btncreate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.dgvFisheriesAgencyDB = new System.Windows.Forms.DataGridView();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.cbAdmin = new System.Windows.Forms.CheckBox();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.btnViewPassword = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFisheriesAgencyDB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            this.SuspendLayout();
             // 
             // btncreate
             // 
-            btncreate.Location = new Point(568, 154);
-            btncreate.Name = "btncreate";
-            btncreate.Size = new Size(95, 30);
-            btncreate.TabIndex = 2;
-            btncreate.Text = "Create ";
-            btncreate.UseVisualStyleBackColor = true;
-            btncreate.Click += btncreate_Click;
+            this.btncreate.Location = new System.Drawing.Point(649, 217);
+            this.btncreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btncreate.Name = "btncreate";
+            this.btncreate.Size = new System.Drawing.Size(109, 40);
+            this.btncreate.TabIndex = 2;
+            this.btncreate.Text = "Create ";
+            this.btncreate.UseVisualStyleBackColor = true;
+            this.btncreate.Click += new System.EventHandler(this.btncreate_Click);
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(464, 154);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(95, 30);
-            btnDelete.TabIndex = 3;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = true;
-            btnDelete.Click += btnDelete_Click;
+            this.btnDelete.Location = new System.Drawing.Point(530, 217);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(109, 40);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(557, 39);
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(106, 23);
-            txtUsername.TabIndex = 5;
+            this.txtUsername.Location = new System.Drawing.Point(637, 52);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(121, 27);
+            this.txtUsername.TabIndex = 5;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(557, 86);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(106, 23);
-            txtPassword.TabIndex = 6;
-            txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.Location = new System.Drawing.Point(637, 115);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(121, 27);
+            this.txtPassword.TabIndex = 6;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // lblUsername
             // 
-            lblUsername.AutoSize = true;
-            lblUsername.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblUsername.Location = new Point(464, 41);
-            lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(87, 21);
-            lblUsername.TabIndex = 7;
-            lblUsername.Text = "Username";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblUsername.Location = new System.Drawing.Point(530, 55);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(106, 28);
+            this.lblUsername.TabIndex = 7;
+            this.lblUsername.Text = "Username";
             // 
             // lblPassword
             // 
-            lblPassword.AutoSize = true;
-            lblPassword.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPassword.Location = new Point(469, 88);
-            lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(82, 21);
-            lblPassword.TabIndex = 8;
-            lblPassword.Text = "Password";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPassword.Location = new System.Drawing.Point(536, 117);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(101, 28);
+            this.lblPassword.TabIndex = 8;
+            this.lblPassword.Text = "Password";
             // 
             // dgvFisheriesAgencyDB
             // 
-            dgvFisheriesAgencyDB.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvFisheriesAgencyDB.Location = new Point(62, 39);
-            dgvFisheriesAgencyDB.Name = "dgvFisheriesAgencyDB";
-            dgvFisheriesAgencyDB.RowHeadersWidth = 51;
-            dgvFisheriesAgencyDB.RowTemplate.Height = 25;
-            dgvFisheriesAgencyDB.Size = new Size(349, 202);
-            dgvFisheriesAgencyDB.TabIndex = 10;
-            dgvFisheriesAgencyDB.CellClick += dgvFisheriesAgencyDB_CellClick;
+            this.dgvFisheriesAgencyDB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFisheriesAgencyDB.Location = new System.Drawing.Point(71, 52);
+            this.dgvFisheriesAgencyDB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvFisheriesAgencyDB.Name = "dgvFisheriesAgencyDB";
+            this.dgvFisheriesAgencyDB.RowHeadersWidth = 51;
+            this.dgvFisheriesAgencyDB.RowTemplate.Height = 25;
+            this.dgvFisheriesAgencyDB.Size = new System.Drawing.Size(399, 269);
+            this.dgvFisheriesAgencyDB.TabIndex = 10;
+            this.dgvFisheriesAgencyDB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFisheriesAgencyDB_CellClick);
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(568, 213);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(95, 30);
-            btnLogout.TabIndex = 11;
-            btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = true;
-            btnLogout.Click += btnLogout_Click;
+            this.btnLogout.Location = new System.Drawing.Point(649, 281);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(109, 40);
+            this.btnLogout.TabIndex = 11;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(464, 213);
-            btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(95, 30);
-            btnEdit.TabIndex = 12;
-            btnEdit.Text = "Edit";
-            btnEdit.UseVisualStyleBackColor = true;
-            btnEdit.Click += btnEdit_Click;
+            this.btnEdit.Location = new System.Drawing.Point(530, 281);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(109, 40);
+            this.btnEdit.TabIndex = 12;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // cbAdmin
             // 
-            cbAdmin.AutoSize = true;
-            cbAdmin.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            cbAdmin.Location = new Point(568, 123);
-            cbAdmin.Name = "cbAdmin";
-            cbAdmin.Size = new Size(75, 25);
-            cbAdmin.TabIndex = 13;
-            cbAdmin.Text = "Admin";
-            cbAdmin.UseVisualStyleBackColor = true;
+            this.cbAdmin.AutoSize = true;
+            this.cbAdmin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbAdmin.Location = new System.Drawing.Point(649, 164);
+            this.cbAdmin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbAdmin.Name = "cbAdmin";
+            this.cbAdmin.Size = new System.Drawing.Size(92, 32);
+            this.cbAdmin.TabIndex = 13;
+            this.cbAdmin.Text = "Admin";
+            this.cbAdmin.UseVisualStyleBackColor = true;
             // 
             // fileSystemWatcher1
             // 
-            fileSystemWatcher1.EnableRaisingEvents = true;
-            fileSystemWatcher1.SynchronizingObject = this;
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
             // 
             // btnViewPassword
             // 
-            btnViewPassword.BackColor = Color.DimGray;
-            btnViewPassword.BackgroundImage = (Image)resources.GetObject("btnViewPassword.BackgroundImage");
-            btnViewPassword.BackgroundImageLayout = ImageLayout.Stretch;
-            btnViewPassword.Cursor = Cursors.Hand;
-            btnViewPassword.FlatStyle = FlatStyle.Popup;
-            btnViewPassword.ForeColor = Color.Black;
-            btnViewPassword.Location = new Point(669, 88);
-            btnViewPassword.Name = "btnViewPassword";
-            btnViewPassword.Size = new Size(27, 27);
-            btnViewPassword.TabIndex = 14;
-            btnViewPassword.UseVisualStyleBackColor = false;
-            btnViewPassword.Click += btnViewPassword_Click;
+            this.btnViewPassword.BackColor = System.Drawing.Color.DimGray;
+            this.btnViewPassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnViewPassword.BackgroundImage")));
+            this.btnViewPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnViewPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewPassword.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnViewPassword.ForeColor = System.Drawing.Color.Black;
+            this.btnViewPassword.Location = new System.Drawing.Point(765, 117);
+            this.btnViewPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnViewPassword.Name = "btnViewPassword";
+            this.btnViewPassword.Size = new System.Drawing.Size(31, 36);
+            this.btnViewPassword.TabIndex = 14;
+            this.btnViewPassword.UseVisualStyleBackColor = false;
+            this.btnViewPassword.Click += new System.EventHandler(this.btnViewPassword_Click);
             // 
             // frmAdminsPanel
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(721, 281);
-            Controls.Add(btnViewPassword);
-            Controls.Add(cbAdmin);
-            Controls.Add(btnEdit);
-            Controls.Add(btnLogout);
-            Controls.Add(dgvFisheriesAgencyDB);
-            Controls.Add(lblPassword);
-            Controls.Add(lblUsername);
-            Controls.Add(txtPassword);
-            Controls.Add(txtUsername);
-            Controls.Add(btnDelete);
-            Controls.Add(btncreate);
-            Name = "frmAdminsPanel";
-            Text = "Admin Panel";
-            ((System.ComponentModel.ISupportInitialize)dgvFisheriesAgencyDB).EndInit();
-            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(824, 375);
+            this.Controls.Add(this.btnViewPassword);
+            this.Controls.Add(this.cbAdmin);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.dgvFisheriesAgencyDB);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblUsername);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btncreate);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "frmAdminsPanel";
+            this.Text = "Admin Panel";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFisheriesAgencyDB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

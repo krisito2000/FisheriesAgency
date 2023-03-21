@@ -1,5 +1,6 @@
 using System.Data.SqlClient;
 using FisheriesAgency.Properties;
+using FisheriesAgency.Utils;
 using FisheriesAgency.View;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -16,7 +17,7 @@ namespace FisheriesAgency
         {
             this.Hide();
             frmRegister frmRegister = new frmRegister();
-            frmRegister.Show();
+            frmRegister.ShowDialog();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -56,16 +57,17 @@ namespace FisheriesAgency
                         {
                             this.Hide();
                             frmAdminsPanel frmAdminsPanel = new frmAdminsPanel();
-                            frmAdminsPanel.Show();
                             MessageBox.Show($"Login successful as \"{username}\"");
+                            frmAdminsPanel.ShowDialog();
                         }
                         else
                         {
                             this.Hide();
                             frmUser frmUser = new frmUser();
-                            frmUser.Show();
                             MessageBox.Show($"Login successful as \"{username}\"");
+                            frmUser.ShowDialog();
                         }
+                        this.Show();
                     }
                     else
                     {
@@ -79,62 +81,45 @@ namespace FisheriesAgency
 
         private void btnViewPassword_Click(object sender, EventArgs e)
         {
-            if (txtPassword.UseSystemPasswordChar == true)
-            {
-                txtPassword.UseSystemPasswordChar = false;
-                btnViewPassword.BackColor = Color.Aqua;
-            }
-            else if (txtPassword.UseSystemPasswordChar == false)
-            {
-                txtPassword.UseSystemPasswordChar = true;
-                btnViewPassword.BackColor = Color.DimGray;
-            }
+            PasswordToggle.Toggle(txtPassword, btnViewPassword);
         }
 
         private void btnLogin_MouseEnter(object sender, EventArgs e)
         {
-            btnLogin.ForeColor = Color.Black;
-            btnLogin.BackColor = Color.Aqua;
+            btnMouse.btnEnter(btnLogin);
         }
 
         private void btnLogin_MouseLeave(object sender, EventArgs e)
         {
-            btnLogin.ForeColor = Color.Aqua;
-            btnLogin.BackColor = Color.DimGray;
+            btnMouse.btnLeave(btnLogin);
         }
 
         private void btnRegister_MouseEnter(object sender, EventArgs e)
         {
-            btnRegister.ForeColor = Color.Black;
-            btnRegister.BackColor = Color.Aqua;
+            btnMouse.btnEnter(btnRegister);
         }
 
         private void btnRegister_MouseLeave(object sender, EventArgs e)
         {
-            btnRegister.ForeColor = Color.Aqua;
-            btnRegister.BackColor = Color.DimGray;
+            btnMouse.btnLeave(btnRegister);
         }
         private void btnLogin_Enter(object sender, EventArgs e)
         {
-            btnLogin.ForeColor = Color.Black;
-            btnLogin.BackColor = Color.Aqua;
+            btnMouse.btnEnter(btnLogin);
         }
 
         private void btnLogin_Leave(object sender, EventArgs e)
         {
-            btnLogin.ForeColor = Color.Aqua;
-            btnLogin.BackColor = Color.DimGray;
+            btnMouse.btnLeave(btnLogin);
         }
         private void btnRegister_Enter(object sender, EventArgs e)
         {
-            btnRegister.ForeColor = Color.Black;
-            btnRegister.BackColor = Color.Aqua;
+            btnMouse.btnEnter(btnRegister);
         }
 
         private void btnRegister_Leave(object sender, EventArgs e)
         {
-            btnRegister.ForeColor = Color.Aqua;
-            btnRegister.BackColor = Color.DimGray;
+            btnMouse.btnLeave(btnRegister);
         }
         private void txtUsername_KeyDown(object sender, KeyEventArgs e)
         {

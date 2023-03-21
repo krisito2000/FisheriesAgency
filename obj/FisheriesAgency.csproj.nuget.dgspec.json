@@ -1,28 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\krisito\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj": {}
+    "C:\\Users\\student\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj": {}
   },
   "projects": {
-    "C:\\Users\\krisito\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj": {
+    "C:\\Users\\student\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\krisito\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj",
+        "projectUniqueName": "C:\\Users\\student\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj",
         "projectName": "FisheriesAgency",
-        "projectPath": "C:\\Users\\krisito\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj",
-        "packagesPath": "C:\\Users\\krisito\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\krisito\\source\\repos\\FisheriesAgency\\obj\\",
+        "projectPath": "C:\\Users\\student\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj",
+        "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\student\\source\\repos\\FisheriesAgency\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\krisito\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -69,8 +65,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -82,7 +77,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

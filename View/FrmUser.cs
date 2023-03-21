@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FisheriesAgency.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,9 +20,7 @@ namespace FisheriesAgency.View
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmLogin frmLogin = new frmLogin();
-            frmLogin.Show();
+            Logout.LogoutHelper(this);
         }
     }
 }

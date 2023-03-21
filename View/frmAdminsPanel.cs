@@ -10,15 +10,14 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using FisheriesAgency.Controller;
 using FisheriesAgency.Model;
+using FisheriesAgency.Utils;
 
 namespace FisheriesAgency.View
 {
     public partial class frmAdminsPanel : Form
     {
-        public frmAdminsPanel()
+        private static void UpdateUsersDataGridView(DataGridView dgvFisheriesAgencyDB)
         {
-            InitializeComponent();
-
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(Program.connectionString))
             {
@@ -32,36 +31,27 @@ namespace FisheriesAgency.View
             }
             dgvFisheriesAgencyDB.DataSource = dt;
         }
+        public frmAdminsPanel()
+        {
+            InitializeComponent();
+            UpdateUsersDataGridView(dgvFisheriesAgencyDB);
+        }
 
         private void dgvReset()
         {
-            //dgvFisheriesAgencyDB.Refresh(); //why is this not working tf
-
-            //this is for now to refresh datagridview
-            this.Hide();
-            frmAdminsPanel frmAdminsPanel = new frmAdminsPanel();
-            frmAdminsPanel.Show();
+            UpdateUsersDataGridView(dgvFisheriesAgencyDB);
+            dgvFisheriesAgencyDB.Refresh();
         }
 
         private void btnViewPassword_Click(object sender, EventArgs e)
         {
-            if (txtPassword.UseSystemPasswordChar == true)
-            {
-                txtPassword.UseSystemPasswordChar = false;
-                btnViewPassword.BackColor = Color.Aqua;
-            }
-            else if (txtPassword.UseSystemPasswordChar == false)
-            {
-                txtPassword.UseSystemPasswordChar = true;
-                btnViewPassword.BackColor = Color.DimGray;
-            }
+            PasswordToggle.Toggle(txtPassword, btnViewPassword);
         }
+
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmLogin frmLogin = new frmLogin();
-            frmLogin.Show();
+            Logout.LogoutHelper(this);
         }
 
         private void btncreate_Click(object sender, EventArgs e)

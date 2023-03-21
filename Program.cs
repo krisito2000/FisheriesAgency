@@ -10,6 +10,7 @@ namespace FisheriesAgency
         {
             ApplicationConfiguration.Initialize();
             Application.Run(new frmLogin());
+
         }
     }
 }
