@@ -218,5 +218,89 @@ namespace FisheriesAgency.View
                 cbAdmin.Checked = isAdmin;
             }
         }
+
+        private void btnGetPermits_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtMonths.Text, out int months))
+            {
+                DateTime expirationDate = DateTime.Today.AddMonths(months);
+                string query = $"SELECT PermitNumber, IssueDate, ExpirationDate, Equipment, VesselId FROM FishingPermit WHERE ExpirationDate <= '{expirationDate.ToString("yyyy-MM-dd")}'";
+
+                using (SqlConnection connection = new SqlConnection(Program.connectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        connection.Open();
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                        {
+                            DataTable permitsTable = new DataTable();
+                            adapter.Fill(permitsTable);
+                            dgvFisheriesAgencyDB.DataSource = permitsTable;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid number of months.");
+            }
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            UpdateUsersDataGridView(dgvFisheriesAgencyDB);
+            dgvFisheriesAgencyDB.Refresh();
+        }
+
+        private void btnFishingPermits_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(Program.connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT PermitNumber, IssueDate, ExpirationDate, Equipment, VesselId FROM [FishingPermit]", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        sda.Fill(dt);
+                    }
+                }
+            }
+            dgvFisheriesAgencyDB.DataSource = dt;
+            dgvFisheriesAgencyDB.Refresh();
+        }
+
+        private void btnVessels_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(Program.connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT VesselId, InternationalNumber, CallSign, Marking, Length, Width, Tonnage, Gas, Engine, Fuel FROM [Vessel]", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        sda.Fill(dt);
+                    }
+                }
+            }
+            dgvFisheriesAgencyDB.DataSource = dt;
+            dgvFisheriesAgencyDB.Refresh();
+        }
+
+        private void btnTickets_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(Program.connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT TicketId, MemberId, StartDate, EndDate, Price, IsPensioner, IsDisabled, TelkDecisionNum FROM [Ticket]", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        sda.Fill(dt);
+                    }
+                }
+            }
+            dgvFisheriesAgencyDB.DataSource = dt;
+            dgvFisheriesAgencyDB.Refresh();
+        }
     }
 }

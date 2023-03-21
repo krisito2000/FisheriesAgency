@@ -131,8 +131,8 @@ namespace FisheriesAgency
             {
                 txtPassword.Focus();
             }
-            else if (e.KeyCode == Keys.Enter) 
-            { 
+            else if (e.KeyCode == Keys.Enter)
+            {
                 if (txtPassword.Text == string.Empty)
                 {
                     txtPassword.Focus();
