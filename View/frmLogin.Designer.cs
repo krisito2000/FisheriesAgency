@@ -37,11 +37,11 @@
             btnRegister = new Button();
             lblRegisterNow = new Label();
             btnViewPassword = new Button();
-            panel1 = new Panel();
+            pnlBackground = new Panel();
             panel2 = new Panel();
             pnlUsernametxt = new Panel();
             lblLogin = new Label();
-            panel1.SuspendLayout();
+            pnlBackground.SuspendLayout();
             SuspendLayout();
             // 
             // txtUsername
@@ -50,7 +50,7 @@
             txtUsername.BorderStyle = BorderStyle.None;
             txtUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtUsername.ForeColor = Color.White;
-            txtUsername.Location = new Point(200, 138);
+            txtUsername.Location = new Point(204, 129);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(106, 22);
             txtUsername.TabIndex = 0;
@@ -62,7 +62,7 @@
             txtPassword.BorderStyle = BorderStyle.None;
             txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtPassword.ForeColor = Color.White;
-            txtPassword.Location = new Point(202, 196);
+            txtPassword.Location = new Point(206, 187);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(106, 22);
             txtPassword.TabIndex = 1;
@@ -76,7 +76,7 @@
             lblUsername.BackColor = Color.Transparent;
             lblUsername.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblUsername.ForeColor = Color.Aqua;
-            lblUsername.Location = new Point(104, 138);
+            lblUsername.Location = new Point(108, 129);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(87, 21);
             lblUsername.TabIndex = 2;
@@ -87,7 +87,7 @@
             lblPassword.AutoSize = true;
             lblPassword.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblPassword.ForeColor = Color.Aqua;
-            lblPassword.Location = new Point(106, 196);
+            lblPassword.Location = new Point(110, 187);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(82, 21);
             lblPassword.TabIndex = 3;
@@ -100,7 +100,7 @@
             btnLogin.FlatStyle = FlatStyle.Popup;
             btnLogin.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogin.ForeColor = Color.Aqua;
-            btnLogin.Location = new Point(114, 266);
+            btnLogin.Location = new Point(118, 257);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(194, 53);
             btnLogin.TabIndex = 4;
@@ -120,7 +120,7 @@
             btnRegister.FlatStyle = FlatStyle.Popup;
             btnRegister.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btnRegister.ForeColor = Color.Aqua;
-            btnRegister.Location = new Point(275, 351);
+            btnRegister.Location = new Point(175, 378);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(80, 28);
             btnRegister.TabIndex = 5;
@@ -139,7 +139,7 @@
             lblRegisterNow.BackColor = Color.Transparent;
             lblRegisterNow.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblRegisterNow.ForeColor = Color.Aqua;
-            lblRegisterNow.Location = new Point(76, 354);
+            lblRegisterNow.Location = new Point(119, 337);
             lblRegisterNow.Name = "lblRegisterNow";
             lblRegisterNow.Size = new Size(193, 21);
             lblRegisterNow.TabIndex = 6;
@@ -152,7 +152,7 @@
             btnViewPassword.BackgroundImageLayout = ImageLayout.Stretch;
             btnViewPassword.Cursor = Cursors.Hand;
             btnViewPassword.FlatStyle = FlatStyle.Popup;
-            btnViewPassword.Location = new Point(314, 194);
+            btnViewPassword.Location = new Point(318, 185);
             btnViewPassword.Name = "btnViewPassword";
             btnViewPassword.Size = new Size(27, 27);
             btnViewPassword.TabIndex = 7;
@@ -160,29 +160,29 @@
             btnViewPassword.Click += btnViewPassword_Click;
             btnViewPassword.KeyDown += btnViewPassword_KeyDown;
             // 
-            // panel1
+            // pnlBackground
             // 
-            panel1.BackColor = Color.Black;
-            panel1.Controls.Add(panel2);
-            panel1.Controls.Add(pnlUsernametxt);
-            panel1.Controls.Add(lblLogin);
-            panel1.Controls.Add(btnViewPassword);
-            panel1.Controls.Add(lblRegisterNow);
-            panel1.Controls.Add(btnRegister);
-            panel1.Controls.Add(btnLogin);
-            panel1.Controls.Add(lblPassword);
-            panel1.Controls.Add(lblUsername);
-            panel1.Controls.Add(txtPassword);
-            panel1.Controls.Add(txtUsername);
-            panel1.Location = new Point(-22, -16);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(460, 504);
-            panel1.TabIndex = 8;
+            pnlBackground.BackColor = Color.Black;
+            pnlBackground.Controls.Add(panel2);
+            pnlBackground.Controls.Add(pnlUsernametxt);
+            pnlBackground.Controls.Add(lblLogin);
+            pnlBackground.Controls.Add(btnViewPassword);
+            pnlBackground.Controls.Add(lblRegisterNow);
+            pnlBackground.Controls.Add(btnRegister);
+            pnlBackground.Controls.Add(btnLogin);
+            pnlBackground.Controls.Add(lblPassword);
+            pnlBackground.Controls.Add(lblUsername);
+            pnlBackground.Controls.Add(txtPassword);
+            pnlBackground.Controls.Add(txtUsername);
+            pnlBackground.Location = new Point(-22, -16);
+            pnlBackground.Name = "pnlBackground";
+            pnlBackground.Size = new Size(460, 504);
+            pnlBackground.TabIndex = 8;
             // 
             // panel2
             // 
             panel2.BackColor = Color.Aqua;
-            panel2.Location = new Point(202, 218);
+            panel2.Location = new Point(206, 209);
             panel2.Name = "panel2";
             panel2.Size = new Size(106, 1);
             panel2.TabIndex = 10;
@@ -190,7 +190,7 @@
             // pnlUsernametxt
             // 
             pnlUsernametxt.BackColor = Color.Aqua;
-            pnlUsernametxt.Location = new Point(200, 159);
+            pnlUsernametxt.Location = new Point(204, 150);
             pnlUsernametxt.Name = "pnlUsernametxt";
             pnlUsernametxt.Size = new Size(106, 1);
             pnlUsernametxt.TabIndex = 9;
@@ -202,7 +202,7 @@
             lblLogin.BackColor = Color.Transparent;
             lblLogin.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
             lblLogin.ForeColor = Color.Aqua;
-            lblLogin.Location = new Point(171, 54);
+            lblLogin.Location = new Point(175, 45);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(89, 37);
             lblLogin.TabIndex = 8;
@@ -213,14 +213,14 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(384, 434);
-            Controls.Add(panel1);
+            Controls.Add(pnlBackground);
             Cursor = Cursors.Hand;
             FormBorderStyle = FormBorderStyle.FixedDialog;
             HelpButton = true;
             Name = "frmLogin";
             Text = "Login";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            pnlBackground.ResumeLayout(false);
+            pnlBackground.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -234,7 +234,7 @@
         private Button btnRegister;
         private Label lblRegisterNow;
         private Button btnViewPassword;
-        private Panel panel1;
+        private Panel pnlBackground;
         private Panel panel2;
         private Panel pnlUsernametxt;
         private Label lblLogin;

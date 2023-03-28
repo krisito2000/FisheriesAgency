@@ -11,6 +11,8 @@ using System.Data.SqlClient;
 using FisheriesAgency.Controller;
 using FisheriesAgency.Model;
 using FisheriesAgency.Utils;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using System.ComponentModel.Design;
 
 namespace FisheriesAgency.View
 {
@@ -209,6 +211,17 @@ namespace FisheriesAgency.View
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvFisheriesAgencyDB.Rows[e.RowIndex];
+
+                if (e.RowIndex == 0)
+                {
+                    string columnName = row.Cells[0].Value.ToString().Trim();
+                    if (columnName != "UserID")
+                    {
+                        MessageBox.Show("You can't select that row in this table.");
+                        return;
+                    }
+                }
+
                 string username = row.Cells["Username"].Value.ToString().Trim();
                 string password = row.Cells["Password"].Value.ToString().Trim();
                 bool isAdmin = (bool)row.Cells["isAdministrator"].Value;
@@ -301,6 +314,35 @@ namespace FisheriesAgency.View
             }
             dgvFisheriesAgencyDB.DataSource = dt;
             dgvFisheriesAgencyDB.Refresh();
+        }
+
+        private void btnBestCatchForTheYear_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(Program.connectionString))
+                {
+                    connection.Open();
+                    string query = @"SELECT m.Name AS [Name], SUM(c.Weight) AS [Total Catch Weight (kg)]
+                             FROM Catch c
+                             INNER JOIN FishingTrip t ON c.FishingTripId = t.TripId
+                             INNER JOIN FishingPermit p ON t.VesselId = p.VesselId
+                             INNER JOIN Member m ON p.PermitNumber = m.Name
+                             WHERE t.TripEnd >= DATEADD(year, -1, GETDATE())
+                             GROUP BY m.Name
+                             ORDER BY [Total Catch Weight (kg)] DESC";
+
+                    SqlCommand command = new SqlCommand(query, connection);
+                    DataTable table = new DataTable();
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(table);
+                    dgvFisheriesAgencyDB.DataSource = table;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error retrieving leaderboard: " + ex.Message);
+            }
         }
     }
 }

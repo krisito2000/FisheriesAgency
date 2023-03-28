@@ -49,6 +49,7 @@
             btnFishingPermits = new Button();
             btnVessels = new Button();
             btnTickets = new Button();
+            btnBestCatchForTheYear = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvFisheriesAgencyDB).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             SuspendLayout();
@@ -253,11 +254,22 @@
             btnTickets.UseVisualStyleBackColor = true;
             btnTickets.Click += btnTickets_Click;
             // 
+            // btnBestCatchForTheYear
+            // 
+            btnBestCatchForTheYear.Location = new Point(365, 225);
+            btnBestCatchForTheYear.Name = "btnBestCatchForTheYear";
+            btnBestCatchForTheYear.Size = new Size(86, 30);
+            btnBestCatchForTheYear.TabIndex = 23;
+            btnBestCatchForTheYear.Text = "Years Catch";
+            btnBestCatchForTheYear.UseVisualStyleBackColor = true;
+            btnBestCatchForTheYear.Click += btnBestCatchForTheYear_Click;
+            // 
             // frmAdminsPanel
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(721, 543);
+            Controls.Add(btnBestCatchForTheYear);
             Controls.Add(btnTickets);
             Controls.Add(btnVessels);
             Controls.Add(btnFishingPermits);
@@ -306,5 +318,6 @@
         private Button btnFishingPermits;
         private Button btnVessels;
         private Button btnTickets;
+        private Button btnBestCatchForTheYear;
     }
 }
