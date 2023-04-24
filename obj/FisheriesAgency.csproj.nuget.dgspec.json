@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\krisito\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj": {}
+    "C:\\Users\\gotin sam\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj": {}
   },
   "projects": {
-    "C:\\Users\\krisito\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj": {
+    "C:\\Users\\gotin sam\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\krisito\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj",
+        "projectUniqueName": "C:\\Users\\gotin sam\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj",
         "projectName": "FisheriesAgency",
-        "projectPath": "C:\\Users\\krisito\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj",
-        "packagesPath": "C:\\Users\\krisito\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\krisito\\source\\repos\\FisheriesAgency\\obj\\",
+        "projectPath": "C:\\Users\\gotin sam\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj",
+        "packagesPath": "C:\\Users\\gotin sam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gotin sam\\source\\repos\\FisheriesAgency\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\krisito\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\gotin sam\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,7 +78,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
