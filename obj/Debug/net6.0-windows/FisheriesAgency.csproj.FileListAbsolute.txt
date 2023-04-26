@@ -327,3 +327,13 @@ C:\Users\krisito\source\repos\FisheriesAgency\obj\Debug\net6.0-windows\refint\Fi
 C:\Users\krisito\source\repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.pdb
 C:\Users\krisito\source\repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.genruntimeconfig.cache
 C:\Users\krisito\source\repos\FisheriesAgency\obj\Debug\net6.0-windows\ref\FisheriesAgency.dll
+C:\Users\krisito\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.View.Admin_Panel_Buttons.frmCaptain.resources
+C:\Users\krisito\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.View.Admin_Panel_Buttons.frmCatch.resources
+C:\Users\krisito\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.View.Admin_Panel_Buttons.frmFishingPermit.resources
+C:\Users\krisito\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.View.Admin_Panel_Buttons.frmFishingTrip.resources
+C:\Users\krisito\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.View.Admin_Panel_Buttons.frmInspector.resources
+C:\Users\krisito\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.View.Admin_Panel_Buttons.frmMember.resources
+C:\Users\krisito\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.View.Admin_Panel_Buttons.frmOwner.resources
+C:\Users\krisito\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.View.Admin_Panel_Buttons.frmTicket.resources
+C:\Users\krisito\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.View.Admin_Panel_Buttons.frmUser.resources
+C:\Users\krisito\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.View.Admin_Panel_Buttons.frmVessel.resources

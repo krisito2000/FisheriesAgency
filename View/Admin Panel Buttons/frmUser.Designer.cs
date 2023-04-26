@@ -29,134 +29,140 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUser));
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.lbIPassword = new System.Windows.Forms.Label();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btncreate = new System.Windows.Forms.Button();
-            this.btnViewPassword = new System.Windows.Forms.Button();
-            this.cbAdmin = new System.Windows.Forms.CheckBox();
-            this.dgvUser = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
-            this.SuspendLayout();
+            btnEdit = new Button();
+            lbIPassword = new Label();
+            lblUsername = new Label();
+            txtPassword = new TextBox();
+            txtUsername = new TextBox();
+            btnDelete = new Button();
+            btncreate = new Button();
+            btnViewPassword = new Button();
+            cbAdmin = new CheckBox();
+            dgvUser = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvUser).BeginInit();
+            SuspendLayout();
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(84, 311);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(95, 30);
-            this.btnEdit.TabIndex = 65;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Location = new Point(95, 229);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(95, 30);
+            btnEdit.TabIndex = 65;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // lbIPassword
             // 
-            this.lbIPassword.AutoSize = true;
-            this.lbIPassword.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lbIPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbIPassword.Location = new System.Drawing.Point(92, 144);
-            this.lbIPassword.Name = "lbIPassword";
-            this.lbIPassword.Size = new System.Drawing.Size(82, 21);
-            this.lbIPassword.TabIndex = 64;
-            this.lbIPassword.Text = "Password";
+            lbIPassword.AutoSize = true;
+            lbIPassword.FlatStyle = FlatStyle.System;
+            lbIPassword.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lbIPassword.Location = new Point(46, 103);
+            lbIPassword.Name = "lbIPassword";
+            lbIPassword.Size = new Size(82, 21);
+            lbIPassword.TabIndex = 64;
+            lbIPassword.Text = "Password";
             // 
             // lblUsername
             // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblUsername.Location = new System.Drawing.Point(87, 97);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(87, 21);
-            this.lblUsername.TabIndex = 63;
-            this.lblUsername.Text = "Username";
+            lblUsername.AutoSize = true;
+            lblUsername.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUsername.Location = new Point(41, 56);
+            lblUsername.Name = "lblUsername";
+            lblUsername.Size = new Size(87, 21);
+            lblUsername.TabIndex = 63;
+            lblUsername.Text = "Username";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(180, 142);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(106, 23);
-            this.txtPassword.TabIndex = 62;
+            txtPassword.Location = new Point(134, 101);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(106, 23);
+            txtPassword.TabIndex = 62;
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(180, 99);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(106, 23);
-            this.txtUsername.TabIndex = 61;
+            txtUsername.Location = new Point(134, 58);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(106, 23);
+            txtUsername.TabIndex = 61;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(87, 263);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(95, 30);
-            this.btnDelete.TabIndex = 60;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Location = new Point(44, 193);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(95, 30);
+            btnDelete.TabIndex = 60;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btncreate
             // 
-            this.btncreate.Location = new System.Drawing.Point(188, 263);
-            this.btncreate.Name = "btncreate";
-            this.btncreate.Size = new System.Drawing.Size(95, 30);
-            this.btncreate.TabIndex = 59;
-            this.btncreate.Text = "Create ";
-            this.btncreate.UseVisualStyleBackColor = true;
+            btncreate.Location = new Point(145, 193);
+            btncreate.Name = "btncreate";
+            btncreate.Size = new Size(95, 30);
+            btncreate.TabIndex = 59;
+            btncreate.Text = "Create ";
+            btncreate.UseVisualStyleBackColor = true;
+            btncreate.Click += btncreate_Click;
             // 
             // btnViewPassword
             // 
-            this.btnViewPassword.BackColor = System.Drawing.Color.DimGray;
-            this.btnViewPassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnViewPassword.BackgroundImage")));
-            this.btnViewPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnViewPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnViewPassword.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnViewPassword.Location = new System.Drawing.Point(307, 123);
-            this.btnViewPassword.Name = "btnViewPassword";
-            this.btnViewPassword.Size = new System.Drawing.Size(27, 27);
-            this.btnViewPassword.TabIndex = 66;
-            this.btnViewPassword.UseVisualStyleBackColor = false;
+            btnViewPassword.BackColor = Color.DimGray;
+            btnViewPassword.BackgroundImage = (Image)resources.GetObject("btnViewPassword.BackgroundImage");
+            btnViewPassword.BackgroundImageLayout = ImageLayout.Stretch;
+            btnViewPassword.Cursor = Cursors.Hand;
+            btnViewPassword.FlatStyle = FlatStyle.Popup;
+            btnViewPassword.Location = new Point(246, 97);
+            btnViewPassword.Name = "btnViewPassword";
+            btnViewPassword.Size = new Size(27, 27);
+            btnViewPassword.TabIndex = 66;
+            btnViewPassword.UseVisualStyleBackColor = false;
+            btnViewPassword.Click += btnViewPassword_Click;
             // 
             // cbAdmin
             // 
-            this.cbAdmin.AutoSize = true;
-            this.cbAdmin.Location = new System.Drawing.Point(180, 200);
-            this.cbAdmin.Name = "cbAdmin";
-            this.cbAdmin.Size = new System.Drawing.Size(62, 19);
-            this.cbAdmin.TabIndex = 67;
-            this.cbAdmin.Text = "Admin";
-            this.cbAdmin.UseVisualStyleBackColor = true;
+            cbAdmin.AutoSize = true;
+            cbAdmin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            cbAdmin.Location = new Point(145, 145);
+            cbAdmin.Name = "cbAdmin";
+            cbAdmin.Size = new Size(80, 25);
+            cbAdmin.TabIndex = 67;
+            cbAdmin.Text = "Admin";
+            cbAdmin.UseVisualStyleBackColor = true;
             // 
             // dgvUser
             // 
-            this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUser.Location = new System.Drawing.Point(389, 217);
-            this.dgvUser.Name = "dgvUser";
-            this.dgvUser.RowTemplate.Height = 25;
-            this.dgvUser.Size = new System.Drawing.Size(240, 150);
-            this.dgvUser.TabIndex = 68;
+            dgvUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUser.Location = new Point(303, 56);
+            dgvUser.Name = "dgvUser";
+            dgvUser.RowTemplate.Height = 25;
+            dgvUser.Size = new Size(442, 195);
+            dgvUser.TabIndex = 68;
+            dgvUser.CellClick += dgvUser_CellClick;
             // 
             // frmUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dgvUser);
-            this.Controls.Add(this.cbAdmin);
-            this.Controls.Add(this.btnViewPassword);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.lbIPassword);
-            this.Controls.Add(this.lblUsername);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btncreate);
-            this.Name = "frmUser";
-            this.Text = "frmUser";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 303);
+            Controls.Add(dgvUser);
+            Controls.Add(cbAdmin);
+            Controls.Add(btnViewPassword);
+            Controls.Add(btnEdit);
+            Controls.Add(lbIPassword);
+            Controls.Add(lblUsername);
+            Controls.Add(txtPassword);
+            Controls.Add(txtUsername);
+            Controls.Add(btnDelete);
+            Controls.Add(btncreate);
+            Name = "frmUser";
+            Text = "frmUser";
+            ((System.ComponentModel.ISupportInitialize)dgvUser).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

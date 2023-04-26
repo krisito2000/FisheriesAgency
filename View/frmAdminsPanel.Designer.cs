@@ -54,7 +54,6 @@
             dgvFisheriesAgencyDB.RowTemplate.Height = 25;
             dgvFisheriesAgencyDB.Size = new Size(666, 202);
             dgvFisheriesAgencyDB.TabIndex = 10;
-            dgvFisheriesAgencyDB.CellClick += dgvFisheriesAgencyDB_CellClick;
             // 
             // fileSystemWatcher1
             // 
@@ -146,7 +145,7 @@
             // 
             // btnBestCatchForTheYear
             // 
-            btnBestCatchForTheYear.Location = new Point(365, 225);
+            btnBestCatchForTheYear.Location = new Point(316, 278);
             btnBestCatchForTheYear.Name = "btnBestCatchForTheYear";
             btnBestCatchForTheYear.Size = new Size(86, 30);
             btnBestCatchForTheYear.TabIndex = 23;
@@ -166,7 +165,7 @@
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(173, 278);
+            btnLogout.Location = new Point(173, 281);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(95, 30);
             btnLogout.TabIndex = 25;
