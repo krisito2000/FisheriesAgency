@@ -208,7 +208,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                     string columnName = row.Cells[0].Value.ToString().Trim();
                     if (columnName != "UserID")
                     {
-                        MessageBox.Show("You can't select that row in this table.");
+                        MessageBox.Show("You can't change the main user.");
                         return;
                     }
                 }

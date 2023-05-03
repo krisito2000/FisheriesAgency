@@ -16,5 +16,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         {
             InitializeComponent();
         }
+
+        private void dgvTicket_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Todo: make when you click cell it will replace everything in txt and dtp
+        }
+        //Todo: make create, edit and delete buttons to work
     }
 }

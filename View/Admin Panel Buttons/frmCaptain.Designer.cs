@@ -28,107 +28,107 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btncreate = new System.Windows.Forms.Button();
-            this.dgvCaptain = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCaptain)).BeginInit();
-            this.SuspendLayout();
+            btnEdit = new Button();
+            lblAddress = new Label();
+            lblName = new Label();
+            txtAddress = new TextBox();
+            txtName = new TextBox();
+            btnDelete = new Button();
+            btncreate = new Button();
+            dgvCaptain = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvCaptain).BeginInit();
+            SuspendLayout();
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(75, 223);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(95, 30);
-            this.btnEdit.TabIndex = 30;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Location = new Point(123, 182);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(95, 30);
+            btnEdit.TabIndex = 30;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = true;
             // 
             // lblAddress
             // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblAddress.Location = new System.Drawing.Point(80, 100);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(70, 21);
-            this.lblAddress.TabIndex = 29;
-            this.lblAddress.Text = "Address";
+            lblAddress.AutoSize = true;
+            lblAddress.FlatStyle = FlatStyle.System;
+            lblAddress.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblAddress.Location = new Point(80, 100);
+            lblAddress.Name = "lblAddress";
+            lblAddress.Size = new Size(70, 21);
+            lblAddress.TabIndex = 29;
+            lblAddress.Text = "Address";
             // 
             // lblName
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblName.Location = new System.Drawing.Point(75, 53);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(56, 21);
-            this.lblName.TabIndex = 28;
-            this.lblName.Text = "Name";
+            lblName.AutoSize = true;
+            lblName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblName.Location = new Point(75, 53);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(56, 21);
+            lblName.TabIndex = 28;
+            lblName.Text = "Name";
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(168, 98);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(106, 23);
-            this.txtAddress.TabIndex = 27;
+            txtAddress.Location = new Point(168, 98);
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(106, 23);
+            txtAddress.TabIndex = 27;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(168, 51);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(106, 23);
-            this.txtName.TabIndex = 26;
+            txtName.Location = new Point(168, 51);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(106, 23);
+            txtName.TabIndex = 26;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(75, 175);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(95, 30);
-            this.btnDelete.TabIndex = 25;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Location = new Point(74, 146);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(95, 30);
+            btnDelete.TabIndex = 25;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
             // 
             // btncreate
             // 
-            this.btncreate.Location = new System.Drawing.Point(179, 175);
-            this.btncreate.Name = "btncreate";
-            this.btncreate.Size = new System.Drawing.Size(95, 30);
-            this.btncreate.TabIndex = 24;
-            this.btncreate.Text = "Create ";
-            this.btncreate.UseVisualStyleBackColor = true;
+            btncreate.Location = new Point(178, 146);
+            btncreate.Name = "btncreate";
+            btncreate.Size = new Size(95, 30);
+            btncreate.TabIndex = 24;
+            btncreate.Text = "Create ";
+            btncreate.UseVisualStyleBackColor = true;
             // 
             // dgvCaptain
             // 
-            this.dgvCaptain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCaptain.Location = new System.Drawing.Point(510, 297);
-            this.dgvCaptain.Name = "dgvCaptain";
-            this.dgvCaptain.RowTemplate.Height = 25;
-            this.dgvCaptain.Size = new System.Drawing.Size(240, 150);
-            this.dgvCaptain.TabIndex = 33;
+            dgvCaptain.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCaptain.Location = new Point(380, 51);
+            dgvCaptain.Name = "dgvCaptain";
+            dgvCaptain.RowTemplate.Height = 25;
+            dgvCaptain.Size = new Size(283, 150);
+            dgvCaptain.TabIndex = 33;
+            dgvCaptain.CellClick += dgvCaptain_CellClick;
             // 
             // frmCaptain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dgvCaptain);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.lblAddress);
-            this.Controls.Add(this.lblName);
-            this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btncreate);
-            this.Name = "frmCaptain";
-            this.Text = "frmCaptain";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCaptain)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(719, 247);
+            Controls.Add(dgvCaptain);
+            Controls.Add(btnEdit);
+            Controls.Add(lblAddress);
+            Controls.Add(lblName);
+            Controls.Add(txtAddress);
+            Controls.Add(txtName);
+            Controls.Add(btnDelete);
+            Controls.Add(btncreate);
+            Name = "frmCaptain";
+            Text = "frmCaptain";
+            ((System.ComponentModel.ISupportInitialize)dgvCaptain).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

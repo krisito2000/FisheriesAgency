@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,41 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
     public partial class frmCaptain : Form
     {
+        private static void UpdateUsersDataGridView(DataGridView dgvFisheriesAgencyDB)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(Program.connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT CaptainId, Name, Address FROM [Captain]", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        sda.Fill(dt);
+                    }
+                }
+            }
+            dgvFisheriesAgencyDB.DataSource = dt;
+        }
         public frmCaptain()
         {
             InitializeComponent();
+            UpdateUsersDataGridView(dgvCaptain);
         }
+
+        private void dgvCaptain_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvCaptain.Rows[e.RowIndex];
+
+
+                string name = row.Cells["Name"].Value.ToString().Trim();
+                string address = row.Cells["Address"].Value.ToString().Trim();
+
+                txtName.Text = name;
+                txtAddress.Text = address;
+            }
+        }
+        //Todo: make create, edit and delete buttons to work
     }
 }
