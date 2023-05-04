@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
@@ -36,7 +37,21 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
         private void dgvFishingPermit_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Todo: make when you click cell it will replace everything in txt and dtp
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvFishingPermit.Rows[e.RowIndex];
+
+
+                string permitNumber = row.Cells["PermitNumber"].Value.ToString().Trim();
+                string issueDate = row.Cells["IssueDate"].Value.ToString().Trim();
+                string expirationDate = row.Cells["ExpirationDate"].Value.ToString().Trim();
+                string equipment = row.Cells["Equipment"].Value.ToString().Trim();
+
+                txtPermitNumber.Text = permitNumber;
+                dtpIssueDate.Text = issueDate;
+                dtpExpirationDate.Text = expirationDate;
+                txtEquipment.Text = equipment;
+            }
         }
         //Todo: make create, edit and delete buttons to work
     }

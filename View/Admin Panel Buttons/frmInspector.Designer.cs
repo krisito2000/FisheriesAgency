@@ -30,18 +30,19 @@
         {
             this.btnEdit = new System.Windows.Forms.Button();
             this.lblInspectorDate = new System.Windows.Forms.Label();
-            this.txtInspectorDate = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btncreate = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.dgvInspector = new System.Windows.Forms.DataGridView();
+            this.dtpInspectorDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInspector)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(87, 158);
+            this.btnEdit.Location = new System.Drawing.Point(182, 191);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(95, 30);
+            this.btnEdit.Size = new System.Drawing.Size(109, 40);
             this.btnEdit.TabIndex = 58;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -50,57 +51,64 @@
             // 
             this.lblInspectorDate.AutoSize = true;
             this.lblInspectorDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblInspectorDate.Location = new System.Drawing.Point(90, 55);
+            this.lblInspectorDate.Location = new System.Drawing.Point(67, 67);
             this.lblInspectorDate.Name = "lblInspectorDate";
-            this.lblInspectorDate.Size = new System.Drawing.Size(117, 21);
+            this.lblInspectorDate.Size = new System.Drawing.Size(145, 28);
             this.lblInspectorDate.TabIndex = 56;
             this.lblInspectorDate.Text = "InspectorDate";
             // 
-            // txtInspectorDate
-            // 
-            this.txtInspectorDate.Location = new System.Drawing.Point(235, 57);
-            this.txtInspectorDate.Name = "txtInspectorDate";
-            this.txtInspectorDate.Size = new System.Drawing.Size(106, 23);
-            this.txtInspectorDate.TabIndex = 54;
-            // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(90, 110);
+            this.btnDelete.Location = new System.Drawing.Point(124, 131);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(95, 30);
+            this.btnDelete.Size = new System.Drawing.Size(109, 40);
             this.btnDelete.TabIndex = 53;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // btncreate
+            // btnCreate
             // 
-            this.btncreate.Location = new System.Drawing.Point(191, 110);
-            this.btncreate.Name = "btncreate";
-            this.btncreate.Size = new System.Drawing.Size(95, 30);
-            this.btncreate.TabIndex = 52;
-            this.btncreate.Text = "Create ";
-            this.btncreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Location = new System.Drawing.Point(239, 131);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(109, 40);
+            this.btnCreate.TabIndex = 52;
+            this.btnCreate.Text = "Create ";
+            this.btnCreate.UseVisualStyleBackColor = true;
             // 
             // dgvInspector
             // 
             this.dgvInspector.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInspector.Location = new System.Drawing.Point(452, 269);
+            this.dgvInspector.Location = new System.Drawing.Point(522, 67);
+            this.dgvInspector.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvInspector.Name = "dgvInspector";
+            this.dgvInspector.RowHeadersWidth = 51;
             this.dgvInspector.RowTemplate.Height = 25;
-            this.dgvInspector.Size = new System.Drawing.Size(240, 150);
+            this.dgvInspector.Size = new System.Drawing.Size(269, 200);
             this.dgvInspector.TabIndex = 61;
+            this.dgvInspector.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInspector_CellClick);
+            // 
+            // dtpInspectorDate
+            // 
+            this.dtpInspectorDate.Location = new System.Drawing.Point(227, 68);
+            this.dtpInspectorDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtpInspectorDate.Name = "dtpInspectorDate";
+            this.dtpInspectorDate.Size = new System.Drawing.Size(246, 27);
+            this.dtpInspectorDate.TabIndex = 75;
             // 
             // frmInspector
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(833, 308);
+            this.Controls.Add(this.dtpInspectorDate);
             this.Controls.Add(this.dgvInspector);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lblInspectorDate);
-            this.Controls.Add(this.txtInspectorDate);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btncreate);
+            this.Controls.Add(this.btnCreate);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmInspector";
             this.Text = "frmInspector";
             ((System.ComponentModel.ISupportInitialize)(this.dgvInspector)).EndInit();
@@ -113,9 +121,9 @@
 
         private Button btnEdit;
         private Label lblInspectorDate;
-        private TextBox txtInspectorDate;
         private Button btnDelete;
-        private Button btncreate;
+        private Button btnCreate;
         private DataGridView dgvInspector;
+        private DateTimePicker dtpInspectorDate;
     }
 }

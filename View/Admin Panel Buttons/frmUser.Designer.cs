@@ -29,140 +29,147 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUser));
-            btnEdit = new Button();
-            lbIPassword = new Label();
-            lblUsername = new Label();
-            txtPassword = new TextBox();
-            txtUsername = new TextBox();
-            btnDelete = new Button();
-            btncreate = new Button();
-            btnViewPassword = new Button();
-            cbAdmin = new CheckBox();
-            dgvUser = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dgvUser).BeginInit();
-            SuspendLayout();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.lbIPassword = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btncreate = new System.Windows.Forms.Button();
+            this.btnViewPassword = new System.Windows.Forms.Button();
+            this.cbAdmin = new System.Windows.Forms.CheckBox();
+            this.dgvUser = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
+            this.SuspendLayout();
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(95, 229);
-            btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(95, 30);
-            btnEdit.TabIndex = 65;
-            btnEdit.Text = "Edit";
-            btnEdit.UseVisualStyleBackColor = true;
-            btnEdit.Click += btnEdit_Click;
+            this.btnEdit.Location = new System.Drawing.Point(109, 305);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(109, 40);
+            this.btnEdit.TabIndex = 65;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // lbIPassword
             // 
-            lbIPassword.AutoSize = true;
-            lbIPassword.FlatStyle = FlatStyle.System;
-            lbIPassword.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lbIPassword.Location = new Point(46, 103);
-            lbIPassword.Name = "lbIPassword";
-            lbIPassword.Size = new Size(82, 21);
-            lbIPassword.TabIndex = 64;
-            lbIPassword.Text = "Password";
+            this.lbIPassword.AutoSize = true;
+            this.lbIPassword.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lbIPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbIPassword.Location = new System.Drawing.Point(53, 137);
+            this.lbIPassword.Name = "lbIPassword";
+            this.lbIPassword.Size = new System.Drawing.Size(101, 28);
+            this.lbIPassword.TabIndex = 64;
+            this.lbIPassword.Text = "Password";
             // 
             // lblUsername
             // 
-            lblUsername.AutoSize = true;
-            lblUsername.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblUsername.Location = new Point(41, 56);
-            lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(87, 21);
-            lblUsername.TabIndex = 63;
-            lblUsername.Text = "Username";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblUsername.Location = new System.Drawing.Point(47, 75);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(106, 28);
+            this.lblUsername.TabIndex = 63;
+            this.lblUsername.Text = "Username";
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(134, 101);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(106, 23);
-            txtPassword.TabIndex = 62;
-            txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.Location = new System.Drawing.Point(153, 135);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(121, 27);
+            this.txtPassword.TabIndex = 62;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(134, 58);
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(106, 23);
-            txtUsername.TabIndex = 61;
+            this.txtUsername.Location = new System.Drawing.Point(153, 77);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(121, 27);
+            this.txtUsername.TabIndex = 61;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(44, 193);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(95, 30);
-            btnDelete.TabIndex = 60;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = true;
-            btnDelete.Click += btnDelete_Click;
+            this.btnDelete.Location = new System.Drawing.Point(50, 257);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(109, 40);
+            this.btnDelete.TabIndex = 60;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btncreate
             // 
-            btncreate.Location = new Point(145, 193);
-            btncreate.Name = "btncreate";
-            btncreate.Size = new Size(95, 30);
-            btncreate.TabIndex = 59;
-            btncreate.Text = "Create ";
-            btncreate.UseVisualStyleBackColor = true;
-            btncreate.Click += btncreate_Click;
+            this.btncreate.Location = new System.Drawing.Point(166, 257);
+            this.btncreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btncreate.Name = "btncreate";
+            this.btncreate.Size = new System.Drawing.Size(109, 40);
+            this.btncreate.TabIndex = 59;
+            this.btncreate.Text = "Create ";
+            this.btncreate.UseVisualStyleBackColor = true;
+            this.btncreate.Click += new System.EventHandler(this.btncreate_Click);
             // 
             // btnViewPassword
             // 
-            btnViewPassword.BackColor = Color.DimGray;
-            btnViewPassword.BackgroundImage = (Image)resources.GetObject("btnViewPassword.BackgroundImage");
-            btnViewPassword.BackgroundImageLayout = ImageLayout.Stretch;
-            btnViewPassword.Cursor = Cursors.Hand;
-            btnViewPassword.FlatStyle = FlatStyle.Popup;
-            btnViewPassword.Location = new Point(246, 97);
-            btnViewPassword.Name = "btnViewPassword";
-            btnViewPassword.Size = new Size(27, 27);
-            btnViewPassword.TabIndex = 66;
-            btnViewPassword.UseVisualStyleBackColor = false;
-            btnViewPassword.Click += btnViewPassword_Click;
+            this.btnViewPassword.BackColor = System.Drawing.Color.DimGray;
+            this.btnViewPassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnViewPassword.BackgroundImage")));
+            this.btnViewPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnViewPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewPassword.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnViewPassword.Location = new System.Drawing.Point(281, 129);
+            this.btnViewPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnViewPassword.Name = "btnViewPassword";
+            this.btnViewPassword.Size = new System.Drawing.Size(31, 36);
+            this.btnViewPassword.TabIndex = 66;
+            this.btnViewPassword.UseVisualStyleBackColor = false;
             // 
             // cbAdmin
             // 
-            cbAdmin.AutoSize = true;
-            cbAdmin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            cbAdmin.Location = new Point(145, 145);
-            cbAdmin.Name = "cbAdmin";
-            cbAdmin.Size = new Size(80, 25);
-            cbAdmin.TabIndex = 67;
-            cbAdmin.Text = "Admin";
-            cbAdmin.UseVisualStyleBackColor = true;
+            this.cbAdmin.AutoSize = true;
+            this.cbAdmin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cbAdmin.Location = new System.Drawing.Point(166, 193);
+            this.cbAdmin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbAdmin.Name = "cbAdmin";
+            this.cbAdmin.Size = new System.Drawing.Size(96, 32);
+            this.cbAdmin.TabIndex = 67;
+            this.cbAdmin.Text = "Admin";
+            this.cbAdmin.UseVisualStyleBackColor = true;
             // 
             // dgvUser
             // 
-            dgvUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUser.Location = new Point(303, 56);
-            dgvUser.Name = "dgvUser";
-            dgvUser.RowTemplate.Height = 25;
-            dgvUser.Size = new Size(442, 195);
-            dgvUser.TabIndex = 68;
-            dgvUser.CellClick += dgvUser_CellClick;
+            this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUser.Location = new System.Drawing.Point(346, 75);
+            this.dgvUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvUser.Name = "dgvUser";
+            this.dgvUser.RowHeadersWidth = 51;
+            this.dgvUser.RowTemplate.Height = 25;
+            this.dgvUser.Size = new System.Drawing.Size(505, 260);
+            this.dgvUser.TabIndex = 68;
             // 
             // frmUser
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(777, 303);
-            Controls.Add(dgvUser);
-            Controls.Add(cbAdmin);
-            Controls.Add(btnViewPassword);
-            Controls.Add(btnEdit);
-            Controls.Add(lbIPassword);
-            Controls.Add(lblUsername);
-            Controls.Add(txtPassword);
-            Controls.Add(txtUsername);
-            Controls.Add(btnDelete);
-            Controls.Add(btncreate);
-            Name = "frmUser";
-            Text = "frmUser";
-            ((System.ComponentModel.ISupportInitialize)dgvUser).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(888, 404);
+            this.Controls.Add(this.dgvUser);
+            this.Controls.Add(this.cbAdmin);
+            this.Controls.Add(this.btnViewPassword);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.lbIPassword);
+            this.Controls.Add(this.lblUsername);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btncreate);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "frmUser";
+            this.Text = "frmUser";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

@@ -34,16 +34,17 @@
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btncreate = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.dgvOwner = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOwner)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(88, 260);
+            this.btnEdit.Location = new System.Drawing.Point(164, 236);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(95, 30);
+            this.btnEdit.Size = new System.Drawing.Size(109, 40);
             this.btnEdit.TabIndex = 65;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -53,9 +54,9 @@
             this.lbIAddress.AutoSize = true;
             this.lbIAddress.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lbIAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbIAddress.Location = new System.Drawing.Point(96, 93);
+            this.lbIAddress.Location = new System.Drawing.Point(110, 124);
             this.lbIAddress.Name = "lbIAddress";
-            this.lbIAddress.Size = new System.Drawing.Size(70, 21);
+            this.lbIAddress.Size = new System.Drawing.Size(87, 28);
             this.lbIAddress.TabIndex = 64;
             this.lbIAddress.Text = "Address";
             // 
@@ -63,58 +64,65 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblName.Location = new System.Drawing.Point(91, 46);
+            this.lblName.Location = new System.Drawing.Point(104, 61);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(56, 21);
+            this.lblName.Size = new System.Drawing.Size(68, 28);
             this.lblName.TabIndex = 63;
             this.lblName.Text = "Name";
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(184, 91);
+            this.txtAddress.Location = new System.Drawing.Point(210, 121);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(106, 23);
+            this.txtAddress.Size = new System.Drawing.Size(121, 27);
             this.txtAddress.TabIndex = 62;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(184, 48);
+            this.txtName.Location = new System.Drawing.Point(210, 64);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(106, 23);
+            this.txtName.Size = new System.Drawing.Size(121, 27);
             this.txtName.TabIndex = 61;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(91, 212);
+            this.btnDelete.Location = new System.Drawing.Point(107, 191);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(95, 30);
+            this.btnDelete.Size = new System.Drawing.Size(109, 37);
             this.btnDelete.TabIndex = 60;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // btncreate
+            // btnCreate
             // 
-            this.btncreate.Location = new System.Drawing.Point(192, 212);
-            this.btncreate.Name = "btncreate";
-            this.btncreate.Size = new System.Drawing.Size(95, 30);
-            this.btncreate.TabIndex = 59;
-            this.btncreate.Text = "Create ";
-            this.btncreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Location = new System.Drawing.Point(222, 191);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(109, 37);
+            this.btnCreate.TabIndex = 59;
+            this.btnCreate.Text = "Create ";
+            this.btnCreate.UseVisualStyleBackColor = true;
             // 
             // dgvOwner
             // 
             this.dgvOwner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOwner.Location = new System.Drawing.Point(485, 260);
+            this.dgvOwner.Location = new System.Drawing.Point(462, 64);
+            this.dgvOwner.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvOwner.Name = "dgvOwner";
+            this.dgvOwner.RowHeadersWidth = 51;
             this.dgvOwner.RowTemplate.Height = 25;
-            this.dgvOwner.Size = new System.Drawing.Size(240, 150);
+            this.dgvOwner.Size = new System.Drawing.Size(319, 200);
             this.dgvOwner.TabIndex = 66;
+            this.dgvOwner.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOwner_CellClick);
             // 
             // frmOwner
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(914, 344);
             this.Controls.Add(this.dgvOwner);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lbIAddress);
@@ -122,7 +130,8 @@
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btncreate);
+            this.Controls.Add(this.btnCreate);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmOwner";
             this.Text = "frmOwner";
             ((System.ComponentModel.ISupportInitialize)(this.dgvOwner)).EndInit();
@@ -139,7 +148,7 @@
         private TextBox txtAddress;
         private TextBox txtName;
         private Button btnDelete;
-        private Button btncreate;
+        private Button btnCreate;
         private DataGridView dgvOwner;
     }
 }

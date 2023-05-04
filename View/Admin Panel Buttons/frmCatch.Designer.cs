@@ -41,9 +41,10 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(109, 214);
+            this.btnEdit.Location = new System.Drawing.Point(149, 253);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(95, 30);
+            this.btnEdit.Size = new System.Drawing.Size(109, 40);
             this.btnEdit.TabIndex = 37;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -53,9 +54,9 @@
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblQuantity.Location = new System.Drawing.Point(114, 91);
+            this.lblQuantity.Location = new System.Drawing.Point(90, 124);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(77, 21);
+            this.lblQuantity.Size = new System.Drawing.Size(95, 28);
             this.lblQuantity.TabIndex = 36;
             this.lblQuantity.Text = "Quantity";
             // 
@@ -63,40 +64,44 @@
             // 
             this.lblWeight.AutoSize = true;
             this.lblWeight.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblWeight.Location = new System.Drawing.Point(109, 44);
+            this.lblWeight.Location = new System.Drawing.Point(85, 62);
             this.lblWeight.Name = "lblWeight";
-            this.lblWeight.Size = new System.Drawing.Size(66, 21);
+            this.lblWeight.Size = new System.Drawing.Size(80, 28);
             this.lblWeight.TabIndex = 35;
             this.lblWeight.Text = "Weight";
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(202, 89);
+            this.txtQuantity.Location = new System.Drawing.Point(191, 122);
+            this.txtQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(106, 23);
+            this.txtQuantity.Size = new System.Drawing.Size(121, 27);
             this.txtQuantity.TabIndex = 34;
             // 
             // txtWeight
             // 
-            this.txtWeight.Location = new System.Drawing.Point(202, 42);
+            this.txtWeight.Location = new System.Drawing.Point(191, 59);
+            this.txtWeight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Size = new System.Drawing.Size(106, 23);
+            this.txtWeight.Size = new System.Drawing.Size(121, 27);
             this.txtWeight.TabIndex = 33;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(109, 166);
+            this.btnDelete.Location = new System.Drawing.Point(88, 196);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(95, 30);
+            this.btnDelete.Size = new System.Drawing.Size(109, 40);
             this.btnDelete.TabIndex = 32;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btncreate
             // 
-            this.btncreate.Location = new System.Drawing.Point(213, 166);
+            this.btncreate.Location = new System.Drawing.Point(206, 196);
+            this.btncreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btncreate.Name = "btncreate";
-            this.btncreate.Size = new System.Drawing.Size(95, 30);
+            this.btncreate.Size = new System.Drawing.Size(109, 40);
             this.btncreate.TabIndex = 31;
             this.btncreate.Text = "Create ";
             this.btncreate.UseVisualStyleBackColor = true;
@@ -104,17 +109,20 @@
             // dgvCatch
             // 
             this.dgvCatch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCatch.Location = new System.Drawing.Point(497, 276);
+            this.dgvCatch.Location = new System.Drawing.Point(460, 62);
+            this.dgvCatch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvCatch.Name = "dgvCatch";
+            this.dgvCatch.RowHeadersWidth = 51;
             this.dgvCatch.RowTemplate.Height = 25;
-            this.dgvCatch.Size = new System.Drawing.Size(240, 150);
+            this.dgvCatch.Size = new System.Drawing.Size(322, 200);
             this.dgvCatch.TabIndex = 38;
+            this.dgvCatch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCatch_CellClick);
             // 
             // frmCatch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(864, 373);
             this.Controls.Add(this.dgvCatch);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lblQuantity);
@@ -123,6 +131,7 @@
             this.Controls.Add(this.txtWeight);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btncreate);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmCatch";
             this.Text = "frmCatch";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCatch)).EndInit();
