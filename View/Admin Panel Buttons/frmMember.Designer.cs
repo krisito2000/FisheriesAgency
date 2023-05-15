@@ -48,6 +48,7 @@
             this.btnEdit.TabIndex = 58;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lbIAddress
             // 
@@ -95,6 +96,7 @@
             this.btnDelete.TabIndex = 53;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnCreate
             // 
@@ -105,16 +107,17 @@
             this.btnCreate.TabIndex = 52;
             this.btnCreate.Text = "Create ";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // dgvMember
             // 
             this.dgvMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMember.Location = new System.Drawing.Point(439, 51);
+            this.dgvMember.Location = new System.Drawing.Point(407, 51);
             this.dgvMember.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvMember.Name = "dgvMember";
             this.dgvMember.RowHeadersWidth = 51;
             this.dgvMember.RowTemplate.Height = 25;
-            this.dgvMember.Size = new System.Drawing.Size(274, 200);
+            this.dgvMember.Size = new System.Drawing.Size(355, 200);
             this.dgvMember.TabIndex = 61;
             this.dgvMember.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMember_CellClick);
             // 

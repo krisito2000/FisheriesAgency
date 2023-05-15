@@ -34,7 +34,7 @@
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btncreate = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.dgvCaptain = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCaptain)).BeginInit();
             this.SuspendLayout();
@@ -48,6 +48,7 @@
             this.btnEdit.TabIndex = 30;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lblAddress
             // 
@@ -95,16 +96,18 @@
             this.btnDelete.TabIndex = 25;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btncreate
+            // btnCreate
             // 
-            this.btncreate.Location = new System.Drawing.Point(203, 195);
-            this.btncreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btncreate.Name = "btncreate";
-            this.btncreate.Size = new System.Drawing.Size(109, 40);
-            this.btncreate.TabIndex = 24;
-            this.btncreate.Text = "Create ";
-            this.btncreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Location = new System.Drawing.Point(203, 195);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(109, 40);
+            this.btnCreate.TabIndex = 24;
+            this.btnCreate.Text = "Create ";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // dgvCaptain
             // 
@@ -130,7 +133,7 @@
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btncreate);
+            this.Controls.Add(this.btnCreate);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmCaptain";
             this.Text = "frmCaptain";
@@ -147,7 +150,7 @@
         private TextBox txtAddress;
         private TextBox txtName;
         private Button btnDelete;
-        private Button btncreate;
+        private Button btnCreate;
         private DataGridView dgvCaptain;
     }
 }

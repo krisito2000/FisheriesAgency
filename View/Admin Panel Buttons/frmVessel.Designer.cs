@@ -42,7 +42,7 @@
             this.txtCallSign = new System.Windows.Forms.TextBox();
             this.txtInternationalNumber = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btncreate = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.dgvVessel = new System.Windows.Forms.DataGridView();
             this.lblGas = new System.Windows.Forms.Label();
             this.txtGas = new System.Windows.Forms.TextBox();
@@ -184,15 +184,16 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // btncreate
+            // btnCreate
             // 
-            this.btncreate.Location = new System.Drawing.Point(619, 320);
-            this.btncreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btncreate.Name = "btncreate";
-            this.btncreate.Size = new System.Drawing.Size(109, 40);
-            this.btncreate.TabIndex = 74;
-            this.btncreate.Text = "Create ";
-            this.btncreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Location = new System.Drawing.Point(619, 320);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(109, 40);
+            this.btnCreate.TabIndex = 74;
+            this.btnCreate.Text = "Create ";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // dgvVessel
             // 
@@ -289,7 +290,7 @@
             this.Controls.Add(this.txtCallSign);
             this.Controls.Add(this.txtInternationalNumber);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btncreate);
+            this.Controls.Add(this.btnCreate);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmVessel";
             this.Text = "frmVessel";
@@ -315,7 +316,7 @@
         private TextBox txtCallSign;
         private TextBox txtInternationalNumber;
         private Button btnDelete;
-        private Button btncreate;
+        private Button btnCreate;
         private DataGridView dgvVessel;
         private Label lblGas;
         private TextBox txtGas;

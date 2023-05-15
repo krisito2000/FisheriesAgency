@@ -48,6 +48,7 @@
             this.btnEdit.TabIndex = 65;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lbIAddress
             // 
@@ -95,6 +96,7 @@
             this.btnDelete.TabIndex = 60;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnCreate
             // 
@@ -105,6 +107,7 @@
             this.btnCreate.TabIndex = 59;
             this.btnCreate.Text = "Create ";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // dgvOwner
             // 

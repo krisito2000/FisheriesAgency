@@ -28,6 +28,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
             dgvFisheriesAgencyDB.DataSource = dt;
         }
+        private void dgvReset()
+        {
+            UpdateUsersDataGridView(dgvCaptain);
+            dgvCaptain.Refresh();
+        }
         public frmCaptain()
         {
             InitializeComponent();
@@ -48,6 +53,121 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 txtAddress.Text = address;
             }
         }
-        //Todo: make create, edit and delete buttons to work
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            string name = txtName.Text;
+            string address = txtAddress.Text;
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(address))
+            {
+                MessageBox.Show("Please fill all spaces");
+            }
+
+            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            {
+                connection.Open();
+
+                // Create a SQL INSERT statement with parameter placeholders
+                string sql = "INSERT INTO Captain (Name, Address) VALUES (@Name, @Address)";
+
+                // Create a SqlCommand object with the SQL statement and connection
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    // Set the parameter values from the text boxes
+                    command.Parameters.AddWithValue("@Name", txtName.Text);
+                    command.Parameters.AddWithValue("@Address", txtAddress.Text);
+
+                    // Execute the SQL command
+                    command.ExecuteNonQuery();
+                }
+                dgvReset();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string name = txtName.Text.Trim();
+            string address = txtAddress.Text.Trim();
+
+            if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(address))
+            {
+                using (SqlConnection connection = new SqlConnection(Program.connectionString))
+                {
+                    connection.Open();
+
+                    string sql = "DELETE FROM Captain WHERE Name = @Name AND Address = @Address";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Name", name);
+                        command.Parameters.AddWithValue("@Address", address);
+
+
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            // Clear the text boxes
+                            txtName.Text = string.Empty;
+                            txtAddress.Text = string.Empty;
+                            dgvReset();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Captain not found or deletion failed.");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter the name and address of the captain to delete.");
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (dgvCaptain.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to update.");
+                return;
+            }
+
+            DataGridViewRow row = dgvCaptain.SelectedRows[0];
+            int captainId = (int)row.Cells["CaptainId"].Value;
+            string newName = txtName.Text.Trim();
+            string newAddress = txtAddress.Text.Trim();
+
+            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            {
+                connection.Open();
+
+                SqlCommand checkCommand = new SqlCommand("SELECT COUNT(*) FROM [Captain] WHERE Name = @Name AND Address <> @Address", connection);
+                checkCommand.Parameters.AddWithValue("@Name", newName);
+                checkCommand.Parameters.AddWithValue("@Address", newAddress);
+                checkCommand.Parameters.AddWithValue("@CaptainId", captainId);
+                int count = (int)checkCommand.ExecuteScalar();
+
+                if (count > 0)
+                {
+                    MessageBox.Show("Captain already exists. Please choose a different username.");
+                    return;
+                }
+            }
+
+            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            {
+                connection.Open();
+
+                SqlCommand updateCommand = new SqlCommand("UPDATE [Captain] SET Name = @Name, Address = @Address WHERE CaptainId = @CaptainId", connection);
+                updateCommand.Parameters.AddWithValue("@Name", newName);
+                updateCommand.Parameters.AddWithValue("@Address", newAddress);
+                updateCommand.Parameters.AddWithValue("@MemberId", captainId);
+                updateCommand.ExecuteNonQuery();
+
+                connection.Close();
+            }
+            dgvReset();
+        }
     }
 }

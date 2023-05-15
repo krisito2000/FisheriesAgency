@@ -67,6 +67,37 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 txtFuel.Text = fuel;
             }
         }
-        // TODO: Write code for create, delete and edit button
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            //using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            //{
+            //    connection.Open();
+
+            //    // Create a SQL INSERT statement with parameter placeholders
+            //    string sql = "INSERT INTO Vessel (InternationalNumber, CallSign, Marking, Length, Width, Tonnage, Gas, Engine, Fuel, OwnerId, CaptainId) " +
+            //                 "VALUES (@InternationalNumber, @CallSign, @Marking, @Length, @Width, @Tonnage, @Gas, @Engine, @Fuel, @OwnerId, @CaptainId)";
+
+            //    // Create a SqlCommand object with the SQL statement and connection
+            //    using (SqlCommand command = new SqlCommand(sql, connection))
+            //    {
+            //        // Set the parameter values from the text boxes
+            //        command.Parameters.AddWithValue("@InternationalNumber", txtInternationalNumber.Text);
+            //        command.Parameters.AddWithValue("@CallSign", txtCallSign.Text);
+            //        command.Parameters.AddWithValue("@Marking", txtMarking.Text);
+            //        command.Parameters.AddWithValue("@Length", decimal.Parse(txtLength.Text));
+            //        command.Parameters.AddWithValue("@Width", decimal.Parse(txtWidth.Text));
+            //        command.Parameters.AddWithValue("@Tonnage", decimal.Parse(txtTonnage.Text));
+            //        command.Parameters.AddWithValue("@Gas", txtGas.Text);
+            //        command.Parameters.AddWithValue("@Engine", txtEngine.Text);
+            //        command.Parameters.AddWithValue("@Fuel", txtFuel.Text);
+            //        command.Parameters.AddWithValue("@OwnerId", int.Parse(txtOwnerId.Text));
+            //        command.Parameters.AddWithValue("@CaptainId", int.Parse(txtCaptainId.Text));
+
+            //        // Execute the SQL command
+            //        command.ExecuteNonQuery();
+            //    }
+            //}
+        }
     }
 }

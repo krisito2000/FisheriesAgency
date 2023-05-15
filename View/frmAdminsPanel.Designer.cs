@@ -104,6 +104,7 @@
             this.btnUsers.TabIndex = 19;
             this.btnUsers.Text = "Users";
             this.btnUsers.UseVisualStyleBackColor = true;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // btnFishingPermits
             // 
@@ -115,6 +116,7 @@
             this.btnFishingPermits.TabIndex = 20;
             this.btnFishingPermits.Text = "Permits";
             this.btnFishingPermits.UseVisualStyleBackColor = true;
+            this.btnFishingPermits.Click += new System.EventHandler(this.btnFishingPermits_Click);
             // 
             // btnVessels
             // 
@@ -126,6 +128,7 @@
             this.btnVessels.TabIndex = 21;
             this.btnVessels.Text = "Vessels";
             this.btnVessels.UseVisualStyleBackColor = true;
+            this.btnVessels.Click += new System.EventHandler(this.btnVessels_Click);
             // 
             // btnTickets
             // 
@@ -137,6 +140,7 @@
             this.btnTickets.TabIndex = 22;
             this.btnTickets.Text = "Tickets";
             this.btnTickets.UseVisualStyleBackColor = true;
+            this.btnTickets.Click += new System.EventHandler(this.btnTickets_Click);
             // 
             // btnBestCatchForTheYear
             // 
@@ -169,6 +173,7 @@
             this.btnCaptains.TabIndex = 26;
             this.btnCaptains.Text = "Captains";
             this.btnCaptains.UseVisualStyleBackColor = true;
+            this.btnCaptains.Click += new System.EventHandler(this.btnCaptains_Click);
             // 
             // btnCatches
             // 
@@ -180,6 +185,7 @@
             this.btnCatches.TabIndex = 27;
             this.btnCatches.Text = "Catches";
             this.btnCatches.UseVisualStyleBackColor = true;
+            this.btnCatches.Click += new System.EventHandler(this.btnCatches_Click);
             // 
             // btnTrips
             // 
@@ -191,6 +197,7 @@
             this.btnTrips.TabIndex = 28;
             this.btnTrips.Text = "Trips";
             this.btnTrips.UseVisualStyleBackColor = true;
+            this.btnTrips.Click += new System.EventHandler(this.btnTrips_Click);
             // 
             // btnInspector
             // 
@@ -202,6 +209,7 @@
             this.btnInspector.TabIndex = 29;
             this.btnInspector.Text = "Inspector";
             this.btnInspector.UseVisualStyleBackColor = true;
+            this.btnInspector.Click += new System.EventHandler(this.btnInspector_Click);
             // 
             // btnMembers
             // 
@@ -213,6 +221,7 @@
             this.btnMembers.TabIndex = 30;
             this.btnMembers.Text = "Members";
             this.btnMembers.UseVisualStyleBackColor = true;
+            this.btnMembers.Click += new System.EventHandler(this.btnMembers_Click);
             // 
             // btnOwners
             // 
@@ -224,6 +233,7 @@
             this.btnOwners.TabIndex = 31;
             this.btnOwners.Text = "Owners";
             this.btnOwners.UseVisualStyleBackColor = true;
+            this.btnOwners.Click += new System.EventHandler(this.btnOwners_Click);
             // 
             // lblTovaShteGoIztriqIBezTova
             // 
