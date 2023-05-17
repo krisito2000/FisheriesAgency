@@ -28,10 +28,58 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
             dgvFisheriesAgencyDB.DataSource = dt;
         }
+
         public frmVessel()
         {
             InitializeComponent();
             UpdateUsersDataGridView(dgvVessel);
+
+
+            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            {
+                connection.Open();
+
+                string sql = "SELECT OwnerId, Name FROM Owner";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int ownerId = reader.GetInt32(0);
+                            string name = reader.GetString(1);
+
+                            // Add the name to the ComboBox items and store the ID as the item value
+                            cbOwners.Items.Add(new ComboBoxOwner(name, ownerId));
+                        }
+                    }
+                }
+            }
+            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            {
+                connection.Open();
+
+                string sql = "SELECT CaptainId, Name FROM Captain";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int captainId = reader.GetInt32(0);
+                            string name = reader.GetString(1);
+
+
+                            // Add the name to the ComboBox items and store the ID as the item value
+                            cbCaptains.Items.Add(new ComboBoxCaptain(name, captainId));
+                        }
+                    }
+                }
+            }
+
+
         }
         private void dgvReset()
         {
@@ -70,6 +118,12 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            if (cbOwners.Text == "Owners" || cbCaptains.Text == "Captains")
+            {
+                MessageBox.Show("Fill all combo boxes");
+                cbOwners.ForeColor = Color.Red;
+                cbCaptains.ForeColor = Color.Red;
+            }
             //using (SqlConnection connection = new SqlConnection(Program.connectionString))
             //{
             //    connection.Open();
@@ -98,6 +152,50 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             //        command.ExecuteNonQuery();
             //    }
             //}
+        }
+
+        private void cbOwners_DropDown(object sender, EventArgs e)
+        {
+            cbOwners.ForeColor = Color.Black;
+            cbCaptains.ForeColor = Color.Black;
+        }
+        private void cbCaptains_DropDown(object sender, EventArgs e)
+        {
+            cbOwners.ForeColor = Color.Black;
+            cbCaptains.ForeColor = Color.Black;
+        }
+
+
+        public class ComboBoxOwner
+        {
+            public int OwnerId { get; set; }
+            public string Name { get; set; }
+
+            public ComboBoxOwner(string name, int ownerId)
+            {
+                Name = name;
+                OwnerId = ownerId;
+            }
+            public override string ToString()
+            {
+                return Name;
+            }
+        }
+
+        public class ComboBoxCaptain
+        {
+            public int CaptainId { get; set; }
+            public string Name { get; set; }
+
+            public ComboBoxCaptain(string name, int captainId)
+            {
+                Name = name;
+                CaptainId = captainId;
+            }
+            public override string ToString()
+            {
+                return Name;
+            }
         }
     }
 }

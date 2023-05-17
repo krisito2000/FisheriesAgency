@@ -61,11 +61,25 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(address))
             {
                 MessageBox.Show("Please fill all spaces");
+                return;
             }
 
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
             {
                 connection.Open();
+
+                // Check if the name already exists in the database
+                string checkSql = "SELECT COUNT(*) FROM Owner WHERE name = @Name";
+                using (SqlCommand checkCommand = new SqlCommand(checkSql, connection))
+                {
+                    checkCommand.Parameters.AddWithValue("@Name", name);
+                    int count = (int)checkCommand.ExecuteScalar();
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Name already exists");
+                        return;
+                    }
+                }
 
                 // Create a SQL INSERT statement with parameter placeholders
                 string sql = "INSERT INTO Owner (name, address) VALUES (@Name, @Address)";
@@ -74,12 +88,13 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     // Set the parameter values from the text boxes
-                    command.Parameters.AddWithValue("@Name", txtName.Text);
-                    command.Parameters.AddWithValue("@Address", txtAddress.Text);
+                    command.Parameters.AddWithValue("@Name", name);
+                    command.Parameters.AddWithValue("@Address", address);
 
                     // Execute the SQL command
                     command.ExecuteNonQuery();
                 }
+
                 dgvReset();
             }
         }

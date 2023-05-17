@@ -28,116 +28,109 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.lblQuantity = new System.Windows.Forms.Label();
-            this.lblWeight = new System.Windows.Forms.Label();
-            this.txtQuantity = new System.Windows.Forms.TextBox();
-            this.txtWeight = new System.Windows.Forms.TextBox();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btncreate = new System.Windows.Forms.Button();
-            this.dgvCatch = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCatch)).BeginInit();
-            this.SuspendLayout();
+            btnEdit = new Button();
+            lblQuantity = new Label();
+            lblWeight = new Label();
+            txtQuantity = new TextBox();
+            txtWeight = new TextBox();
+            btnDelete = new Button();
+            btnCreate = new Button();
+            dgvCatch = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvCatch).BeginInit();
+            SuspendLayout();
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(149, 253);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(109, 40);
-            this.btnEdit.TabIndex = 37;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Location = new Point(130, 190);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(95, 30);
+            btnEdit.TabIndex = 37;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = true;
             // 
             // lblQuantity
             // 
-            this.lblQuantity.AutoSize = true;
-            this.lblQuantity.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lblQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblQuantity.Location = new System.Drawing.Point(90, 124);
-            this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(95, 28);
-            this.lblQuantity.TabIndex = 36;
-            this.lblQuantity.Text = "Quantity";
+            lblQuantity.AutoSize = true;
+            lblQuantity.FlatStyle = FlatStyle.System;
+            lblQuantity.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblQuantity.Location = new Point(79, 93);
+            lblQuantity.Name = "lblQuantity";
+            lblQuantity.Size = new Size(77, 21);
+            lblQuantity.TabIndex = 36;
+            lblQuantity.Text = "Quantity";
             // 
             // lblWeight
             // 
-            this.lblWeight.AutoSize = true;
-            this.lblWeight.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblWeight.Location = new System.Drawing.Point(85, 62);
-            this.lblWeight.Name = "lblWeight";
-            this.lblWeight.Size = new System.Drawing.Size(80, 28);
-            this.lblWeight.TabIndex = 35;
-            this.lblWeight.Text = "Weight";
+            lblWeight.AutoSize = true;
+            lblWeight.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblWeight.Location = new Point(74, 46);
+            lblWeight.Name = "lblWeight";
+            lblWeight.Size = new Size(66, 21);
+            lblWeight.TabIndex = 35;
+            lblWeight.Text = "Weight";
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(191, 122);
-            this.txtQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(121, 27);
-            this.txtQuantity.TabIndex = 34;
+            txtQuantity.Location = new Point(167, 92);
+            txtQuantity.Name = "txtQuantity";
+            txtQuantity.Size = new Size(106, 23);
+            txtQuantity.TabIndex = 34;
             // 
             // txtWeight
             // 
-            this.txtWeight.Location = new System.Drawing.Point(191, 59);
-            this.txtWeight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Size = new System.Drawing.Size(121, 27);
-            this.txtWeight.TabIndex = 33;
+            txtWeight.Location = new Point(167, 44);
+            txtWeight.Name = "txtWeight";
+            txtWeight.Size = new Size(106, 23);
+            txtWeight.TabIndex = 33;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(88, 196);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(109, 40);
-            this.btnDelete.TabIndex = 32;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Location = new Point(77, 147);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(95, 30);
+            btnDelete.TabIndex = 32;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
             // 
-            // btncreate
+            // btnCreate
             // 
-            this.btncreate.Location = new System.Drawing.Point(206, 196);
-            this.btncreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btncreate.Name = "btncreate";
-            this.btncreate.Size = new System.Drawing.Size(109, 40);
-            this.btncreate.TabIndex = 31;
-            this.btncreate.Text = "Create ";
-            this.btncreate.UseVisualStyleBackColor = true;
+            btnCreate.Location = new Point(180, 147);
+            btnCreate.Name = "btnCreate";
+            btnCreate.Size = new Size(95, 30);
+            btnCreate.TabIndex = 31;
+            btnCreate.Text = "Create ";
+            btnCreate.UseVisualStyleBackColor = true;
+            btnCreate.Click += btnCreate_Click;
             // 
             // dgvCatch
             // 
-            this.dgvCatch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCatch.Location = new System.Drawing.Point(460, 62);
-            this.dgvCatch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvCatch.Name = "dgvCatch";
-            this.dgvCatch.RowHeadersWidth = 51;
-            this.dgvCatch.RowTemplate.Height = 25;
-            this.dgvCatch.Size = new System.Drawing.Size(322, 200);
-            this.dgvCatch.TabIndex = 38;
-            this.dgvCatch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCatch_CellClick);
+            dgvCatch.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCatch.Location = new Point(347, 46);
+            dgvCatch.Name = "dgvCatch";
+            dgvCatch.RowHeadersWidth = 51;
+            dgvCatch.RowTemplate.Height = 25;
+            dgvCatch.Size = new Size(337, 150);
+            dgvCatch.TabIndex = 38;
+            dgvCatch.CellClick += dgvCatch_CellClick;
             // 
             // frmCatch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 373);
-            this.Controls.Add(this.dgvCatch);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.lblQuantity);
-            this.Controls.Add(this.lblWeight);
-            this.Controls.Add(this.txtQuantity);
-            this.Controls.Add(this.txtWeight);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btncreate);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmCatch";
-            this.Text = "frmCatch";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCatch)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(756, 280);
+            Controls.Add(dgvCatch);
+            Controls.Add(btnEdit);
+            Controls.Add(lblQuantity);
+            Controls.Add(lblWeight);
+            Controls.Add(txtQuantity);
+            Controls.Add(txtWeight);
+            Controls.Add(btnDelete);
+            Controls.Add(btnCreate);
+            Name = "frmCatch";
+            Text = "frmCatch";
+            ((System.ComponentModel.ISupportInitialize)dgvCatch).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -148,7 +141,7 @@
         private TextBox txtQuantity;
         private TextBox txtWeight;
         private Button btnDelete;
-        private Button btncreate;
+        private Button btnCreate;
         private DataGridView dgvCatch;
     }
 }

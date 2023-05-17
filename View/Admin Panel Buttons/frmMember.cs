@@ -67,6 +67,19 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             {
                 connection.Open();
 
+                // Check if the name already exists in the database
+                string checkSql = "SELECT COUNT(*) FROM Member WHERE Name = @Name";
+                using (SqlCommand checkCommand = new SqlCommand(checkSql, connection))
+                {
+                    checkCommand.Parameters.AddWithValue("@Name", name);
+                    int count = (int)checkCommand.ExecuteScalar();
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Name already exists");
+                        return;
+                    }
+                }
+
                 // Create a SQL INSERT statement with parameter placeholders
                 string sql = "INSERT INTO Member (Name, Address) VALUES (@Name, @Address)";
 

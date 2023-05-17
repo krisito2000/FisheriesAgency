@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
@@ -27,6 +28,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 }
             }
             dgvFisheriesAgencyDB.DataSource = dt;
+        }
+        private void dgvReset()
+        {
+            UpdateUsersDataGridView(dgvCatch);
+            dgvCatch.Refresh();
         }
         public frmCatch()
         {
@@ -48,6 +54,35 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 txtQuantity.Text = quantity;
             }
         }
-        //Todo: make create, edit and delete buttons to work
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            //string weight = txtWeight.Text;
+            //string quantity = txtQuantity.Text;
+            //if (string.IsNullOrEmpty(weight) || string.IsNullOrEmpty(quantity))
+            //{
+            //    MessageBox.Show("Please fill all spaces");
+            //}
+
+            //using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            //{
+            //    connection.Open();
+
+            //    // Create a SQL INSERT statement with parameter placeholders
+            //    string sql = "INSERT INTO Catch (Weight, Quantity) VALUES (@Weight, @Quantity)";
+
+            //    // Create a SqlCommand object with the SQL statement and connection
+            //    using (SqlCommand command = new SqlCommand(sql, connection))
+            //    {
+            //        // Set the parameter values from the text boxes
+            //        command.Parameters.AddWithValue("@Weight", txtWeight.Text);
+            //        command.Parameters.AddWithValue("@Quantity", txtQuantity.Text);
+
+            //        // Execute the SQL command
+            //        command.ExecuteNonQuery();
+            //    }
+            //    dgvReset();
+            //}
+        }
     }
 }
