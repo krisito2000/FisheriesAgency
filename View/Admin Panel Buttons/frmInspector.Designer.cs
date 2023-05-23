@@ -28,93 +28,100 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.lblInspectorDate = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.dgvInspector = new System.Windows.Forms.DataGridView();
-            this.dtpInspectorDate = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInspector)).BeginInit();
-            this.SuspendLayout();
+            btnEdit = new Button();
+            lblInspectorDate = new Label();
+            btnDelete = new Button();
+            btnCreate = new Button();
+            dgvInspector = new DataGridView();
+            dtpInspectorDate = new DateTimePicker();
+            cbVessels = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dgvInspector).BeginInit();
+            SuspendLayout();
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(182, 191);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(109, 40);
-            this.btnEdit.TabIndex = 58;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Location = new Point(155, 191);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(95, 30);
+            btnEdit.TabIndex = 58;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // lblInspectorDate
             // 
-            this.lblInspectorDate.AutoSize = true;
-            this.lblInspectorDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblInspectorDate.Location = new System.Drawing.Point(67, 67);
-            this.lblInspectorDate.Name = "lblInspectorDate";
-            this.lblInspectorDate.Size = new System.Drawing.Size(145, 28);
-            this.lblInspectorDate.TabIndex = 56;
-            this.lblInspectorDate.Text = "InspectorDate";
+            lblInspectorDate.AutoSize = true;
+            lblInspectorDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblInspectorDate.Location = new Point(59, 50);
+            lblInspectorDate.Name = "lblInspectorDate";
+            lblInspectorDate.Size = new Size(117, 21);
+            lblInspectorDate.TabIndex = 56;
+            lblInspectorDate.Text = "InspectorDate";
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(124, 131);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(109, 40);
-            this.btnDelete.TabIndex = 53;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Location = new Point(104, 146);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(95, 30);
+            btnDelete.TabIndex = 53;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(239, 131);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(109, 40);
-            this.btnCreate.TabIndex = 52;
-            this.btnCreate.Text = "Create ";
-            this.btnCreate.UseVisualStyleBackColor = true;
+            btnCreate.Location = new Point(205, 146);
+            btnCreate.Name = "btnCreate";
+            btnCreate.Size = new Size(95, 30);
+            btnCreate.TabIndex = 52;
+            btnCreate.Text = "Create ";
+            btnCreate.UseVisualStyleBackColor = true;
+            btnCreate.Click += btnCreate_Click;
             // 
             // dgvInspector
             // 
-            this.dgvInspector.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInspector.Location = new System.Drawing.Point(522, 67);
-            this.dgvInspector.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvInspector.Name = "dgvInspector";
-            this.dgvInspector.RowHeadersWidth = 51;
-            this.dgvInspector.RowTemplate.Height = 25;
-            this.dgvInspector.Size = new System.Drawing.Size(269, 200);
-            this.dgvInspector.TabIndex = 61;
-            this.dgvInspector.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInspector_CellClick);
+            dgvInspector.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvInspector.Location = new Point(381, 91);
+            dgvInspector.Name = "dgvInspector";
+            dgvInspector.RowHeadersWidth = 51;
+            dgvInspector.RowTemplate.Height = 25;
+            dgvInspector.Size = new Size(308, 150);
+            dgvInspector.TabIndex = 61;
+            dgvInspector.CellClick += dgvInspector_CellClick;
             // 
             // dtpInspectorDate
             // 
-            this.dtpInspectorDate.Location = new System.Drawing.Point(227, 68);
-            this.dtpInspectorDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtpInspectorDate.Name = "dtpInspectorDate";
-            this.dtpInspectorDate.Size = new System.Drawing.Size(246, 27);
-            this.dtpInspectorDate.TabIndex = 75;
+            dtpInspectorDate.Location = new Point(199, 51);
+            dtpInspectorDate.Name = "dtpInspectorDate";
+            dtpInspectorDate.Size = new Size(216, 23);
+            dtpInspectorDate.TabIndex = 75;
+            // 
+            // cbVessels
+            // 
+            cbVessels.FormattingEnabled = true;
+            cbVessels.Location = new Point(146, 91);
+            cbVessels.Name = "cbVessels";
+            cbVessels.Size = new Size(121, 23);
+            cbVessels.TabIndex = 76;
+            cbVessels.Text = "Vessels";
             // 
             // frmInspector
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 308);
-            this.Controls.Add(this.dtpInspectorDate);
-            this.Controls.Add(this.dgvInspector);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.lblInspectorDate);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnCreate);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmInspector";
-            this.Text = "frmInspector";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInspector)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(729, 273);
+            Controls.Add(cbVessels);
+            Controls.Add(dtpInspectorDate);
+            Controls.Add(dgvInspector);
+            Controls.Add(btnEdit);
+            Controls.Add(lblInspectorDate);
+            Controls.Add(btnDelete);
+            Controls.Add(btnCreate);
+            Name = "frmInspector";
+            Text = "frmInspector";
+            ((System.ComponentModel.ISupportInitialize)dgvInspector).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -125,5 +132,6 @@
         private Button btnCreate;
         private DataGridView dgvInspector;
         private DateTimePicker dtpInspectorDate;
+        private ComboBox cbVessels;
     }
 }

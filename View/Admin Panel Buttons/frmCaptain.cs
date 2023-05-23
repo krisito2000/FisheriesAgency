@@ -154,30 +154,24 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             {
                 connection.Open();
 
-                SqlCommand checkCommand = new SqlCommand("SELECT COUNT(*) FROM [Captain] WHERE Name = @Name AND Address <> @Address", connection);
+                SqlCommand checkCommand = new SqlCommand("SELECT COUNT(*) FROM [Captain] WHERE Name = @Name AND Address <> @Address AND CaptainId <> @CaptainId", connection);
                 checkCommand.Parameters.AddWithValue("@Name", newName);
                 checkCommand.Parameters.AddWithValue("@Address", newAddress);
                 checkCommand.Parameters.AddWithValue("@CaptainId", captainId);
-                int count = (int)checkCommand.ExecuteScalar();
 
-                if (count > 0)
+
+                using (SqlConnection conn = new SqlConnection(Program.connectionString))
                 {
-                    MessageBox.Show("Captain already exists. Please choose a different username.");
-                    return;
+                    conn.Open();
+
+                    SqlCommand updateCommand = new SqlCommand("UPDATE [Captain] SET Name = @Name, Address = @Address WHERE CaptainId = @CaptainId", conn);
+                    updateCommand.Parameters.AddWithValue("@Name", newName);
+                    updateCommand.Parameters.AddWithValue("@Address", newAddress);
+                    updateCommand.Parameters.AddWithValue("@CaptainId", captainId);
+                    updateCommand.ExecuteNonQuery();
+
+                    conn.Close();
                 }
-            }
-
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                SqlCommand updateCommand = new SqlCommand("UPDATE [Captain] SET Name = @Name, Address = @Address WHERE CaptainId = @CaptainId", connection);
-                updateCommand.Parameters.AddWithValue("@Name", newName);
-                updateCommand.Parameters.AddWithValue("@Address", newAddress);
-                updateCommand.Parameters.AddWithValue("@MemberId", captainId);
-                updateCommand.ExecuteNonQuery();
-
-                connection.Close();
             }
             dgvReset();
         }

@@ -133,6 +133,7 @@
             btnEdit.TabIndex = 80;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // lbICallSign
             // 
@@ -177,6 +178,7 @@
             btnDelete.TabIndex = 75;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnCreate
             // 

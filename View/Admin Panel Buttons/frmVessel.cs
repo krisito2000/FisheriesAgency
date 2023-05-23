@@ -118,40 +118,49 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (cbOwners.Text == "Owners" || cbCaptains.Text == "Captains")
+            if (cbOwners.SelectedIndex == -1 || cbCaptains.SelectedIndex == -1)
             {
-                MessageBox.Show("Fill all combo boxes");
+                MessageBox.Show("Please select an owner and a captain.");
                 cbOwners.ForeColor = Color.Red;
                 cbCaptains.ForeColor = Color.Red;
+                return;
             }
-            //using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            //{
-            //    connection.Open();
 
-            //    // Create a SQL INSERT statement with parameter placeholders
-            //    string sql = "INSERT INTO Vessel (InternationalNumber, CallSign, Marking, Length, Width, Tonnage, Gas, Engine, Fuel, OwnerId, CaptainId) " +
-            //                 "VALUES (@InternationalNumber, @CallSign, @Marking, @Length, @Width, @Tonnage, @Gas, @Engine, @Fuel, @OwnerId, @CaptainId)";
+            ComboBoxOwner selectedOwner = (ComboBoxOwner)cbOwners.SelectedItem;
+            ComboBoxCaptain selectedCaptain = (ComboBoxCaptain)cbCaptains.SelectedItem;
 
-            //    // Create a SqlCommand object with the SQL statement and connection
-            //    using (SqlCommand command = new SqlCommand(sql, connection))
-            //    {
-            //        // Set the parameter values from the text boxes
-            //        command.Parameters.AddWithValue("@InternationalNumber", txtInternationalNumber.Text);
-            //        command.Parameters.AddWithValue("@CallSign", txtCallSign.Text);
-            //        command.Parameters.AddWithValue("@Marking", txtMarking.Text);
-            //        command.Parameters.AddWithValue("@Length", decimal.Parse(txtLength.Text));
-            //        command.Parameters.AddWithValue("@Width", decimal.Parse(txtWidth.Text));
-            //        command.Parameters.AddWithValue("@Tonnage", decimal.Parse(txtTonnage.Text));
-            //        command.Parameters.AddWithValue("@Gas", txtGas.Text);
-            //        command.Parameters.AddWithValue("@Engine", txtEngine.Text);
-            //        command.Parameters.AddWithValue("@Fuel", txtFuel.Text);
-            //        command.Parameters.AddWithValue("@OwnerId", int.Parse(txtOwnerId.Text));
-            //        command.Parameters.AddWithValue("@CaptainId", int.Parse(txtCaptainId.Text));
+            int ownerId = selectedOwner.OwnerId;
+            int captainId = selectedCaptain.CaptainId;
 
-            //        // Execute the SQL command
-            //        command.ExecuteNonQuery();
-            //    }
-            //}
+            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            {
+                connection.Open();
+
+                // Create a SQL INSERT statement with parameter placeholders
+                string sql = "INSERT INTO Vessel (InternationalNumber, CallSign, Marking, Length, Width, Tonnage, Gas, Engine, Fuel, OwnerId, CaptainId) " +
+                             "VALUES (@InternationalNumber, @CallSign, @Marking, @Length, @Width, @Tonnage, @Gas, @Engine, @Fuel, @OwnerId, @CaptainId)";
+
+                // Create a SqlCommand object with the SQL statement and connection
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    // Set the parameter values from the text boxes
+                    command.Parameters.AddWithValue("@InternationalNumber", txtInternationalNumber.Text);
+                    command.Parameters.AddWithValue("@CallSign", txtCallSign.Text);
+                    command.Parameters.AddWithValue("@Marking", txtMarking.Text);
+                    command.Parameters.AddWithValue("@Length", decimal.Parse(txtLength.Text));
+                    command.Parameters.AddWithValue("@Width", decimal.Parse(txtWidth.Text));
+                    command.Parameters.AddWithValue("@Tonnage", decimal.Parse(txtTonnage.Text));
+                    command.Parameters.AddWithValue("@Gas", txtGas.Text);
+                    command.Parameters.AddWithValue("@Engine", txtEngine.Text);
+                    command.Parameters.AddWithValue("@Fuel", txtFuel.Text);
+                    command.Parameters.AddWithValue("@OwnerId", ownerId);
+                    command.Parameters.AddWithValue("@CaptainId", captainId);
+
+                    // Execute the SQL command
+                    command.ExecuteNonQuery();
+                    dgvReset();
+                }
+            }
         }
 
         private void cbOwners_DropDown(object sender, EventArgs e)
@@ -196,6 +205,90 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             {
                 return Name;
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            // Check if a row is selected
+            if (dgvVessel.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to delete.");
+                return;
+            }
+
+            // Get the VesselID from the selected row
+            int vesselId = (int)dgvVessel.SelectedRows[0].Cells["VesselID"].Value;
+
+            // Confirm deletion with the user
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this vessel?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                // Delete the vessel from the database
+                using (SqlConnection connection = new SqlConnection(Program.connectionString))
+                {
+                    connection.Open();
+
+                    SqlCommand deleteCommand = new SqlCommand("DELETE FROM [Vessel] WHERE VesselID = @VesselId", connection);
+                    deleteCommand.Parameters.AddWithValue("@VesselId", vesselId);
+                    deleteCommand.ExecuteNonQuery();
+
+                    connection.Close();
+                }
+
+                // Refresh the DataGridView
+                dgvReset();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            // Check if a row is selected
+            if (dgvVessel.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to edit.");
+                return;
+            }
+
+            // Get the selected row
+            DataGridViewRow row = dgvVessel.SelectedRows[0];
+
+            // Get the VesselID from the selected row
+            int vesselId = (int)row.Cells["VesselID"].Value;
+
+            // Get the new values from the text boxes
+            string internationalNumber = txtInternationalNumber.Text.Trim();
+            string callSign = txtCallSign.Text.Trim();
+            string marking = txtMarking.Text.Trim();
+            decimal length = decimal.Parse(txtLength.Text.Trim());
+            decimal width = decimal.Parse(txtWidth.Text.Trim());
+            decimal tonnage = decimal.Parse(txtTonnage.Text.Trim());
+            string gas = txtGas.Text.Trim();
+            string engine = txtEngine.Text.Trim();
+            string fuel = txtFuel.Text.Trim();
+
+            // Update the vessel in the database
+            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            {
+                connection.Open();
+
+                SqlCommand updateCommand = new SqlCommand("UPDATE [Vessel] SET InternationalNumber = @InternationalNumber, CallSign = @CallSign, Marking = @Marking, Length = @Length, Width = @Width, Tonnage = @Tonnage, Gas = @Gas, Engine = @Engine, Fuel = @Fuel WHERE VesselID = @VesselId", connection);
+                updateCommand.Parameters.AddWithValue("@InternationalNumber", internationalNumber);
+                updateCommand.Parameters.AddWithValue("@CallSign", callSign);
+                updateCommand.Parameters.AddWithValue("@Marking", marking);
+                updateCommand.Parameters.AddWithValue("@Length", length);
+                updateCommand.Parameters.AddWithValue("@Width", width);
+                updateCommand.Parameters.AddWithValue("@Tonnage", tonnage);
+                updateCommand.Parameters.AddWithValue("@Gas", gas);
+                updateCommand.Parameters.AddWithValue("@Engine", engine);
+                updateCommand.Parameters.AddWithValue("@Fuel", fuel);
+                updateCommand.Parameters.AddWithValue("@VesselId", vesselId);
+                updateCommand.ExecuteNonQuery();
+
+                connection.Close();
+            }
+
+            // Refresh the DataGridView
+            dgvReset();
         }
     }
 }

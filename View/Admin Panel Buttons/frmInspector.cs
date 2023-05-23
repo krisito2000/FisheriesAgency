@@ -13,12 +13,12 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
     public partial class frmInspector : Form
     {
-        private static void UpdateUsersDataGridView(DataGridView dgvFisheriesAgencyDB)
+        private static void UpdateInspectorDataGridView(DataGridView dgvInspector)
         {
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(Program.connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT InspectorId, InspectorDate FROM [Inspector]", con))
+                using (SqlCommand cmd = new SqlCommand("SELECT InspectorId, InspectorDate, VesselId FROM [Inspector]", con))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
@@ -26,12 +26,41 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                     }
                 }
             }
-            dgvFisheriesAgencyDB.DataSource = dt;
+            dgvInspector.DataSource = dt;
         }
+
         public frmInspector()
         {
             InitializeComponent();
-            UpdateUsersDataGridView(dgvInspector);
+            UpdateInspectorDataGridView(dgvInspector);
+
+            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            {
+                connection.Open();
+
+                string sql = "SELECT VesselId, InternationalNumber FROM Vessel";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int vesselId = reader.GetInt32(0);
+                            string internationalNumber = reader.GetString(1);
+
+                            // Add the vessel to the ComboBox items and store the ID as the item value
+                            cbVessels.Items.Add(new ComboBoxItem(internationalNumber, vesselId));
+                        }
+                    }
+                }
+            }
+        }
+
+        private void dgvReset()
+        {
+            UpdateInspectorDataGridView(dgvInspector);
+            dgvInspector.Refresh();
         }
 
         private void dgvInspector_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -40,12 +69,133 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             {
                 DataGridViewRow row = dgvInspector.Rows[e.RowIndex];
 
+                int inspectorId = (int)row.Cells["InspectorId"].Value;
+                DateTime inspectorDate = (DateTime)row.Cells["InspectorDate"].Value;
+                int vesselId = (int)row.Cells["VesselId"].Value;
 
-                string inspectorDate = row.Cells["InspectorDate"].Value.ToString().Trim();
+                dtpInspectorDate.Value = inspectorDate;
 
-                dtpInspectorDate.Text = inspectorDate;
+                // Select the appropriate vessel in the ComboBox based on vesselId
+                foreach (ComboBoxItem item in cbVessels.Items)
+                {
+                    if (item.Value == vesselId)
+                    {
+                        cbVessels.SelectedItem = item;
+                        break;
+                    }
+                }
             }
         }
-        //Todo: make create, edit and delete buttons to work
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            if (cbVessels.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a vessel.");
+                return;
+            }
+
+            ComboBoxItem selectedVessel = (ComboBoxItem)cbVessels.SelectedItem;
+
+            int vesselId = (int)selectedVessel.Value;
+
+            DateTime inspectorDate = dtpInspectorDate.Value;
+
+            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            {
+                connection.Open();
+
+                string sql = "INSERT INTO Inspector (InspectorDate, VesselId) VALUES (@InspectorDate, @VesselId)";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@InspectorDate", inspectorDate);
+                    command.Parameters.AddWithValue("@VesselId", vesselId);
+
+                    command.ExecuteNonQuery();
+                    dgvReset();
+                }
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvInspector.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to delete.");
+                return;
+            }
+
+            int inspectorId = (int)dgvInspector.SelectedRows[0].Cells["InspectorId"].Value;
+
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this inspector?", "Confirm Deletion", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                using (SqlConnection connection = new SqlConnection(Program.connectionString))
+                {
+                    connection.Open();
+
+                    string sql = "DELETE FROM Inspector WHERE InspectorId = @InspectorId";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@InspectorId", inspectorId);
+
+                        command.ExecuteNonQuery();
+                        dgvReset();
+                    }
+                }
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (dgvInspector.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to edit.");
+                return;
+            }
+
+            DataGridViewRow row = dgvInspector.SelectedRows[0];
+            int inspectorId = (int)row.Cells["InspectorId"].Value;
+            DateTime inspectorDate = dtpInspectorDate.Value;
+
+            ComboBoxItem selectedVessel = (ComboBoxItem)cbVessels.SelectedItem;
+            int vesselId = (int)selectedVessel.Value;
+
+            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            {
+                connection.Open();
+
+                string sql = "UPDATE Inspector SET InspectorDate = @InspectorDate, VesselId = @VesselId WHERE InspectorId = @InspectorId";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@InspectorDate", inspectorDate);
+                    command.Parameters.AddWithValue("@VesselId", vesselId);
+                    command.Parameters.AddWithValue("@InspectorId", inspectorId);
+
+                    command.ExecuteNonQuery();
+                    dgvReset();
+                }
+            }
+        }
+    }
+
+    public class ComboBoxItem
+    {
+        public string Text { get; set; }
+        public int Value { get; set; }
+
+        public ComboBoxItem(string text, int value)
+        {
+            Text = text;
+            Value = value;
+        }
+
+        public override string ToString()
+        {
+            return Text;
+        }
     }
 }

@@ -139,5 +139,10 @@ namespace FisheriesAgency.View
             Admin_Panel_Buttons.frmOwner frmOwner = new Admin_Panel_Buttons.frmOwner();
             frmOwner.ShowDialog();
         }
+
+        private void frmAdminsPanel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,189 +28,193 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvTicket = new System.Windows.Forms.DataGridView();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.lbIEndDate = new System.Windows.Forms.Label();
-            this.lblStartDate = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btncreate = new System.Windows.Forms.Button();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.lblTelk = new System.Windows.Forms.Label();
-            this.txtTalkDecisionNum = new System.Windows.Forms.TextBox();
-            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
-            this.cbIsPensioner = new System.Windows.Forms.CheckBox();
-            this.cbIsDisabled = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTicket)).BeginInit();
-            this.SuspendLayout();
+            dgvTicket = new DataGridView();
+            btnEdit = new Button();
+            lbIEndDate = new Label();
+            lblStartDate = new Label();
+            btnDelete = new Button();
+            btnCreate = new Button();
+            lblPrice = new Label();
+            txtPrice = new TextBox();
+            lblTelk = new Label();
+            txtTelk = new TextBox();
+            dtpStartDate = new DateTimePicker();
+            dtpEndDate = new DateTimePicker();
+            cbIsPensioner = new CheckBox();
+            cbIsDisabled = new CheckBox();
+            cmbMember = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dgvTicket).BeginInit();
+            SuspendLayout();
             // 
             // dgvTicket
             // 
-            this.dgvTicket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTicket.Location = new System.Drawing.Point(553, 73);
-            this.dgvTicket.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvTicket.Name = "dgvTicket";
-            this.dgvTicket.RowHeadersWidth = 51;
-            this.dgvTicket.RowTemplate.Height = 25;
-            this.dgvTicket.Size = new System.Drawing.Size(274, 200);
-            this.dgvTicket.TabIndex = 0;
-            this.dgvTicket.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTicket_CellClick);
+            dgvTicket.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTicket.Location = new Point(441, 53);
+            dgvTicket.Name = "dgvTicket";
+            dgvTicket.RowHeadersWidth = 51;
+            dgvTicket.RowTemplate.Height = 25;
+            dgvTicket.Size = new Size(304, 150);
+            dgvTicket.TabIndex = 0;
+            dgvTicket.CellClick += dgvTicket_CellClick;
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(632, 347);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(109, 40);
-            this.btnEdit.TabIndex = 65;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Location = new Point(536, 260);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(95, 30);
+            btnEdit.TabIndex = 65;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // lbIEndDate
             // 
-            this.lbIEndDate.AutoSize = true;
-            this.lbIEndDate.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lbIEndDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbIEndDate.Location = new System.Drawing.Point(75, 109);
-            this.lbIEndDate.Name = "lbIEndDate";
-            this.lbIEndDate.Size = new System.Drawing.Size(98, 28);
-            this.lbIEndDate.TabIndex = 64;
-            this.lbIEndDate.Text = "End Date";
+            lbIEndDate.AutoSize = true;
+            lbIEndDate.FlatStyle = FlatStyle.System;
+            lbIEndDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lbIEndDate.Location = new Point(61, 82);
+            lbIEndDate.Name = "lbIEndDate";
+            lbIEndDate.Size = new Size(79, 21);
+            lbIEndDate.TabIndex = 64;
+            lbIEndDate.Text = "End Date";
             // 
             // lblStartDate
             // 
-            this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblStartDate.Location = new System.Drawing.Point(70, 47);
-            this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(110, 28);
-            this.lblStartDate.TabIndex = 63;
-            this.lblStartDate.Text = "Start Date";
+            lblStartDate.AutoSize = true;
+            lblStartDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblStartDate.Location = new Point(61, 35);
+            lblStartDate.Name = "lblStartDate";
+            lblStartDate.Size = new Size(86, 21);
+            lblStartDate.TabIndex = 63;
+            lblStartDate.Text = "Start Date";
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(565, 299);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(109, 40);
-            this.btnDelete.TabIndex = 60;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Location = new Point(484, 224);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(95, 30);
+            btnDelete.TabIndex = 60;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
-            // btncreate
+            // btnCreate
             // 
-            this.btncreate.Location = new System.Drawing.Point(680, 299);
-            this.btncreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btncreate.Name = "btncreate";
-            this.btncreate.Size = new System.Drawing.Size(109, 40);
-            this.btncreate.TabIndex = 59;
-            this.btncreate.Text = "Create ";
-            this.btncreate.UseVisualStyleBackColor = true;
+            btnCreate.Location = new Point(585, 224);
+            btnCreate.Name = "btnCreate";
+            btnCreate.Size = new Size(95, 30);
+            btnCreate.TabIndex = 59;
+            btnCreate.Text = "Create ";
+            btnCreate.UseVisualStyleBackColor = true;
+            btnCreate.Click += btnCreate_Click;
             // 
             // lblPrice
             // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPrice.Location = new System.Drawing.Point(75, 163);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(59, 28);
-            this.lblPrice.TabIndex = 68;
-            this.lblPrice.Text = "Price";
+            lblPrice.AutoSize = true;
+            lblPrice.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblPrice.Location = new Point(61, 122);
+            lblPrice.Name = "lblPrice";
+            lblPrice.Size = new Size(48, 21);
+            lblPrice.TabIndex = 68;
+            lblPrice.Text = "Price";
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(192, 165);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(228, 27);
-            this.txtPrice.TabIndex = 66;
+            txtPrice.Location = new Point(168, 124);
+            txtPrice.Name = "txtPrice";
+            txtPrice.Size = new Size(200, 23);
+            txtPrice.TabIndex = 66;
             // 
             // lblTelk
             // 
-            this.lblTelk.AutoSize = true;
-            this.lblTelk.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lblTelk.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTelk.Location = new System.Drawing.Point(83, 347);
-            this.lblTelk.Name = "lblTelk";
-            this.lblTelk.Size = new System.Drawing.Size(50, 28);
-            this.lblTelk.TabIndex = 73;
-            this.lblTelk.Text = "Telk";
+            lblTelk.AutoSize = true;
+            lblTelk.FlatStyle = FlatStyle.System;
+            lblTelk.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTelk.Location = new Point(61, 260);
+            lblTelk.Name = "lblTelk";
+            lblTelk.Size = new Size(41, 21);
+            lblTelk.TabIndex = 73;
+            lblTelk.Text = "Telk";
             // 
-            // txtTalkDecisionNum
+            // txtTelk
             // 
-            this.txtTalkDecisionNum.Location = new System.Drawing.Point(192, 344);
-            this.txtTalkDecisionNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtTalkDecisionNum.Name = "txtTalkDecisionNum";
-            this.txtTalkDecisionNum.Size = new System.Drawing.Size(121, 27);
-            this.txtTalkDecisionNum.TabIndex = 71;
+            txtTelk.Location = new Point(168, 260);
+            txtTelk.Name = "txtTelk";
+            txtTelk.Size = new Size(200, 23);
+            txtTelk.TabIndex = 71;
             // 
             // dtpStartDate
             // 
-            this.dtpStartDate.Location = new System.Drawing.Point(192, 47);
-            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(228, 27);
-            this.dtpStartDate.TabIndex = 74;
+            dtpStartDate.Location = new Point(168, 35);
+            dtpStartDate.Name = "dtpStartDate";
+            dtpStartDate.Size = new Size(200, 23);
+            dtpStartDate.TabIndex = 74;
             // 
             // dtpEndDate
             // 
-            this.dtpEndDate.Location = new System.Drawing.Point(192, 109);
-            this.dtpEndDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(228, 27);
-            this.dtpEndDate.TabIndex = 75;
+            dtpEndDate.Location = new Point(168, 82);
+            dtpEndDate.Name = "dtpEndDate";
+            dtpEndDate.Size = new Size(200, 23);
+            dtpEndDate.TabIndex = 75;
             // 
             // cbIsPensioner
             // 
-            this.cbIsPensioner.AutoSize = true;
-            this.cbIsPensioner.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cbIsPensioner.Location = new System.Drawing.Point(131, 224);
-            this.cbIsPensioner.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbIsPensioner.Name = "cbIsPensioner";
-            this.cbIsPensioner.Size = new System.Drawing.Size(141, 32);
-            this.cbIsPensioner.TabIndex = 76;
-            this.cbIsPensioner.Text = "IsPensioner";
-            this.cbIsPensioner.UseVisualStyleBackColor = true;
+            cbIsPensioner.AutoSize = true;
+            cbIsPensioner.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            cbIsPensioner.Location = new Point(61, 167);
+            cbIsPensioner.Name = "cbIsPensioner";
+            cbIsPensioner.Size = new Size(105, 25);
+            cbIsPensioner.TabIndex = 76;
+            cbIsPensioner.Text = "Pensioner";
+            cbIsPensioner.UseVisualStyleBackColor = true;
             // 
             // cbIsDisabled
             // 
-            this.cbIsDisabled.AutoSize = true;
-            this.cbIsDisabled.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cbIsDisabled.Location = new System.Drawing.Point(131, 281);
-            this.cbIsDisabled.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbIsDisabled.Name = "cbIsDisabled";
-            this.cbIsDisabled.Size = new System.Drawing.Size(131, 32);
-            this.cbIsDisabled.TabIndex = 77;
-            this.cbIsDisabled.Text = "IsDisabled";
-            this.cbIsDisabled.UseVisualStyleBackColor = true;
+            cbIsDisabled.AutoSize = true;
+            cbIsDisabled.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            cbIsDisabled.Location = new Point(61, 210);
+            cbIsDisabled.Name = "cbIsDisabled";
+            cbIsDisabled.Size = new Size(96, 25);
+            cbIsDisabled.TabIndex = 77;
+            cbIsDisabled.Text = "Disabled";
+            cbIsDisabled.UseVisualStyleBackColor = true;
+            // 
+            // cmbMember
+            // 
+            cmbMember.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbMember.FormattingEnabled = true;
+            cmbMember.Location = new Point(191, 167);
+            cmbMember.Name = "cmbMember";
+            cmbMember.Size = new Size(167, 23);
+            cmbMember.TabIndex = 78;
+            cmbMember.Text = "Select Member";
+            cmbMember.DragDrop += cbMember_DragDrop;
             // 
             // frmTicket
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 448);
-            this.Controls.Add(this.cbIsDisabled);
-            this.Controls.Add(this.cbIsPensioner);
-            this.Controls.Add(this.dtpEndDate);
-            this.Controls.Add(this.dtpStartDate);
-            this.Controls.Add(this.lblTelk);
-            this.Controls.Add(this.txtTalkDecisionNum);
-            this.Controls.Add(this.lblPrice);
-            this.Controls.Add(this.txtPrice);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.lbIEndDate);
-            this.Controls.Add(this.lblStartDate);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btncreate);
-            this.Controls.Add(this.dgvTicket);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmTicket";
-            this.Text = "frmTicket";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTicket)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 336);
+            Controls.Add(cmbMember);
+            Controls.Add(cbIsDisabled);
+            Controls.Add(cbIsPensioner);
+            Controls.Add(dtpEndDate);
+            Controls.Add(dtpStartDate);
+            Controls.Add(lblTelk);
+            Controls.Add(txtTelk);
+            Controls.Add(lblPrice);
+            Controls.Add(txtPrice);
+            Controls.Add(btnEdit);
+            Controls.Add(lbIEndDate);
+            Controls.Add(lblStartDate);
+            Controls.Add(btnDelete);
+            Controls.Add(btnCreate);
+            Controls.Add(dgvTicket);
+            Name = "frmTicket";
+            Text = "frmTicket";
+            ((System.ComponentModel.ISupportInitialize)dgvTicket).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -220,16 +224,17 @@
         private Label lbIEndDate;
         private Label lblStartDate;
         private Button btnDelete;
-        private Button btncreate;
+        private Button btnCreate;
         private Label lblIsPensioner;
         private Label lblPrice;
         private TextBox txtPrice;
         private Label lblTelk;
         private Label lblIsDisabled;
-        private TextBox txtTalkDecisionNum;
+        private TextBox txtTelk;
         private DateTimePicker dtpStartDate;
         private DateTimePicker dtpEndDate;
         private CheckBox cbIsPensioner;
         private CheckBox cbIsDisabled;
+        private ComboBox cmbMember;
     }
 }

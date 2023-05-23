@@ -28,169 +28,173 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.lbIssueDate = new System.Windows.Forms.Label();
-            this.lblPermitNumber = new System.Windows.Forms.Label();
-            this.txtPermitNumber = new System.Windows.Forms.TextBox();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btncreate = new System.Windows.Forms.Button();
-            this.dgvFishingPermit = new System.Windows.Forms.DataGridView();
-            this.lblExpirationDate = new System.Windows.Forms.Label();
-            this.lblEquipment = new System.Windows.Forms.Label();
-            this.txtEquipment = new System.Windows.Forms.TextBox();
-            this.dtpIssueDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpExpirationDate = new System.Windows.Forms.DateTimePicker();
-            this.sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFishingPermit)).BeginInit();
-            this.SuspendLayout();
+            btnEdit = new Button();
+            lbIssueDate = new Label();
+            lblPermitNumber = new Label();
+            txtPermitNumber = new TextBox();
+            btnDelete = new Button();
+            btnCreate = new Button();
+            dgvPermit = new DataGridView();
+            lblExpirationDate = new Label();
+            lblEquipment = new Label();
+            txtEquipment = new TextBox();
+            dtpIssueDate = new DateTimePicker();
+            dtpExpirationDate = new DateTimePicker();
+            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            cbVessels = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dgvPermit).BeginInit();
+            SuspendLayout();
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(191, 396);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(109, 40);
-            this.btnEdit.TabIndex = 37;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Location = new Point(167, 312);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(95, 30);
+            btnEdit.TabIndex = 37;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // lbIssueDate
             // 
-            this.lbIssueDate.AutoSize = true;
-            this.lbIssueDate.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lbIssueDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbIssueDate.Location = new System.Drawing.Point(116, 123);
-            this.lbIssueDate.Name = "lbIssueDate";
-            this.lbIssueDate.Size = new System.Drawing.Size(110, 28);
-            this.lbIssueDate.TabIndex = 36;
-            this.lbIssueDate.Text = "Issue Date";
+            lbIssueDate.AutoSize = true;
+            lbIssueDate.FlatStyle = FlatStyle.System;
+            lbIssueDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lbIssueDate.Location = new Point(102, 92);
+            lbIssueDate.Name = "lbIssueDate";
+            lbIssueDate.Size = new Size(88, 21);
+            lbIssueDate.TabIndex = 36;
+            lbIssueDate.Text = "Issue Date";
             // 
             // lblPermitNumber
             // 
-            this.lblPermitNumber.AutoSize = true;
-            this.lblPermitNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPermitNumber.Location = new System.Drawing.Point(83, 63);
-            this.lblPermitNumber.Name = "lblPermitNumber";
-            this.lblPermitNumber.Size = new System.Drawing.Size(157, 28);
-            this.lblPermitNumber.TabIndex = 35;
-            this.lblPermitNumber.Text = "Permit Number";
+            lblPermitNumber.AutoSize = true;
+            lblPermitNumber.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblPermitNumber.Location = new Point(73, 47);
+            lblPermitNumber.Name = "lblPermitNumber";
+            lblPermitNumber.Size = new Size(128, 21);
+            lblPermitNumber.TabIndex = 35;
+            lblPermitNumber.Text = "Permit Number";
             // 
             // txtPermitNumber
             // 
-            this.txtPermitNumber.Location = new System.Drawing.Point(254, 64);
-            this.txtPermitNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtPermitNumber.Name = "txtPermitNumber";
-            this.txtPermitNumber.Size = new System.Drawing.Size(148, 27);
-            this.txtPermitNumber.TabIndex = 33;
+            txtPermitNumber.Location = new Point(218, 48);
+            txtPermitNumber.Name = "txtPermitNumber";
+            txtPermitNumber.Size = new Size(134, 23);
+            txtPermitNumber.TabIndex = 33;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(134, 348);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(109, 40);
-            this.btnDelete.TabIndex = 32;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Location = new Point(117, 276);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(95, 30);
+            btnDelete.TabIndex = 32;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
-            // btncreate
+            // btnCreate
             // 
-            this.btncreate.Location = new System.Drawing.Point(249, 348);
-            this.btncreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btncreate.Name = "btncreate";
-            this.btncreate.Size = new System.Drawing.Size(109, 40);
-            this.btncreate.TabIndex = 31;
-            this.btncreate.Text = "Create ";
-            this.btncreate.UseVisualStyleBackColor = true;
+            btnCreate.Location = new Point(218, 276);
+            btnCreate.Name = "btnCreate";
+            btnCreate.Size = new Size(95, 30);
+            btnCreate.TabIndex = 31;
+            btnCreate.Text = "Create ";
+            btnCreate.UseVisualStyleBackColor = true;
+            btnCreate.Click += btnCreate_Click;
             // 
-            // dgvFishingPermit
+            // dgvPermit
             // 
-            this.dgvFishingPermit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFishingPermit.Location = new System.Drawing.Point(498, 107);
-            this.dgvFishingPermit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvFishingPermit.Name = "dgvFishingPermit";
-            this.dgvFishingPermit.RowHeadersWidth = 51;
-            this.dgvFishingPermit.RowTemplate.Height = 25;
-            this.dgvFishingPermit.Size = new System.Drawing.Size(368, 200);
-            this.dgvFishingPermit.TabIndex = 38;
-            this.dgvFishingPermit.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFishingPermit_CellClick);
+            dgvPermit.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPermit.Location = new Point(436, 80);
+            dgvPermit.Name = "dgvPermit";
+            dgvPermit.RowHeadersWidth = 51;
+            dgvPermit.RowTemplate.Height = 25;
+            dgvPermit.Size = new Size(322, 150);
+            dgvPermit.TabIndex = 38;
+            dgvPermit.CellClick += dgvPermit_CellClick;
             // 
             // lblExpirationDate
             // 
-            this.lblExpirationDate.AutoSize = true;
-            this.lblExpirationDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblExpirationDate.Location = new System.Drawing.Point(83, 195);
-            this.lblExpirationDate.Name = "lblExpirationDate";
-            this.lblExpirationDate.Size = new System.Drawing.Size(160, 28);
-            this.lblExpirationDate.TabIndex = 39;
-            this.lblExpirationDate.Text = "Expiration Date";
+            lblExpirationDate.AutoSize = true;
+            lblExpirationDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblExpirationDate.Location = new Point(73, 146);
+            lblExpirationDate.Name = "lblExpirationDate";
+            lblExpirationDate.Size = new Size(129, 21);
+            lblExpirationDate.TabIndex = 39;
+            lblExpirationDate.Text = "Expiration Date";
             // 
             // lblEquipment
             // 
-            this.lblEquipment.AutoSize = true;
-            this.lblEquipment.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lblEquipment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblEquipment.Location = new System.Drawing.Point(112, 264);
-            this.lblEquipment.Name = "lblEquipment";
-            this.lblEquipment.Size = new System.Drawing.Size(114, 28);
-            this.lblEquipment.TabIndex = 41;
-            this.lblEquipment.Text = "Equipment";
+            lblEquipment.AutoSize = true;
+            lblEquipment.FlatStyle = FlatStyle.System;
+            lblEquipment.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblEquipment.Location = new Point(98, 198);
+            lblEquipment.Name = "lblEquipment";
+            lblEquipment.Size = new Size(94, 21);
+            lblEquipment.TabIndex = 41;
+            lblEquipment.Text = "Equipment";
             // 
             // txtEquipment
             // 
-            this.txtEquipment.Location = new System.Drawing.Point(249, 261);
-            this.txtEquipment.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtEquipment.Name = "txtEquipment";
-            this.txtEquipment.Size = new System.Drawing.Size(153, 27);
-            this.txtEquipment.TabIndex = 42;
+            txtEquipment.Location = new Point(218, 196);
+            txtEquipment.Name = "txtEquipment";
+            txtEquipment.Size = new Size(134, 23);
+            txtEquipment.TabIndex = 42;
             // 
             // dtpIssueDate
             // 
-            this.dtpIssueDate.Location = new System.Drawing.Point(249, 124);
-            this.dtpIssueDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtpIssueDate.Name = "dtpIssueDate";
-            this.dtpIssueDate.Size = new System.Drawing.Size(153, 27);
-            this.dtpIssueDate.TabIndex = 43;
+            dtpIssueDate.Location = new Point(218, 93);
+            dtpIssueDate.Name = "dtpIssueDate";
+            dtpIssueDate.Size = new Size(134, 23);
+            dtpIssueDate.TabIndex = 43;
             // 
             // dtpExpirationDate
             // 
-            this.dtpExpirationDate.Location = new System.Drawing.Point(249, 197);
-            this.dtpExpirationDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtpExpirationDate.Name = "dtpExpirationDate";
-            this.dtpExpirationDate.Size = new System.Drawing.Size(153, 27);
-            this.dtpExpirationDate.TabIndex = 44;
+            dtpExpirationDate.Location = new Point(218, 148);
+            dtpExpirationDate.Name = "dtpExpirationDate";
+            dtpExpirationDate.Size = new Size(134, 23);
+            dtpExpirationDate.TabIndex = 44;
             // 
             // sqlCommand1
             // 
-            this.sqlCommand1.CommandTimeout = 30;
-            this.sqlCommand1.Connection = null;
-            this.sqlCommand1.Notification = null;
-            this.sqlCommand1.Transaction = null;
+            sqlCommand1.CommandTimeout = 30;
+            sqlCommand1.Connection = null;
+            sqlCommand1.Notification = null;
+            sqlCommand1.Transaction = null;
+            // 
+            // cbVessels
+            // 
+            cbVessels.FormattingEnabled = true;
+            cbVessels.Location = new Point(167, 232);
+            cbVessels.Name = "cbVessels";
+            cbVessels.Size = new Size(121, 23);
+            cbVessels.TabIndex = 77;
+            cbVessels.Text = "Vessels";
             // 
             // frmFishingPermit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 472);
-            this.Controls.Add(this.dtpExpirationDate);
-            this.Controls.Add(this.dtpIssueDate);
-            this.Controls.Add(this.txtEquipment);
-            this.Controls.Add(this.lblEquipment);
-            this.Controls.Add(this.lblExpirationDate);
-            this.Controls.Add(this.dgvFishingPermit);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.lbIssueDate);
-            this.Controls.Add(this.lblPermitNumber);
-            this.Controls.Add(this.txtPermitNumber);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btncreate);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmFishingPermit";
-            this.Text = "frmFishingPermit";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFishingPermit)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 354);
+            Controls.Add(cbVessels);
+            Controls.Add(dtpExpirationDate);
+            Controls.Add(dtpIssueDate);
+            Controls.Add(txtEquipment);
+            Controls.Add(lblEquipment);
+            Controls.Add(lblExpirationDate);
+            Controls.Add(dgvPermit);
+            Controls.Add(btnEdit);
+            Controls.Add(lbIssueDate);
+            Controls.Add(lblPermitNumber);
+            Controls.Add(txtPermitNumber);
+            Controls.Add(btnDelete);
+            Controls.Add(btnCreate);
+            Name = "frmFishingPermit";
+            Text = "frmFishingPermit";
+            ((System.ComponentModel.ISupportInitialize)dgvPermit).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -200,13 +204,14 @@
         private Label lblPermitNumber;
         private TextBox txtPermitNumber;
         private Button btnDelete;
-        private Button btncreate;
-        private DataGridView dgvFishingPermit;
+        private Button btnCreate;
+        private DataGridView dgvPermit;
         private Label lblExpirationDate;
         private Label lblEquipment;
         private TextBox txtEquipment;
         private DateTimePicker dtpIssueDate;
         private DateTimePicker dtpExpirationDate;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
+        private ComboBox cbVessels;
     }
 }

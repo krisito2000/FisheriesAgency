@@ -28,252 +28,224 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.txtMonths = new System.Windows.Forms.TextBox();
-            this.lblMonths = new System.Windows.Forms.Label();
-            this.btnGetPermits = new System.Windows.Forms.Button();
-            this.lblTables = new System.Windows.Forms.Label();
-            this.btnUsers = new System.Windows.Forms.Button();
-            this.btnFishingPermits = new System.Windows.Forms.Button();
-            this.btnVessels = new System.Windows.Forms.Button();
-            this.btnTickets = new System.Windows.Forms.Button();
-            this.btnBestCatchForTheYear = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.btnCaptains = new System.Windows.Forms.Button();
-            this.btnCatches = new System.Windows.Forms.Button();
-            this.btnTrips = new System.Windows.Forms.Button();
-            this.btnInspector = new System.Windows.Forms.Button();
-            this.btnMembers = new System.Windows.Forms.Button();
-            this.btnOwners = new System.Windows.Forms.Button();
-            this.lblTovaShteGoIztriqIBezTova = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
-            this.SuspendLayout();
+            fileSystemWatcher1 = new FileSystemWatcher();
+            txtMonths = new TextBox();
+            lblMonths = new Label();
+            btnGetPermits = new Button();
+            lblTables = new Label();
+            btnUsers = new Button();
+            btnFishingPermits = new Button();
+            btnVessels = new Button();
+            btnTickets = new Button();
+            btnBestCatchForTheYear = new Button();
+            btnLogout = new Button();
+            btnCaptains = new Button();
+            btnCatches = new Button();
+            btnTrips = new Button();
+            btnInspector = new Button();
+            btnMembers = new Button();
+            btnOwners = new Button();
+            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
+            SuspendLayout();
             // 
             // fileSystemWatcher1
             // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
+            fileSystemWatcher1.EnableRaisingEvents = true;
+            fileSystemWatcher1.SynchronizingObject = this;
             // 
             // txtMonths
             // 
-            this.txtMonths.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMonths.Location = new System.Drawing.Point(572, 263);
-            this.txtMonths.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtMonths.Name = "txtMonths";
-            this.txtMonths.Size = new System.Drawing.Size(70, 43);
-            this.txtMonths.TabIndex = 15;
+            txtMonths.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            txtMonths.Location = new Point(525, 229);
+            txtMonths.Name = "txtMonths";
+            txtMonths.Size = new Size(62, 36);
+            txtMonths.TabIndex = 15;
             // 
             // lblMonths
             // 
-            this.lblMonths.AutoSize = true;
-            this.lblMonths.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblMonths.Location = new System.Drawing.Point(650, 267);
-            this.lblMonths.Name = "lblMonths";
-            this.lblMonths.Size = new System.Drawing.Size(118, 37);
-            this.lblMonths.TabIndex = 16;
-            this.lblMonths.Text = "Month/s";
+            lblMonths.AutoSize = true;
+            lblMonths.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            lblMonths.Location = new Point(594, 232);
+            lblMonths.Name = "lblMonths";
+            lblMonths.Size = new Size(95, 30);
+            lblMonths.TabIndex = 16;
+            lblMonths.Text = "Month/s";
             // 
             // btnGetPermits
             // 
-            this.btnGetPermits.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnGetPermits.Location = new System.Drawing.Point(460, 267);
-            this.btnGetPermits.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnGetPermits.Name = "btnGetPermits";
-            this.btnGetPermits.Size = new System.Drawing.Size(93, 44);
-            this.btnGetPermits.TabIndex = 17;
-            this.btnGetPermits.Text = "Permits";
-            this.btnGetPermits.UseVisualStyleBackColor = true;
+            btnGetPermits.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnGetPermits.Location = new Point(427, 232);
+            btnGetPermits.Name = "btnGetPermits";
+            btnGetPermits.Size = new Size(81, 33);
+            btnGetPermits.TabIndex = 17;
+            btnGetPermits.Text = "Permits";
+            btnGetPermits.UseVisualStyleBackColor = true;
             // 
             // lblTables
             // 
-            this.lblTables.AutoSize = true;
-            this.lblTables.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTables.Location = new System.Drawing.Point(227, 46);
-            this.lblTables.Name = "lblTables";
-            this.lblTables.Size = new System.Drawing.Size(90, 37);
-            this.lblTables.TabIndex = 18;
-            this.lblTables.Text = "Tables";
+            lblTables.AutoSize = true;
+            lblTables.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTables.Location = new Point(199, 34);
+            lblTables.Name = "lblTables";
+            lblTables.Size = new Size(73, 30);
+            lblTables.TabIndex = 18;
+            lblTables.Text = "Tables";
             // 
             // btnUsers
             // 
-            this.btnUsers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnUsers.Location = new System.Drawing.Point(43, 107);
-            this.btnUsers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(107, 44);
-            this.btnUsers.TabIndex = 19;
-            this.btnUsers.Text = "Users";
-            this.btnUsers.UseVisualStyleBackColor = true;
-            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
+            btnUsers.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUsers.Location = new Point(38, 80);
+            btnUsers.Name = "btnUsers";
+            btnUsers.Size = new Size(94, 33);
+            btnUsers.TabIndex = 19;
+            btnUsers.Text = "Users";
+            btnUsers.UseVisualStyleBackColor = true;
+            btnUsers.Click += btnUsers_Click;
             // 
             // btnFishingPermits
             // 
-            this.btnFishingPermits.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnFishingPermits.Location = new System.Drawing.Point(269, 107);
-            this.btnFishingPermits.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnFishingPermits.Name = "btnFishingPermits";
-            this.btnFishingPermits.Size = new System.Drawing.Size(107, 44);
-            this.btnFishingPermits.TabIndex = 20;
-            this.btnFishingPermits.Text = "Permits";
-            this.btnFishingPermits.UseVisualStyleBackColor = true;
-            this.btnFishingPermits.Click += new System.EventHandler(this.btnFishingPermits_Click);
+            btnFishingPermits.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFishingPermits.Location = new Point(235, 80);
+            btnFishingPermits.Name = "btnFishingPermits";
+            btnFishingPermits.Size = new Size(94, 33);
+            btnFishingPermits.TabIndex = 20;
+            btnFishingPermits.Text = "Permits";
+            btnFishingPermits.UseVisualStyleBackColor = true;
+            btnFishingPermits.Click += btnFishingPermits_Click;
             // 
             // btnVessels
             // 
-            this.btnVessels.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnVessels.Location = new System.Drawing.Point(156, 107);
-            this.btnVessels.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnVessels.Name = "btnVessels";
-            this.btnVessels.Size = new System.Drawing.Size(107, 44);
-            this.btnVessels.TabIndex = 21;
-            this.btnVessels.Text = "Vessels";
-            this.btnVessels.UseVisualStyleBackColor = true;
-            this.btnVessels.Click += new System.EventHandler(this.btnVessels_Click);
+            btnVessels.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVessels.Location = new Point(136, 80);
+            btnVessels.Name = "btnVessels";
+            btnVessels.Size = new Size(94, 33);
+            btnVessels.TabIndex = 21;
+            btnVessels.Text = "Vessels";
+            btnVessels.UseVisualStyleBackColor = true;
+            btnVessels.Click += btnVessels_Click;
             // 
             // btnTickets
             // 
-            this.btnTickets.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnTickets.Location = new System.Drawing.Point(382, 107);
-            this.btnTickets.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnTickets.Name = "btnTickets";
-            this.btnTickets.Size = new System.Drawing.Size(107, 44);
-            this.btnTickets.TabIndex = 22;
-            this.btnTickets.Text = "Tickets";
-            this.btnTickets.UseVisualStyleBackColor = true;
-            this.btnTickets.Click += new System.EventHandler(this.btnTickets_Click);
+            btnTickets.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnTickets.Location = new Point(334, 80);
+            btnTickets.Name = "btnTickets";
+            btnTickets.Size = new Size(94, 33);
+            btnTickets.TabIndex = 22;
+            btnTickets.Text = "Tickets";
+            btnTickets.UseVisualStyleBackColor = true;
+            btnTickets.Click += btnTickets_Click;
             // 
             // btnBestCatchForTheYear
             // 
-            this.btnBestCatchForTheYear.Location = new System.Drawing.Point(545, 319);
-            this.btnBestCatchForTheYear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnBestCatchForTheYear.Name = "btnBestCatchForTheYear";
-            this.btnBestCatchForTheYear.Size = new System.Drawing.Size(98, 40);
-            this.btnBestCatchForTheYear.TabIndex = 23;
-            this.btnBestCatchForTheYear.Text = "Years Catch";
-            this.btnBestCatchForTheYear.UseVisualStyleBackColor = true;
+            btnBestCatchForTheYear.Location = new Point(502, 271);
+            btnBestCatchForTheYear.Name = "btnBestCatchForTheYear";
+            btnBestCatchForTheYear.Size = new Size(86, 30);
+            btnBestCatchForTheYear.TabIndex = 23;
+            btnBestCatchForTheYear.Text = "Years Catch";
+            btnBestCatchForTheYear.UseVisualStyleBackColor = true;
             // 
             // btnLogout
             // 
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLogout.Location = new System.Drawing.Point(210, 308);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(107, 48);
-            this.btnLogout.TabIndex = 25;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogout.Location = new Point(184, 231);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(94, 36);
+            btnLogout.TabIndex = 25;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = true;
             // 
             // btnCaptains
             // 
-            this.btnCaptains.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCaptains.Location = new System.Drawing.Point(43, 172);
-            this.btnCaptains.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCaptains.Name = "btnCaptains";
-            this.btnCaptains.Size = new System.Drawing.Size(107, 44);
-            this.btnCaptains.TabIndex = 26;
-            this.btnCaptains.Text = "Captains";
-            this.btnCaptains.UseVisualStyleBackColor = true;
-            this.btnCaptains.Click += new System.EventHandler(this.btnCaptains_Click);
+            btnCaptains.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCaptains.Location = new Point(38, 129);
+            btnCaptains.Name = "btnCaptains";
+            btnCaptains.Size = new Size(94, 33);
+            btnCaptains.TabIndex = 26;
+            btnCaptains.Text = "Captains";
+            btnCaptains.UseVisualStyleBackColor = true;
+            btnCaptains.Click += btnCaptains_Click;
             // 
             // btnCatches
             // 
-            this.btnCatches.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCatches.Location = new System.Drawing.Point(156, 172);
-            this.btnCatches.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCatches.Name = "btnCatches";
-            this.btnCatches.Size = new System.Drawing.Size(107, 44);
-            this.btnCatches.TabIndex = 27;
-            this.btnCatches.Text = "Catches";
-            this.btnCatches.UseVisualStyleBackColor = true;
-            this.btnCatches.Click += new System.EventHandler(this.btnCatches_Click);
+            btnCatches.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCatches.Location = new Point(136, 129);
+            btnCatches.Name = "btnCatches";
+            btnCatches.Size = new Size(94, 33);
+            btnCatches.TabIndex = 27;
+            btnCatches.Text = "Catches";
+            btnCatches.UseVisualStyleBackColor = true;
+            btnCatches.Click += btnCatches_Click;
             // 
             // btnTrips
             // 
-            this.btnTrips.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnTrips.Location = new System.Drawing.Point(269, 172);
-            this.btnTrips.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnTrips.Name = "btnTrips";
-            this.btnTrips.Size = new System.Drawing.Size(107, 44);
-            this.btnTrips.TabIndex = 28;
-            this.btnTrips.Text = "Trips";
-            this.btnTrips.UseVisualStyleBackColor = true;
-            this.btnTrips.Click += new System.EventHandler(this.btnTrips_Click);
+            btnTrips.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTrips.Location = new Point(235, 129);
+            btnTrips.Name = "btnTrips";
+            btnTrips.Size = new Size(94, 33);
+            btnTrips.TabIndex = 28;
+            btnTrips.Text = "Trips";
+            btnTrips.UseVisualStyleBackColor = true;
+            btnTrips.Click += btnTrips_Click;
             // 
             // btnInspector
             // 
-            this.btnInspector.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnInspector.Location = new System.Drawing.Point(382, 172);
-            this.btnInspector.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnInspector.Name = "btnInspector";
-            this.btnInspector.Size = new System.Drawing.Size(107, 44);
-            this.btnInspector.TabIndex = 29;
-            this.btnInspector.Text = "Inspector";
-            this.btnInspector.UseVisualStyleBackColor = true;
-            this.btnInspector.Click += new System.EventHandler(this.btnInspector_Click);
+            btnInspector.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnInspector.Location = new Point(334, 129);
+            btnInspector.Name = "btnInspector";
+            btnInspector.Size = new Size(94, 33);
+            btnInspector.TabIndex = 29;
+            btnInspector.Text = "Inspector";
+            btnInspector.UseVisualStyleBackColor = true;
+            btnInspector.Click += btnInspector_Click;
             // 
             // btnMembers
             // 
-            this.btnMembers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMembers.Location = new System.Drawing.Point(156, 236);
-            this.btnMembers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnMembers.Name = "btnMembers";
-            this.btnMembers.Size = new System.Drawing.Size(107, 44);
-            this.btnMembers.TabIndex = 30;
-            this.btnMembers.Text = "Members";
-            this.btnMembers.UseVisualStyleBackColor = true;
-            this.btnMembers.Click += new System.EventHandler(this.btnMembers_Click);
+            btnMembers.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnMembers.Location = new Point(136, 177);
+            btnMembers.Name = "btnMembers";
+            btnMembers.Size = new Size(94, 33);
+            btnMembers.TabIndex = 30;
+            btnMembers.Text = "Members";
+            btnMembers.UseVisualStyleBackColor = true;
+            btnMembers.Click += btnMembers_Click;
             // 
             // btnOwners
             // 
-            this.btnOwners.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnOwners.Location = new System.Drawing.Point(269, 236);
-            this.btnOwners.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnOwners.Name = "btnOwners";
-            this.btnOwners.Size = new System.Drawing.Size(107, 44);
-            this.btnOwners.TabIndex = 31;
-            this.btnOwners.Text = "Owners";
-            this.btnOwners.UseVisualStyleBackColor = true;
-            this.btnOwners.Click += new System.EventHandler(this.btnOwners_Click);
-            // 
-            // lblTovaShteGoIztriqIBezTova
-            // 
-            this.lblTovaShteGoIztriqIBezTova.AutoSize = true;
-            this.lblTovaShteGoIztriqIBezTova.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTovaShteGoIztriqIBezTova.Location = new System.Drawing.Point(382, 363);
-            this.lblTovaShteGoIztriqIBezTova.Name = "lblTovaShteGoIztriqIBezTova";
-            this.lblTovaShteGoIztriqIBezTova.Size = new System.Drawing.Size(400, 37);
-            this.lblTovaShteGoIztriqIBezTova.TabIndex = 32;
-            this.lblTovaShteGoIztriqIBezTova.Text = "Тези ще ги преместя спокойно";
+            btnOwners.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnOwners.Location = new Point(235, 177);
+            btnOwners.Name = "btnOwners";
+            btnOwners.Size = new Size(94, 33);
+            btnOwners.TabIndex = 31;
+            btnOwners.Text = "Owners";
+            btnOwners.UseVisualStyleBackColor = true;
+            btnOwners.Click += btnOwners_Click;
             // 
             // frmAdminsPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 435);
-            this.Controls.Add(this.lblTovaShteGoIztriqIBezTova);
-            this.Controls.Add(this.btnOwners);
-            this.Controls.Add(this.btnMembers);
-            this.Controls.Add(this.btnInspector);
-            this.Controls.Add(this.btnTrips);
-            this.Controls.Add(this.btnCatches);
-            this.Controls.Add(this.btnCaptains);
-            this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.btnBestCatchForTheYear);
-            this.Controls.Add(this.btnTickets);
-            this.Controls.Add(this.btnVessels);
-            this.Controls.Add(this.btnFishingPermits);
-            this.Controls.Add(this.btnUsers);
-            this.Controls.Add(this.lblTables);
-            this.Controls.Add(this.btnGetPermits);
-            this.Controls.Add(this.lblMonths);
-            this.Controls.Add(this.txtMonths);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmAdminsPanel";
-            this.Text = "Admin Panel";
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(721, 326);
+            Controls.Add(btnOwners);
+            Controls.Add(btnMembers);
+            Controls.Add(btnInspector);
+            Controls.Add(btnTrips);
+            Controls.Add(btnCatches);
+            Controls.Add(btnCaptains);
+            Controls.Add(btnLogout);
+            Controls.Add(btnBestCatchForTheYear);
+            Controls.Add(btnTickets);
+            Controls.Add(btnVessels);
+            Controls.Add(btnFishingPermits);
+            Controls.Add(btnUsers);
+            Controls.Add(lblTables);
+            Controls.Add(btnGetPermits);
+            Controls.Add(lblMonths);
+            Controls.Add(txtMonths);
+            Name = "frmAdminsPanel";
+            Text = "Admin Panel";
+            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -294,6 +266,5 @@
         private Button btnTrips;
         private Button btnCatches;
         private Button btnCaptains;
-        private Label lblTovaShteGoIztriqIBezTova;
     }
 }
