@@ -28,144 +28,151 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
-            this.lblTripStart = new System.Windows.Forms.Label();
-            this.lblTripEnd = new System.Windows.Forms.Label();
-            this.lblCatchAmount = new System.Windows.Forms.Label();
-            this.dtpTripStart = new System.Windows.Forms.DateTimePicker();
-            this.dtpTripEnd = new System.Windows.Forms.DateTimePicker();
-            this.txtCatchAmount = new System.Windows.Forms.TextBox();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.dgvTrip = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTrip)).BeginInit();
-            this.SuspendLayout();
+            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            lblTripStart = new Label();
+            lblTripEnd = new Label();
+            lblCatchAmount = new Label();
+            dtpTripStart = new DateTimePicker();
+            dtpTripEnd = new DateTimePicker();
+            txtCatchAmount = new TextBox();
+            btnEdit = new Button();
+            btnDelete = new Button();
+            btnCreate = new Button();
+            dgvTrip = new DataGridView();
+            cbVessels = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dgvTrip).BeginInit();
+            SuspendLayout();
             // 
             // sqlCommand1
             // 
-            this.sqlCommand1.CommandTimeout = 30;
-            this.sqlCommand1.Connection = null;
-            this.sqlCommand1.Notification = null;
-            this.sqlCommand1.Transaction = null;
+            sqlCommand1.CommandTimeout = 30;
+            sqlCommand1.Connection = null;
+            sqlCommand1.Notification = null;
+            sqlCommand1.Transaction = null;
             // 
             // lblTripStart
             // 
-            this.lblTripStart.AutoSize = true;
-            this.lblTripStart.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTripStart.Location = new System.Drawing.Point(88, 62);
-            this.lblTripStart.Name = "lblTripStart";
-            this.lblTripStart.Size = new System.Drawing.Size(101, 28);
-            this.lblTripStart.TabIndex = 64;
-            this.lblTripStart.Text = "Trip Start";
+            lblTripStart.AutoSize = true;
+            lblTripStart.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTripStart.Location = new Point(77, 46);
+            lblTripStart.Name = "lblTripStart";
+            lblTripStart.Size = new Size(79, 21);
+            lblTripStart.TabIndex = 64;
+            lblTripStart.Text = "Trip Start";
             // 
             // lblTripEnd
             // 
-            this.lblTripEnd.AutoSize = true;
-            this.lblTripEnd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTripEnd.Location = new System.Drawing.Point(100, 107);
-            this.lblTripEnd.Name = "lblTripEnd";
-            this.lblTripEnd.Size = new System.Drawing.Size(89, 28);
-            this.lblTripEnd.TabIndex = 65;
-            this.lblTripEnd.Text = "Trip End";
+            lblTripEnd.AutoSize = true;
+            lblTripEnd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTripEnd.Location = new Point(88, 80);
+            lblTripEnd.Name = "lblTripEnd";
+            lblTripEnd.Size = new Size(72, 21);
+            lblTripEnd.TabIndex = 65;
+            lblTripEnd.Text = "Trip End";
             // 
             // lblCatchAmount
             // 
-            this.lblCatchAmount.AutoSize = true;
-            this.lblCatchAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCatchAmount.Location = new System.Drawing.Point(42, 156);
-            this.lblCatchAmount.Name = "lblCatchAmount";
-            this.lblCatchAmount.Size = new System.Drawing.Size(147, 28);
-            this.lblCatchAmount.TabIndex = 66;
-            this.lblCatchAmount.Text = "Catch Amount";
+            lblCatchAmount.AutoSize = true;
+            lblCatchAmount.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCatchAmount.Location = new Point(37, 117);
+            lblCatchAmount.Name = "lblCatchAmount";
+            lblCatchAmount.Size = new Size(119, 21);
+            lblCatchAmount.TabIndex = 66;
+            lblCatchAmount.Text = "Catch Amount";
             // 
             // dtpTripStart
             // 
-            this.dtpTripStart.Location = new System.Drawing.Point(220, 64);
-            this.dtpTripStart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtpTripStart.Name = "dtpTripStart";
-            this.dtpTripStart.Size = new System.Drawing.Size(243, 27);
-            this.dtpTripStart.TabIndex = 75;
+            dtpTripStart.Location = new Point(192, 48);
+            dtpTripStart.Name = "dtpTripStart";
+            dtpTripStart.Size = new Size(213, 23);
+            dtpTripStart.TabIndex = 75;
             // 
             // dtpTripEnd
             // 
-            this.dtpTripEnd.Location = new System.Drawing.Point(220, 109);
-            this.dtpTripEnd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtpTripEnd.Name = "dtpTripEnd";
-            this.dtpTripEnd.Size = new System.Drawing.Size(243, 27);
-            this.dtpTripEnd.TabIndex = 76;
+            dtpTripEnd.Location = new Point(192, 82);
+            dtpTripEnd.Name = "dtpTripEnd";
+            dtpTripEnd.Size = new Size(213, 23);
+            dtpTripEnd.TabIndex = 76;
             // 
             // txtCatchAmount
             // 
-            this.txtCatchAmount.Location = new System.Drawing.Point(220, 156);
-            this.txtCatchAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCatchAmount.Name = "txtCatchAmount";
-            this.txtCatchAmount.Size = new System.Drawing.Size(243, 27);
-            this.txtCatchAmount.TabIndex = 77;
+            txtCatchAmount.Location = new Point(192, 117);
+            txtCatchAmount.Name = "txtCatchAmount";
+            txtCatchAmount.Size = new Size(213, 23);
+            txtCatchAmount.TabIndex = 77;
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(175, 267);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(109, 40);
-            this.btnEdit.TabIndex = 80;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Location = new Point(149, 236);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(95, 30);
+            btnEdit.TabIndex = 80;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(116, 219);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(109, 40);
-            this.btnDelete.TabIndex = 79;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Location = new Point(98, 200);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(95, 30);
+            btnDelete.TabIndex = 79;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(231, 219);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(109, 40);
-            this.btnCreate.TabIndex = 78;
-            this.btnCreate.Text = "Create ";
-            this.btnCreate.UseVisualStyleBackColor = true;
+            btnCreate.Location = new Point(198, 200);
+            btnCreate.Name = "btnCreate";
+            btnCreate.Size = new Size(95, 30);
+            btnCreate.TabIndex = 78;
+            btnCreate.Text = "Create ";
+            btnCreate.UseVisualStyleBackColor = true;
+            btnCreate.Click += btnCreate_Click;
             // 
             // dgvTrip
             // 
-            this.dgvTrip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTrip.Location = new System.Drawing.Point(490, 64);
-            this.dgvTrip.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvTrip.Name = "dgvTrip";
-            this.dgvTrip.RowHeadersWidth = 51;
-            this.dgvTrip.RowTemplate.Height = 25;
-            this.dgvTrip.Size = new System.Drawing.Size(421, 200);
-            this.dgvTrip.TabIndex = 81;
-            this.dgvTrip.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTicket_CellClick);
+            dgvTrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTrip.Location = new Point(429, 48);
+            dgvTrip.Name = "dgvTrip";
+            dgvTrip.RowHeadersWidth = 51;
+            dgvTrip.RowTemplate.Height = 25;
+            dgvTrip.Size = new Size(368, 150);
+            dgvTrip.TabIndex = 81;
+            dgvTrip.CellClick += dgvTicket_CellClick;
+            // 
+            // cbVessels
+            // 
+            cbVessels.FormattingEnabled = true;
+            cbVessels.Location = new Point(140, 162);
+            cbVessels.Name = "cbVessels";
+            cbVessels.Size = new Size(121, 23);
+            cbVessels.TabIndex = 82;
+            cbVessels.Text = "Vessels";
             // 
             // frmFishingTrip
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 370);
-            this.Controls.Add(this.dgvTrip);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnCreate);
-            this.Controls.Add(this.txtCatchAmount);
-            this.Controls.Add(this.dtpTripEnd);
-            this.Controls.Add(this.dtpTripStart);
-            this.Controls.Add(this.lblCatchAmount);
-            this.Controls.Add(this.lblTripEnd);
-            this.Controls.Add(this.lblTripStart);
-            this.Name = "frmFishingTrip";
-            this.Text = "Fishing Trip";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTrip)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(839, 278);
+            Controls.Add(cbVessels);
+            Controls.Add(dgvTrip);
+            Controls.Add(btnEdit);
+            Controls.Add(btnDelete);
+            Controls.Add(btnCreate);
+            Controls.Add(txtCatchAmount);
+            Controls.Add(dtpTripEnd);
+            Controls.Add(dtpTripStart);
+            Controls.Add(lblCatchAmount);
+            Controls.Add(lblTripEnd);
+            Controls.Add(lblTripStart);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "frmFishingTrip";
+            Text = "Fishing Trip";
+            ((System.ComponentModel.ISupportInitialize)dgvTrip).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -181,5 +188,6 @@
         private Button btnDelete;
         private Button btnCreate;
         private DataGridView dgvTrip;
+        private ComboBox cbVessels;
     }
 }

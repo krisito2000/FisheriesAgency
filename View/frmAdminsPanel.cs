@@ -140,9 +140,10 @@ namespace FisheriesAgency.View
             frmOwner.ShowDialog();
         }
 
-        private void frmAdminsPanel_Load(object sender, EventArgs e)
+        private void btnOther_Click(object sender, EventArgs e)
         {
-
+            Admin_Panel_Buttons.frmOther frmOther = new Admin_Panel_Buttons.frmOther();
+            frmOther.ShowDialog();
         }
     }
 }

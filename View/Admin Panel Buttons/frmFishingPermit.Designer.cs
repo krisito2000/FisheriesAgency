@@ -176,7 +176,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 354);
+            ClientSize = new Size(800, 356);
             Controls.Add(cbVessels);
             Controls.Add(dtpExpirationDate);
             Controls.Add(dtpIssueDate);

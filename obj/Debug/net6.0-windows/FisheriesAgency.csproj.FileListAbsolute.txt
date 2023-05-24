@@ -406,3 +406,4 @@ C:\Users\student\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\refint\Fi
 C:\Users\student\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.pdb
 C:\Users\student\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.genruntimeconfig.cache
 C:\Users\student\Source\Repos\FisheriesAgency\obj\Debug\net6.0-windows\ref\FisheriesAgency.dll
+C:\Users\krisito\source\repos\FisheriesAgency\obj\Debug\net6.0-windows\FisheriesAgency.View.Admin_Panel_Buttons.frmOther.resources

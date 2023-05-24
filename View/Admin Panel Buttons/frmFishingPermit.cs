@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static FisheriesAgency.View.Admin_Panel_Buttons.frmVessel;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
@@ -29,34 +30,37 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             dgvPermits.DataSource = dt;
         }
 
-        private static void UpdateVesselsComboBox(ComboBox cbVessels)
+        public frmFishingPermit()
         {
-            cbVessels.Items.Clear();
-            using (SqlConnection con = new SqlConnection(Program.connectionString))
+            InitializeComponent();
+            UpdatePermitsDataGridView(dgvPermit);
+
+            using (SqlConnection connection = new SqlConnection(Program.connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT VesselId, InternationalNumber FROM [Vessel]", con))
+                connection.Open();
+
+                string sql = "SELECT VesselId, InternationalNumber FROM [Vessel]";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
                 {
-                    con.Open();
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
                             int vesselId = reader.GetInt32(0);
-                            string internationalNumber = reader.GetString(1);
+                            string intNum = reader.GetString(1);
 
-                            // Add the international number to the ComboBox items and store the vessel ID as the item value
-                            cbVessels.Items.Add(new ComboBoxItem(internationalNumber, vesselId));
+                            // Add the name to the ComboBox items and store the ID as the item value
+                            cbVessels.Items.Add(new ComboBoxVessel(intNum, vesselId));
                         }
                     }
                 }
             }
         }
-
-        public frmFishingPermit()
+        private void dgvReset()
         {
-            InitializeComponent();
             UpdatePermitsDataGridView(dgvPermit);
-            UpdateVesselsComboBox(cbVessels);
+            dgvPermit.Refresh();
         }
 
         private void dgvPermit_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -72,10 +76,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 string vesselId = row.Cells["VesselId"].Value.ToString().Trim();
 
                 txtPermitNumber.Text = permitNumber;
+
                 dtpIssueDate.Value = issueDate;
                 dtpExpirationDate.Value = expirationDate;
                 txtEquipment.Text = equipment;
-                cbVessels.SelectedItem = cbVessels.Items.Cast<ComboBoxItem>().FirstOrDefault(item => item.Value.ToString() == vesselId);
+                cbVessels.SelectedItem = cbVessels.Items.Cast<ComboBoxVessel>().FirstOrDefault(item => item.VesselId.ToString() == vesselId);
             }
         }
 
@@ -84,39 +89,34 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             if (cbVessels.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select a vessel.");
+                cbVessels.ForeColor = Color.Red;
                 return;
             }
 
-            ComboBoxItem selectedVessel = (ComboBoxItem)cbVessels.SelectedItem;
-
-            int vesselId = (int)selectedVessel.Value;
+            ComboBoxVessel selectedVessel = (ComboBoxVessel)cbVessels.SelectedItem;
+            int vesselId = selectedVessel.VesselId;
 
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
             {
                 connection.Open();
 
                 // Create a SQL INSERT statement with parameter placeholders
-                string sql = "INSERT INTO [FishingPermit] (PermitNumber, IssueDate, ExpirationDate, Equipment, VesselId) " +
+                string sql = "INSERT INTO FishingPermit (PermitNumber, IssueDate, ExpirationDate, Equipment, VesselId) " +
                              "VALUES (@PermitNumber, @IssueDate, @ExpirationDate, @Equipment, @VesselId)";
 
                 // Create a SqlCommand object with the SQL statement and connection
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
-                    // Generate a unique permit number
-                    string permitNumber = GeneratePermitNumber();
-
-                    // Set the parameter values from the controls and selected vessel ID
-                    command.Parameters.AddWithValue("@PermitNumber", permitNumber);
-                    command.Parameters.AddWithValue("@IssueDate", dtpIssueDate.Value);
-                    command.Parameters.AddWithValue("@ExpirationDate", dtpExpirationDate.Value);
+                    // Set the parameter values from the form controls
+                    command.Parameters.AddWithValue("@PermitNumber", txtPermitNumber.Text);
+                    command.Parameters.AddWithValue("@IssueDate", dtpIssueDate.Value.Date);
+                    command.Parameters.AddWithValue("@ExpirationDate", dtpExpirationDate.Value.Date);
                     command.Parameters.AddWithValue("@Equipment", txtEquipment.Text);
                     command.Parameters.AddWithValue("@VesselId", vesselId);
 
                     // Execute the SQL command
                     command.ExecuteNonQuery();
-
-                    // Refresh the DataGridView
-                    UpdatePermitsDataGridView(dgvPermit);
+                    dgvReset();
                 }
             }
         }
@@ -158,51 +158,52 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
 
             DataGridViewRow row = dgvPermit.SelectedRows[0];
-
             int permitId = (int)row.Cells["PermitId"].Value;
+            string permitNumber = txtPermitNumber.Text.Trim();
+            DateTime issueDate = dtpIssueDate.Value;
+            DateTime expirationDate = dtpExpirationDate.Value;
+            string equipment = txtEquipment.Text.Trim();
 
-            ComboBoxItem selectedVessel = (ComboBoxItem)cbVessels.SelectedItem;
-            int vesselId = (int)selectedVessel.Value;
+            ComboBoxVessel selectedVessel = (ComboBoxVessel)cbVessels.SelectedItem;
+            int vesselId = (int)selectedVessel.VesselId;
 
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
             {
                 connection.Open();
 
-                SqlCommand updateCommand = new SqlCommand("UPDATE [FishingPermit] SET IssueDate = @IssueDate, ExpirationDate = @ExpirationDate, Equipment = @Equipment, VesselId = @VesselId WHERE PermitId = @PermitId", connection);
-                updateCommand.Parameters.AddWithValue("@IssueDate", dtpIssueDate.Value);
-                updateCommand.Parameters.AddWithValue("@ExpirationDate", dtpExpirationDate.Value);
-                updateCommand.Parameters.AddWithValue("@Equipment", txtEquipment.Text);
-                updateCommand.Parameters.AddWithValue("@VesselId", vesselId);
-                updateCommand.Parameters.AddWithValue("@PermitId", permitId);
-                updateCommand.ExecuteNonQuery();
+                string sql = "UPDATE [FishingPermit] SET PermitNumber = @PermitNumber, IssueDate = @IssueDate, ExpirationDate = @ExpirationDate, Equipment = @Equipment,VesselId = @VesselId WHERE PermitId = @PermitId";
 
-                connection.Close();
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@PermitNumber", permitNumber);
+                    command.Parameters.AddWithValue("@IssueDate", issueDate);
+                    command.Parameters.AddWithValue("@ExpirationDate", expirationDate);
+                    command.Parameters.AddWithValue("@Equipment", equipment);
+
+
+                    command.Parameters.AddWithValue("@VesselId", vesselId);
+                    command.Parameters.AddWithValue("@PermitId", permitId);
+
+                    command.ExecuteNonQuery();
+                    dgvReset();
+                }
             }
-
-            UpdatePermitsDataGridView(dgvPermit);
         }
 
-        private string GeneratePermitNumber()
+        public class ComboBoxVessel
         {
-            // Generate a unique permit number here or use a specific logic
-            // Return the generated permit number
-            return Guid.NewGuid().ToString();
-        }
+            public int VesselId { get; set; }
+            public string InternationalNumber { get; set; }
 
-        public class ComboBoxItem
-        {
-            public object Value { get; set; }
-            public string Text { get; set; }
-
-            public ComboBoxItem(string text, object value)
+            public ComboBoxVessel(string internationalNumber, int vesselId)
             {
-                Text = text;
-                Value = value;
+                InternationalNumber = internationalNumber;
+                VesselId = vesselId;
             }
 
             public override string ToString()
             {
-                return Text;
+                return InternationalNumber;
             }
         }
     }

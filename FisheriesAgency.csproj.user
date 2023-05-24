@@ -19,6 +19,9 @@
     <Compile Update="View\Admin Panel Buttons\frmMember.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="View\Admin Panel Buttons\frmOther.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="View\Admin Panel Buttons\frmOwner.cs">
       <SubType>Form</SubType>
     </Compile>
