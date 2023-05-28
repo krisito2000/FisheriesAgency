@@ -8,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static FisheriesAgency.View.Admin_Panel_Buttons.frmFishingPermit;
+using static FisheriesAgency.View.Admin_Panel_Buttons.frmTicket;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
@@ -78,37 +80,51 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            string query = "INSERT INTO [FishingTrip] (Trip_Start, Trip_End, Catch_Amount) VALUES (@TripStart, @TripEnd, @CatchAmount)";
+            // Get the selected member from the ComboBox
+            ComboBoxVessel selectedVessel = (ComboBoxVessel)cbVessels.SelectedItem;
 
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            if (selectedVessel != null) 
             {
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@TripStart", dtpTripStart.Value.Date);
-                    command.Parameters.AddWithValue("@TripEnd", dtpTripEnd.Value.Date);
-                    command.Parameters.AddWithValue("@CatchAmount", txtCatchAmount.Text);
+                int vesselId = selectedVessel.VesselId;
 
-                    try
+                string query = "INSERT INTO [FishingTrip] (TripStart, TripEnd, CatchAmount, VesselId) VALUES (@TripStart, @TripEnd, @CatchAmount, @VesselId)";
+
+                using (SqlConnection connection = new SqlConnection(Program.connectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        connection.Open();
-                        int rowsAffected = command.ExecuteNonQuery();
-                        if (rowsAffected > 0)
+                        command.Parameters.AddWithValue("@TripStart", dtpTripStart.Value.Date);
+                        command.Parameters.AddWithValue("@TripEnd", dtpTripEnd.Value.Date);
+                        command.Parameters.AddWithValue("@CatchAmount", txtCatchAmount.Text);
+                        command.Parameters.AddWithValue("@VesselId", vesselId);
+
+                        try
                         {
-                            // Insert successful
-                            MessageBox.Show("Fishing trip created successfully.");
+                            connection.Open();
+                            int rowsAffected = command.ExecuteNonQuery();
+                            if (rowsAffected > 0)
+                            {
+                                // Insert successful
+                                MessageBox.Show("Fishing trip created successfully.");
+                                dgvReset();
+                            }
+                            else
+                            {
+                                // Insert failed
+                                MessageBox.Show("Failed to create fishing trip.");
+                            }
                         }
-                        else
+                        catch (SqlException ex)
                         {
-                            // Insert failed
-                            MessageBox.Show("Failed to create fishing trip.");
+                            // Handle SQL exception
+                            MessageBox.Show("An error occurred: " + ex.Message);
                         }
-                    }
-                    catch (SqlException ex)
-                    {
-                        // Handle SQL exception
-                        MessageBox.Show("An error occurred: " + ex.Message);
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Invalid vessel selection!");
             }
 
         }
@@ -121,7 +137,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 return;
             }
 
-            int permitId = (int)dgvTrip.SelectedRows[0].Cells["TripId"].Value;
+            int tripId = (int)dgvTrip.SelectedRows[0].Cells["TripId"].Value;
 
             DialogResult result = MessageBox.Show("Are you sure you want to delete this fishing permit?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
@@ -130,8 +146,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 {
                     connection.Open();
 
-                    SqlCommand deleteCommand = new SqlCommand("DELETE FROM [FishingTrip] WHERE PermitId = @PermitId", connection);
-                    deleteCommand.Parameters.AddWithValue("@TripId", permitId);
+                    SqlCommand deleteCommand = new SqlCommand("DELETE FROM [FishingTrip] WHERE TripId = @TripId", connection);
+                    deleteCommand.Parameters.AddWithValue("@TripId", tripId);
                     deleteCommand.ExecuteNonQuery();
 
                     connection.Close();
@@ -143,7 +159,59 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            // Check if a row is selected
+            if (dgvTrip.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to update.");
+                return;
+            }
 
+            // Get the selected row
+            DataGridViewRow row = dgvTrip.SelectedRows[0];
+
+            // Get the ticket ID from the selected row
+            int tripId = (int)row.Cells["TripId"].Value;
+
+            // Get the new start date, end date, price, and other values from the respective controls
+            string newTripStart = dtpTripStart.Value.ToString("yyyy-MM-dd");
+            string newTripEnd = dtpTripEnd.Value.ToString("yyyy-MM-dd");
+            string newCatch = txtCatchAmount.Text.Trim();
+
+            // Update the ticket in the database
+            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            {
+                connection.Open();
+
+                SqlCommand updateCommand = new SqlCommand("UPDATE [FishingTrip] SET TripStart = @TripStart, TripEnd = @TripEnd, CatchAmount = @CatchAmount WHERE TripID = @TripId", connection);
+                updateCommand.Parameters.AddWithValue("@TripStart", newTripStart);
+                updateCommand.Parameters.AddWithValue("@TripEnd", newTripEnd);
+                updateCommand.Parameters.AddWithValue("@CatchAmount", newCatch);
+                updateCommand.Parameters.AddWithValue("@TripId", tripId);
+                // Add parameters for other relevant columns if needed
+
+                updateCommand.ExecuteNonQuery();
+
+                connection.Close();
+            }
+
+            // Refresh the DataGridView to reflect the updated data
+            UpdateUsersDataGridView(dgvTrip);
+        }
+        public class Vessel
+        {
+            public int VesselId { get; set; }
+            public string IN { get; set; }
+
+            public Vessel(int vesselId, string In)
+            {
+                VesselId = vesselId;
+                IN = In;
+            }
+
+            public override string ToString()
+            {
+                return IN;
+            }
         }
     }
 }

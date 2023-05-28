@@ -69,11 +69,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             {
                 DataGridViewRow row = dgvPermit.Rows[e.RowIndex];
 
-                string permitNumber = row.Cells["PermitNumber"].Value.ToString().Trim();
+                string permitNumber = row.Cells["PermitNumber"].Value?.ToString()?.Trim() ?? string.Empty;
                 DateTime issueDate = (DateTime)row.Cells["IssueDate"].Value;
                 DateTime expirationDate = (DateTime)row.Cells["ExpirationDate"].Value;
-                string equipment = row.Cells["Equipment"].Value.ToString().Trim();
-                string vesselId = row.Cells["VesselId"].Value.ToString().Trim();
+                string equipment = row.Cells["Equipment"].Value?.ToString()?.Trim() ?? string.Empty;
+                string vesselId = row.Cells["VesselId"].Value?.ToString()?.Trim() ?? string.Empty;
 
                 txtPermitNumber.Text = permitNumber;
 

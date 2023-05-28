@@ -110,37 +110,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 }
             }
         }
-
-        private Member GetMember(int memberId)
-        {
-            Member member = null;
-
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                string sql = "SELECT MemberId, Name, Address FROM Member WHERE MemberId = @MemberId";
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    command.Parameters.AddWithValue("@MemberId", memberId);
-
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            int memberIdValue = reader.GetInt32(0);
-                            string name = reader.GetString(1);
-                            string address = reader.GetString(2);
-
-                            member = new Member(memberIdValue, name);
-                        }
-                    }
-                }
-            }
-
-            return member;
-        }
         public class Member
         {
             public int MemberId { get; set; }
@@ -163,19 +132,14 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         private void btnCreate_Click(object sender, EventArgs e)
         {
             // Get the selected member from the ComboBox
-            Member selectedMember = cmbMember.SelectedItem as Member;
+            Member selectedMember = (Member)cmbMember.SelectedItem;
 
             // Check if a valid member is selected
             if (selectedMember != null)
             {
                 // Retrieve the selected member details
                 int memberId = selectedMember.MemberId;
-                string memberName = selectedMember.Name;
 
-                // Use the selected member ID and name for further processing
-                // ...
-
-                // Example: Inserting ticket details using the retrieved member information
                 using (SqlConnection connection = new SqlConnection(Program.connectionString))
                 {
                     connection.Open();
@@ -287,6 +251,5 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             // Refresh the DataGridView to reflect the updated data
             UpdateUsersDataGridView(dgvTicket);
         }
-        //Todo: make create, edit and delete buttons to work
     }
 }

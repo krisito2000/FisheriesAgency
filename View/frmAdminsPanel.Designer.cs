@@ -138,7 +138,7 @@
             // 
             // btnTrips
             // 
-            btnTrips.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTrips.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnTrips.Location = new Point(245, 131);
             btnTrips.Name = "btnTrips";
             btnTrips.Size = new Size(94, 33);
