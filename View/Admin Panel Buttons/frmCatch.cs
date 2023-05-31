@@ -67,8 +67,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             {
                 DataGridViewRow row = dgvCatch.Rows[e.RowIndex];
 
-                string weight = row.Cells["Weight"].Value.ToString().Trim();
-                string quantity = row.Cells["Quantity"].Value.ToString().Trim();
+                string weight = row.Cells["Weight"].Value?.ToString()?.Trim() ?? string.Empty;
+                string quantity = row.Cells["Quantity"].Value?.ToString()?.Trim() ?? string.Empty;
 
                 txtWeight.Text = weight;
                 txtQuantity.Text = quantity;
@@ -95,6 +95,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         private void btnCreate_Click(object sender, EventArgs e)
         {
             Trip selectedTrip = (Trip)cmbTrip.SelectedItem;
+            
             if (selectedTrip != null)
             {
                 int tripId = selectedTrip.TripId;
@@ -129,7 +130,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                             }
 
                             dgvReset();
-                            MessageBox.Show("Catch record created successfully.");
                         }
                     }
                     catch (Exception ex)
@@ -140,6 +140,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
             else
             {
+                cmbTrip.ForeColor = Color.Red;
                 MessageBox.Show("Invalid trip selection!");
             }
         }
@@ -193,7 +194,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             string weight = txtWeight.Text.Trim();
             string quantity = txtQuantity.Text.Trim();
 
-            Trip selectedTrip = cmbTrip.SelectedItem as Trip;
+            Trip selectedTrip = (Trip)cmbTrip.SelectedItem;
             if (selectedTrip == null)
             {
                 MessageBox.Show("Invalid trip selection!");
@@ -219,6 +220,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                     dgvReset();
                 }
             }
+        }
+
+        private void cmbTrip_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbTrip.ForeColor = Color.Black;
         }
     }
 }

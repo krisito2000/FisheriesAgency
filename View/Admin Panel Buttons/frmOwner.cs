@@ -108,28 +108,32 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             {
                 using (SqlConnection connection = new SqlConnection(Program.connectionString))
                 {
-                    connection.Open();
-
-                    string sql = "DELETE FROM Owner WHERE name = @Name AND address = @Address";
-
-                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this member?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
                     {
-                        command.Parameters.AddWithValue("@Name", name);
-                        command.Parameters.AddWithValue("@Address", address);
+                        connection.Open();
 
+                        string sql = "DELETE FROM Owner WHERE name = @Name AND address = @Address";
 
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
+                        using (SqlCommand command = new SqlCommand(sql, connection))
                         {
-                            // Clear the text boxes
-                            txtName.Text = string.Empty;
-                            txtAddress.Text = string.Empty;
-                            dgvReset();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Owner not found or deletion failed.");
+                            command.Parameters.AddWithValue("@Name", name);
+                            command.Parameters.AddWithValue("@Address", address);
+
+
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                // Clear the text boxes
+                                txtName.Text = string.Empty;
+                                txtAddress.Text = string.Empty;
+                                dgvReset();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Owner not found or deletion failed.");
+                            }
                         }
                     }
                 }
@@ -161,13 +165,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 checkCommand.Parameters.AddWithValue("@name", newName);
                 checkCommand.Parameters.AddWithValue("@address", newAddress);
                 checkCommand.Parameters.AddWithValue("@OwnerId", ownerId);
-                int count = (int)checkCommand.ExecuteScalar();
-
-                if (count > 0)
-                {
-                    MessageBox.Show("Owner already exists. Please choose a different username.");
-                    return;
-                }
             }
 
             using (SqlConnection connection = new SqlConnection(Program.connectionString))

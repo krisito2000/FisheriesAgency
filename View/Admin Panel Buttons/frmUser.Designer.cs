@@ -50,6 +50,7 @@
             btnEdit.TabIndex = 65;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // lbIPassword
             // 
@@ -95,6 +96,7 @@
             btnDelete.TabIndex = 60;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btncreate
             // 
@@ -118,6 +120,7 @@
             btnViewPassword.Size = new Size(27, 27);
             btnViewPassword.TabIndex = 66;
             btnViewPassword.UseVisualStyleBackColor = false;
+            btnViewPassword.Click += btnViewPassword_Click;
             // 
             // cbAdmin
             // 
@@ -139,6 +142,7 @@
             dgvUser.RowTemplate.Height = 25;
             dgvUser.Size = new Size(442, 195);
             dgvUser.TabIndex = 68;
+            dgvUser.CellClick += dgvUser_CellClick;
             // 
             // frmUser
             // 

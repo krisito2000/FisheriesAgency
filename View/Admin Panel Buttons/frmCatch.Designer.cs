@@ -125,6 +125,7 @@
             cmbTrip.Size = new Size(167, 23);
             cmbTrip.TabIndex = 79;
             cmbTrip.Text = "Select Trip";
+            cmbTrip.SelectedIndexChanged += cmbTrip_SelectedIndexChanged;
             // 
             // frmCatch
             // 

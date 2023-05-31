@@ -32,32 +32,36 @@
             btnGetPermits = new Button();
             lblMonths = new Label();
             txtMonths = new TextBox();
+            dgvOther = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvOther).BeginInit();
             SuspendLayout();
             // 
             // btnBestCatchForTheYear
             // 
-            btnBestCatchForTheYear.Location = new Point(250, 187);
+            btnBestCatchForTheYear.Location = new Point(224, 325);
             btnBestCatchForTheYear.Name = "btnBestCatchForTheYear";
             btnBestCatchForTheYear.Size = new Size(86, 30);
             btnBestCatchForTheYear.TabIndex = 27;
             btnBestCatchForTheYear.Text = "Years Catch";
             btnBestCatchForTheYear.UseVisualStyleBackColor = true;
+            btnBestCatchForTheYear.Click += btnBestCatchForTheYear_Click;
             // 
             // btnGetPermits
             // 
             btnGetPermits.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnGetPermits.Location = new Point(175, 148);
+            btnGetPermits.Location = new Point(135, 59);
             btnGetPermits.Name = "btnGetPermits";
             btnGetPermits.Size = new Size(81, 33);
             btnGetPermits.TabIndex = 26;
             btnGetPermits.Text = "Permits";
             btnGetPermits.UseVisualStyleBackColor = true;
+            btnGetPermits.Click += btnGetPermits_Click;
             // 
             // lblMonths
             // 
             lblMonths.AutoSize = true;
             lblMonths.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMonths.Location = new Point(342, 148);
+            lblMonths.Location = new Point(302, 59);
             lblMonths.Name = "lblMonths";
             lblMonths.Size = new Size(95, 30);
             lblMonths.TabIndex = 25;
@@ -66,22 +70,34 @@
             // txtMonths
             // 
             txtMonths.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMonths.Location = new Point(273, 145);
+            txtMonths.Location = new Point(233, 56);
             txtMonths.Name = "txtMonths";
             txtMonths.Size = new Size(62, 36);
             txtMonths.TabIndex = 24;
+            // 
+            // dgvOther
+            // 
+            dgvOther.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvOther.Location = new Point(58, 127);
+            dgvOther.Name = "dgvOther";
+            dgvOther.RowHeadersWidth = 51;
+            dgvOther.RowTemplate.Height = 25;
+            dgvOther.Size = new Size(443, 164);
+            dgvOther.TabIndex = 90;
             // 
             // frmOther
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(565, 391);
+            Controls.Add(dgvOther);
             Controls.Add(btnBestCatchForTheYear);
             Controls.Add(btnGetPermits);
             Controls.Add(lblMonths);
             Controls.Add(txtMonths);
             Name = "frmOther";
             Text = "frmOther";
+            ((System.ComponentModel.ISupportInitialize)dgvOther).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -92,5 +108,6 @@
         private Button btnGetPermits;
         private Label lblMonths;
         private TextBox txtMonths;
+        private DataGridView dgvOther;
     }
 }

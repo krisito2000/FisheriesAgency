@@ -54,7 +54,7 @@
             // 
             lblTables.AutoSize = true;
             lblTables.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTables.Location = new Point(194, 34);
+            lblTables.Location = new Point(206, 37);
             lblTables.Name = "lblTables";
             lblTables.Size = new Size(73, 30);
             lblTables.TabIndex = 18;
@@ -113,6 +113,7 @@
             btnLogout.TabIndex = 25;
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // btnCaptains
             // 
@@ -127,7 +128,7 @@
             // 
             // btnCatches
             // 
-            btnCatches.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCatches.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnCatches.Location = new Point(146, 131);
             btnCatches.Name = "btnCatches";
             btnCatches.Size = new Size(94, 33);
@@ -196,7 +197,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(506, 312);
+            ClientSize = new Size(485, 312);
             Controls.Add(btnOther);
             Controls.Add(btnOwners);
             Controls.Add(btnMembers);

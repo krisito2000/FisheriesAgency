@@ -69,16 +69,18 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             {
                 DataGridViewRow row = dgvTicket.Rows[e.RowIndex];
 
-                string startDate = row.Cells["StartDate"].Value.ToString().Trim();
-                string endDate = row.Cells["EndDate"].Value.ToString().Trim();
-                string price = row.Cells["Price"].Value.ToString().Trim();
-                string telk = row.Cells["TelkDecisionNum"].Value.ToString().Trim();
+                string startDate = row.Cells["StartDate"].Value?.ToString()?.Trim() ?? string.Empty;
+                string endDate = row.Cells["EndDate"].Value?.ToString()?.Trim() ?? string.Empty;
+                string price = row.Cells["Price"].Value?.ToString()?.Trim() ?? string.Empty;
+                bool pensioner = (bool)row.Cells["IsPensioner"].Value;
+                bool disabled = (bool)row.Cells["IsDisabled"].Value;
+                string telk = row.Cells["TelkDecisionNum"].Value?.ToString()?.Trim() ?? string.Empty;
 
                 dtpStartDate.Text = startDate;
                 dtpEndDate.Text = endDate;
                 txtPrice.Text = price;
-                bool isPensioner = (bool)row.Cells["IsPensioner"].Value;
-                bool isDisabled = (bool)row.Cells["IsDisabled"].Value;
+                cbIsPensioner.Checked = pensioner;
+                cbIsDisabled.Checked = disabled;
                 txtTelk.Text = telk;
             }
         }
@@ -114,7 +116,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         {
             public int MemberId { get; set; }
             public string Name { get; set; }
-            public string Address { get; set; }
 
             public Member(int memberId, string name)
             {
@@ -131,6 +132,13 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            if (cmbMember.SelectedIndex == -1)
+            {
+                cmbMember.ForeColor = Color.Red;
+                MessageBox.Show("Please select an owner and a captain.");
+                return;
+            }
+
             // Get the selected member from the ComboBox
             Member selectedMember = (Member)cmbMember.SelectedItem;
 
@@ -250,6 +258,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
             // Refresh the DataGridView to reflect the updated data
             UpdateUsersDataGridView(dgvTicket);
+        }
+
+        private void cmbMember_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbMember.ForeColor = Color.Black;
         }
     }
 }

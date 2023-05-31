@@ -46,8 +46,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 DataGridViewRow row = dgvMember.Rows[e.RowIndex];
 
 
-                string name = row.Cells["Name"].Value.ToString().Trim();
-                string address = row.Cells["Address"].Value.ToString().Trim();
+                string name = row.Cells["Name"].Value?.ToString()?.Trim() ?? string.Empty;
+                string address = row.Cells["Address"].Value?.ToString()?.Trim() ?? string.Empty;
 
                 txtName.Text = name;
                 txtAddress.Text = address;
@@ -104,30 +104,35 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
             if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(address))
             {
-                using (SqlConnection connection = new SqlConnection(Program.connectionString))
+
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this member?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes) 
                 {
-                    connection.Open();
-
-                    string sql = "DELETE FROM Member WHERE Name = @Name AND Address = @Address";
-
-                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    using (SqlConnection connection = new SqlConnection(Program.connectionString))
                     {
-                        command.Parameters.AddWithValue("@Name", name);
-                        command.Parameters.AddWithValue("@Address", address);
+                        connection.Open();
 
+                        string sql = "DELETE FROM Member WHERE Name = @Name AND Address = @Address";
 
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
+                        using (SqlCommand command = new SqlCommand(sql, connection))
                         {
-                            // Clear the text boxes
-                            txtName.Text = string.Empty;
-                            txtAddress.Text = string.Empty;
-                            dgvReset();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Owner not found or deletion failed.");
+                            command.Parameters.AddWithValue("@Name", name);
+                            command.Parameters.AddWithValue("@Address", address);
+
+
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                // Clear the text boxes
+                                txtName.Text = string.Empty;
+                                txtAddress.Text = string.Empty;
+                                dgvReset();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Owner not found or deletion failed.");
+                            }
                         }
                     }
                 }
@@ -159,13 +164,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 checkCommand.Parameters.AddWithValue("@Name", newName);
                 checkCommand.Parameters.AddWithValue("@Address", newAddress);
                 checkCommand.Parameters.AddWithValue("@MemberId", memberId);
-                int count = (int)checkCommand.ExecuteScalar();
-
-                if (count > 0)
-                {
-                    MessageBox.Show("Member already exists. Please choose a different username.");
-                    return;
-                }
             }
 
             using (SqlConnection connection = new SqlConnection(Program.connectionString))

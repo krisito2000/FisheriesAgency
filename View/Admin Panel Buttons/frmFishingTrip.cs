@@ -64,9 +64,9 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             DataGridViewRow row = dgvTrip.Rows[e.RowIndex];
 
 
-            string tripStart = row.Cells["TripStart"].Value.ToString().Trim();
-            string tripEnd = row.Cells["TripEnd"].Value.ToString().Trim();
-            string catchAmount = row.Cells["CatchAmount"].Value.ToString().Trim();
+            string tripStart = row.Cells["TripStart"].Value?.ToString()?.Trim() ?? string.Empty;
+            string tripEnd = row.Cells["TripEnd"].Value?.ToString()?.Trim() ?? string.Empty;
+            string catchAmount = row.Cells["CatchAmount"].Value?.ToString()?.Trim() ?? string.Empty;
 
             dtpTripStart.Text = tripStart;
             dtpTripEnd.Text = tripEnd;
@@ -80,10 +80,10 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            // Get the selected member from the ComboBox
             ComboBoxVessel selectedVessel = (ComboBoxVessel)cbVessels.SelectedItem;
 
-            if (selectedVessel != null) 
+
+            if (selectedVessel != null)
             {
                 int vesselId = selectedVessel.VesselId;
 
@@ -104,8 +104,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                             int rowsAffected = command.ExecuteNonQuery();
                             if (rowsAffected > 0)
                             {
-                                // Insert successful
-                                MessageBox.Show("Fishing trip created successfully.");
                                 dgvReset();
                             }
                             else
@@ -124,6 +122,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
             else
             {
+                cbVessels.ForeColor = Color.Red;
                 MessageBox.Show("Invalid vessel selection!");
             }
 
@@ -212,6 +211,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             {
                 return IN;
             }
+        }
+
+        private void cbVessels_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbVessels.ForeColor = Color.Black;
         }
     }
 }

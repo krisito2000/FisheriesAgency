@@ -46,8 +46,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 DataGridViewRow row = dgvCaptain.Rows[e.RowIndex];
 
 
-                string name = row.Cells["Name"].Value.ToString().Trim();
-                string address = row.Cells["Address"].Value.ToString().Trim();
+                string name = row.Cells["Name"].Value?.ToString()?.Trim() ?? string.Empty;
+                string address = row.Cells["Address"].Value?.ToString()?.Trim() ?? string.Empty;
 
                 txtName.Text = name;
                 txtAddress.Text = address;
@@ -98,10 +98,15 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string name = txtName.Text.Trim();
-            string address = txtAddress.Text.Trim();
 
-            if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(address))
+            if (dgvCaptain.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to delete.");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this captain?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes) 
             {
                 using (SqlConnection connection = new SqlConnection(Program.connectionString))
                 {
@@ -111,8 +116,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@Name", name);
-                        command.Parameters.AddWithValue("@Address", address);
+                        command.Parameters.AddWithValue("@Name", txtName.Text.Trim());
+                        command.Parameters.AddWithValue("@Address", txtAddress.Text.Trim());
 
 
                         int rowsAffected = command.ExecuteNonQuery();
@@ -130,10 +135,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                         }
                     }
                 }
-            }
-            else
-            {
-                MessageBox.Show("Please enter the name and address of the captain to delete.");
             }
         }
 

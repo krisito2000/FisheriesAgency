@@ -126,21 +126,23 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
             int userId = (int)dgvUser.SelectedRows[0].Cells["UserID"].Value;
 
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this vessel?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
             {
-                connection.Open();
+                using (SqlConnection connection = new SqlConnection(Program.connectionString))
+                {
+                    connection.Open();
 
-                SqlCommand command = new SqlCommand("DELETE FROM [User] WHERE UserID = @UserId", connection);
-                command.Parameters.AddWithValue("@UserId", userId);
+                    SqlCommand command = new SqlCommand("DELETE FROM [User] WHERE UserID = @UserId", connection);
+                    command.Parameters.AddWithValue("@UserId", userId);
 
-                command.ExecuteNonQuery();
-                connection.Close();
+                    command.ExecuteNonQuery();
+                    connection.Close();
 
-                dgvReset();
+                    dgvReset();
+                }
             }
         }
-
-
 
         private void btnEdit_Click(object sender, EventArgs e)
         {

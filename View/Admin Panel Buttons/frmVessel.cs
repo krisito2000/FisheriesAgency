@@ -94,15 +94,15 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 DataGridViewRow row = dgvVessel.Rows[e.RowIndex];
 
 
-                string internationalNumber = row.Cells["InternationalNumber"].Value.ToString().Trim();
-                string callSign = row.Cells["CallSign"].Value.ToString().Trim();
-                string marking = row.Cells["Marking"].Value.ToString().Trim();
-                string length = row.Cells["Length"].Value.ToString().Trim();
-                string width = row.Cells["Width"].Value.ToString().Trim();
-                string tonnage = row.Cells["Tonnage"].Value.ToString().Trim();
-                string gas = row.Cells["Gas"].Value.ToString().Trim();
-                string engine = row.Cells["Engine"].Value.ToString().Trim();
-                string fuel = row.Cells["Fuel"].Value.ToString().Trim();
+                string internationalNumber = row.Cells["InternationalNumber"].Value?.ToString()?.Trim() ?? string.Empty;
+                string callSign = row.Cells["CallSign"].Value?.ToString()?.Trim() ?? string.Empty;
+                string marking = row.Cells["Marking"].Value?.ToString()?.Trim() ?? string.Empty;
+                string length = row.Cells["Length"].Value?.ToString()?.Trim() ?? string.Empty;
+                string width = row.Cells["Width"].Value?.ToString()?.Trim() ?? string.Empty;
+                string tonnage = row.Cells["Tonnage"].Value?.ToString()?.Trim() ?? string.Empty;
+                string gas = row.Cells["Gas"].Value?.ToString()?.Trim() ?? string.Empty;
+                string engine = row.Cells["Engine"].Value?.ToString()?.Trim() ?? string.Empty;
+                string fuel = row.Cells["Fuel"].Value?.ToString()?.Trim() ?? string.Empty;
 
                 txtInternationalNumber.Text = internationalNumber;
                 txtCallSign.Text = callSign;
@@ -120,9 +120,9 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         {
             if (cbOwners.SelectedIndex == -1 || cbCaptains.SelectedIndex == -1)
             {
-                MessageBox.Show("Please select an owner and a captain.");
                 cbOwners.ForeColor = Color.Red;
                 cbCaptains.ForeColor = Color.Red;
+                MessageBox.Show("Please select an owner and a captain.");
                 return;
             }
 

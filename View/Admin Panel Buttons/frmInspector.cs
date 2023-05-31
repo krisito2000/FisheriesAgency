@@ -180,6 +180,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 }
             }
         }
+
+        private void cbVessels_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class ComboBoxItem

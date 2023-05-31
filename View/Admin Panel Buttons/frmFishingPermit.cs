@@ -88,8 +88,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         {
             if (cbVessels.SelectedIndex == -1)
             {
-                MessageBox.Show("Please select a vessel.");
                 cbVessels.ForeColor = Color.Red;
+                MessageBox.Show("Please select a vessel.");
                 return;
             }
 
@@ -205,6 +205,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             {
                 return InternationalNumber;
             }
+        }
+
+        private void cbVessels_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbVessels.ForeColor = Color.Black;
         }
     }
 }

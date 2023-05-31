@@ -171,6 +171,7 @@
             cbVessels.Size = new Size(121, 23);
             cbVessels.TabIndex = 77;
             cbVessels.Text = "Vessels";
+            cbVessels.SelectedIndexChanged += cbVessels_SelectedIndexChanged;
             // 
             // frmFishingPermit
             // 
