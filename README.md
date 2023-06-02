@@ -1,4 +1,4 @@
-# IARA Information System
+# FisheriesAgency
 
 The IARA Information System is a project aimed at managing the business processes of the Executive Agency for Fisheries and Aquaculture (IARA) and facilitating its interactions with various stakeholders. This system encompasses multiple areas of data management, including registers, permits, tickets, inspections, and more. The primary goal is to streamline operations and improve efficiency within the organization.
 
