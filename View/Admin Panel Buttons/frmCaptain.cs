@@ -13,7 +13,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
     public partial class frmCaptain : Form
     {
-        private static void UpdateUsersDataGridView(DataGridView dgvFisheriesAgencyDB)
+        private static void UpdateCaptainsDataGridView(DataGridView dgvFisheriesAgencyDB)
         {
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(Program.connectionString))
@@ -30,13 +30,13 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         }
         private void dgvReset()
         {
-            UpdateUsersDataGridView(dgvCaptain);
+            UpdateCaptainsDataGridView(dgvCaptain);
             dgvCaptain.Refresh();
         }
         public frmCaptain()
         {
             InitializeComponent();
-            UpdateUsersDataGridView(dgvCaptain);
+            UpdateCaptainsDataGridView(dgvCaptain);
         }
 
         private void dgvCaptain_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -173,6 +173,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
                     conn.Close();
                 }
+                connection.Close();
             }
             dgvReset();
         }

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static FisheriesAgency.View.Admin_Panel_Buttons.frmVessel;
+using FisheriesAgency.Model;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
@@ -51,7 +52,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                             string intNum = reader.GetString(1);
 
                             // Add the name to the ComboBox items and store the ID as the item value
-                            cbVessels.Items.Add(new ComboBoxVessel(intNum, vesselId));
+                            cmbVessels.Items.Add(new ComboBoxVessel(intNum, vesselId));
                         }
                     }
                 }
@@ -80,20 +81,20 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 dtpIssueDate.Value = issueDate;
                 dtpExpirationDate.Value = expirationDate;
                 txtEquipment.Text = equipment;
-                cbVessels.SelectedItem = cbVessels.Items.Cast<ComboBoxVessel>().FirstOrDefault(item => item.VesselId.ToString() == vesselId);
+                cmbVessels.SelectedItem = cmbVessels.Items.Cast<ComboBoxVessel>().FirstOrDefault(item => item.VesselId.ToString() == vesselId);
             }
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (cbVessels.SelectedIndex == -1)
+            if (cmbVessels.SelectedIndex == -1)
             {
-                cbVessels.ForeColor = Color.Red;
+                cmbVessels.ForeColor = Color.Red;
                 MessageBox.Show("Please select a vessel.");
                 return;
             }
 
-            ComboBoxVessel selectedVessel = (ComboBoxVessel)cbVessels.SelectedItem;
+            ComboBoxVessel selectedVessel = (ComboBoxVessel)cmbVessels.SelectedItem;
             int vesselId = selectedVessel.VesselId;
 
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
@@ -164,7 +165,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             DateTime expirationDate = dtpExpirationDate.Value;
             string equipment = txtEquipment.Text.Trim();
 
-            ComboBoxVessel selectedVessel = (ComboBoxVessel)cbVessels.SelectedItem;
+            ComboBoxVessel selectedVessel = (ComboBoxVessel)cmbVessels.SelectedItem;
             int vesselId = (int)selectedVessel.VesselId;
 
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
@@ -190,26 +191,9 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
         }
 
-        public class ComboBoxVessel
+        private void cmbVessels_SelectedIndexChanged(object sender, EventArgs e)
         {
-            public int VesselId { get; set; }
-            public string InternationalNumber { get; set; }
-
-            public ComboBoxVessel(string internationalNumber, int vesselId)
-            {
-                InternationalNumber = internationalNumber;
-                VesselId = vesselId;
-            }
-
-            public override string ToString()
-            {
-                return InternationalNumber;
-            }
-        }
-
-        private void cbVessels_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cbVessels.ForeColor = Color.Black;
+            cmbVessels.ForeColor = Color.Black;
         }
     }
 }

@@ -50,8 +50,8 @@
             txtEngine = new TextBox();
             lblFuel = new Label();
             txtFuel = new TextBox();
-            cbOwners = new ComboBox();
-            cbCaptains = new ComboBox();
+            cmbOwners = new ComboBox();
+            cmbCaptains = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvVessel).BeginInit();
             SuspendLayout();
             // 
@@ -255,34 +255,34 @@
             txtFuel.Size = new Size(106, 23);
             txtFuel.TabIndex = 94;
             // 
-            // cbOwners
+            // cmbOwners
             // 
-            cbOwners.AccessibleName = "";
-            cbOwners.FormattingEnabled = true;
-            cbOwners.Location = new Point(347, 332);
-            cbOwners.Name = "cbOwners";
-            cbOwners.Size = new Size(121, 23);
-            cbOwners.TabIndex = 96;
-            cbOwners.Text = "Owners";
-            cbOwners.DropDown += cbOwners_DropDown;
+            cmbOwners.AccessibleName = "";
+            cmbOwners.FormattingEnabled = true;
+            cmbOwners.Location = new Point(347, 332);
+            cmbOwners.Name = "cmbOwners";
+            cmbOwners.Size = new Size(121, 23);
+            cmbOwners.TabIndex = 96;
+            cmbOwners.Text = "Owners";
+            cmbOwners.DropDown += cbOwners_DropDown;
             // 
-            // cbCaptains
+            // cmbCaptains
             // 
-            cbCaptains.FormattingEnabled = true;
-            cbCaptains.Location = new Point(585, 332);
-            cbCaptains.Name = "cbCaptains";
-            cbCaptains.Size = new Size(121, 23);
-            cbCaptains.TabIndex = 97;
-            cbCaptains.Text = "Captains";
-            cbCaptains.DropDown += cbCaptains_DropDown;
+            cmbCaptains.FormattingEnabled = true;
+            cmbCaptains.Location = new Point(585, 332);
+            cmbCaptains.Name = "cmbCaptains";
+            cmbCaptains.Size = new Size(121, 23);
+            cmbCaptains.TabIndex = 97;
+            cmbCaptains.Text = "Captains";
+            cmbCaptains.DropDown += cbCaptains_DropDown;
             // 
             // frmVessel
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 396);
-            Controls.Add(cbCaptains);
-            Controls.Add(cbOwners);
+            Controls.Add(cmbCaptains);
+            Controls.Add(cmbOwners);
             Controls.Add(lblFuel);
             Controls.Add(txtFuel);
             Controls.Add(lblEngine);
@@ -336,7 +336,7 @@
         private TextBox txtEngine;
         private Label lblFuel;
         private TextBox txtFuel;
-        private ComboBox cbOwners;
-        private ComboBox cbCaptains;
+        private ComboBox cmbOwners;
+        private ComboBox cmbCaptains;
     }
 }

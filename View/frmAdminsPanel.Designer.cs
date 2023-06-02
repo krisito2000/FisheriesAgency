@@ -53,16 +53,16 @@
             // lblTables
             // 
             lblTables.AutoSize = true;
-            lblTables.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTables.Location = new Point(206, 37);
+            lblTables.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTables.Location = new Point(194, 31);
             lblTables.Name = "lblTables";
-            lblTables.Size = new Size(73, 30);
+            lblTables.Size = new Size(85, 32);
             lblTables.TabIndex = 18;
             lblTables.Text = "Tables";
             // 
             // btnUsers
             // 
-            btnUsers.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUsers.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnUsers.Location = new Point(48, 82);
             btnUsers.Name = "btnUsers";
             btnUsers.Size = new Size(94, 33);
@@ -73,7 +73,7 @@
             // 
             // btnFishingPermits
             // 
-            btnFishingPermits.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFishingPermits.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnFishingPermits.Location = new Point(245, 82);
             btnFishingPermits.Name = "btnFishingPermits";
             btnFishingPermits.Size = new Size(94, 33);
@@ -84,7 +84,7 @@
             // 
             // btnVessels
             // 
-            btnVessels.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVessels.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnVessels.Location = new Point(146, 82);
             btnVessels.Name = "btnVessels";
             btnVessels.Size = new Size(94, 33);
@@ -95,7 +95,7 @@
             // 
             // btnTickets
             // 
-            btnTickets.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnTickets.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnTickets.Location = new Point(344, 82);
             btnTickets.Name = "btnTickets";
             btnTickets.Size = new Size(94, 33);
@@ -117,7 +117,7 @@
             // 
             // btnCaptains
             // 
-            btnCaptains.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCaptains.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnCaptains.Location = new Point(48, 131);
             btnCaptains.Name = "btnCaptains";
             btnCaptains.Size = new Size(94, 33);
@@ -128,7 +128,7 @@
             // 
             // btnCatches
             // 
-            btnCatches.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCatches.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnCatches.Location = new Point(146, 131);
             btnCatches.Name = "btnCatches";
             btnCatches.Size = new Size(94, 33);
@@ -139,7 +139,7 @@
             // 
             // btnTrips
             // 
-            btnTrips.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnTrips.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnTrips.Location = new Point(245, 131);
             btnTrips.Name = "btnTrips";
             btnTrips.Size = new Size(94, 33);
@@ -150,7 +150,7 @@
             // 
             // btnInspector
             // 
-            btnInspector.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnInspector.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnInspector.Location = new Point(344, 131);
             btnInspector.Name = "btnInspector";
             btnInspector.Size = new Size(94, 33);
@@ -161,7 +161,7 @@
             // 
             // btnMembers
             // 
-            btnMembers.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnMembers.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnMembers.Location = new Point(95, 170);
             btnMembers.Name = "btnMembers";
             btnMembers.Size = new Size(94, 33);
@@ -172,7 +172,7 @@
             // 
             // btnOwners
             // 
-            btnOwners.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnOwners.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnOwners.Location = new Point(194, 170);
             btnOwners.Name = "btnOwners";
             btnOwners.Size = new Size(94, 33);
@@ -183,7 +183,7 @@
             // 
             // btnOther
             // 
-            btnOther.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnOther.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnOther.Location = new Point(294, 170);
             btnOther.Name = "btnOther";
             btnOther.Size = new Size(94, 33);

@@ -57,14 +57,12 @@ namespace FisheriesAgency
                         {
                             this.Hide();
                             frmAdminsPanel frmAdminsPanel = new frmAdminsPanel();
-                            //MessageBox.Show($"Login successful as \"{username}\"");
                             frmAdminsPanel.ShowDialog();
                         }
                         else
                         {
                             this.Hide();
                             frmUser frmUser = new frmUser();
-                            //MessageBox.Show($"Login successful as \"{username}\"");
                             frmUser.ShowDialog();
                         }
                         this.Show();

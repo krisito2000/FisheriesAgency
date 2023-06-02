@@ -27,7 +27,6 @@ namespace FisheriesAgency.View
             Logout.LogoutHelper(this);
         }
 
-        //Making password visible
         private void btnViewPassword_Click(object sender, EventArgs e)
         {
             PasswordToggle.ToggleRegister(txtPassword, txtConfirmPassword, btnViewPassword);

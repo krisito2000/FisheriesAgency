@@ -41,7 +41,7 @@
             dtpIssueDate = new DateTimePicker();
             dtpExpirationDate = new DateTimePicker();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
-            cbVessels = new ComboBox();
+            cmbVessels = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvPermit).BeginInit();
             SuspendLayout();
             // 
@@ -163,22 +163,22 @@
             sqlCommand1.Notification = null;
             sqlCommand1.Transaction = null;
             // 
-            // cbVessels
+            // cmbVessels
             // 
-            cbVessels.FormattingEnabled = true;
-            cbVessels.Location = new Point(167, 232);
-            cbVessels.Name = "cbVessels";
-            cbVessels.Size = new Size(121, 23);
-            cbVessels.TabIndex = 77;
-            cbVessels.Text = "Vessels";
-            cbVessels.SelectedIndexChanged += cbVessels_SelectedIndexChanged;
+            cmbVessels.FormattingEnabled = true;
+            cmbVessels.Location = new Point(167, 232);
+            cmbVessels.Name = "cmbVessels";
+            cmbVessels.Size = new Size(121, 23);
+            cmbVessels.TabIndex = 77;
+            cmbVessels.Text = "Vessels";
+            cmbVessels.SelectedIndexChanged += cmbVessels_SelectedIndexChanged;
             // 
             // frmFishingPermit
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 356);
-            Controls.Add(cbVessels);
+            Controls.Add(cmbVessels);
             Controls.Add(dtpExpirationDate);
             Controls.Add(dtpIssueDate);
             Controls.Add(txtEquipment);
@@ -213,6 +213,6 @@
         private DateTimePicker dtpIssueDate;
         private DateTimePicker dtpExpirationDate;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
-        private ComboBox cbVessels;
+        private ComboBox cmbVessels;
     }
 }

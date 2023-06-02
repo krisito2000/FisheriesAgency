@@ -13,7 +13,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
     public partial class frmMember : Form
     {
-        private static void UpdateUsersDataGridView(DataGridView dgvFisheriesAgencyDB)
+        private static void UpdateMembersDataGridView(DataGridView dgvFisheriesAgencyDB)
         {
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(Program.connectionString))
@@ -30,13 +30,13 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         }
         private void dgvReset()
         {
-            UpdateUsersDataGridView(dgvMember);
+            UpdateMembersDataGridView(dgvMember);
             dgvMember.Refresh();
         }
         public frmMember()
         {
             InitializeComponent();
-            UpdateUsersDataGridView(dgvMember);
+            UpdateMembersDataGridView(dgvMember);
         }
 
         private void dgvMember_CellClick(object sender, DataGridViewCellEventArgs e)

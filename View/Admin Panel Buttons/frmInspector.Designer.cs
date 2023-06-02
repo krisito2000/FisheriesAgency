@@ -34,7 +34,7 @@
             btnCreate = new Button();
             dgvInspector = new DataGridView();
             dtpInspectorDate = new DateTimePicker();
-            cbVessels = new ComboBox();
+            cmbVessels = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvInspector).BeginInit();
             SuspendLayout();
             // 
@@ -96,21 +96,22 @@
             dtpInspectorDate.Size = new Size(216, 23);
             dtpInspectorDate.TabIndex = 75;
             // 
-            // cbVessels
+            // cmbVessels
             // 
-            cbVessels.FormattingEnabled = true;
-            cbVessels.Location = new Point(146, 91);
-            cbVessels.Name = "cbVessels";
-            cbVessels.Size = new Size(121, 23);
-            cbVessels.TabIndex = 76;
-            cbVessels.Text = "Vessels";
+            cmbVessels.FormattingEnabled = true;
+            cmbVessels.Location = new Point(146, 91);
+            cmbVessels.Name = "cmbVessels";
+            cmbVessels.Size = new Size(121, 23);
+            cmbVessels.TabIndex = 76;
+            cmbVessels.Text = "Vessels";
+            cmbVessels.SelectedIndexChanged += cmbVessels_SelectedIndexChanged;
             // 
             // frmInspector
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(729, 273);
-            Controls.Add(cbVessels);
+            Controls.Add(cmbVessels);
             Controls.Add(dtpInspectorDate);
             Controls.Add(dgvInspector);
             Controls.Add(btnEdit);
@@ -132,6 +133,6 @@
         private Button btnCreate;
         private DataGridView dgvInspector;
         private DateTimePicker dtpInspectorDate;
-        private ComboBox cbVessels;
+        private ComboBox cmbVessels;
     }
 }

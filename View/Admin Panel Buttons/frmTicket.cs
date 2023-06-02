@@ -12,12 +12,13 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using FisheriesAgency;
 using static FisheriesAgency.View.Admin_Panel_Buttons.frmTicket;
+using FisheriesAgency.Model;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
     public partial class frmTicket : Form
     {
-        private static void UpdateUsersDataGridView(DataGridView dgvFisheriesAgencyDB)
+        private static void UpdateTicketsDataGridView(DataGridView dgvFisheriesAgencyDB)
         {
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(Program.connectionString))
@@ -35,7 +36,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         public frmTicket()
         {
             InitializeComponent();
-            UpdateUsersDataGridView(dgvTicket);
+            UpdateTicketsDataGridView(dgvTicket);
 
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
             {
@@ -53,7 +54,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                             string name = reader.GetString(1);
 
                             // Create a new Member object
-                            Member member = new Member(memberId, name);
+                            ComboBoxMember member = new ComboBoxMember(memberId, name);
 
                             // Add the member to the combo box
                             cmbMember.Items.Add(member);
@@ -85,7 +86,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
         }
 
-        private void cbMember_DragDrop(object sender, DragEventArgs e)
+        private void cmbMember_DragDrop(object sender, DragEventArgs e)
         {
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
             {
@@ -103,7 +104,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                             string name = reader.GetString(1);
 
                             // Create a new Member object
-                            Member member = new Member(memberId, name);
+                            ComboBoxMember member = new ComboBoxMember(memberId, name);
 
                             // Add the member to the combo box
                             cmbMember.Items.Add(member);
@@ -112,23 +113,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 }
             }
         }
-        public class Member
-        {
-            public int MemberId { get; set; }
-            public string Name { get; set; }
-
-            public Member(int memberId, string name)
-            {
-                MemberId = memberId;
-                Name = name;
-            }
-
-            public override string ToString()
-            {
-                return Name;
-            }
-        }
-
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
@@ -140,7 +124,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
 
             // Get the selected member from the ComboBox
-            Member selectedMember = (Member)cmbMember.SelectedItem;
+            ComboBoxMember selectedMember = (ComboBoxMember)cmbMember.SelectedItem;
 
             // Check if a valid member is selected
             if (selectedMember != null)
@@ -169,7 +153,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                     }
                 }
 
-                UpdateUsersDataGridView(dgvTicket);
+                UpdateTicketsDataGridView(dgvTicket);
             }
             else
             {
@@ -257,7 +241,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
 
             // Refresh the DataGridView to reflect the updated data
-            UpdateUsersDataGridView(dgvTicket);
+            UpdateTicketsDataGridView(dgvTicket);
         }
 
         private void cmbMember_SelectedIndexChanged(object sender, EventArgs e)

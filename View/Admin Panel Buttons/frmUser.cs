@@ -45,6 +45,31 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         {
             PasswordToggle.Toggle(txtPassword, btnViewPassword);
         }
+        private void dgvUser_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvUser.Rows[e.RowIndex];
+
+                if (e.RowIndex == 0)
+                {
+                    string columnName = row.Cells[0].Value?.ToString()?.Trim() ?? string.Empty;
+                    if (columnName != "UserID")
+                    {
+                        MessageBox.Show("You can't change the main owner.");
+                        return;
+                    }
+                }
+
+                string username = row.Cells["Username"].Value?.ToString()?.Trim() ?? string.Empty;
+                string password = row.Cells["Password"].Value?.ToString()?.Trim() ?? string.Empty;
+                bool isAdmin = (bool)row.Cells["isAdministrator"].Value;
+
+                txtUsername.Text = username;
+                txtPassword.Text = password;
+                cbAdmin.Checked = isAdmin;
+            }
+        }
 
         private void btncreate_Click(object sender, EventArgs e)
         {
@@ -54,17 +79,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
             if (string.IsNullOrEmpty(username) && string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Please enter your username and password");
-                return;
-            }
-            else if (string.IsNullOrEmpty(username))
-            {
-                MessageBox.Show("Please enter your username");
-                return;
-            }
-            else if (string.IsNullOrEmpty(password))
-            {
-                MessageBox.Show("Please enter your password");
+                MessageBox.Show("Please fill all spaces");
                 return;
             }
 
@@ -197,32 +212,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
 
             dgvReset();
-        }
-
-        private void dgvUser_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgvUser.Rows[e.RowIndex];
-
-                if (e.RowIndex == 0)
-                {
-                    string columnName = row.Cells[0].Value?.ToString()?.Trim() ?? string.Empty;
-                    if (columnName != "UserID")
-                    {
-                        MessageBox.Show("You can't change the main owner.");
-                        return;
-                    }
-                }
-
-                string username = row.Cells["Username"].Value?.ToString()?.Trim() ?? string.Empty;
-                string password = row.Cells["Password"].Value?.ToString()?.Trim() ?? string.Empty;
-                bool isAdmin = (bool)row.Cells["isAdministrator"].Value;
-
-                txtUsername.Text = username;
-                txtPassword.Text = password;
-                cbAdmin.Checked = isAdmin;
-            }
         }
     }
 }

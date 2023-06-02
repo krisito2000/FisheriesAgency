@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FisheriesAgency.Model;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
@@ -50,7 +51,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                             string internationalNumber = reader.GetString(1);
 
                             // Add the vessel to the ComboBox items and store the ID as the item value
-                            cbVessels.Items.Add(new ComboBoxItem(internationalNumber, vesselId));
+                            cmbVessels.Items.Add(new ComboBoxVessel(internationalNumber, vesselId));
                         }
                     }
                 }
@@ -76,11 +77,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 dtpInspectorDate.Value = inspectorDate;
 
                 // Select the appropriate vessel in the ComboBox based on vesselId
-                foreach (ComboBoxItem item in cbVessels.Items)
+                foreach (ComboBoxVessel item in cmbVessels.Items)
                 {
-                    if (item.Value == vesselId)
+                    if (item.VesselId == vesselId)
                     {
-                        cbVessels.SelectedItem = item;
+                        cmbVessels.SelectedItem = item;
                         break;
                     }
                 }
@@ -89,15 +90,16 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (cbVessels.SelectedIndex == -1)
+            if (cmbVessels.SelectedIndex == -1)
             {
+                cmbVessels.ForeColor = Color.Red;
                 MessageBox.Show("Please select a vessel.");
                 return;
             }
 
-            ComboBoxItem selectedVessel = (ComboBoxItem)cbVessels.SelectedItem;
+            ComboBoxVessel selectedVessel = (ComboBoxVessel)cmbVessels.SelectedItem;
 
-            int vesselId = (int)selectedVessel.Value;
+            int vesselId = (int)selectedVessel.VesselId;
 
             DateTime inspectorDate = dtpInspectorDate.Value;
 
@@ -128,7 +130,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
             int inspectorId = (int)dgvInspector.SelectedRows[0].Cells["InspectorId"].Value;
 
-            DialogResult result = MessageBox.Show("Are you sure you want to delete this inspector?", "Confirm Deletion", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this inspector?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 using (SqlConnection connection = new SqlConnection(Program.connectionString))
@@ -160,8 +162,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             int inspectorId = (int)row.Cells["InspectorId"].Value;
             DateTime inspectorDate = dtpInspectorDate.Value;
 
-            ComboBoxItem selectedVessel = (ComboBoxItem)cbVessels.SelectedItem;
-            int vesselId = (int)selectedVessel.Value;
+            ComboBoxVessel selectedVessel = (ComboBoxVessel)cmbVessels.SelectedItem;
+            int vesselId = (int)selectedVessel.VesselId;
 
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
             {
@@ -181,26 +183,9 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
         }
 
-        private void cbVessels_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbVessels_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-    }
-
-    public class ComboBoxItem
-    {
-        public string Text { get; set; }
-        public int Value { get; set; }
-
-        public ComboBoxItem(string text, int value)
-        {
-            Text = text;
-            Value = value;
-        }
-
-        public override string ToString()
-        {
-            return Text;
+            cmbVessels.ForeColor = Color.Black;
         }
     }
 }

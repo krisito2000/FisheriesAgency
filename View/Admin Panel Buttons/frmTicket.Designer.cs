@@ -189,7 +189,7 @@
             cmbMember.TabIndex = 78;
             cmbMember.Text = "Select Member";
             cmbMember.SelectedIndexChanged += cmbMember_SelectedIndexChanged;
-            cmbMember.DragDrop += cbMember_DragDrop;
+            cmbMember.DragDrop += cmbMember_DragDrop;
             // 
             // frmTicket
             // 

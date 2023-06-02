@@ -8,12 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FisheriesAgency.Model;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
     public partial class frmVessel : Form
     {
-        private static void UpdateUsersDataGridView(DataGridView dgvFisheriesAgencyDB)
+        private static void UpdateVesselsDataGridView(DataGridView dgvFisheriesAgencyDB)
         {
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(Program.connectionString))
@@ -32,7 +33,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         public frmVessel()
         {
             InitializeComponent();
-            UpdateUsersDataGridView(dgvVessel);
+            UpdateVesselsDataGridView(dgvVessel);
 
 
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
@@ -51,7 +52,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                             string name = reader.GetString(1);
 
                             // Add the name to the ComboBox items and store the ID as the item value
-                            cbOwners.Items.Add(new ComboBoxOwner(name, ownerId));
+                            cmbOwners.Items.Add(new ComboBoxModel.ComboBoxOwner(name, ownerId));
                         }
                     }
                 }
@@ -73,7 +74,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
 
                             // Add the name to the ComboBox items and store the ID as the item value
-                            cbCaptains.Items.Add(new ComboBoxCaptain(name, captainId));
+                            cmbCaptains.Items.Add(new ComboBoxCaptain(name, captainId));
                         }
                     }
                 }
@@ -83,7 +84,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         }
         private void dgvReset()
         {
-            UpdateUsersDataGridView(dgvVessel);
+            UpdateVesselsDataGridView(dgvVessel);
             dgvVessel.Refresh();
         }
 
@@ -118,16 +119,16 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (cbOwners.SelectedIndex == -1 || cbCaptains.SelectedIndex == -1)
+            if (cmbOwners.SelectedIndex == -1 || cmbCaptains.SelectedIndex == -1)
             {
-                cbOwners.ForeColor = Color.Red;
-                cbCaptains.ForeColor = Color.Red;
+                cmbOwners.ForeColor = Color.Red;
+                cmbCaptains.ForeColor = Color.Red;
                 MessageBox.Show("Please select an owner and a captain.");
                 return;
             }
 
-            ComboBoxOwner selectedOwner = (ComboBoxOwner)cbOwners.SelectedItem;
-            ComboBoxCaptain selectedCaptain = (ComboBoxCaptain)cbCaptains.SelectedItem;
+            ComboBoxModel.ComboBoxOwner selectedOwner = (ComboBoxModel.ComboBoxOwner)cmbOwners.SelectedItem;
+            ComboBoxCaptain selectedCaptain = (ComboBoxCaptain)cmbCaptains.SelectedItem;
 
             int ownerId = selectedOwner.OwnerId;
             int captainId = selectedCaptain.CaptainId;
@@ -165,46 +166,13 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
         private void cbOwners_DropDown(object sender, EventArgs e)
         {
-            cbOwners.ForeColor = Color.Black;
-            cbCaptains.ForeColor = Color.Black;
+            cmbOwners.ForeColor = Color.Black;
+            cmbCaptains.ForeColor = Color.Black;
         }
         private void cbCaptains_DropDown(object sender, EventArgs e)
         {
-            cbOwners.ForeColor = Color.Black;
-            cbCaptains.ForeColor = Color.Black;
-        }
-
-
-        public class ComboBoxOwner
-        {
-            public int OwnerId { get; set; }
-            public string Name { get; set; }
-
-            public ComboBoxOwner(string name, int ownerId)
-            {
-                Name = name;
-                OwnerId = ownerId;
-            }
-            public override string ToString()
-            {
-                return Name;
-            }
-        }
-
-        public class ComboBoxCaptain
-        {
-            public int CaptainId { get; set; }
-            public string Name { get; set; }
-
-            public ComboBoxCaptain(string name, int captainId)
-            {
-                Name = name;
-                CaptainId = captainId;
-            }
-            public override string ToString()
-            {
-                return Name;
-            }
+            cmbOwners.ForeColor = Color.Black;
+            cmbCaptains.ForeColor = Color.Black;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

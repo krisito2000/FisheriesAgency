@@ -11,12 +11,13 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using static FisheriesAgency.View.Admin_Panel_Buttons.frmFishingPermit;
 using static FisheriesAgency.View.Admin_Panel_Buttons.frmTicket;
+using FisheriesAgency.Model;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
     public partial class frmFishingTrip : Form
     {
-        private static void UpdateUsersDataGridView(DataGridView dgvFisheriesAgencyDB)
+        private static void UpdateTripsDataGridView(DataGridView dgvFisheriesAgencyDB)
         {
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(Program.connectionString))
@@ -34,7 +35,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         public frmFishingTrip()
         {
             InitializeComponent();
-            UpdateUsersDataGridView(dgvTrip);
+            UpdateTripsDataGridView(dgvTrip);
 
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
             {
@@ -58,6 +59,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 }
             }
         }
+        private void dgvReset()
+        {
+            UpdateTripsDataGridView(dgvTrip);
+            dgvTrip.Refresh();
+        }
 
         private void dgvTicket_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -72,16 +78,10 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             dtpTripEnd.Text = tripEnd;
             txtCatchAmount.Text = catchAmount;
         }
-        private void dgvReset()
-        {
-            UpdateUsersDataGridView(dgvTrip);
-            dgvTrip.Refresh();
-        }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
             ComboBoxVessel selectedVessel = (ComboBoxVessel)cbVessels.SelectedItem;
-
 
             if (selectedVessel != null)
             {
@@ -152,7 +152,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                     connection.Close();
                 }
 
-                UpdateUsersDataGridView(dgvTrip);
+                UpdateTripsDataGridView(dgvTrip);
             }
         }
 
@@ -194,23 +194,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
 
             // Refresh the DataGridView to reflect the updated data
-            UpdateUsersDataGridView(dgvTrip);
-        }
-        public class Vessel
-        {
-            public int VesselId { get; set; }
-            public string IN { get; set; }
-
-            public Vessel(int vesselId, string In)
-            {
-                VesselId = vesselId;
-                IN = In;
-            }
-
-            public override string ToString()
-            {
-                return IN;
-            }
+            UpdateTripsDataGridView(dgvTrip);
         }
 
         private void cbVessels_SelectedIndexChanged(object sender, EventArgs e)

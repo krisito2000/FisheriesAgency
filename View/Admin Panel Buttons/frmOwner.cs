@@ -13,7 +13,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
     public partial class frmOwner : Form
     {
-        private static void UpdateUsersDataGridView(DataGridView dgvFisheriesAgencyDB)
+        private static void UpdateOwnersDataGridView(DataGridView dgvFisheriesAgencyDB)
         {
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(Program.connectionString))
@@ -31,11 +31,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         public frmOwner()
         {
             InitializeComponent();
-            UpdateUsersDataGridView(dgvOwner);
+            UpdateOwnersDataGridView(dgvOwner);
         }
         private void dgvReset()
         {
-            UpdateUsersDataGridView(dgvOwner);
+            UpdateOwnersDataGridView(dgvOwner);
             dgvOwner.Refresh();
         }
 
@@ -46,8 +46,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 DataGridViewRow row = dgvOwner.Rows[e.RowIndex];
 
 
-                string name = row.Cells["name"].Value.ToString().Trim();
-                string address = row.Cells["address"].Value.ToString().Trim();
+                string name = row.Cells["name"].Value?.ToString()?.Trim() ?? string.Empty;
+                string address = row.Cells["address"].Value?.ToString()?.Trim() ?? string.Empty;
 
                 txtName.Text = name;
                 txtAddress.Text = address;
@@ -69,7 +69,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 connection.Open();
 
                 // Check if the name already exists in the database
-                string checkSql = "SELECT COUNT(*) FROM Owner WHERE name = @Name";
+                string checkSql = "SELECT COUNT(*) FROM [Owner] WHERE name = @Name";
                 using (SqlCommand checkCommand = new SqlCommand(checkSql, connection))
                 {
                     checkCommand.Parameters.AddWithValue("@Name", name);

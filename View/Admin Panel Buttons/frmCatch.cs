@@ -3,12 +3,13 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using static FisheriesAgency.View.Admin_Panel_Buttons.frmFishingPermit;
+using FisheriesAgency.Model;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
     public partial class frmCatch : Form
     {
-        private static void UpdateCatchDataGridView(DataGridView dgvCatch)
+        private static void UpdateCatchesDataGridView(DataGridView dgvCatch)
         {
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(Program.connectionString))
@@ -26,14 +27,14 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
         private void dgvReset()
         {
-            UpdateCatchDataGridView(dgvCatch);
+            UpdateCatchesDataGridView(dgvCatch);
             dgvCatch.Refresh();
         }
 
         public frmCatch()
         {
             InitializeComponent();
-            UpdateCatchDataGridView(dgvCatch);
+            UpdateCatchesDataGridView(dgvCatch);
 
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
             {
@@ -51,7 +52,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                             int vesselId = reader.GetInt32(1);
 
                             // Create a new trip object
-                            Trip trip = new Trip(tripId, vesselId);
+                            ComboBoxTrip trip = new ComboBoxTrip(tripId, vesselId);
 
                             // Add the trip to the combo box
                             cmbTrip.Items.Add(trip);
@@ -75,26 +76,9 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
         }
 
-        private class Trip
-        {
-            public int TripId { get; set; }
-            public int VesselId { get; set; }
-
-            public Trip(int tripId, int vesselId)
-            {
-                TripId = tripId;
-                VesselId = vesselId;
-            }
-
-            public override string ToString()
-            {
-                return VesselId.ToString();
-            }
-        }
-
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            Trip selectedTrip = (Trip)cmbTrip.SelectedItem;
+            ComboBoxTrip selectedTrip = (ComboBoxTrip)cmbTrip.SelectedItem;
             
             if (selectedTrip != null)
             {
@@ -194,7 +178,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             string weight = txtWeight.Text.Trim();
             string quantity = txtQuantity.Text.Trim();
 
-            Trip selectedTrip = (Trip)cmbTrip.SelectedItem;
+            ComboBoxTrip selectedTrip = (ComboBoxTrip)cmbTrip.SelectedItem;
             if (selectedTrip == null)
             {
                 MessageBox.Show("Invalid trip selection!");

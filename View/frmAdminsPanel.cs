@@ -22,67 +22,11 @@ namespace FisheriesAgency.View
     public partial class frmAdminsPanel : Form
     {
         private static List<Form> openForms = new List<Form>();
+
         public frmAdminsPanel()
         {
             InitializeComponent();
         }
-
-
-        private void btnGetPermits_Click(object sender, EventArgs e)
-        {
-            //if (int.TryParse(txtMonths.Text, out int months))
-            //{
-            //    DateTime expirationDate = DateTime.Today.AddMonths(months);
-            //    string query = $"SELECT PermitNumber, IssueDate, ExpirationDate, Equipment, VesselId FROM FishingPermit WHERE ExpirationDate <= '{expirationDate.ToString("yyyy-MM-dd")}'";
-
-            //    using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            //    {
-            //        using (SqlCommand command = new SqlCommand(query, connection))
-            //        {
-            //            connection.Open();
-            //            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-            //            {
-            //                DataTable permitsTable = new DataTable();
-            //                adapter.Fill(permitsTable);
-            //                dgvFisheriesAgencyDB.DataSource = permitsTable;
-            //            }
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Please enter a valid number of months.");
-            //}
-        }
-        private void btnBestCatchForTheYear_Click(object sender, EventArgs e)
-        {
-            //try
-            //{
-            //    using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            //    {
-            //        connection.Open();
-            //        string query = @"SELECT m.Name AS [Name], SUM(c.Weight) AS [Total Catch Weight (kg)]
-            //                 FROM Catch c
-            //                 INNER JOIN FishingTrip t ON c.FishingTripId = t.TripId
-            //                 INNER JOIN FishingPermit p ON t.VesselId = p.VesselId
-            //                 INNER JOIN Member m ON p.PermitNumber = m.Name
-            //                 WHERE t.TripEnd >= DATEADD(year, -1, GETDATE())
-            //                 GROUP BY m.Name
-            //                 ORDER BY [Total Catch Weight (kg)] DESC";
-
-            //        SqlCommand command = new SqlCommand(query, connection);
-            //        DataTable table = new DataTable();
-            //        SqlDataAdapter adapter = new SqlDataAdapter(command);
-            //        adapter.Fill(table);
-            //        dgvFisheriesAgencyDB.DataSource = table;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error retrieving leaderboard: " + ex.Message);
-            //}
-        }
-
         private void btnUsers_Click(object sender, EventArgs e)
         {
             Admin_Panel_Buttons.frmUser frmUser = new Admin_Panel_Buttons.frmUser();
@@ -162,7 +106,7 @@ namespace FisheriesAgency.View
         private void btnLogout_Click(object sender, EventArgs e)
         {
             DialogResult logout = MessageBox.Show("Are you sure you want to logout?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (logout == DialogResult.Yes) 
+            if (logout == DialogResult.Yes)
             {
                 foreach (Form form in openForms)
                 {
