@@ -28,33 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            btnLogout = new Button();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(36, 32);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(585, 305);
-            this.btnLogout.TabIndex = 12;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            btnLogout.Location = new Point(275, 284);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(64, 28);
+            btnLogout.TabIndex = 12;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(648, 218);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(8, 8);
+            dataGridView1.TabIndex = 13;
             // 
             // frmUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 365);
-            this.Controls.Add(this.btnLogout);
-            this.Name = "frmUser";
-            this.Text = "frmUser";
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(649, 365);
+            Controls.Add(dataGridView1);
+            Controls.Add(btnLogout);
+            Name = "frmUser";
+            Text = "frmUser";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
 
         private Button btnLogout;
+        private DataGridView dataGridView1;
     }
 }
