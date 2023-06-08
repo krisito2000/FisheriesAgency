@@ -195,5 +195,10 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         {
             cmbVessels.ForeColor = Color.Black;
         }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

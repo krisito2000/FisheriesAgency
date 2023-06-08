@@ -28,101 +28,121 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnEdit = new Button();
-            lblInspectorDate = new Label();
-            btnDelete = new Button();
-            btnCreate = new Button();
-            dgvInspector = new DataGridView();
-            dtpInspectorDate = new DateTimePicker();
-            cmbVessels = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)dgvInspector).BeginInit();
-            SuspendLayout();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.lblInspectorDate = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.dgvInspector = new System.Windows.Forms.DataGridView();
+            this.dtpInspectorDate = new System.Windows.Forms.DateTimePicker();
+            this.cmbVessels = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInspector)).BeginInit();
+            this.SuspendLayout();
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(155, 191);
-            btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(95, 30);
-            btnEdit.TabIndex = 58;
-            btnEdit.Text = "Edit";
-            btnEdit.UseVisualStyleBackColor = true;
-            btnEdit.Click += btnEdit_Click;
+            this.btnEdit.BackColor = System.Drawing.Color.DimGray;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEdit.ForeColor = System.Drawing.Color.Aqua;
+            this.btnEdit.Location = new System.Drawing.Point(155, 191);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(95, 30);
+            this.btnEdit.TabIndex = 58;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
             // 
             // lblInspectorDate
             // 
-            lblInspectorDate.AutoSize = true;
-            lblInspectorDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblInspectorDate.Location = new Point(59, 50);
-            lblInspectorDate.Name = "lblInspectorDate";
-            lblInspectorDate.Size = new Size(117, 21);
-            lblInspectorDate.TabIndex = 56;
-            lblInspectorDate.Text = "InspectorDate";
+            this.lblInspectorDate.AutoSize = true;
+            this.lblInspectorDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblInspectorDate.ForeColor = System.Drawing.Color.Aqua;
+            this.lblInspectorDate.Location = new System.Drawing.Point(59, 50);
+            this.lblInspectorDate.Name = "lblInspectorDate";
+            this.lblInspectorDate.Size = new System.Drawing.Size(117, 21);
+            this.lblInspectorDate.TabIndex = 56;
+            this.lblInspectorDate.Text = "InspectorDate";
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(104, 146);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(95, 30);
-            btnDelete.TabIndex = 53;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = true;
-            btnDelete.Click += btnDelete_Click;
+            this.btnDelete.BackColor = System.Drawing.Color.DimGray;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDelete.ForeColor = System.Drawing.Color.Aqua;
+            this.btnDelete.Location = new System.Drawing.Point(104, 146);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(95, 30);
+            this.btnDelete.TabIndex = 53;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
             // btnCreate
             // 
-            btnCreate.Location = new Point(205, 146);
-            btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(95, 30);
-            btnCreate.TabIndex = 52;
-            btnCreate.Text = "Create ";
-            btnCreate.UseVisualStyleBackColor = true;
-            btnCreate.Click += btnCreate_Click;
+            this.btnCreate.BackColor = System.Drawing.Color.DimGray;
+            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCreate.ForeColor = System.Drawing.Color.Aqua;
+            this.btnCreate.Location = new System.Drawing.Point(205, 146);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(95, 30);
+            this.btnCreate.TabIndex = 52;
+            this.btnCreate.Text = "Create ";
+            this.btnCreate.UseVisualStyleBackColor = false;
             // 
             // dgvInspector
             // 
-            dgvInspector.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvInspector.Location = new Point(381, 91);
-            dgvInspector.Name = "dgvInspector";
-            dgvInspector.RowHeadersWidth = 51;
-            dgvInspector.RowTemplate.Height = 25;
-            dgvInspector.Size = new Size(308, 150);
-            dgvInspector.TabIndex = 61;
-            dgvInspector.CellClick += dgvInspector_CellClick;
+            this.dgvInspector.BackgroundColor = System.Drawing.Color.Aqua;
+            this.dgvInspector.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInspector.Location = new System.Drawing.Point(381, 91);
+            this.dgvInspector.Name = "dgvInspector";
+            this.dgvInspector.RowHeadersWidth = 51;
+            this.dgvInspector.RowTemplate.Height = 25;
+            this.dgvInspector.Size = new System.Drawing.Size(308, 150);
+            this.dgvInspector.TabIndex = 61;
             // 
             // dtpInspectorDate
             // 
-            dtpInspectorDate.Location = new Point(199, 51);
-            dtpInspectorDate.Name = "dtpInspectorDate";
-            dtpInspectorDate.Size = new Size(216, 23);
-            dtpInspectorDate.TabIndex = 75;
+            this.dtpInspectorDate.CalendarForeColor = System.Drawing.Color.Aqua;
+            this.dtpInspectorDate.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dtpInspectorDate.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dtpInspectorDate.CalendarTitleForeColor = System.Drawing.Color.Aqua;
+            this.dtpInspectorDate.CalendarTrailingForeColor = System.Drawing.Color.Aqua;
+            this.dtpInspectorDate.Location = new System.Drawing.Point(199, 51);
+            this.dtpInspectorDate.Name = "dtpInspectorDate";
+            this.dtpInspectorDate.Size = new System.Drawing.Size(216, 23);
+            this.dtpInspectorDate.TabIndex = 75;
             // 
             // cmbVessels
             // 
-            cmbVessels.FormattingEnabled = true;
-            cmbVessels.Location = new Point(146, 91);
-            cmbVessels.Name = "cmbVessels";
-            cmbVessels.Size = new Size(121, 23);
-            cmbVessels.TabIndex = 76;
-            cmbVessels.Text = "Vessels";
-            cmbVessels.SelectedIndexChanged += cmbVessels_SelectedIndexChanged;
+            this.cmbVessels.BackColor = System.Drawing.Color.Gray;
+            this.cmbVessels.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbVessels.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cmbVessels.ForeColor = System.Drawing.Color.Aqua;
+            this.cmbVessels.FormattingEnabled = true;
+            this.cmbVessels.Location = new System.Drawing.Point(146, 91);
+            this.cmbVessels.Name = "cmbVessels";
+            this.cmbVessels.Size = new System.Drawing.Size(121, 23);
+            this.cmbVessels.TabIndex = 76;
+            this.cmbVessels.Text = "Vessels";
             // 
             // frmInspector
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(729, 273);
-            Controls.Add(cmbVessels);
-            Controls.Add(dtpInspectorDate);
-            Controls.Add(dgvInspector);
-            Controls.Add(btnEdit);
-            Controls.Add(lblInspectorDate);
-            Controls.Add(btnDelete);
-            Controls.Add(btnCreate);
-            Name = "frmInspector";
-            Text = "frmInspector";
-            ((System.ComponentModel.ISupportInitialize)dgvInspector).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ClientSize = new System.Drawing.Size(729, 273);
+            this.Controls.Add(this.cmbVessels);
+            this.Controls.Add(this.dtpInspectorDate);
+            this.Controls.Add(this.dgvInspector);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.lblInspectorDate);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnCreate);
+            this.Name = "frmInspector";
+            this.Text = "frmInspector";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInspector)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

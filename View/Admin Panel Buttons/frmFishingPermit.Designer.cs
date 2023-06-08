@@ -28,174 +28,234 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnEdit = new Button();
-            lbIssueDate = new Label();
-            lblPermitNumber = new Label();
-            txtPermitNumber = new TextBox();
-            btnDelete = new Button();
-            btnCreate = new Button();
-            dgvPermit = new DataGridView();
-            lblExpirationDate = new Label();
-            lblEquipment = new Label();
-            txtEquipment = new TextBox();
-            dtpIssueDate = new DateTimePicker();
-            dtpExpirationDate = new DateTimePicker();
-            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
-            cmbVessels = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)dgvPermit).BeginInit();
-            SuspendLayout();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.lbIssueDate = new System.Windows.Forms.Label();
+            this.lblPermitNumber = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.dgvPermit = new System.Windows.Forms.DataGridView();
+            this.lblExpirationDate = new System.Windows.Forms.Label();
+            this.lblEquipment = new System.Windows.Forms.Label();
+            this.dtpIssueDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpExpirationDate = new System.Windows.Forms.DateTimePicker();
+            this.sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            this.cmbVessels = new System.Windows.Forms.ComboBox();
+            this.pnlUsernametxt = new System.Windows.Forms.Panel();
+            this.txtPermitNumber = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtEquipment = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPermit)).BeginInit();
+            this.SuspendLayout();
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(167, 312);
-            btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(95, 30);
-            btnEdit.TabIndex = 37;
-            btnEdit.Text = "Edit";
-            btnEdit.UseVisualStyleBackColor = true;
-            btnEdit.Click += btnEdit_Click;
+            this.btnEdit.BackColor = System.Drawing.Color.DimGray;
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEdit.ForeColor = System.Drawing.Color.Aqua;
+            this.btnEdit.Location = new System.Drawing.Point(167, 312);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(95, 30);
+            this.btnEdit.TabIndex = 37;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
             // 
             // lbIssueDate
             // 
-            lbIssueDate.AutoSize = true;
-            lbIssueDate.FlatStyle = FlatStyle.System;
-            lbIssueDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lbIssueDate.Location = new Point(102, 92);
-            lbIssueDate.Name = "lbIssueDate";
-            lbIssueDate.Size = new Size(88, 21);
-            lbIssueDate.TabIndex = 36;
-            lbIssueDate.Text = "Issue Date";
+            this.lbIssueDate.AutoSize = true;
+            this.lbIssueDate.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lbIssueDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbIssueDate.ForeColor = System.Drawing.Color.Aqua;
+            this.lbIssueDate.Location = new System.Drawing.Point(102, 92);
+            this.lbIssueDate.Name = "lbIssueDate";
+            this.lbIssueDate.Size = new System.Drawing.Size(88, 21);
+            this.lbIssueDate.TabIndex = 36;
+            this.lbIssueDate.Text = "Issue Date";
             // 
             // lblPermitNumber
             // 
-            lblPermitNumber.AutoSize = true;
-            lblPermitNumber.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPermitNumber.Location = new Point(73, 47);
-            lblPermitNumber.Name = "lblPermitNumber";
-            lblPermitNumber.Size = new Size(128, 21);
-            lblPermitNumber.TabIndex = 35;
-            lblPermitNumber.Text = "Permit Number";
-            // 
-            // txtPermitNumber
-            // 
-            txtPermitNumber.Location = new Point(218, 48);
-            txtPermitNumber.Name = "txtPermitNumber";
-            txtPermitNumber.Size = new Size(134, 23);
-            txtPermitNumber.TabIndex = 33;
+            this.lblPermitNumber.AutoSize = true;
+            this.lblPermitNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPermitNumber.ForeColor = System.Drawing.Color.Aqua;
+            this.lblPermitNumber.Location = new System.Drawing.Point(73, 47);
+            this.lblPermitNumber.Name = "lblPermitNumber";
+            this.lblPermitNumber.Size = new System.Drawing.Size(128, 21);
+            this.lblPermitNumber.TabIndex = 35;
+            this.lblPermitNumber.Text = "Permit Number";
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(117, 276);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(95, 30);
-            btnDelete.TabIndex = 32;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = true;
-            btnDelete.Click += btnDelete_Click;
+            this.btnDelete.BackColor = System.Drawing.Color.DimGray;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDelete.ForeColor = System.Drawing.Color.Aqua;
+            this.btnDelete.Location = new System.Drawing.Point(117, 276);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(95, 30);
+            this.btnDelete.TabIndex = 32;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
             // btnCreate
             // 
-            btnCreate.Location = new Point(218, 276);
-            btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(95, 30);
-            btnCreate.TabIndex = 31;
-            btnCreate.Text = "Create ";
-            btnCreate.UseVisualStyleBackColor = true;
-            btnCreate.Click += btnCreate_Click;
+            this.btnCreate.BackColor = System.Drawing.Color.DimGray;
+            this.btnCreate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCreate.ForeColor = System.Drawing.Color.Aqua;
+            this.btnCreate.Location = new System.Drawing.Point(218, 276);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(95, 30);
+            this.btnCreate.TabIndex = 31;
+            this.btnCreate.Text = "Create ";
+            this.btnCreate.UseVisualStyleBackColor = false;
             // 
             // dgvPermit
             // 
-            dgvPermit.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPermit.Location = new Point(436, 80);
-            dgvPermit.Name = "dgvPermit";
-            dgvPermit.RowHeadersWidth = 51;
-            dgvPermit.RowTemplate.Height = 25;
-            dgvPermit.Size = new Size(322, 150);
-            dgvPermit.TabIndex = 38;
-            dgvPermit.CellClick += dgvPermit_CellClick;
+            this.dgvPermit.BackgroundColor = System.Drawing.Color.Aqua;
+            this.dgvPermit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPermit.Location = new System.Drawing.Point(436, 80);
+            this.dgvPermit.Name = "dgvPermit";
+            this.dgvPermit.RowHeadersWidth = 51;
+            this.dgvPermit.RowTemplate.Height = 25;
+            this.dgvPermit.Size = new System.Drawing.Size(322, 150);
+            this.dgvPermit.TabIndex = 38;
             // 
             // lblExpirationDate
             // 
-            lblExpirationDate.AutoSize = true;
-            lblExpirationDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblExpirationDate.Location = new Point(73, 146);
-            lblExpirationDate.Name = "lblExpirationDate";
-            lblExpirationDate.Size = new Size(129, 21);
-            lblExpirationDate.TabIndex = 39;
-            lblExpirationDate.Text = "Expiration Date";
+            this.lblExpirationDate.AutoSize = true;
+            this.lblExpirationDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblExpirationDate.ForeColor = System.Drawing.Color.Aqua;
+            this.lblExpirationDate.Location = new System.Drawing.Point(73, 146);
+            this.lblExpirationDate.Name = "lblExpirationDate";
+            this.lblExpirationDate.Size = new System.Drawing.Size(129, 21);
+            this.lblExpirationDate.TabIndex = 39;
+            this.lblExpirationDate.Text = "Expiration Date";
             // 
             // lblEquipment
             // 
-            lblEquipment.AutoSize = true;
-            lblEquipment.FlatStyle = FlatStyle.System;
-            lblEquipment.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblEquipment.Location = new Point(98, 198);
-            lblEquipment.Name = "lblEquipment";
-            lblEquipment.Size = new Size(94, 21);
-            lblEquipment.TabIndex = 41;
-            lblEquipment.Text = "Equipment";
-            // 
-            // txtEquipment
-            // 
-            txtEquipment.Location = new Point(218, 196);
-            txtEquipment.Name = "txtEquipment";
-            txtEquipment.Size = new Size(134, 23);
-            txtEquipment.TabIndex = 42;
+            this.lblEquipment.AutoSize = true;
+            this.lblEquipment.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblEquipment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblEquipment.ForeColor = System.Drawing.Color.Aqua;
+            this.lblEquipment.Location = new System.Drawing.Point(98, 198);
+            this.lblEquipment.Name = "lblEquipment";
+            this.lblEquipment.Size = new System.Drawing.Size(94, 21);
+            this.lblEquipment.TabIndex = 41;
+            this.lblEquipment.Text = "Equipment";
             // 
             // dtpIssueDate
             // 
-            dtpIssueDate.Location = new Point(218, 93);
-            dtpIssueDate.Name = "dtpIssueDate";
-            dtpIssueDate.Size = new Size(134, 23);
-            dtpIssueDate.TabIndex = 43;
+            this.dtpIssueDate.CalendarForeColor = System.Drawing.Color.Aqua;
+            this.dtpIssueDate.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dtpIssueDate.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dtpIssueDate.CalendarTitleForeColor = System.Drawing.Color.Aqua;
+            this.dtpIssueDate.CalendarTrailingForeColor = System.Drawing.Color.Aqua;
+            this.dtpIssueDate.Location = new System.Drawing.Point(218, 93);
+            this.dtpIssueDate.Name = "dtpIssueDate";
+            this.dtpIssueDate.Size = new System.Drawing.Size(134, 23);
+            this.dtpIssueDate.TabIndex = 43;
             // 
             // dtpExpirationDate
             // 
-            dtpExpirationDate.Location = new Point(218, 148);
-            dtpExpirationDate.Name = "dtpExpirationDate";
-            dtpExpirationDate.Size = new Size(134, 23);
-            dtpExpirationDate.TabIndex = 44;
+            this.dtpExpirationDate.CalendarForeColor = System.Drawing.Color.Aqua;
+            this.dtpExpirationDate.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dtpExpirationDate.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dtpExpirationDate.CalendarTitleForeColor = System.Drawing.Color.Aqua;
+            this.dtpExpirationDate.CalendarTrailingForeColor = System.Drawing.Color.Aqua;
+            this.dtpExpirationDate.Location = new System.Drawing.Point(218, 148);
+            this.dtpExpirationDate.Name = "dtpExpirationDate";
+            this.dtpExpirationDate.Size = new System.Drawing.Size(134, 23);
+            this.dtpExpirationDate.TabIndex = 44;
             // 
             // sqlCommand1
             // 
-            sqlCommand1.CommandTimeout = 30;
-            sqlCommand1.Connection = null;
-            sqlCommand1.Notification = null;
-            sqlCommand1.Transaction = null;
+            this.sqlCommand1.CommandTimeout = 30;
+            this.sqlCommand1.Connection = null;
+            this.sqlCommand1.Notification = null;
+            this.sqlCommand1.Transaction = null;
             // 
             // cmbVessels
             // 
-            cmbVessels.FormattingEnabled = true;
-            cmbVessels.Location = new Point(167, 232);
-            cmbVessels.Name = "cmbVessels";
-            cmbVessels.Size = new Size(121, 23);
-            cmbVessels.TabIndex = 77;
-            cmbVessels.Text = "Vessels";
-            cmbVessels.SelectedIndexChanged += cmbVessels_SelectedIndexChanged;
+            this.cmbVessels.BackColor = System.Drawing.Color.Gray;
+            this.cmbVessels.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbVessels.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cmbVessels.ForeColor = System.Drawing.Color.Aqua;
+            this.cmbVessels.FormattingEnabled = true;
+            this.cmbVessels.Location = new System.Drawing.Point(167, 232);
+            this.cmbVessels.Name = "cmbVessels";
+            this.cmbVessels.Size = new System.Drawing.Size(121, 23);
+            this.cmbVessels.TabIndex = 77;
+            this.cmbVessels.Text = "Vessels";
+            // 
+            // pnlUsernametxt
+            // 
+            this.pnlUsernametxt.BackColor = System.Drawing.Color.Aqua;
+            this.pnlUsernametxt.Location = new System.Drawing.Point(218, 67);
+            this.pnlUsernametxt.Name = "pnlUsernametxt";
+            this.pnlUsernametxt.Size = new System.Drawing.Size(134, 1);
+            this.pnlUsernametxt.TabIndex = 79;
+            // 
+            // txtPermitNumber
+            // 
+            this.txtPermitNumber.BackColor = System.Drawing.Color.Black;
+            this.txtPermitNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPermitNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPermitNumber.ForeColor = System.Drawing.Color.White;
+            this.txtPermitNumber.Location = new System.Drawing.Point(218, 46);
+            this.txtPermitNumber.Name = "txtPermitNumber";
+            this.txtPermitNumber.Size = new System.Drawing.Size(134, 22);
+            this.txtPermitNumber.TabIndex = 78;
+            this.txtPermitNumber.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Aqua;
+            this.panel1.Location = new System.Drawing.Point(218, 218);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(134, 1);
+            this.panel1.TabIndex = 81;
+            // 
+            // txtEquipment
+            // 
+            this.txtEquipment.BackColor = System.Drawing.Color.Black;
+            this.txtEquipment.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEquipment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEquipment.ForeColor = System.Drawing.Color.White;
+            this.txtEquipment.Location = new System.Drawing.Point(218, 197);
+            this.txtEquipment.Name = "txtEquipment";
+            this.txtEquipment.Size = new System.Drawing.Size(134, 22);
+            this.txtEquipment.TabIndex = 80;
             // 
             // frmFishingPermit
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 356);
-            Controls.Add(cmbVessels);
-            Controls.Add(dtpExpirationDate);
-            Controls.Add(dtpIssueDate);
-            Controls.Add(txtEquipment);
-            Controls.Add(lblEquipment);
-            Controls.Add(lblExpirationDate);
-            Controls.Add(dgvPermit);
-            Controls.Add(btnEdit);
-            Controls.Add(lbIssueDate);
-            Controls.Add(lblPermitNumber);
-            Controls.Add(txtPermitNumber);
-            Controls.Add(btnDelete);
-            Controls.Add(btnCreate);
-            Name = "frmFishingPermit";
-            Text = "frmFishingPermit";
-            ((System.ComponentModel.ISupportInitialize)dgvPermit).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ClientSize = new System.Drawing.Size(800, 356);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.txtEquipment);
+            this.Controls.Add(this.pnlUsernametxt);
+            this.Controls.Add(this.txtPermitNumber);
+            this.Controls.Add(this.cmbVessels);
+            this.Controls.Add(this.dtpExpirationDate);
+            this.Controls.Add(this.dtpIssueDate);
+            this.Controls.Add(this.lblEquipment);
+            this.Controls.Add(this.lblExpirationDate);
+            this.Controls.Add(this.dgvPermit);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.lbIssueDate);
+            this.Controls.Add(this.lblPermitNumber);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnCreate);
+            this.Name = "frmFishingPermit";
+            this.Text = "frmFishingPermit";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPermit)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -203,16 +263,18 @@
         private Button btnEdit;
         private Label lbIssueDate;
         private Label lblPermitNumber;
-        private TextBox txtPermitNumber;
         private Button btnDelete;
         private Button btnCreate;
         private DataGridView dgvPermit;
         private Label lblExpirationDate;
         private Label lblEquipment;
-        private TextBox txtEquipment;
         private DateTimePicker dtpIssueDate;
         private DateTimePicker dtpExpirationDate;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private ComboBox cmbVessels;
+        private Panel pnlUsernametxt;
+        private TextBox txtPermitNumber;
+        private Panel panel1;
+        private TextBox txtEquipment;
     }
 }
