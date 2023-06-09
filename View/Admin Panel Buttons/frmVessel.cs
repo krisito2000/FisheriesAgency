@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FisheriesAgency.Model;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
@@ -124,6 +125,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 cmbOwners.ForeColor = Color.Red;
                 cmbCaptains.ForeColor = Color.Red;
                 MessageBox.Show("Please select an owner and a captain.");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtInternationalNumber.Text) || string.IsNullOrEmpty(txtCallSign.Text) || string.IsNullOrEmpty(txtMarking.Text) || string.IsNullOrEmpty(txtLength.Text) || string.IsNullOrEmpty(txtWidth.Text) || string.IsNullOrEmpty(txtTonnage.Text) || string.IsNullOrEmpty(txtGas.Text) || string.IsNullOrEmpty(txtEngine.Text) || string.IsNullOrEmpty(txtFuel.Text))
+            {
+                MessageBox.Show("Please fill all spaces");
                 return;
             }
 

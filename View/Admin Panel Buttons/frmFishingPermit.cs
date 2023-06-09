@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static FisheriesAgency.View.Admin_Panel_Buttons.frmVessel;
 using FisheriesAgency.Model;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
@@ -91,6 +92,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             {
                 cmbVessels.ForeColor = Color.Red;
                 MessageBox.Show("Please select a vessel.");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtPermitNumber.Text) || string.IsNullOrEmpty(txtEquipment.Text))
+            {
+                MessageBox.Show("Please fill all spaces");
                 return;
             }
 
@@ -194,11 +200,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         private void cmbVessels_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbVessels.ForeColor = Color.Black;
-        }
-
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

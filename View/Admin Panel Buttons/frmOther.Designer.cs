@@ -28,100 +28,101 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnBestCatchForTheYear = new System.Windows.Forms.Button();
-            this.btnGetPermits = new System.Windows.Forms.Button();
-            this.lblMonths = new System.Windows.Forms.Label();
-            this.dgvOther = new System.Windows.Forms.DataGridView();
-            this.pnlUsernametxt = new System.Windows.Forms.Panel();
-            this.txtMonths = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOther)).BeginInit();
-            this.SuspendLayout();
+            btnBestCatchForTheYear = new Button();
+            btnGetPermits = new Button();
+            lblMonths = new Label();
+            dgvOther = new DataGridView();
+            pnlUsernametxt = new Panel();
+            txtMonths = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dgvOther).BeginInit();
+            SuspendLayout();
             // 
             // btnBestCatchForTheYear
             // 
-            this.btnBestCatchForTheYear.BackColor = System.Drawing.Color.DimGray;
-            this.btnBestCatchForTheYear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBestCatchForTheYear.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnBestCatchForTheYear.ForeColor = System.Drawing.Color.Aqua;
-            this.btnBestCatchForTheYear.Location = new System.Drawing.Point(224, 325);
-            this.btnBestCatchForTheYear.Name = "btnBestCatchForTheYear";
-            this.btnBestCatchForTheYear.Size = new System.Drawing.Size(86, 30);
-            this.btnBestCatchForTheYear.TabIndex = 27;
-            this.btnBestCatchForTheYear.Text = "Years Catch";
-            this.btnBestCatchForTheYear.UseVisualStyleBackColor = false;
+            btnBestCatchForTheYear.BackColor = Color.DimGray;
+            btnBestCatchForTheYear.FlatStyle = FlatStyle.Popup;
+            btnBestCatchForTheYear.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBestCatchForTheYear.ForeColor = Color.Aqua;
+            btnBestCatchForTheYear.Location = new Point(224, 325);
+            btnBestCatchForTheYear.Name = "btnBestCatchForTheYear";
+            btnBestCatchForTheYear.Size = new Size(86, 30);
+            btnBestCatchForTheYear.TabIndex = 27;
+            btnBestCatchForTheYear.Text = "Years Catch";
+            btnBestCatchForTheYear.UseVisualStyleBackColor = false;
+            btnBestCatchForTheYear.Click += btnBestCatchForTheYear_Click;
             // 
             // btnGetPermits
             // 
-            this.btnGetPermits.BackColor = System.Drawing.Color.DimGray;
-            this.btnGetPermits.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGetPermits.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnGetPermits.ForeColor = System.Drawing.Color.Aqua;
-            this.btnGetPermits.Location = new System.Drawing.Point(103, 60);
-            this.btnGetPermits.Name = "btnGetPermits";
-            this.btnGetPermits.Size = new System.Drawing.Size(81, 33);
-            this.btnGetPermits.TabIndex = 26;
-            this.btnGetPermits.Text = "Permits";
-            this.btnGetPermits.UseVisualStyleBackColor = false;
+            btnGetPermits.BackColor = Color.DimGray;
+            btnGetPermits.FlatStyle = FlatStyle.Popup;
+            btnGetPermits.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGetPermits.ForeColor = Color.Aqua;
+            btnGetPermits.Location = new Point(103, 60);
+            btnGetPermits.Name = "btnGetPermits";
+            btnGetPermits.Size = new Size(81, 33);
+            btnGetPermits.TabIndex = 26;
+            btnGetPermits.Text = "Permits";
+            btnGetPermits.UseVisualStyleBackColor = false;
+            btnGetPermits.Click += btnGetPermits_Click;
             // 
             // lblMonths
             // 
-            this.lblMonths.AutoSize = true;
-            this.lblMonths.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMonths.ForeColor = System.Drawing.Color.Aqua;
-            this.lblMonths.Location = new System.Drawing.Point(302, 59);
-            this.lblMonths.Name = "lblMonths";
-            this.lblMonths.Size = new System.Drawing.Size(102, 30);
-            this.lblMonths.TabIndex = 25;
-            this.lblMonths.Text = "Month/s";
+            lblMonths.AutoSize = true;
+            lblMonths.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            lblMonths.ForeColor = Color.Aqua;
+            lblMonths.Location = new Point(302, 59);
+            lblMonths.Name = "lblMonths";
+            lblMonths.Size = new Size(102, 30);
+            lblMonths.TabIndex = 25;
+            lblMonths.Text = "Month/s";
             // 
             // dgvOther
             // 
-            this.dgvOther.BackgroundColor = System.Drawing.Color.Aqua;
-            this.dgvOther.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOther.Location = new System.Drawing.Point(58, 127);
-            this.dgvOther.Name = "dgvOther";
-            this.dgvOther.RowHeadersWidth = 51;
-            this.dgvOther.RowTemplate.Height = 25;
-            this.dgvOther.Size = new System.Drawing.Size(443, 164);
-            this.dgvOther.TabIndex = 90;
+            dgvOther.BackgroundColor = Color.Aqua;
+            dgvOther.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvOther.Location = new Point(58, 127);
+            dgvOther.Name = "dgvOther";
+            dgvOther.RowHeadersWidth = 51;
+            dgvOther.RowTemplate.Height = 25;
+            dgvOther.Size = new Size(443, 164);
+            dgvOther.TabIndex = 90;
             // 
             // pnlUsernametxt
             // 
-            this.pnlUsernametxt.BackColor = System.Drawing.Color.Aqua;
-            this.pnlUsernametxt.Location = new System.Drawing.Point(206, 87);
-            this.pnlUsernametxt.Name = "pnlUsernametxt";
-            this.pnlUsernametxt.Size = new System.Drawing.Size(90, 1);
-            this.pnlUsernametxt.TabIndex = 92;
+            pnlUsernametxt.BackColor = Color.Aqua;
+            pnlUsernametxt.Location = new Point(206, 87);
+            pnlUsernametxt.Name = "pnlUsernametxt";
+            pnlUsernametxt.Size = new Size(90, 1);
+            pnlUsernametxt.TabIndex = 92;
             // 
             // txtMonths
             // 
-            this.txtMonths.BackColor = System.Drawing.Color.Black;
-            this.txtMonths.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMonths.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMonths.ForeColor = System.Drawing.Color.White;
-            this.txtMonths.Location = new System.Drawing.Point(206, 66);
-            this.txtMonths.Name = "txtMonths";
-            this.txtMonths.Size = new System.Drawing.Size(90, 22);
-            this.txtMonths.TabIndex = 91;
+            txtMonths.BackColor = Color.Black;
+            txtMonths.BorderStyle = BorderStyle.None;
+            txtMonths.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtMonths.ForeColor = Color.White;
+            txtMonths.Location = new Point(206, 66);
+            txtMonths.Name = "txtMonths";
+            txtMonths.Size = new Size(90, 22);
+            txtMonths.TabIndex = 91;
             // 
             // frmOther
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(565, 391);
-            this.Controls.Add(this.pnlUsernametxt);
-            this.Controls.Add(this.txtMonths);
-            this.Controls.Add(this.dgvOther);
-            this.Controls.Add(this.btnBestCatchForTheYear);
-            this.Controls.Add(this.btnGetPermits);
-            this.Controls.Add(this.lblMonths);
-            this.Name = "frmOther";
-            this.Text = "frmOther";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOther)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaptionText;
+            ClientSize = new Size(565, 391);
+            Controls.Add(pnlUsernametxt);
+            Controls.Add(txtMonths);
+            Controls.Add(dgvOther);
+            Controls.Add(btnBestCatchForTheYear);
+            Controls.Add(btnGetPermits);
+            Controls.Add(lblMonths);
+            Name = "frmOther";
+            Text = "frmOther";
+            ((System.ComponentModel.ISupportInitialize)dgvOther).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

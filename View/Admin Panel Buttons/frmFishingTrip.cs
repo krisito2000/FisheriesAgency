@@ -65,7 +65,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             dgvTrip.Refresh();
         }
 
-        private void dgvTicket_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvTrip_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dgvTrip.Rows[e.RowIndex];
 
@@ -85,6 +85,12 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
             if (selectedVessel != null)
             {
+                if (string.IsNullOrEmpty(txtCatchAmount.Text))
+                {
+                    MessageBox.Show("Please fill all spaces");
+                    return;
+                }
+
                 int vesselId = selectedVessel.VesselId;
 
                 string query = "INSERT INTO [FishingTrip] (TripStart, TripEnd, CatchAmount, VesselId) VALUES (@TripStart, @TripEnd, @CatchAmount, @VesselId)";

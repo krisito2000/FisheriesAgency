@@ -71,13 +71,13 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
         }
 
-        private void btncreate_Click(object sender, EventArgs e)
+        private void btnCreate_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
             bool admin = cbAdmin.Checked;
 
-            if (string.IsNullOrEmpty(username) && string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Please fill all spaces");
                 return;

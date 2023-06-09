@@ -28,196 +28,200 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
-            this.lblTripStart = new System.Windows.Forms.Label();
-            this.lblTripEnd = new System.Windows.Forms.Label();
-            this.lblCatchAmount = new System.Windows.Forms.Label();
-            this.dtpTripStart = new System.Windows.Forms.DateTimePicker();
-            this.dtpTripEnd = new System.Windows.Forms.DateTimePicker();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.dgvTrip = new System.Windows.Forms.DataGridView();
-            this.cbVessels = new System.Windows.Forms.ComboBox();
-            this.pnlUsernametxt = new System.Windows.Forms.Panel();
-            this.txtCatchAmount = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTrip)).BeginInit();
-            this.SuspendLayout();
+            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            lblTripStart = new Label();
+            lblTripEnd = new Label();
+            lblCatchAmount = new Label();
+            dtpTripStart = new DateTimePicker();
+            dtpTripEnd = new DateTimePicker();
+            btnEdit = new Button();
+            btnDelete = new Button();
+            btnCreate = new Button();
+            dgvTrip = new DataGridView();
+            cbVessels = new ComboBox();
+            pnlUsernametxt = new Panel();
+            txtCatchAmount = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dgvTrip).BeginInit();
+            SuspendLayout();
             // 
             // sqlCommand1
             // 
-            this.sqlCommand1.CommandTimeout = 30;
-            this.sqlCommand1.Connection = null;
-            this.sqlCommand1.Notification = null;
-            this.sqlCommand1.Transaction = null;
+            sqlCommand1.CommandTimeout = 30;
+            sqlCommand1.Connection = null;
+            sqlCommand1.Notification = null;
+            sqlCommand1.Transaction = null;
             // 
             // lblTripStart
             // 
-            this.lblTripStart.AutoSize = true;
-            this.lblTripStart.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTripStart.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTripStart.ForeColor = System.Drawing.Color.Aqua;
-            this.lblTripStart.Location = new System.Drawing.Point(77, 46);
-            this.lblTripStart.Name = "lblTripStart";
-            this.lblTripStart.Size = new System.Drawing.Size(79, 21);
-            this.lblTripStart.TabIndex = 64;
-            this.lblTripStart.Text = "Trip Start";
+            lblTripStart.AutoSize = true;
+            lblTripStart.BackColor = SystemColors.ActiveCaptionText;
+            lblTripStart.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTripStart.ForeColor = Color.Aqua;
+            lblTripStart.Location = new Point(77, 46);
+            lblTripStart.Name = "lblTripStart";
+            lblTripStart.Size = new Size(79, 21);
+            lblTripStart.TabIndex = 64;
+            lblTripStart.Text = "Trip Start";
             // 
             // lblTripEnd
             // 
-            this.lblTripEnd.AutoSize = true;
-            this.lblTripEnd.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTripEnd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTripEnd.ForeColor = System.Drawing.Color.Aqua;
-            this.lblTripEnd.Location = new System.Drawing.Point(88, 80);
-            this.lblTripEnd.Name = "lblTripEnd";
-            this.lblTripEnd.Size = new System.Drawing.Size(72, 21);
-            this.lblTripEnd.TabIndex = 65;
-            this.lblTripEnd.Text = "Trip End";
+            lblTripEnd.AutoSize = true;
+            lblTripEnd.BackColor = SystemColors.ActiveCaptionText;
+            lblTripEnd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTripEnd.ForeColor = Color.Aqua;
+            lblTripEnd.Location = new Point(88, 80);
+            lblTripEnd.Name = "lblTripEnd";
+            lblTripEnd.Size = new Size(72, 21);
+            lblTripEnd.TabIndex = 65;
+            lblTripEnd.Text = "Trip End";
             // 
             // lblCatchAmount
             // 
-            this.lblCatchAmount.AutoSize = true;
-            this.lblCatchAmount.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCatchAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCatchAmount.ForeColor = System.Drawing.Color.Aqua;
-            this.lblCatchAmount.Location = new System.Drawing.Point(37, 117);
-            this.lblCatchAmount.Name = "lblCatchAmount";
-            this.lblCatchAmount.Size = new System.Drawing.Size(119, 21);
-            this.lblCatchAmount.TabIndex = 66;
-            this.lblCatchAmount.Text = "Catch Amount";
+            lblCatchAmount.AutoSize = true;
+            lblCatchAmount.BackColor = SystemColors.ActiveCaptionText;
+            lblCatchAmount.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCatchAmount.ForeColor = Color.Aqua;
+            lblCatchAmount.Location = new Point(37, 117);
+            lblCatchAmount.Name = "lblCatchAmount";
+            lblCatchAmount.Size = new Size(119, 21);
+            lblCatchAmount.TabIndex = 66;
+            lblCatchAmount.Text = "Catch Amount";
             // 
             // dtpTripStart
             // 
-            this.dtpTripStart.CalendarForeColor = System.Drawing.Color.Aqua;
-            this.dtpTripStart.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dtpTripStart.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dtpTripStart.CalendarTitleForeColor = System.Drawing.Color.Aqua;
-            this.dtpTripStart.CalendarTrailingForeColor = System.Drawing.Color.Aqua;
-            this.dtpTripStart.Location = new System.Drawing.Point(192, 48);
-            this.dtpTripStart.Name = "dtpTripStart";
-            this.dtpTripStart.Size = new System.Drawing.Size(213, 23);
-            this.dtpTripStart.TabIndex = 75;
+            dtpTripStart.CalendarForeColor = Color.Aqua;
+            dtpTripStart.CalendarMonthBackground = Color.FromArgb(64, 64, 64);
+            dtpTripStart.CalendarTitleBackColor = Color.FromArgb(64, 64, 64);
+            dtpTripStart.CalendarTitleForeColor = Color.Aqua;
+            dtpTripStart.CalendarTrailingForeColor = Color.Aqua;
+            dtpTripStart.Location = new Point(192, 48);
+            dtpTripStart.Name = "dtpTripStart";
+            dtpTripStart.Size = new Size(213, 23);
+            dtpTripStart.TabIndex = 75;
             // 
             // dtpTripEnd
             // 
-            this.dtpTripEnd.CalendarForeColor = System.Drawing.Color.Aqua;
-            this.dtpTripEnd.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dtpTripEnd.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dtpTripEnd.CalendarTitleForeColor = System.Drawing.Color.Aqua;
-            this.dtpTripEnd.CalendarTrailingForeColor = System.Drawing.Color.Aqua;
-            this.dtpTripEnd.Location = new System.Drawing.Point(192, 82);
-            this.dtpTripEnd.Name = "dtpTripEnd";
-            this.dtpTripEnd.Size = new System.Drawing.Size(213, 23);
-            this.dtpTripEnd.TabIndex = 76;
+            dtpTripEnd.CalendarForeColor = Color.Aqua;
+            dtpTripEnd.CalendarMonthBackground = Color.FromArgb(64, 64, 64);
+            dtpTripEnd.CalendarTitleBackColor = Color.FromArgb(64, 64, 64);
+            dtpTripEnd.CalendarTitleForeColor = Color.Aqua;
+            dtpTripEnd.CalendarTrailingForeColor = Color.Aqua;
+            dtpTripEnd.Location = new Point(192, 82);
+            dtpTripEnd.Name = "dtpTripEnd";
+            dtpTripEnd.Size = new Size(213, 23);
+            dtpTripEnd.TabIndex = 76;
             // 
             // btnEdit
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.DimGray;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEdit.ForeColor = System.Drawing.Color.Aqua;
-            this.btnEdit.Location = new System.Drawing.Point(149, 236);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(95, 30);
-            this.btnEdit.TabIndex = 80;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.BackColor = Color.DimGray;
+            btnEdit.FlatStyle = FlatStyle.Popup;
+            btnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEdit.ForeColor = Color.Aqua;
+            btnEdit.Location = new Point(149, 236);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(95, 30);
+            btnEdit.TabIndex = 80;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.DimGray;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDelete.ForeColor = System.Drawing.Color.Aqua;
-            this.btnDelete.Location = new System.Drawing.Point(98, 200);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(95, 30);
-            this.btnDelete.TabIndex = 79;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.BackColor = Color.DimGray;
+            btnDelete.FlatStyle = FlatStyle.Popup;
+            btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDelete.ForeColor = Color.Aqua;
+            btnDelete.Location = new Point(98, 200);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(95, 30);
+            btnDelete.TabIndex = 79;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnCreate
             // 
-            this.btnCreate.BackColor = System.Drawing.Color.DimGray;
-            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCreate.ForeColor = System.Drawing.Color.Aqua;
-            this.btnCreate.Location = new System.Drawing.Point(198, 200);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(95, 30);
-            this.btnCreate.TabIndex = 78;
-            this.btnCreate.Text = "Create ";
-            this.btnCreate.UseVisualStyleBackColor = false;
+            btnCreate.BackColor = Color.DimGray;
+            btnCreate.FlatStyle = FlatStyle.Popup;
+            btnCreate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCreate.ForeColor = Color.Aqua;
+            btnCreate.Location = new Point(198, 200);
+            btnCreate.Name = "btnCreate";
+            btnCreate.Size = new Size(95, 30);
+            btnCreate.TabIndex = 78;
+            btnCreate.Text = "Create ";
+            btnCreate.UseVisualStyleBackColor = false;
+            btnCreate.Click += btnCreate_Click;
             // 
             // dgvTrip
             // 
-            this.dgvTrip.BackgroundColor = System.Drawing.Color.Aqua;
-            this.dgvTrip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTrip.Location = new System.Drawing.Point(429, 48);
-            this.dgvTrip.Name = "dgvTrip";
-            this.dgvTrip.RowHeadersWidth = 51;
-            this.dgvTrip.RowTemplate.Height = 25;
-            this.dgvTrip.Size = new System.Drawing.Size(368, 150);
-            this.dgvTrip.TabIndex = 81;
+            dgvTrip.BackgroundColor = Color.Aqua;
+            dgvTrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTrip.Location = new Point(429, 48);
+            dgvTrip.Name = "dgvTrip";
+            dgvTrip.RowHeadersWidth = 51;
+            dgvTrip.RowTemplate.Height = 25;
+            dgvTrip.Size = new Size(368, 150);
+            dgvTrip.TabIndex = 81;
+            dgvTrip.CellClick += dgvTrip_CellClick;
             // 
             // cbVessels
             // 
-            this.cbVessels.BackColor = System.Drawing.Color.Gray;
-            this.cbVessels.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbVessels.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cbVessels.ForeColor = System.Drawing.Color.Aqua;
-            this.cbVessels.FormattingEnabled = true;
-            this.cbVessels.Location = new System.Drawing.Point(140, 162);
-            this.cbVessels.Name = "cbVessels";
-            this.cbVessels.Size = new System.Drawing.Size(121, 23);
-            this.cbVessels.TabIndex = 82;
-            this.cbVessels.Text = "Vessels";
+            cbVessels.BackColor = Color.Gray;
+            cbVessels.FlatStyle = FlatStyle.Popup;
+            cbVessels.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            cbVessels.ForeColor = Color.Aqua;
+            cbVessels.FormattingEnabled = true;
+            cbVessels.Location = new Point(140, 162);
+            cbVessels.Name = "cbVessels";
+            cbVessels.Size = new Size(121, 23);
+            cbVessels.TabIndex = 82;
+            cbVessels.Text = "Vessels";
+            cbVessels.SelectedIndexChanged += cbVessels_SelectedIndexChanged;
             // 
             // pnlUsernametxt
             // 
-            this.pnlUsernametxt.BackColor = System.Drawing.Color.Aqua;
-            this.pnlUsernametxt.Location = new System.Drawing.Point(192, 138);
-            this.pnlUsernametxt.Name = "pnlUsernametxt";
-            this.pnlUsernametxt.Size = new System.Drawing.Size(213, 1);
-            this.pnlUsernametxt.TabIndex = 84;
+            pnlUsernametxt.BackColor = Color.Aqua;
+            pnlUsernametxt.Location = new Point(192, 138);
+            pnlUsernametxt.Name = "pnlUsernametxt";
+            pnlUsernametxt.Size = new Size(213, 1);
+            pnlUsernametxt.TabIndex = 84;
             // 
             // txtCatchAmount
             // 
-            this.txtCatchAmount.BackColor = System.Drawing.Color.Black;
-            this.txtCatchAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCatchAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCatchAmount.ForeColor = System.Drawing.Color.White;
-            this.txtCatchAmount.Location = new System.Drawing.Point(192, 117);
-            this.txtCatchAmount.Name = "txtCatchAmount";
-            this.txtCatchAmount.Size = new System.Drawing.Size(213, 22);
-            this.txtCatchAmount.TabIndex = 83;
+            txtCatchAmount.BackColor = Color.Black;
+            txtCatchAmount.BorderStyle = BorderStyle.None;
+            txtCatchAmount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCatchAmount.ForeColor = Color.White;
+            txtCatchAmount.Location = new Point(192, 117);
+            txtCatchAmount.Name = "txtCatchAmount";
+            txtCatchAmount.Size = new Size(213, 22);
+            txtCatchAmount.TabIndex = 83;
             // 
             // frmFishingTrip
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(839, 278);
-            this.Controls.Add(this.pnlUsernametxt);
-            this.Controls.Add(this.txtCatchAmount);
-            this.Controls.Add(this.cbVessels);
-            this.Controls.Add(this.dgvTrip);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnCreate);
-            this.Controls.Add(this.dtpTripEnd);
-            this.Controls.Add(this.dtpTripStart);
-            this.Controls.Add(this.lblCatchAmount);
-            this.Controls.Add(this.lblTripEnd);
-            this.Controls.Add(this.lblTripStart);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "frmFishingTrip";
-            this.Text = "Fishing Trip";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTrip)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaptionText;
+            ClientSize = new Size(839, 278);
+            Controls.Add(pnlUsernametxt);
+            Controls.Add(txtCatchAmount);
+            Controls.Add(cbVessels);
+            Controls.Add(dgvTrip);
+            Controls.Add(btnEdit);
+            Controls.Add(btnDelete);
+            Controls.Add(btnCreate);
+            Controls.Add(dtpTripEnd);
+            Controls.Add(dtpTripStart);
+            Controls.Add(lblCatchAmount);
+            Controls.Add(lblTripEnd);
+            Controls.Add(lblTripStart);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "frmFishingTrip";
+            Text = "Fishing Trip";
+            ((System.ComponentModel.ISupportInitialize)dgvTrip).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

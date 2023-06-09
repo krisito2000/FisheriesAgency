@@ -13,6 +13,7 @@ using System.Xml.Linq;
 using FisheriesAgency;
 using static FisheriesAgency.View.Admin_Panel_Buttons.frmTicket;
 using FisheriesAgency.Model;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
@@ -120,6 +121,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             {
                 cmbMember.ForeColor = Color.Red;
                 MessageBox.Show("Please select an owner and a captain.");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtPrice.Text) || string.IsNullOrEmpty(txtTelk.Text))
+            {
+                MessageBox.Show("Please fill all spaces");
                 return;
             }
 

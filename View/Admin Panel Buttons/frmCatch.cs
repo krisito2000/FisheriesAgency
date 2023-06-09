@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using static FisheriesAgency.View.Admin_Panel_Buttons.frmFishingPermit;
 using FisheriesAgency.Model;
+using System.Xml.Linq;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
@@ -79,7 +80,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         private void btnCreate_Click(object sender, EventArgs e)
         {
             ComboBoxTrip selectedTrip = (ComboBoxTrip)cmbTrip.SelectedItem;
-            
+
             if (selectedTrip != null)
             {
                 int tripId = selectedTrip.TripId;
@@ -172,6 +173,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 MessageBox.Show("Please select a row to edit.");
                 return;
             }
+            if (string.IsNullOrEmpty(txtWeight.Text) || string.IsNullOrEmpty(txtQuantity.Text))
+            {
+                MessageBox.Show("Please fill all spaces");
+                return;
+            }
 
             DataGridViewRow row = dgvCatch.SelectedRows[0];
             int catchId = (int)row.Cells["CatchId"].Value;
@@ -204,11 +210,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                     dgvReset();
                 }
             }
-        }
-
-        private void cmbTrip_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cmbTrip.ForeColor = Color.Black;
         }
     }
 }
