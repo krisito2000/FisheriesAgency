@@ -115,7 +115,7 @@ namespace FisheriesAgency.View
                         form.Close();
                     }
                 }
-                this.Hide();
+                this.Close();
             }
         }
     }

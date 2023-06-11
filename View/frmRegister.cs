@@ -24,7 +24,8 @@ namespace FisheriesAgency.View
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Logout.LogoutHelper(this);
+            frmLogin frmLogin = new frmLogin();
+            this.Hide();
         }
 
         private void btnViewPassword_Click(object sender, EventArgs e)

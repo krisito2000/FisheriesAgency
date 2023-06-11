@@ -30,12 +30,16 @@
         {
             btnLogout = new Button();
             dataGridView1 = new DataGridView();
+            dgvInformation = new DataGridView();
+            cmbTables = new ComboBox();
+            btnTicket = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvInformation).BeginInit();
             SuspendLayout();
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(275, 284);
+            btnLogout.Location = new Point(275, 293);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(64, 28);
             btnLogout.TabIndex = 12;
@@ -52,16 +56,47 @@
             dataGridView1.Size = new Size(8, 8);
             dataGridView1.TabIndex = 13;
             // 
+            // dgvInformation
+            // 
+            dgvInformation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvInformation.Location = new Point(312, 66);
+            dgvInformation.Name = "dgvInformation";
+            dgvInformation.RowTemplate.Height = 25;
+            dgvInformation.Size = new Size(325, 192);
+            dgvInformation.TabIndex = 14;
+            // 
+            // cmbTables
+            // 
+            cmbTables.FormattingEnabled = true;
+            cmbTables.Location = new Point(97, 148);
+            cmbTables.Name = "cmbTables";
+            cmbTables.Size = new Size(121, 23);
+            cmbTables.TabIndex = 15;
+            cmbTables.Text = "Select a table";
+            // 
+            // btnTicket
+            // 
+            btnTicket.Location = new Point(97, 211);
+            btnTicket.Name = "btnTicket";
+            btnTicket.Size = new Size(121, 28);
+            btnTicket.TabIndex = 16;
+            btnTicket.Text = "Create a ticket";
+            btnTicket.UseVisualStyleBackColor = true;
+            // 
             // frmUser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(649, 365);
+            Controls.Add(btnTicket);
+            Controls.Add(cmbTables);
+            Controls.Add(dgvInformation);
             Controls.Add(dataGridView1);
             Controls.Add(btnLogout);
             Name = "frmUser";
             Text = "frmUser";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvInformation).EndInit();
             ResumeLayout(false);
         }
 
@@ -69,5 +104,8 @@
 
         private Button btnLogout;
         private DataGridView dataGridView1;
+        private DataGridView dgvInformation;
+        private ComboBox cmbTables;
+        private Button btnTicket;
     }
 }

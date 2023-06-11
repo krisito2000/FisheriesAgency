@@ -21,9 +21,9 @@ namespace FisheriesAgency.View
         private void btnLogout_Click(object sender, EventArgs e)
         {
             DialogResult logout = MessageBox.Show("Are you sure you want to logout?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (logout == DialogResult.Yes) 
+            if (logout == DialogResult.Yes)
             {
-                Logout.LogoutHelper(this);
+                this.Close();
             }
         }
     }

@@ -15,7 +15,6 @@ namespace FisheriesAgency
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            this.Hide();
             frmRegister frmRegister = new frmRegister();
             frmRegister.ShowDialog();
         }
