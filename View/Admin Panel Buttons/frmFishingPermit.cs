@@ -197,9 +197,9 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
         }
 
-        private void cmbVessels_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbVessels_DropDown(object sender, EventArgs e)
         {
-            cmbVessels.ForeColor = Color.Black;
+            cmbVessels.ForeColor = Color.Aqua;
         }
     }
 }

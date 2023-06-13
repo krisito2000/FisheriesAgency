@@ -145,7 +145,7 @@
             dgvUser.Name = "dgvUser";
             dgvUser.RowHeadersWidth = 51;
             dgvUser.RowTemplate.Height = 25;
-            dgvUser.Size = new Size(442, 195);
+            dgvUser.Size = new Size(453, 195);
             dgvUser.TabIndex = 68;
             dgvUser.CellClick += dgvUser_CellClick;
             // 
@@ -192,7 +192,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(777, 303);
+            ClientSize = new Size(800, 303);
             Controls.Add(panel1);
             Controls.Add(txtPassword);
             Controls.Add(panel2);
@@ -206,7 +206,7 @@
             Controls.Add(btnDelete);
             Controls.Add(btnCreate);
             Name = "frmUser";
-            Text = "frmUser";
+            Text = "Users";
             ((System.ComponentModel.ISupportInitialize)dgvUser).EndInit();
             ResumeLayout(false);
             PerformLayout();

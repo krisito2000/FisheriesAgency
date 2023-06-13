@@ -170,15 +170,13 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
         }
 
-        private void cbOwners_DropDown(object sender, EventArgs e)
+        private void cmbOwners_DropDown(object sender, EventArgs e)
         {
-            cmbOwners.ForeColor = Color.Black;
-            cmbCaptains.ForeColor = Color.Black;
+            cmbOwners.ForeColor = Color.Aqua;
         }
-        private void cbCaptains_DropDown(object sender, EventArgs e)
+        private void cmbCaptains_DropDown(object sender, EventArgs e)
         {
-            cmbOwners.ForeColor = Color.Black;
-            cmbCaptains.ForeColor = Color.Black;
+            cmbCaptains.ForeColor = Color.Aqua;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

@@ -42,8 +42,6 @@
             cbIsDisabled = new CheckBox();
             cmbMember = new ComboBox();
             pnlUsernametxt = new Panel();
-            txtName = new TextBox();
-            panel1 = new Panel();
             txtPrice = new TextBox();
             panel2 = new Panel();
             txtTelk = new TextBox();
@@ -114,7 +112,7 @@
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
-            //
+            // 
             // btnCreate
             // 
             btnCreate.BackColor = Color.DimGray;
@@ -148,7 +146,7 @@
             lblTelk.FlatStyle = FlatStyle.System;
             lblTelk.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblTelk.ForeColor = Color.Aqua;
-            lblTelk.Location = new Point(61, 260);
+            lblTelk.Location = new Point(68, 268);
             lblTelk.Name = "lblTelk";
             lblTelk.Size = new Size(41, 21);
             lblTelk.TabIndex = 73;
@@ -194,14 +192,16 @@
             // 
             // cmbMember
             // 
-            cmbMember.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbMember.BackColor = Color.Gray;
+            cmbMember.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            cmbMember.ForeColor = Color.Aqua;
             cmbMember.FormattingEnabled = true;
-            cmbMember.Location = new Point(191, 167);
+            cmbMember.Location = new Point(191, 191);
             cmbMember.Name = "cmbMember";
             cmbMember.Size = new Size(167, 23);
             cmbMember.TabIndex = 78;
             cmbMember.Text = "Select Member";
-            cmbMember.SelectedIndexChanged += cmbMember_SelectedIndexChanged;
+            cmbMember.DropDown += cmbMember_DropDown;
             // 
             // pnlUsernametxt
             // 
@@ -211,35 +211,16 @@
             pnlUsernametxt.Size = new Size(167, 1);
             pnlUsernametxt.TabIndex = 96;
             // 
-            // txtName
-            // 
-            txtName.BackColor = Color.Black;
-            txtName.BorderStyle = BorderStyle.None;
-            txtName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtName.ForeColor = Color.White;
-            txtName.Location = new Point(191, 121);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(167, 22);
-            txtName.TabIndex = 95;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Aqua;
-            panel1.Location = new Point(191, 232);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(167, 1);
-            panel1.TabIndex = 98;
-            // 
             // txtPrice
             // 
             txtPrice.BackColor = Color.Black;
             txtPrice.BorderStyle = BorderStyle.None;
             txtPrice.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtPrice.ForeColor = Color.White;
-            txtPrice.Location = new Point(191, 211);
+            txtPrice.Location = new Point(191, 121);
             txtPrice.Name = "txtPrice";
             txtPrice.Size = new Size(167, 22);
-            txtPrice.TabIndex = 97;
+            txtPrice.TabIndex = 95;
             // 
             // panel2
             // 
@@ -268,10 +249,8 @@
             ClientSize = new Size(800, 336);
             Controls.Add(panel2);
             Controls.Add(txtTelk);
-            Controls.Add(panel1);
-            Controls.Add(txtPrice);
             Controls.Add(pnlUsernametxt);
-            Controls.Add(txtName);
+            Controls.Add(txtPrice);
             Controls.Add(cmbMember);
             Controls.Add(cbIsDisabled);
             Controls.Add(cbIsPensioner);
@@ -286,7 +265,7 @@
             Controls.Add(btnCreate);
             Controls.Add(dgvTicket);
             Name = "frmTicket";
-            Text = "frmTicket";
+            Text = "Tickets";
             ((System.ComponentModel.ISupportInitialize)dgvTicket).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -310,8 +289,6 @@
         private CheckBox cbIsDisabled;
         private ComboBox cmbMember;
         private Panel pnlUsernametxt;
-        private TextBox txtName;
-        private Panel panel1;
         private TextBox txtPrice;
         private Panel panel2;
         private TextBox txtTelk;

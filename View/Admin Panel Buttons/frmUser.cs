@@ -187,13 +187,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 SqlCommand checkCommand = new SqlCommand("SELECT COUNT(*) FROM [User] WHERE Username = @Username AND UserID <> @UserId", connection);
                 checkCommand.Parameters.AddWithValue("@Username", newUsername);
                 checkCommand.Parameters.AddWithValue("@UserId", userId);
-                int count = (int)checkCommand.ExecuteScalar();
-
-                if (count > 0)
-                {
-                    MessageBox.Show("Username already exists. Please choose a different username.");
-                    return;
-                }
             }
 
             // Update the user in the local database

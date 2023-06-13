@@ -87,34 +87,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
         }
 
-        private void cmbMember_DragDrop(object sender, DragEventArgs e)
-        {
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                string sql = "SELECT MemberId, Name FROM Member";
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            int memberId = reader.GetInt32(0);
-                            string name = reader.GetString(1);
-
-                            // Create a new Member object
-                            ComboBoxMember member = new ComboBoxMember(memberId, name);
-
-                            // Add the member to the combo box
-                            cmbMember.Items.Add(member);
-                        }
-                    }
-                }
-            }
-        }
-
         private void btnCreate_Click(object sender, EventArgs e)
         {
             if (cmbMember.SelectedIndex == -1)
@@ -123,7 +95,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 MessageBox.Show("Please select an owner and a captain.");
                 return;
             }
-            if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtPrice.Text) || string.IsNullOrEmpty(txtTelk.Text))
+            if (string.IsNullOrEmpty(txtPrice.Text) || string.IsNullOrEmpty(txtTelk.Text))
             {
                 MessageBox.Show("Please fill all spaces");
                 return;
@@ -250,9 +222,9 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             UpdateTicketsDataGridView(dgvTicket);
         }
 
-        private void cmbMember_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbMember_DropDown(object sender, EventArgs e)
         {
-            cmbMember.ForeColor = Color.Black;
+            cmbMember.ForeColor = Color.Aqua;
         }
     }
 }

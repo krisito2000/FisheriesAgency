@@ -157,11 +157,11 @@
             // 
             dgvTrip.BackgroundColor = Color.Aqua;
             dgvTrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTrip.Location = new Point(429, 48);
+            dgvTrip.Location = new Point(429, 59);
             dgvTrip.Name = "dgvTrip";
             dgvTrip.RowHeadersWidth = 51;
             dgvTrip.RowTemplate.Height = 25;
-            dgvTrip.Size = new Size(368, 150);
+            dgvTrip.Size = new Size(453, 171);
             dgvTrip.TabIndex = 81;
             dgvTrip.CellClick += dgvTrip_CellClick;
             // 
@@ -177,7 +177,7 @@
             cbVessels.Size = new Size(121, 23);
             cbVessels.TabIndex = 82;
             cbVessels.Text = "Vessels";
-            cbVessels.SelectedIndexChanged += cbVessels_SelectedIndexChanged;
+            cbVessels.DropDown += cbVessels_DropDown;
             // 
             // pnlUsernametxt
             // 
@@ -203,7 +203,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(839, 278);
+            ClientSize = new Size(945, 285);
             Controls.Add(pnlUsernametxt);
             Controls.Add(txtCatchAmount);
             Controls.Add(cbVessels);
@@ -218,7 +218,7 @@
             Controls.Add(lblTripStart);
             Margin = new Padding(3, 2, 3, 2);
             Name = "frmFishingTrip";
-            Text = "Fishing Trip";
+            Text = "Fishing Trips";
             ((System.ComponentModel.ISupportInitialize)dgvTrip).EndInit();
             ResumeLayout(false);
             PerformLayout();

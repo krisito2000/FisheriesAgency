@@ -119,7 +119,7 @@
             Controls.Add(btnGetPermits);
             Controls.Add(lblMonths);
             Name = "frmOther";
-            Text = "frmOther";
+            Text = "Other";
             ((System.ComponentModel.ISupportInitialize)dgvOther).EndInit();
             ResumeLayout(false);
             PerformLayout();

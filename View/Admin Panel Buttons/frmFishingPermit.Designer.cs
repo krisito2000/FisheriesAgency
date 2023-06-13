@@ -123,7 +123,7 @@
             dgvPermit.Name = "dgvPermit";
             dgvPermit.RowHeadersWidth = 51;
             dgvPermit.RowTemplate.Height = 25;
-            dgvPermit.Size = new Size(322, 150);
+            dgvPermit.Size = new Size(356, 159);
             dgvPermit.TabIndex = 38;
             dgvPermit.CellClick += dgvPermit_CellClick;
             // 
@@ -193,7 +193,7 @@
             cmbVessels.Size = new Size(121, 23);
             cmbVessels.TabIndex = 77;
             cmbVessels.Text = "Vessels";
-            cmbVessels.SelectedIndexChanged += cmbVessels_SelectedIndexChanged;
+            cmbVessels.DropDown += cmbVessels_DropDown;
             // 
             // pnlUsernametxt
             // 
@@ -238,7 +238,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(800, 356);
+            ClientSize = new Size(849, 356);
             Controls.Add(panel1);
             Controls.Add(txtEquipment);
             Controls.Add(pnlUsernametxt);
@@ -255,7 +255,7 @@
             Controls.Add(btnDelete);
             Controls.Add(btnCreate);
             Name = "frmFishingPermit";
-            Text = "frmFishingPermit";
+            Text = "Fishing Permits";
             ((System.ComponentModel.ISupportInitialize)dgvPermit).EndInit();
             ResumeLayout(false);
             PerformLayout();

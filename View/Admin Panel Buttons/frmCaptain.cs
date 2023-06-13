@@ -106,7 +106,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
 
             DialogResult result = MessageBox.Show("Are you sure you want to delete this captain?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes) 
+            if (result == DialogResult.Yes)
             {
                 using (SqlConnection connection = new SqlConnection(Program.connectionString))
                 {

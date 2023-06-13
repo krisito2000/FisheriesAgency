@@ -203,9 +203,9 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             UpdateTripsDataGridView(dgvTrip);
         }
 
-        private void cbVessels_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbVessels_DropDown(object sender, EventArgs e)
         {
-            cbVessels.ForeColor = Color.Black;
+            cbVessels.ForeColor = Color.Aqua;
         }
     }
 }

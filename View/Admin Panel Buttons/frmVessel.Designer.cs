@@ -120,7 +120,7 @@
             btnEdit.FlatStyle = FlatStyle.Popup;
             btnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnEdit.ForeColor = Color.Aqua;
-            btnEdit.Location = new Point(481, 281);
+            btnEdit.Location = new Point(484, 277);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(95, 30);
             btnEdit.TabIndex = 80;
@@ -240,11 +240,12 @@
             cmbOwners.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cmbOwners.ForeColor = Color.Aqua;
             cmbOwners.FormattingEnabled = true;
-            cmbOwners.Location = new Point(347, 332);
+            cmbOwners.Location = new Point(350, 328);
             cmbOwners.Name = "cmbOwners";
             cmbOwners.Size = new Size(121, 23);
             cmbOwners.TabIndex = 96;
             cmbOwners.Text = "Owners";
+            cmbOwners.DropDown += cmbOwners_DropDown;
             // 
             // cmbCaptains
             // 
@@ -253,11 +254,12 @@
             cmbCaptains.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cmbCaptains.ForeColor = Color.Aqua;
             cmbCaptains.FormattingEnabled = true;
-            cmbCaptains.Location = new Point(585, 332);
+            cmbCaptains.Location = new Point(588, 328);
             cmbCaptains.Name = "cmbCaptains";
             cmbCaptains.Size = new Size(121, 23);
             cmbCaptains.TabIndex = 97;
             cmbCaptains.Text = "Captains";
+            cmbCaptains.DropDown += cmbCaptains_DropDown;
             // 
             // pnlUsernametxt
             // 
@@ -470,7 +472,7 @@
             Controls.Add(btnDelete);
             Controls.Add(btnCreate);
             Name = "frmVessel";
-            Text = "frmVessel";
+            Text = "Vessels";
             ((System.ComponentModel.ISupportInitialize)dgvVessel).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -132,7 +132,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (dgvCatch.SelectedRows.Count > 0)
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this catch?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dgvCatch.SelectedRows.Count > 0 && result == DialogResult.Yes)
             {
                 // Get the selected row
                 DataGridViewRow selectedRow = dgvCatch.SelectedRows[0];
@@ -210,6 +211,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                     dgvReset();
                 }
             }
+        }
+
+        private void cmbTrip_DropDown(object sender, EventArgs e)
+        {
+            cmbTrip.ForeColor = Color.Aqua;
         }
     }
 }

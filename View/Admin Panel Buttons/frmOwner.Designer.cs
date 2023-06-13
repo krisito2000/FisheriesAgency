@@ -175,7 +175,7 @@
             Controls.Add(btnDelete);
             Controls.Add(btnCreate);
             Name = "frmOwner";
-            Text = "frmOwner";
+            Text = "Owners";
             ((System.ComponentModel.ISupportInitialize)dgvOwner).EndInit();
             ResumeLayout(false);
             PerformLayout();
