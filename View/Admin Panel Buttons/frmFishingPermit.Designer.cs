@@ -157,6 +157,7 @@
             dtpIssueDate.CalendarTitleBackColor = Color.FromArgb(64, 64, 64);
             dtpIssueDate.CalendarTitleForeColor = Color.Aqua;
             dtpIssueDate.CalendarTrailingForeColor = Color.Aqua;
+            dtpIssueDate.Cursor = Cursors.Hand;
             dtpIssueDate.Location = new Point(218, 93);
             dtpIssueDate.Name = "dtpIssueDate";
             dtpIssueDate.Size = new Size(134, 23);
@@ -169,6 +170,7 @@
             dtpExpirationDate.CalendarTitleBackColor = Color.FromArgb(64, 64, 64);
             dtpExpirationDate.CalendarTitleForeColor = Color.Aqua;
             dtpExpirationDate.CalendarTrailingForeColor = Color.Aqua;
+            dtpExpirationDate.Cursor = Cursors.Hand;
             dtpExpirationDate.Location = new Point(218, 148);
             dtpExpirationDate.Name = "dtpExpirationDate";
             dtpExpirationDate.Size = new Size(134, 23);
@@ -184,6 +186,7 @@
             // cmbVessels
             // 
             cmbVessels.BackColor = Color.Gray;
+            cmbVessels.Cursor = Cursors.Hand;
             cmbVessels.FlatStyle = FlatStyle.Popup;
             cmbVessels.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cmbVessels.ForeColor = Color.Aqua;
@@ -207,6 +210,7 @@
             // 
             txtPermitNumber.BackColor = Color.Black;
             txtPermitNumber.BorderStyle = BorderStyle.None;
+            txtPermitNumber.Cursor = Cursors.IBeam;
             txtPermitNumber.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtPermitNumber.ForeColor = Color.White;
             txtPermitNumber.Location = new Point(218, 46);
@@ -226,6 +230,7 @@
             // 
             txtEquipment.BackColor = Color.Black;
             txtEquipment.BorderStyle = BorderStyle.None;
+            txtEquipment.Cursor = Cursors.IBeam;
             txtEquipment.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtEquipment.ForeColor = Color.White;
             txtEquipment.Location = new Point(218, 197);
@@ -255,6 +260,7 @@
             Controls.Add(btnDelete);
             Controls.Add(btnCreate);
             Name = "frmFishingPermit";
+            Opacity = 0.93D;
             Text = "Fishing Permits";
             ((System.ComponentModel.ISupportInitialize)dgvPermit).EndInit();
             ResumeLayout(false);

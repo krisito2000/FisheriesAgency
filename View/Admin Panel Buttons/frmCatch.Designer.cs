@@ -45,6 +45,7 @@
             // btnEdit
             // 
             btnEdit.BackColor = Color.DimGray;
+            btnEdit.Cursor = Cursors.Hand;
             btnEdit.FlatStyle = FlatStyle.Popup;
             btnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnEdit.ForeColor = Color.Aqua;
@@ -84,6 +85,7 @@
             // btnDelete
             // 
             btnDelete.BackColor = Color.DimGray;
+            btnDelete.Cursor = Cursors.Hand;
             btnDelete.FlatStyle = FlatStyle.Popup;
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.Aqua;
@@ -98,6 +100,7 @@
             // btnCreate
             // 
             btnCreate.BackColor = Color.DimGray;
+            btnCreate.Cursor = Cursors.Hand;
             btnCreate.FlatStyle = FlatStyle.Popup;
             btnCreate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCreate.ForeColor = Color.Aqua;
@@ -124,6 +127,7 @@
             // cmbTrip
             // 
             cmbTrip.BackColor = Color.DimGray;
+            cmbTrip.Cursor = Cursors.Hand;
             cmbTrip.FlatStyle = FlatStyle.Popup;
             cmbTrip.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cmbTrip.ForeColor = Color.Aqua;
@@ -147,6 +151,7 @@
             // 
             txtWeight.BackColor = Color.Black;
             txtWeight.BorderStyle = BorderStyle.None;
+            txtWeight.Cursor = Cursors.IBeam;
             txtWeight.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtWeight.ForeColor = Color.White;
             txtWeight.Location = new Point(160, 44);
@@ -166,6 +171,7 @@
             // 
             txtQuantity.BackColor = Color.Black;
             txtQuantity.BorderStyle = BorderStyle.None;
+            txtQuantity.Cursor = Cursors.IBeam;
             txtQuantity.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtQuantity.ForeColor = Color.White;
             txtQuantity.Location = new Point(159, 91);
@@ -191,6 +197,7 @@
             Controls.Add(btnDelete);
             Controls.Add(btnCreate);
             Name = "frmCatch";
+            Opacity = 0.93D;
             Text = "Catches";
             ((System.ComponentModel.ISupportInitialize)dgvCatch).EndInit();
             ResumeLayout(false);

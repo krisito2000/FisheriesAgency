@@ -63,6 +63,7 @@
             // btnEdit
             // 
             btnEdit.BackColor = Color.DimGray;
+            btnEdit.Cursor = Cursors.Hand;
             btnEdit.FlatStyle = FlatStyle.Popup;
             btnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnEdit.ForeColor = Color.Aqua;
@@ -102,6 +103,7 @@
             // btnDelete
             // 
             btnDelete.BackColor = Color.DimGray;
+            btnDelete.Cursor = Cursors.Hand;
             btnDelete.FlatStyle = FlatStyle.Popup;
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.Aqua;
@@ -116,6 +118,7 @@
             // btnCreate
             // 
             btnCreate.BackColor = Color.DimGray;
+            btnCreate.Cursor = Cursors.Hand;
             btnCreate.FlatStyle = FlatStyle.Popup;
             btnCreate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCreate.ForeColor = Color.Aqua;
@@ -154,6 +157,7 @@
             // 
             // dtpStartDate
             // 
+            dtpStartDate.Cursor = Cursors.Hand;
             dtpStartDate.Location = new Point(168, 35);
             dtpStartDate.Name = "dtpStartDate";
             dtpStartDate.Size = new Size(200, 23);
@@ -161,6 +165,7 @@
             // 
             // dtpEndDate
             // 
+            dtpEndDate.Cursor = Cursors.Hand;
             dtpEndDate.Location = new Point(168, 82);
             dtpEndDate.Name = "dtpEndDate";
             dtpEndDate.Size = new Size(200, 23);
@@ -169,6 +174,7 @@
             // cbIsPensioner
             // 
             cbIsPensioner.AutoSize = true;
+            cbIsPensioner.Cursor = Cursors.Hand;
             cbIsPensioner.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             cbIsPensioner.ForeColor = Color.Aqua;
             cbIsPensioner.Location = new Point(61, 167);
@@ -181,6 +187,7 @@
             // cbIsDisabled
             // 
             cbIsDisabled.AutoSize = true;
+            cbIsDisabled.Cursor = Cursors.Hand;
             cbIsDisabled.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             cbIsDisabled.ForeColor = Color.Aqua;
             cbIsDisabled.Location = new Point(61, 210);
@@ -193,6 +200,7 @@
             // cmbMember
             // 
             cmbMember.BackColor = Color.Gray;
+            cmbMember.Cursor = Cursors.Hand;
             cmbMember.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cmbMember.ForeColor = Color.Aqua;
             cmbMember.FormattingEnabled = true;
@@ -215,6 +223,7 @@
             // 
             txtPrice.BackColor = Color.Black;
             txtPrice.BorderStyle = BorderStyle.None;
+            txtPrice.Cursor = Cursors.IBeam;
             txtPrice.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtPrice.ForeColor = Color.White;
             txtPrice.Location = new Point(191, 121);
@@ -234,6 +243,7 @@
             // 
             txtTelk.BackColor = Color.Black;
             txtTelk.BorderStyle = BorderStyle.None;
+            txtTelk.Cursor = Cursors.IBeam;
             txtTelk.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtTelk.ForeColor = Color.White;
             txtTelk.Location = new Point(191, 268);
@@ -265,6 +275,7 @@
             Controls.Add(btnCreate);
             Controls.Add(dgvTicket);
             Name = "frmTicket";
+            Opacity = 0.93D;
             Text = "Tickets";
             ((System.ComponentModel.ISupportInitialize)dgvTicket).EndInit();
             ResumeLayout(false);

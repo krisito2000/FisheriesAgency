@@ -44,6 +44,7 @@
             // btnEdit
             // 
             btnEdit.BackColor = Color.DimGray;
+            btnEdit.Cursor = Cursors.Hand;
             btnEdit.FlatStyle = FlatStyle.Popup;
             btnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnEdit.ForeColor = Color.Aqua;
@@ -83,6 +84,7 @@
             // btnDelete
             // 
             btnDelete.BackColor = Color.DimGray;
+            btnDelete.Cursor = Cursors.Hand;
             btnDelete.FlatStyle = FlatStyle.Popup;
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.Aqua;
@@ -97,6 +99,7 @@
             // btnCreate
             // 
             btnCreate.BackColor = Color.DimGray;
+            btnCreate.Cursor = Cursors.Hand;
             btnCreate.FlatStyle = FlatStyle.Popup;
             btnCreate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCreate.ForeColor = Color.Aqua;
@@ -132,6 +135,7 @@
             // 
             txtName.BackColor = Color.Black;
             txtName.BorderStyle = BorderStyle.None;
+            txtName.Cursor = Cursors.IBeam;
             txtName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtName.ForeColor = Color.White;
             txtName.Location = new Point(168, 53);
@@ -151,6 +155,7 @@
             // 
             txtAddress.BackColor = Color.Black;
             txtAddress.BorderStyle = BorderStyle.None;
+            txtAddress.Cursor = Cursors.IBeam;
             txtAddress.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtAddress.ForeColor = Color.White;
             txtAddress.Location = new Point(167, 100);
@@ -175,6 +180,7 @@
             Controls.Add(btnDelete);
             Controls.Add(btnCreate);
             Name = "frmCaptain";
+            Opacity = 0.93D;
             Text = "Captains";
             ((System.ComponentModel.ISupportInitialize)dgvCaptain).EndInit();
             ResumeLayout(false);

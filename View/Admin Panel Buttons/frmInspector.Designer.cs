@@ -41,6 +41,7 @@
             // btnEdit
             // 
             btnEdit.BackColor = Color.DimGray;
+            btnEdit.Cursor = Cursors.Hand;
             btnEdit.FlatStyle = FlatStyle.Popup;
             btnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnEdit.ForeColor = Color.Aqua;
@@ -66,6 +67,7 @@
             // btnDelete
             // 
             btnDelete.BackColor = Color.DimGray;
+            btnDelete.Cursor = Cursors.Hand;
             btnDelete.FlatStyle = FlatStyle.Popup;
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.Aqua;
@@ -80,6 +82,7 @@
             // btnCreate
             // 
             btnCreate.BackColor = Color.DimGray;
+            btnCreate.Cursor = Cursors.Hand;
             btnCreate.FlatStyle = FlatStyle.Popup;
             btnCreate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCreate.ForeColor = Color.Aqua;
@@ -110,6 +113,7 @@
             dtpInspectorDate.CalendarTitleBackColor = Color.FromArgb(64, 64, 64);
             dtpInspectorDate.CalendarTitleForeColor = Color.Aqua;
             dtpInspectorDate.CalendarTrailingForeColor = Color.Aqua;
+            dtpInspectorDate.Cursor = Cursors.Hand;
             dtpInspectorDate.Location = new Point(178, 41);
             dtpInspectorDate.Name = "dtpInspectorDate";
             dtpInspectorDate.Size = new Size(216, 23);
@@ -118,6 +122,7 @@
             // cmbVessels
             // 
             cmbVessels.BackColor = Color.Gray;
+            cmbVessels.Cursor = Cursors.Hand;
             cmbVessels.FlatStyle = FlatStyle.Popup;
             cmbVessels.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cmbVessels.ForeColor = Color.Aqua;
@@ -143,6 +148,7 @@
             Controls.Add(btnDelete);
             Controls.Add(btnCreate);
             Name = "frmInspector";
+            Opacity = 0.93D;
             Text = "Inspectors";
             ((System.ComponentModel.ISupportInitialize)dgvInspector).EndInit();
             ResumeLayout(false);

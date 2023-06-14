@@ -44,6 +44,7 @@
             // btnEdit
             // 
             btnEdit.BackColor = Color.DimGray;
+            btnEdit.Cursor = Cursors.Hand;
             btnEdit.FlatStyle = FlatStyle.Popup;
             btnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnEdit.ForeColor = Color.Aqua;
@@ -83,6 +84,7 @@
             // btnDelete
             // 
             btnDelete.BackColor = Color.DimGray;
+            btnDelete.Cursor = Cursors.Hand;
             btnDelete.FlatStyle = FlatStyle.Popup;
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.Aqua;
@@ -97,6 +99,7 @@
             // btnCreate
             // 
             btnCreate.BackColor = Color.DimGray;
+            btnCreate.Cursor = Cursors.Hand;
             btnCreate.FlatStyle = FlatStyle.Popup;
             btnCreate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCreate.ForeColor = Color.Aqua;
@@ -125,18 +128,19 @@
             pnlUsernametxt.BackColor = Color.Aqua;
             pnlUsernametxt.Location = new Point(184, 69);
             pnlUsernametxt.Name = "pnlUsernametxt";
-            pnlUsernametxt.Size = new Size(90, 1);
+            pnlUsernametxt.Size = new Size(105, 1);
             pnlUsernametxt.TabIndex = 94;
             // 
             // txtName
             // 
             txtName.BackColor = Color.Black;
             txtName.BorderStyle = BorderStyle.None;
+            txtName.Cursor = Cursors.IBeam;
             txtName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtName.ForeColor = Color.White;
             txtName.Location = new Point(184, 48);
             txtName.Name = "txtName";
-            txtName.Size = new Size(90, 22);
+            txtName.Size = new Size(105, 22);
             txtName.TabIndex = 93;
             // 
             // panel1
@@ -144,18 +148,19 @@
             panel1.BackColor = Color.Aqua;
             panel1.Location = new Point(184, 114);
             panel1.Name = "panel1";
-            panel1.Size = new Size(90, 1);
+            panel1.Size = new Size(105, 1);
             panel1.TabIndex = 96;
             // 
             // txtAddress
             // 
             txtAddress.BackColor = Color.Black;
             txtAddress.BorderStyle = BorderStyle.None;
+            txtAddress.Cursor = Cursors.IBeam;
             txtAddress.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtAddress.ForeColor = Color.White;
             txtAddress.Location = new Point(184, 93);
             txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(90, 22);
+            txtAddress.Size = new Size(105, 22);
             txtAddress.TabIndex = 95;
             // 
             // frmOwner
@@ -163,7 +168,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(800, 242);
+            ClientSize = new Size(732, 242);
             Controls.Add(panel1);
             Controls.Add(txtAddress);
             Controls.Add(pnlUsernametxt);
@@ -175,6 +180,7 @@
             Controls.Add(btnDelete);
             Controls.Add(btnCreate);
             Name = "frmOwner";
+            Opacity = 0.93D;
             Text = "Owners";
             ((System.ComponentModel.ISupportInitialize)dgvOwner).EndInit();
             ResumeLayout(false);

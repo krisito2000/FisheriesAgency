@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static FisheriesAgency.View.Admin_Panel_Buttons.frmVessel;
 using FisheriesAgency.Model;
+using FisheriesAgency.Controller;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
@@ -59,10 +60,10 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 }
             }
         }
-        private void dgvReset()
+
+        private void cmbVessels_DropDown(object sender, EventArgs e)
         {
-            UpdatePermitsDataGridView(dgvPermit);
-            dgvPermit.Refresh();
+            cmbVessels.ForeColor = Color.Aqua;
         }
 
         private void dgvPermit_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -103,29 +104,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             ComboBoxVessel selectedVessel = (ComboBoxVessel)cmbVessels.SelectedItem;
             int vesselId = selectedVessel.VesselId;
 
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                // Create a SQL INSERT statement with parameter placeholders
-                string sql = "INSERT INTO FishingPermit (PermitNumber, IssueDate, ExpirationDate, Equipment, VesselId) " +
-                             "VALUES (@PermitNumber, @IssueDate, @ExpirationDate, @Equipment, @VesselId)";
-
-                // Create a SqlCommand object with the SQL statement and connection
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    // Set the parameter values from the form controls
-                    command.Parameters.AddWithValue("@PermitNumber", txtPermitNumber.Text);
-                    command.Parameters.AddWithValue("@IssueDate", dtpIssueDate.Value.Date);
-                    command.Parameters.AddWithValue("@ExpirationDate", dtpExpirationDate.Value.Date);
-                    command.Parameters.AddWithValue("@Equipment", txtEquipment.Text);
-                    command.Parameters.AddWithValue("@VesselId", vesselId);
-
-                    // Execute the SQL command
-                    command.ExecuteNonQuery();
-                    dgvReset();
-                }
-            }
+            AdminPanelController.PermitsCreateController(txtPermitNumber, dtpIssueDate, dtpExpirationDate, txtEquipment, vesselId);
+            UpdatePermitsDataGridView(dgvPermit);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -141,17 +121,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             DialogResult result = MessageBox.Show("Are you sure you want to delete this fishing permit?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                using (SqlConnection connection = new SqlConnection(Program.connectionString))
-                {
-                    connection.Open();
-
-                    SqlCommand deleteCommand = new SqlCommand("DELETE FROM [FishingPermit] WHERE PermitId = @PermitId", connection);
-                    deleteCommand.Parameters.AddWithValue("@PermitId", permitId);
-                    deleteCommand.ExecuteNonQuery();
-
-                    connection.Close();
-                }
-
+                AdminPanelController.PermitsDeleteController(permitId);
                 UpdatePermitsDataGridView(dgvPermit);
             }
         }
@@ -174,32 +144,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             ComboBoxVessel selectedVessel = (ComboBoxVessel)cmbVessels.SelectedItem;
             int vesselId = (int)selectedVessel.VesselId;
 
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                string sql = "UPDATE [FishingPermit] SET PermitNumber = @PermitNumber, IssueDate = @IssueDate, ExpirationDate = @ExpirationDate, Equipment = @Equipment,VesselId = @VesselId WHERE PermitId = @PermitId";
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    command.Parameters.AddWithValue("@PermitNumber", permitNumber);
-                    command.Parameters.AddWithValue("@IssueDate", issueDate);
-                    command.Parameters.AddWithValue("@ExpirationDate", expirationDate);
-                    command.Parameters.AddWithValue("@Equipment", equipment);
-
-
-                    command.Parameters.AddWithValue("@VesselId", vesselId);
-                    command.Parameters.AddWithValue("@PermitId", permitId);
-
-                    command.ExecuteNonQuery();
-                    dgvReset();
-                }
-            }
-        }
-
-        private void cmbVessels_DropDown(object sender, EventArgs e)
-        {
-            cmbVessels.ForeColor = Color.Aqua;
+            AdminPanelController.PermitsEditController(permitNumber, issueDate, expirationDate, equipment, vesselId, permitId);
+            UpdatePermitsDataGridView(dgvPermit);
         }
     }
 }

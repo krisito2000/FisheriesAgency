@@ -47,6 +47,7 @@
             // btnEdit
             // 
             btnEdit.BackColor = Color.DimGray;
+            btnEdit.Cursor = Cursors.Hand;
             btnEdit.FlatStyle = FlatStyle.Popup;
             btnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnEdit.ForeColor = Color.Aqua;
@@ -86,6 +87,7 @@
             // btnDelete
             // 
             btnDelete.BackColor = Color.DimGray;
+            btnDelete.Cursor = Cursors.Hand;
             btnDelete.FlatStyle = FlatStyle.Popup;
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.Aqua;
@@ -100,6 +102,7 @@
             // btnCreate
             // 
             btnCreate.BackColor = Color.DimGray;
+            btnCreate.Cursor = Cursors.Hand;
             btnCreate.FlatStyle = FlatStyle.Popup;
             btnCreate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCreate.ForeColor = Color.Aqua;
@@ -128,6 +131,7 @@
             // cbAdmin
             // 
             cbAdmin.AutoSize = true;
+            cbAdmin.Cursor = Cursors.Hand;
             cbAdmin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             cbAdmin.ForeColor = Color.Aqua;
             cbAdmin.Location = new Point(145, 145);
@@ -161,6 +165,7 @@
             // 
             txtUsername.BackColor = Color.Black;
             txtUsername.BorderStyle = BorderStyle.None;
+            txtUsername.Cursor = Cursors.IBeam;
             txtUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtUsername.ForeColor = Color.White;
             txtUsername.Location = new Point(130, 55);
@@ -180,12 +185,14 @@
             // 
             txtPassword.BackColor = Color.Black;
             txtPassword.BorderStyle = BorderStyle.None;
+            txtPassword.Cursor = Cursors.IBeam;
             txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtPassword.ForeColor = Color.White;
             txtPassword.Location = new Point(130, 103);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(110, 22);
             txtPassword.TabIndex = 103;
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // frmUser
             // 
@@ -206,6 +213,7 @@
             Controls.Add(btnDelete);
             Controls.Add(btnCreate);
             Name = "frmUser";
+            Opacity = 0.93D;
             Text = "Users";
             ((System.ComponentModel.ISupportInitialize)dgvUser).EndInit();
             ResumeLayout(false);

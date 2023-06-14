@@ -13,6 +13,7 @@ using System.Xml.Linq;
 using FisheriesAgency;
 using static FisheriesAgency.View.Admin_Panel_Buttons.frmTicket;
 using FisheriesAgency.Model;
+using FisheriesAgency.Controller;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
@@ -110,26 +111,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 // Retrieve the selected member details
                 int memberId = selectedMember.MemberId;
 
-                using (SqlConnection connection = new SqlConnection(Program.connectionString))
-                {
-                    connection.Open();
-
-                    string sql = "INSERT INTO Ticket (MemberId, StartDate, EndDate, Price, IsPensioner, IsDisabled, TelkDecisionNum) " +
-                                 "VALUES (@MemberId, @StartDate, @EndDate, @Price, @IsPensioner, @IsDisabled, @TelkDecisionNum)";
-
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        command.Parameters.AddWithValue("@MemberId", memberId);
-                        command.Parameters.AddWithValue("@StartDate", dtpStartDate.Value);
-                        command.Parameters.AddWithValue("@EndDate", dtpEndDate.Value);
-                        command.Parameters.AddWithValue("@Price", Convert.ToDecimal(txtPrice.Text));
-                        command.Parameters.AddWithValue("@IsPensioner", cbIsPensioner.Checked);
-                        command.Parameters.AddWithValue("@IsDisabled", cbIsDisabled.Checked);
-                        command.Parameters.AddWithValue("@TelkDecisionNum", txtTelk.Text);
-
-                        command.ExecuteNonQuery();
-                    }
-                }
+                AdminPanelController.TicketCreateController(memberId, dtpStartDate, dtpEndDate, txtPrice, cbIsPensioner, cbIsDisabled, txtTelk);
 
                 UpdateTicketsDataGridView(dgvTicket);
             }
@@ -150,23 +132,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 // Get the TicketID value from the selected row
                 int ticketId = Convert.ToInt32(selectedRow.Cells["TicketID"].Value);
 
-                // Execute a SQL DELETE statement to remove the record from the database
-                using (SqlConnection connection = new SqlConnection(Program.connectionString))
-                {
-                    connection.Open();
-
-                    string sql = "DELETE FROM Ticket WHERE TicketID = @TicketID";
-
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        command.Parameters.AddWithValue("@TicketID", ticketId);
-
-                        command.ExecuteNonQuery();
-                    }
-                }
+                AdminPanelController.TicketDeleteController(ticketId);
 
                 // Remove the selected row from the DataGridView
                 dgvTicket.Rows.Remove(selectedRow);
+                UpdateTicketsDataGridView(dgvTicket);
 
             }
             else
@@ -197,26 +167,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             string newPrice = txtPrice.Text.Trim();
             bool newIsPensioner = cbIsPensioner.Checked;
             bool newIsDisabled = cbIsDisabled.Checked;
-            // Retrieve other relevant values as needed
 
-            // Update the ticket in the database
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                SqlCommand updateCommand = new SqlCommand("UPDATE Ticket SET StartDate = @StartDate, EndDate = @EndDate, Price = @Price, IsPensioner = @IsPensioner, IsDisabled = @IsDisabled WHERE TicketID = @TicketId", connection);
-                updateCommand.Parameters.AddWithValue("@StartDate", newStartDate);
-                updateCommand.Parameters.AddWithValue("@EndDate", newEndDate);
-                updateCommand.Parameters.AddWithValue("@Price", newPrice);
-                updateCommand.Parameters.AddWithValue("@IsPensioner", newIsPensioner);
-                updateCommand.Parameters.AddWithValue("@IsDisabled", newIsDisabled);
-                updateCommand.Parameters.AddWithValue("@TicketId", ticketId);
-                // Add parameters for other relevant columns if needed
-
-                updateCommand.ExecuteNonQuery();
-
-                connection.Close();
-            }
+            AdminPanelController.TicketEditController(newStartDate, newEndDate, newPrice, newIsPensioner, newIsDisabled, ticketId);
 
             // Refresh the DataGridView to reflect the updated data
             UpdateTicketsDataGridView(dgvTicket);

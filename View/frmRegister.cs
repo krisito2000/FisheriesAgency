@@ -95,10 +95,7 @@ namespace FisheriesAgency.View
                                     int result = insertCommand.ExecuteNonQuery();
                                     if (result > 0)
                                     {
-                                        this.Hide();
-                                        frmLogin frmLogin = new frmLogin();
-                                        frmLogin.ShowDialog();
-                                        this.Show();
+                                        this.Close();
                                         MessageBox.Show("Registration successful!");
                                     }
                                     else
@@ -162,7 +159,7 @@ namespace FisheriesAgency.View
                 btnBack.Focus();
             }
             else if (e.KeyCode == Keys.Down)
-            { 
+            {
                 txtPassword.Focus();
             }
             else if (e.KeyCode == Keys.Enter)

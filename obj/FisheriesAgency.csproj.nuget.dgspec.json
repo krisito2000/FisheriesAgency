@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\krisito\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj": {}
+    "C:\\Users\\krisito\\Source\\Repos\\krisito2000\\FisheriesAgency\\FisheriesAgency.csproj": {}
   },
   "projects": {
-    "C:\\Users\\krisito\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj": {
+    "C:\\Users\\krisito\\Source\\Repos\\krisito2000\\FisheriesAgency\\FisheriesAgency.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\krisito\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj",
+        "projectUniqueName": "C:\\Users\\krisito\\Source\\Repos\\krisito2000\\FisheriesAgency\\FisheriesAgency.csproj",
         "projectName": "FisheriesAgency",
-        "projectPath": "C:\\Users\\krisito\\source\\repos\\FisheriesAgency\\FisheriesAgency.csproj",
+        "projectPath": "C:\\Users\\krisito\\Source\\Repos\\krisito2000\\FisheriesAgency\\FisheriesAgency.csproj",
         "packagesPath": "C:\\Users\\krisito\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\krisito\\source\\repos\\FisheriesAgency\\obj\\",
+        "outputPath": "C:\\Users\\krisito\\Source\\Repos\\krisito2000\\FisheriesAgency\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

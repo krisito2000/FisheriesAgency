@@ -29,218 +29,218 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegister));
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.lblCofirmPassword = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
-            this.btnRegister = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.pnlRegisterBAckground = new System.Windows.Forms.Panel();
-            this.btnViewPassword = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlUsernametxt = new System.Windows.Forms.Panel();
-            this.lblRegister = new System.Windows.Forms.Label();
-            this.pnlRegisterBAckground.SuspendLayout();
-            this.SuspendLayout();
+            lblUsername = new Label();
+            lblPassword = new Label();
+            lblCofirmPassword = new Label();
+            txtUsername = new TextBox();
+            txtPassword = new TextBox();
+            txtConfirmPassword = new TextBox();
+            btnRegister = new Button();
+            btnBack = new Button();
+            pnlRegisterBAckground = new Panel();
+            btnViewPassword = new Button();
+            panel2 = new Panel();
+            panel1 = new Panel();
+            pnlUsernametxt = new Panel();
+            lblRegister = new Label();
+            pnlRegisterBAckground.SuspendLayout();
+            SuspendLayout();
             // 
             // lblUsername
             // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblUsername.ForeColor = System.Drawing.Color.Aqua;
-            this.lblUsername.Location = new System.Drawing.Point(110, 106);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(87, 21);
-            this.lblUsername.TabIndex = 0;
-            this.lblUsername.Text = "Username";
+            lblUsername.AutoSize = true;
+            lblUsername.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUsername.ForeColor = Color.Aqua;
+            lblUsername.Location = new Point(110, 106);
+            lblUsername.Name = "lblUsername";
+            lblUsername.Size = new Size(87, 21);
+            lblUsername.TabIndex = 0;
+            lblUsername.Text = "Username";
             // 
             // lblPassword
             // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPassword.ForeColor = System.Drawing.Color.Aqua;
-            this.lblPassword.Location = new System.Drawing.Point(115, 155);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(82, 21);
-            this.lblPassword.TabIndex = 1;
-            this.lblPassword.Text = "Password";
+            lblPassword.AutoSize = true;
+            lblPassword.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblPassword.ForeColor = Color.Aqua;
+            lblPassword.Location = new Point(115, 155);
+            lblPassword.Name = "lblPassword";
+            lblPassword.Size = new Size(82, 21);
+            lblPassword.TabIndex = 1;
+            lblPassword.Text = "Password";
             // 
             // lblCofirmPassword
             // 
-            this.lblCofirmPassword.AutoSize = true;
-            this.lblCofirmPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCofirmPassword.ForeColor = System.Drawing.Color.Aqua;
-            this.lblCofirmPassword.Location = new System.Drawing.Point(54, 199);
-            this.lblCofirmPassword.Name = "lblCofirmPassword";
-            this.lblCofirmPassword.Size = new System.Drawing.Size(148, 21);
-            this.lblCofirmPassword.TabIndex = 3;
-            this.lblCofirmPassword.Text = "Confirm Password";
+            lblCofirmPassword.AutoSize = true;
+            lblCofirmPassword.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCofirmPassword.ForeColor = Color.Aqua;
+            lblCofirmPassword.Location = new Point(54, 199);
+            lblCofirmPassword.Name = "lblCofirmPassword";
+            lblCofirmPassword.Size = new Size(148, 21);
+            lblCofirmPassword.TabIndex = 3;
+            lblCofirmPassword.Text = "Confirm Password";
             // 
             // txtUsername
             // 
-            this.txtUsername.BackColor = System.Drawing.Color.Black;
-            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtUsername.ForeColor = System.Drawing.Color.White;
-            this.txtUsername.Location = new System.Drawing.Point(223, 104);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(149, 22);
-            this.txtUsername.TabIndex = 4;
-            this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
+            txtUsername.BackColor = Color.Black;
+            txtUsername.BorderStyle = BorderStyle.None;
+            txtUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtUsername.ForeColor = Color.White;
+            txtUsername.Location = new Point(223, 104);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(149, 22);
+            txtUsername.TabIndex = 4;
+            txtUsername.KeyDown += txtUsername_KeyDown;
             // 
             // txtPassword
             // 
-            this.txtPassword.BackColor = System.Drawing.Color.Black;
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPassword.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPassword.Location = new System.Drawing.Point(223, 153);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(149, 22);
-            this.txtPassword.TabIndex = 5;
-            this.txtPassword.UseSystemPasswordChar = true;
-            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
+            txtPassword.BackColor = Color.Black;
+            txtPassword.BorderStyle = BorderStyle.None;
+            txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPassword.ForeColor = SystemColors.Window;
+            txtPassword.Location = new Point(223, 153);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(149, 22);
+            txtPassword.TabIndex = 5;
+            txtPassword.UseSystemPasswordChar = true;
+            txtPassword.KeyDown += txtPassword_KeyDown;
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.BackColor = System.Drawing.Color.Black;
-            this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtConfirmPassword.ForeColor = System.Drawing.Color.White;
-            this.txtConfirmPassword.Location = new System.Drawing.Point(223, 197);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(149, 22);
-            this.txtConfirmPassword.TabIndex = 6;
-            this.txtConfirmPassword.UseSystemPasswordChar = true;
-            this.txtConfirmPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtConfirmPassword_KeyDown);
+            txtConfirmPassword.BackColor = Color.Black;
+            txtConfirmPassword.BorderStyle = BorderStyle.None;
+            txtConfirmPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtConfirmPassword.ForeColor = Color.White;
+            txtConfirmPassword.Location = new Point(223, 197);
+            txtConfirmPassword.Name = "txtConfirmPassword";
+            txtConfirmPassword.Size = new Size(149, 22);
+            txtConfirmPassword.TabIndex = 6;
+            txtConfirmPassword.UseSystemPasswordChar = true;
+            txtConfirmPassword.KeyDown += txtConfirmPassword_KeyDown;
             // 
             // btnRegister
             // 
-            this.btnRegister.BackColor = System.Drawing.Color.DimGray;
-            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnRegister.ForeColor = System.Drawing.Color.Aqua;
-            this.btnRegister.Location = new System.Drawing.Point(165, 260);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(147, 53);
-            this.btnRegister.TabIndex = 7;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            this.btnRegister.Enter += new System.EventHandler(this.btnRegister_Enter);
-            this.btnRegister.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnRegister_KeyDown);
-            this.btnRegister.Leave += new System.EventHandler(this.btnRegister_Leave);
-            this.btnRegister.MouseEnter += new System.EventHandler(this.btnRegister_MouseEnter);
-            this.btnRegister.MouseLeave += new System.EventHandler(this.btnRegister_MouseLeave);
+            btnRegister.BackColor = Color.DimGray;
+            btnRegister.Cursor = Cursors.Hand;
+            btnRegister.FlatStyle = FlatStyle.Popup;
+            btnRegister.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRegister.ForeColor = Color.Aqua;
+            btnRegister.Location = new Point(165, 260);
+            btnRegister.Name = "btnRegister";
+            btnRegister.Size = new Size(147, 53);
+            btnRegister.TabIndex = 7;
+            btnRegister.Text = "Register";
+            btnRegister.UseVisualStyleBackColor = false;
+            btnRegister.Click += btnRegister_Click;
+            btnRegister.Enter += btnRegister_Enter;
+            btnRegister.KeyDown += btnRegister_KeyDown;
+            btnRegister.Leave += btnRegister_Leave;
+            btnRegister.MouseEnter += btnRegister_MouseEnter;
+            btnRegister.MouseLeave += btnRegister_MouseLeave;
             // 
             // btnBack
             // 
-            this.btnBack.BackColor = System.Drawing.Color.DimGray;
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBack.ForeColor = System.Drawing.Color.Aqua;
-            this.btnBack.Location = new System.Drawing.Point(194, 333);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(86, 40);
-            this.btnBack.TabIndex = 8;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            this.btnBack.Enter += new System.EventHandler(this.btnBack_Enter);
-            this.btnBack.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnBack_KeyDown);
-            this.btnBack.Leave += new System.EventHandler(this.btnBack_Leave);
-            this.btnBack.MouseEnter += new System.EventHandler(this.btnBack_MouseEnter);
-            this.btnBack.MouseLeave += new System.EventHandler(this.btnBack_MouseLeave);
+            btnBack.BackColor = Color.DimGray;
+            btnBack.Cursor = Cursors.Hand;
+            btnBack.FlatStyle = FlatStyle.Popup;
+            btnBack.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBack.ForeColor = Color.Aqua;
+            btnBack.Location = new Point(194, 333);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(86, 40);
+            btnBack.TabIndex = 8;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += btnBack_Click;
+            btnBack.Enter += btnBack_Enter;
+            btnBack.KeyDown += btnBack_KeyDown;
+            btnBack.Leave += btnBack_Leave;
+            btnBack.MouseEnter += btnBack_MouseEnter;
+            btnBack.MouseLeave += btnBack_MouseLeave;
             // 
             // pnlRegisterBAckground
             // 
-            this.pnlRegisterBAckground.BackColor = System.Drawing.Color.Black;
-            this.pnlRegisterBAckground.Controls.Add(this.btnViewPassword);
-            this.pnlRegisterBAckground.Controls.Add(this.panel2);
-            this.pnlRegisterBAckground.Controls.Add(this.panel1);
-            this.pnlRegisterBAckground.Controls.Add(this.pnlUsernametxt);
-            this.pnlRegisterBAckground.Controls.Add(this.lblRegister);
-            this.pnlRegisterBAckground.Controls.Add(this.btnBack);
-            this.pnlRegisterBAckground.Controls.Add(this.btnRegister);
-            this.pnlRegisterBAckground.Controls.Add(this.txtConfirmPassword);
-            this.pnlRegisterBAckground.Controls.Add(this.txtPassword);
-            this.pnlRegisterBAckground.Controls.Add(this.txtUsername);
-            this.pnlRegisterBAckground.Controls.Add(this.lblCofirmPassword);
-            this.pnlRegisterBAckground.Controls.Add(this.lblPassword);
-            this.pnlRegisterBAckground.Controls.Add(this.lblUsername);
-            this.pnlRegisterBAckground.Location = new System.Drawing.Point(-19, -17);
-            this.pnlRegisterBAckground.Name = "pnlRegisterBAckground";
-            this.pnlRegisterBAckground.Size = new System.Drawing.Size(556, 454);
-            this.pnlRegisterBAckground.TabIndex = 10;
+            pnlRegisterBAckground.BackColor = Color.Black;
+            pnlRegisterBAckground.Controls.Add(btnViewPassword);
+            pnlRegisterBAckground.Controls.Add(panel2);
+            pnlRegisterBAckground.Controls.Add(panel1);
+            pnlRegisterBAckground.Controls.Add(pnlUsernametxt);
+            pnlRegisterBAckground.Controls.Add(lblRegister);
+            pnlRegisterBAckground.Controls.Add(btnBack);
+            pnlRegisterBAckground.Controls.Add(btnRegister);
+            pnlRegisterBAckground.Controls.Add(txtConfirmPassword);
+            pnlRegisterBAckground.Controls.Add(txtPassword);
+            pnlRegisterBAckground.Controls.Add(txtUsername);
+            pnlRegisterBAckground.Controls.Add(lblCofirmPassword);
+            pnlRegisterBAckground.Controls.Add(lblPassword);
+            pnlRegisterBAckground.Controls.Add(lblUsername);
+            pnlRegisterBAckground.Location = new Point(-19, -17);
+            pnlRegisterBAckground.Name = "pnlRegisterBAckground";
+            pnlRegisterBAckground.Size = new Size(556, 454);
+            pnlRegisterBAckground.TabIndex = 10;
             // 
             // btnViewPassword
             // 
-            this.btnViewPassword.BackColor = System.Drawing.Color.DimGray;
-            this.btnViewPassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnViewPassword.BackgroundImage")));
-            this.btnViewPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnViewPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnViewPassword.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnViewPassword.Location = new System.Drawing.Point(390, 155);
-            this.btnViewPassword.Name = "btnViewPassword";
-            this.btnViewPassword.Size = new System.Drawing.Size(27, 27);
-            this.btnViewPassword.TabIndex = 13;
-            this.btnViewPassword.UseVisualStyleBackColor = false;
-            this.btnViewPassword.Click += new System.EventHandler(this.btnViewPassword_Click);
+            btnViewPassword.BackColor = Color.DimGray;
+            btnViewPassword.BackgroundImage = (Image)resources.GetObject("btnViewPassword.BackgroundImage");
+            btnViewPassword.BackgroundImageLayout = ImageLayout.Stretch;
+            btnViewPassword.Cursor = Cursors.Hand;
+            btnViewPassword.FlatStyle = FlatStyle.Popup;
+            btnViewPassword.Location = new Point(390, 155);
+            btnViewPassword.Name = "btnViewPassword";
+            btnViewPassword.Size = new Size(27, 27);
+            btnViewPassword.TabIndex = 13;
+            btnViewPassword.UseVisualStyleBackColor = false;
+            btnViewPassword.Click += btnViewPassword_Click;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Aqua;
-            this.panel2.Location = new System.Drawing.Point(223, 219);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(149, 1);
-            this.panel2.TabIndex = 12;
+            panel2.BackColor = Color.Aqua;
+            panel2.Location = new Point(223, 219);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(149, 1);
+            panel2.TabIndex = 12;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Aqua;
-            this.panel1.Location = new System.Drawing.Point(223, 175);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(149, 1);
-            this.panel1.TabIndex = 12;
+            panel1.BackColor = Color.Aqua;
+            panel1.Location = new Point(223, 175);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(149, 1);
+            panel1.TabIndex = 12;
             // 
             // pnlUsernametxt
             // 
-            this.pnlUsernametxt.BackColor = System.Drawing.Color.Aqua;
-            this.pnlUsernametxt.Location = new System.Drawing.Point(223, 126);
-            this.pnlUsernametxt.Name = "pnlUsernametxt";
-            this.pnlUsernametxt.Size = new System.Drawing.Size(149, 1);
-            this.pnlUsernametxt.TabIndex = 11;
+            pnlUsernametxt.BackColor = Color.Aqua;
+            pnlUsernametxt.Location = new Point(223, 126);
+            pnlUsernametxt.Name = "pnlUsernametxt";
+            pnlUsernametxt.Size = new Size(149, 1);
+            pnlUsernametxt.TabIndex = 11;
             // 
             // lblRegister
             // 
-            this.lblRegister.AutoSize = true;
-            this.lblRegister.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblRegister.ForeColor = System.Drawing.Color.Aqua;
-            this.lblRegister.Location = new System.Drawing.Point(176, 36);
-            this.lblRegister.Name = "lblRegister";
-            this.lblRegister.Size = new System.Drawing.Size(123, 37);
-            this.lblRegister.TabIndex = 10;
-            this.lblRegister.Text = "Register";
+            lblRegister.AutoSize = true;
+            lblRegister.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            lblRegister.ForeColor = Color.Aqua;
+            lblRegister.Location = new Point(176, 36);
+            lblRegister.Name = "lblRegister";
+            lblRegister.Size = new Size(123, 37);
+            lblRegister.TabIndex = 10;
+            lblRegister.Text = "Register";
             // 
             // frmRegister
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 385);
-            this.Controls.Add(this.pnlRegisterBAckground);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "frmRegister";
-            this.Text = "Register";
-            this.pnlRegisterBAckground.ResumeLayout(false);
-            this.pnlRegisterBAckground.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(432, 385);
+            Controls.Add(pnlRegisterBAckground);
+            Cursor = Cursors.Hand;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Name = "frmRegister";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Register";
+            pnlRegisterBAckground.ResumeLayout(false);
+            pnlRegisterBAckground.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

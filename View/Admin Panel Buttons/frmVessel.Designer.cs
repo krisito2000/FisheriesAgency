@@ -117,6 +117,7 @@
             // btnEdit
             // 
             btnEdit.BackColor = Color.DimGray;
+            btnEdit.Cursor = Cursors.Hand;
             btnEdit.FlatStyle = FlatStyle.Popup;
             btnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnEdit.ForeColor = Color.Aqua;
@@ -156,6 +157,7 @@
             // btnDelete
             // 
             btnDelete.BackColor = Color.DimGray;
+            btnDelete.Cursor = Cursors.Hand;
             btnDelete.FlatStyle = FlatStyle.Popup;
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.Aqua;
@@ -170,6 +172,7 @@
             // btnCreate
             // 
             btnCreate.BackColor = Color.DimGray;
+            btnCreate.Cursor = Cursors.Hand;
             btnCreate.FlatStyle = FlatStyle.Popup;
             btnCreate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCreate.ForeColor = Color.Aqua;
@@ -236,6 +239,7 @@
             // 
             cmbOwners.AccessibleName = "";
             cmbOwners.BackColor = Color.DimGray;
+            cmbOwners.Cursor = Cursors.Hand;
             cmbOwners.FlatStyle = FlatStyle.Popup;
             cmbOwners.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cmbOwners.ForeColor = Color.Aqua;
@@ -250,6 +254,7 @@
             // cmbCaptains
             // 
             cmbCaptains.BackColor = Color.DimGray;
+            cmbCaptains.Cursor = Cursors.Hand;
             cmbCaptains.FlatStyle = FlatStyle.Popup;
             cmbCaptains.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cmbCaptains.ForeColor = Color.Aqua;
@@ -273,6 +278,7 @@
             // 
             txtInternationalNumber.BackColor = Color.Black;
             txtInternationalNumber.BorderStyle = BorderStyle.None;
+            txtInternationalNumber.Cursor = Cursors.IBeam;
             txtInternationalNumber.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtInternationalNumber.ForeColor = Color.White;
             txtInternationalNumber.Location = new Point(162, 31);
@@ -292,6 +298,7 @@
             // 
             txtCallSign.BackColor = Color.Black;
             txtCallSign.BorderStyle = BorderStyle.None;
+            txtCallSign.Cursor = Cursors.IBeam;
             txtCallSign.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtCallSign.ForeColor = Color.White;
             txtCallSign.Location = new Point(162, 64);
@@ -311,6 +318,7 @@
             // 
             txtMarking.BackColor = Color.Black;
             txtMarking.BorderStyle = BorderStyle.None;
+            txtMarking.Cursor = Cursors.IBeam;
             txtMarking.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtMarking.ForeColor = Color.White;
             txtMarking.Location = new Point(162, 101);
@@ -330,6 +338,7 @@
             // 
             txtWidth.BackColor = Color.Black;
             txtWidth.BorderStyle = BorderStyle.None;
+            txtWidth.Cursor = Cursors.IBeam;
             txtWidth.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtWidth.ForeColor = Color.White;
             txtWidth.Location = new Point(162, 179);
@@ -349,6 +358,7 @@
             // 
             txtTonnage.BackColor = Color.Black;
             txtTonnage.BorderStyle = BorderStyle.None;
+            txtTonnage.Cursor = Cursors.IBeam;
             txtTonnage.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtTonnage.ForeColor = Color.White;
             txtTonnage.Location = new Point(162, 211);
@@ -368,6 +378,7 @@
             // 
             txtLength.BackColor = Color.Black;
             txtLength.BorderStyle = BorderStyle.None;
+            txtLength.Cursor = Cursors.IBeam;
             txtLength.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtLength.ForeColor = Color.White;
             txtLength.Location = new Point(162, 136);
@@ -387,6 +398,7 @@
             // 
             txtGas.BackColor = Color.Black;
             txtGas.BorderStyle = BorderStyle.None;
+            txtGas.Cursor = Cursors.IBeam;
             txtGas.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtGas.ForeColor = Color.White;
             txtGas.Location = new Point(162, 253);
@@ -406,6 +418,7 @@
             // 
             txtEngine.BackColor = Color.Black;
             txtEngine.BorderStyle = BorderStyle.None;
+            txtEngine.Cursor = Cursors.IBeam;
             txtEngine.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtEngine.ForeColor = Color.White;
             txtEngine.Location = new Point(162, 290);
@@ -425,6 +438,7 @@
             // 
             txtFuel.BackColor = Color.Black;
             txtFuel.BorderStyle = BorderStyle.None;
+            txtFuel.Cursor = Cursors.IBeam;
             txtFuel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtFuel.ForeColor = Color.White;
             txtFuel.Location = new Point(162, 333);
@@ -472,6 +486,7 @@
             Controls.Add(btnDelete);
             Controls.Add(btnCreate);
             Name = "frmVessel";
+            Opacity = 0.93D;
             Text = "Vessels";
             ((System.ComponentModel.ISupportInitialize)dgvVessel).EndInit();
             ResumeLayout(false);

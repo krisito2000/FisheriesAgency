@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using System.Xml.Linq;
+using FisheriesAgency.Controller;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
@@ -34,11 +35,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         {
             InitializeComponent();
             UpdateOwnersDataGridView(dgvOwner);
-        }
-        private void dgvReset()
-        {
-            UpdateOwnersDataGridView(dgvOwner);
-            dgvOwner.Refresh();
         }
 
         private void dgvOwner_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -66,39 +62,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 return;
             }
 
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                // Check if the name already exists in the database
-                string checkSql = "SELECT COUNT(*) FROM [Owner] WHERE name = @Name";
-                using (SqlCommand checkCommand = new SqlCommand(checkSql, connection))
-                {
-                    checkCommand.Parameters.AddWithValue("@Name", name);
-                    int count = (int)checkCommand.ExecuteScalar();
-                    if (count > 0)
-                    {
-                        MessageBox.Show("Name already exists");
-                        return;
-                    }
-                }
-
-                // Create a SQL INSERT statement with parameter placeholders
-                string sql = "INSERT INTO Owner (name, address) VALUES (@Name, @Address)";
-
-                // Create a SqlCommand object with the SQL statement and connection
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    // Set the parameter values from the text boxes
-                    command.Parameters.AddWithValue("@Name", name);
-                    command.Parameters.AddWithValue("@Address", address);
-
-                    // Execute the SQL command
-                    command.ExecuteNonQuery();
-                }
-
-                dgvReset();
-            }
+            AdminPanelController.OwnerCreateController(name, address);
+            UpdateOwnersDataGridView(dgvOwner);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -108,37 +73,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
             if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(address))
             {
-                using (SqlConnection connection = new SqlConnection(Program.connectionString))
-                {
-                    DialogResult result = MessageBox.Show("Are you sure you want to delete this member?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (result == DialogResult.Yes)
-                    {
-                        connection.Open();
-
-                        string sql = "DELETE FROM Owner WHERE name = @Name AND address = @Address";
-
-                        using (SqlCommand command = new SqlCommand(sql, connection))
-                        {
-                            command.Parameters.AddWithValue("@Name", name);
-                            command.Parameters.AddWithValue("@Address", address);
-
-
-                            int rowsAffected = command.ExecuteNonQuery();
-
-                            if (rowsAffected > 0)
-                            {
-                                // Clear the text boxes
-                                txtName.Text = string.Empty;
-                                txtAddress.Text = string.Empty;
-                                dgvReset();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Owner not found or deletion failed.");
-                            }
-                        }
-                    }
-                }
+                AdminPanelController.OwnerDeleteController(name, address);
+                UpdateOwnersDataGridView(dgvOwner);
             }
             else
             {
@@ -159,29 +95,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             string newName = txtName.Text.Trim();
             string newAddress = txtAddress.Text.Trim();
 
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                SqlCommand checkCommand = new SqlCommand("SELECT COUNT(*) FROM [Owner] WHERE name = @name AND address <> @address", connection);
-                checkCommand.Parameters.AddWithValue("@name", newName);
-                checkCommand.Parameters.AddWithValue("@address", newAddress);
-                checkCommand.Parameters.AddWithValue("@OwnerId", ownerId);
-            }
-
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                SqlCommand updateCommand = new SqlCommand("UPDATE [Owner] SET name = @name, address = @address WHERE OwnerID = @OwnerId", connection);
-                updateCommand.Parameters.AddWithValue("@name", newName);
-                updateCommand.Parameters.AddWithValue("@address", newAddress);
-                updateCommand.Parameters.AddWithValue("@OwnerId", ownerId);
-                updateCommand.ExecuteNonQuery();
-
-                connection.Close();
-            }
-            dgvReset();
+            AdminPanelController.OwnerEditController(newName, newAddress, ownerId);
+            UpdateOwnersDataGridView(dgvOwner);
         }
     }
 }

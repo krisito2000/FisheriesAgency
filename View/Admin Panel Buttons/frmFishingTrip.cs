@@ -12,6 +12,7 @@ using System.Xml.Linq;
 using static FisheriesAgency.View.Admin_Panel_Buttons.frmFishingPermit;
 using static FisheriesAgency.View.Admin_Panel_Buttons.frmTicket;
 using FisheriesAgency.Model;
+using FisheriesAgency.Controller;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
@@ -59,11 +60,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 }
             }
         }
-        private void dgvReset()
-        {
-            UpdateTripsDataGridView(dgvTrip);
-            dgvTrip.Refresh();
-        }
 
         private void dgvTrip_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -110,7 +106,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                             int rowsAffected = command.ExecuteNonQuery();
                             if (rowsAffected > 0)
                             {
-                                dgvReset();
+                                UpdateTripsDataGridView(dgvTrip);
                             }
                             else
                             {
@@ -147,17 +143,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             DialogResult result = MessageBox.Show("Are you sure you want to delete this fishing permit?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                using (SqlConnection connection = new SqlConnection(Program.connectionString))
-                {
-                    connection.Open();
-
-                    SqlCommand deleteCommand = new SqlCommand("DELETE FROM [FishingTrip] WHERE TripId = @TripId", connection);
-                    deleteCommand.Parameters.AddWithValue("@TripId", tripId);
-                    deleteCommand.ExecuteNonQuery();
-
-                    connection.Close();
-                }
-
+                AdminPanelController.TripDeleteController(tripId);
                 UpdateTripsDataGridView(dgvTrip);
             }
         }
@@ -182,22 +168,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             string newTripEnd = dtpTripEnd.Value.ToString("yyyy-MM-dd");
             string newCatch = txtCatchAmount.Text.Trim();
 
-            // Update the ticket in the database
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                SqlCommand updateCommand = new SqlCommand("UPDATE [FishingTrip] SET TripStart = @TripStart, TripEnd = @TripEnd, CatchAmount = @CatchAmount WHERE TripID = @TripId", connection);
-                updateCommand.Parameters.AddWithValue("@TripStart", newTripStart);
-                updateCommand.Parameters.AddWithValue("@TripEnd", newTripEnd);
-                updateCommand.Parameters.AddWithValue("@CatchAmount", newCatch);
-                updateCommand.Parameters.AddWithValue("@TripId", tripId);
-                // Add parameters for other relevant columns if needed
-
-                updateCommand.ExecuteNonQuery();
-
-                connection.Close();
-            }
+            AdminPanelController.TripEditController(newTripStart, newTripEnd, newCatch, tripId);
 
             // Refresh the DataGridView to reflect the updated data
             UpdateTripsDataGridView(dgvTrip);

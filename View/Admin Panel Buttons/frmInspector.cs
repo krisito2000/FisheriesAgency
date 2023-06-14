@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FisheriesAgency.Controller;
 using FisheriesAgency.Model;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
@@ -58,12 +59,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
         }
 
-        private void dgvReset()
-        {
-            UpdateInspectorDataGridView(dgvInspector);
-            dgvInspector.Refresh();
-        }
-
         private void dgvInspector_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -103,21 +98,9 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
             DateTime inspectorDate = dtpInspectorDate.Value;
 
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
+            AdminPanelController.InspectorCreateController(inspectorDate, vesselId);
 
-                string sql = "INSERT INTO Inspector (InspectorDate, VesselId) VALUES (@InspectorDate, @VesselId)";
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    command.Parameters.AddWithValue("@InspectorDate", inspectorDate);
-                    command.Parameters.AddWithValue("@VesselId", vesselId);
-
-                    command.ExecuteNonQuery();
-                    dgvReset();
-                }
-            }
+            UpdateInspectorDataGridView(dgvInspector);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -133,20 +116,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             DialogResult result = MessageBox.Show("Are you sure you want to delete this inspector?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                using (SqlConnection connection = new SqlConnection(Program.connectionString))
-                {
-                    connection.Open();
-
-                    string sql = "DELETE FROM Inspector WHERE InspectorId = @InspectorId";
-
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        command.Parameters.AddWithValue("@InspectorId", inspectorId);
-
-                        command.ExecuteNonQuery();
-                        dgvReset();
-                    }
-                }
+                AdminPanelController.InspectorDeleteController(inspectorId);
+                UpdateInspectorDataGridView(dgvInspector);
             }
         }
 
@@ -165,22 +136,9 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             ComboBoxVessel selectedVessel = (ComboBoxVessel)cmbVessels.SelectedItem;
             int vesselId = (int)selectedVessel.VesselId;
 
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
+            AdminPanelController.InspectorEditController(inspectorDate, vesselId, inspectorId);
 
-                string sql = "UPDATE Inspector SET InspectorDate = @InspectorDate, VesselId = @VesselId WHERE InspectorId = @InspectorId";
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    command.Parameters.AddWithValue("@InspectorDate", inspectorDate);
-                    command.Parameters.AddWithValue("@VesselId", vesselId);
-                    command.Parameters.AddWithValue("@InspectorId", inspectorId);
-
-                    command.ExecuteNonQuery();
-                    dgvReset();
-                }
-            }
+            UpdateInspectorDataGridView(dgvInspector);
         }
 
         private void cmbVessels_DropDown(object sender, EventArgs e)

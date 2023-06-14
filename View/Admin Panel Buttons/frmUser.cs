@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FisheriesAgency.Controller;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
@@ -33,12 +34,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         {
             InitializeComponent();
             UpdateUsersDataGridView(dgvUser);
-        }
-
-        private void dgvReset()
-        {
-            UpdateUsersDataGridView(dgvUser);
-            dgvUser.Refresh();
         }
 
         private void btnViewPassword_Click(object sender, EventArgs e)
@@ -110,7 +105,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                             int result = insertCommand.ExecuteNonQuery();
                             if (result > 0)
                             {
-                                dgvReset();
+                                UpdateUsersDataGridView(dgvUser);
                             }
                             else
                             {
@@ -144,18 +139,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             DialogResult result = MessageBox.Show("Are you sure you want to delete this vessel?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                using (SqlConnection connection = new SqlConnection(Program.connectionString))
-                {
-                    connection.Open();
-
-                    SqlCommand command = new SqlCommand("DELETE FROM [User] WHERE UserID = @UserId", connection);
-                    command.Parameters.AddWithValue("@UserId", userId);
-
-                    command.ExecuteNonQuery();
-                    connection.Close();
-
-                    dgvReset();
-                }
+                AdminPanelController.UserDeleteController(userId);
+                UpdateUsersDataGridView(dgvUser);
             }
         }
 
@@ -168,43 +153,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 return;
             }
 
-            // Get the selected row
-            DataGridViewRow row = dgvUser.SelectedRows[0];
-
-            // Get the user ID from the selected row
-            int userId = (int)row.Cells["UserID"].Value;
-
-            // Get the new username and password from the textboxes
-            string newUsername = txtUsername.Text.Trim();
-            string newPassword = txtPassword.Text.Trim();
-            bool newAdmin = cbAdmin.Checked;
-
-            // Check if the new username already exists in the database
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                SqlCommand checkCommand = new SqlCommand("SELECT COUNT(*) FROM [User] WHERE Username = @Username AND UserID <> @UserId", connection);
-                checkCommand.Parameters.AddWithValue("@Username", newUsername);
-                checkCommand.Parameters.AddWithValue("@UserId", userId);
-            }
-
-            // Update the user in the local database
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                SqlCommand updateCommand = new SqlCommand("UPDATE [User] SET Username = @Username, Password = @Password, isAdministrator = @newAdmin WHERE UserID = @UserId", connection);
-                updateCommand.Parameters.AddWithValue("@Username", newUsername);
-                updateCommand.Parameters.AddWithValue("@Password", newPassword);
-                updateCommand.Parameters.AddWithValue("@newAdmin", newAdmin);
-                updateCommand.Parameters.AddWithValue("@UserId", userId);
-                updateCommand.ExecuteNonQuery();
-
-                connection.Close();
-            }
-
-            dgvReset();
+            AdminPanelController.UserEditController(txtUsername, txtPassword, cbAdmin, dgvUser);
+            UpdateUsersDataGridView(dgvUser);
         }
     }
 }

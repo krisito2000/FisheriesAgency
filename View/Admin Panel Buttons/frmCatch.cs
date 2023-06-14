@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using static FisheriesAgency.View.Admin_Panel_Buttons.frmFishingPermit;
 using FisheriesAgency.Model;
+using FisheriesAgency.Controller;
 using System.Xml.Linq;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
@@ -24,12 +25,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 }
             }
             dgvCatch.DataSource = dt;
-        }
-
-        private void dgvReset()
-        {
-            UpdateCatchesDataGridView(dgvCatch);
-            dgvCatch.Refresh();
         }
 
         public frmCatch()
@@ -95,27 +90,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 {
                     try
                     {
-                        using (SqlConnection connection = new SqlConnection(Program.connectionString))
-                        {
-                            connection.Open();
-
-                            // Create a SQL INSERT statement with parameter placeholders
-                            string sql = "INSERT INTO Catch (FishingTripId, Weight, Quantity) VALUES (@TripId, @Weight, @Quantity)";
-
-                            // Create a SqlCommand object with the SQL statement and connection
-                            using (SqlCommand command = new SqlCommand(sql, connection))
-                            {
-                                // Set the parameter values from the text boxes
-                                command.Parameters.AddWithValue("@Weight", weight);
-                                command.Parameters.AddWithValue("@Quantity", quantity);
-                                command.Parameters.AddWithValue("@TripId", tripId);
-
-                                // Execute the SQL command
-                                command.ExecuteNonQuery();
-                            }
-
-                            dgvReset();
-                        }
+                        AdminPanelController.CatchCreateController(weight, quantity, tripId);
+                        UpdateCatchesDataGridView(dgvCatch);
                     }
                     catch (Exception ex)
                     {
@@ -141,20 +117,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 // Get the TicketID value from the selected row
                 int catchId = Convert.ToInt32(selectedRow.Cells["CatchId"].Value);
 
-                // Execute a SQL DELETE statement to remove the record from the database
-                using (SqlConnection connection = new SqlConnection(Program.connectionString))
-                {
-                    connection.Open();
-
-                    string sql = "DELETE FROM [Catch] WHERE CatchId = @CatchId";
-
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        command.Parameters.AddWithValue("@CatchId", catchId);
-
-                        command.ExecuteNonQuery();
-                    }
-                }
+                AdminPanelController.CatchDeleteController(catchId);
 
                 // Remove the selected row from the DataGridView
                 dgvCatch.Rows.Remove(selectedRow);
@@ -194,23 +157,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
             int tripId = selectedTrip.TripId;
 
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                string sql = "UPDATE [Catch] SET FishingTripId = @TripId, Weight = @Weight, Quantity = @Quantity WHERE CatchId = @CatchId";
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    command.Parameters.AddWithValue("@TripId", tripId);
-                    command.Parameters.AddWithValue("@Weight", weight);
-                    command.Parameters.AddWithValue("@Quantity", quantity);
-                    command.Parameters.AddWithValue("@CatchId", catchId);
-
-                    command.ExecuteNonQuery();
-                    dgvReset();
-                }
-            }
+            AdminPanelController.CatchEditController(tripId, weight, quantity, catchId);
+            UpdateCatchesDataGridView(dgvCatch);
         }
 
         private void cmbTrip_DropDown(object sender, EventArgs e)

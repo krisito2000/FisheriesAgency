@@ -219,6 +219,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             HelpButton = true;
             Name = "frmLogin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             pnlBackground.ResumeLayout(false);
             pnlBackground.PerformLayout();

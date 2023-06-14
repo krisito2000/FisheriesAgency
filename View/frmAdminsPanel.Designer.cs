@@ -56,7 +56,7 @@
             lblTables.BackColor = SystemColors.ActiveCaptionText;
             lblTables.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             lblTables.ForeColor = Color.Aqua;
-            lblTables.Location = new Point(194, 31);
+            lblTables.Location = new Point(203, 30);
             lblTables.Name = "lblTables";
             lblTables.Size = new Size(85, 32);
             lblTables.TabIndex = 18;
@@ -65,6 +65,7 @@
             // btnUsers
             // 
             btnUsers.BackColor = Color.DimGray;
+            btnUsers.Cursor = Cursors.Hand;
             btnUsers.FlatStyle = FlatStyle.Popup;
             btnUsers.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnUsers.ForeColor = Color.Aqua;
@@ -79,6 +80,7 @@
             // btnFishingPermits
             // 
             btnFishingPermits.BackColor = Color.DimGray;
+            btnFishingPermits.Cursor = Cursors.Hand;
             btnFishingPermits.FlatStyle = FlatStyle.Popup;
             btnFishingPermits.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnFishingPermits.ForeColor = Color.Aqua;
@@ -93,6 +95,7 @@
             // btnVessels
             // 
             btnVessels.BackColor = Color.DimGray;
+            btnVessels.Cursor = Cursors.Hand;
             btnVessels.FlatStyle = FlatStyle.Popup;
             btnVessels.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnVessels.ForeColor = Color.Aqua;
@@ -107,6 +110,7 @@
             // btnTickets
             // 
             btnTickets.BackColor = Color.DimGray;
+            btnTickets.Cursor = Cursors.Hand;
             btnTickets.FlatStyle = FlatStyle.Popup;
             btnTickets.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnTickets.ForeColor = Color.Aqua;
@@ -121,6 +125,7 @@
             // btnLogout
             // 
             btnLogout.BackColor = Color.DimGray;
+            btnLogout.Cursor = Cursors.Hand;
             btnLogout.FlatStyle = FlatStyle.Popup;
             btnLogout.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogout.ForeColor = Color.Aqua;
@@ -135,6 +140,7 @@
             // btnCaptains
             // 
             btnCaptains.BackColor = Color.DimGray;
+            btnCaptains.Cursor = Cursors.Hand;
             btnCaptains.FlatStyle = FlatStyle.Popup;
             btnCaptains.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnCaptains.ForeColor = Color.Aqua;
@@ -149,6 +155,7 @@
             // btnCatches
             // 
             btnCatches.BackColor = Color.DimGray;
+            btnCatches.Cursor = Cursors.Hand;
             btnCatches.FlatStyle = FlatStyle.Popup;
             btnCatches.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnCatches.ForeColor = Color.Aqua;
@@ -163,6 +170,7 @@
             // btnTrips
             // 
             btnTrips.BackColor = Color.DimGray;
+            btnTrips.Cursor = Cursors.Hand;
             btnTrips.FlatStyle = FlatStyle.Popup;
             btnTrips.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnTrips.ForeColor = Color.Aqua;
@@ -177,6 +185,7 @@
             // btnInspector
             // 
             btnInspector.BackColor = Color.DimGray;
+            btnInspector.Cursor = Cursors.Hand;
             btnInspector.FlatStyle = FlatStyle.Popup;
             btnInspector.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnInspector.ForeColor = Color.Aqua;
@@ -191,6 +200,7 @@
             // btnMembers
             // 
             btnMembers.BackColor = Color.DimGray;
+            btnMembers.Cursor = Cursors.Hand;
             btnMembers.FlatStyle = FlatStyle.Popup;
             btnMembers.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnMembers.ForeColor = Color.Aqua;
@@ -205,6 +215,7 @@
             // btnOwners
             // 
             btnOwners.BackColor = Color.DimGray;
+            btnOwners.Cursor = Cursors.Hand;
             btnOwners.FlatStyle = FlatStyle.Popup;
             btnOwners.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnOwners.ForeColor = Color.Aqua;
@@ -219,6 +230,7 @@
             // btnOther
             // 
             btnOther.BackColor = Color.DimGray;
+            btnOther.Cursor = Cursors.Hand;
             btnOther.FlatStyle = FlatStyle.Popup;
             btnOther.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnOther.ForeColor = Color.Aqua;
@@ -232,11 +244,10 @@
             // 
             // frmAdminsPanel
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             AutoSize = true;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(485, 293);
+            ClientSize = new Size(485, 282);
             Controls.Add(btnOther);
             Controls.Add(btnOwners);
             Controls.Add(btnMembers);
@@ -250,7 +261,9 @@
             Controls.Add(btnFishingPermits);
             Controls.Add(btnUsers);
             Controls.Add(lblTables);
+            MinimizeBox = false;
             Name = "frmAdminsPanel";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Admin Panel";
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
             ResumeLayout(false);

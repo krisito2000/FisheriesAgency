@@ -94,6 +94,7 @@
             dtpTripStart.CalendarTitleBackColor = Color.FromArgb(64, 64, 64);
             dtpTripStart.CalendarTitleForeColor = Color.Aqua;
             dtpTripStart.CalendarTrailingForeColor = Color.Aqua;
+            dtpTripStart.Cursor = Cursors.Hand;
             dtpTripStart.Location = new Point(192, 48);
             dtpTripStart.Name = "dtpTripStart";
             dtpTripStart.Size = new Size(213, 23);
@@ -106,6 +107,7 @@
             dtpTripEnd.CalendarTitleBackColor = Color.FromArgb(64, 64, 64);
             dtpTripEnd.CalendarTitleForeColor = Color.Aqua;
             dtpTripEnd.CalendarTrailingForeColor = Color.Aqua;
+            dtpTripEnd.Cursor = Cursors.Hand;
             dtpTripEnd.Location = new Point(192, 82);
             dtpTripEnd.Name = "dtpTripEnd";
             dtpTripEnd.Size = new Size(213, 23);
@@ -114,6 +116,7 @@
             // btnEdit
             // 
             btnEdit.BackColor = Color.DimGray;
+            btnEdit.Cursor = Cursors.Hand;
             btnEdit.FlatStyle = FlatStyle.Popup;
             btnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnEdit.ForeColor = Color.Aqua;
@@ -128,6 +131,7 @@
             // btnDelete
             // 
             btnDelete.BackColor = Color.DimGray;
+            btnDelete.Cursor = Cursors.Hand;
             btnDelete.FlatStyle = FlatStyle.Popup;
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.Aqua;
@@ -142,6 +146,7 @@
             // btnCreate
             // 
             btnCreate.BackColor = Color.DimGray;
+            btnCreate.Cursor = Cursors.Hand;
             btnCreate.FlatStyle = FlatStyle.Popup;
             btnCreate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCreate.ForeColor = Color.Aqua;
@@ -168,6 +173,7 @@
             // cbVessels
             // 
             cbVessels.BackColor = Color.Gray;
+            cbVessels.Cursor = Cursors.Hand;
             cbVessels.FlatStyle = FlatStyle.Popup;
             cbVessels.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cbVessels.ForeColor = Color.Aqua;
@@ -191,6 +197,7 @@
             // 
             txtCatchAmount.BackColor = Color.Black;
             txtCatchAmount.BorderStyle = BorderStyle.None;
+            txtCatchAmount.Cursor = Cursors.IBeam;
             txtCatchAmount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtCatchAmount.ForeColor = Color.White;
             txtCatchAmount.Location = new Point(192, 117);
@@ -218,6 +225,7 @@
             Controls.Add(lblTripStart);
             Margin = new Padding(3, 2, 3, 2);
             Name = "frmFishingTrip";
+            Opacity = 0.93D;
             Text = "Fishing Trips";
             ((System.ComponentModel.ISupportInitialize)dgvTrip).EndInit();
             ResumeLayout(false);

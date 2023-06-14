@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FisheriesAgency.Model;
+using FisheriesAgency.Controller;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
@@ -83,11 +84,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
 
         }
-        private void dgvReset()
-        {
-            UpdateVesselsDataGridView(dgvVessel);
-            dgvVessel.Refresh();
-        }
 
         private void dgvVessel_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -139,35 +135,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             int ownerId = selectedOwner.OwnerId;
             int captainId = selectedCaptain.CaptainId;
 
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                // Create a SQL INSERT statement with parameter placeholders
-                string sql = "INSERT INTO Vessel (InternationalNumber, CallSign, Marking, Length, Width, Tonnage, Gas, Engine, Fuel, OwnerId, CaptainId) " +
-                             "VALUES (@InternationalNumber, @CallSign, @Marking, @Length, @Width, @Tonnage, @Gas, @Engine, @Fuel, @OwnerId, @CaptainId)";
-
-                // Create a SqlCommand object with the SQL statement and connection
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    // Set the parameter values from the text boxes
-                    command.Parameters.AddWithValue("@InternationalNumber", txtInternationalNumber.Text);
-                    command.Parameters.AddWithValue("@CallSign", txtCallSign.Text);
-                    command.Parameters.AddWithValue("@Marking", txtMarking.Text);
-                    command.Parameters.AddWithValue("@Length", decimal.Parse(txtLength.Text));
-                    command.Parameters.AddWithValue("@Width", decimal.Parse(txtWidth.Text));
-                    command.Parameters.AddWithValue("@Tonnage", decimal.Parse(txtTonnage.Text));
-                    command.Parameters.AddWithValue("@Gas", txtGas.Text);
-                    command.Parameters.AddWithValue("@Engine", txtEngine.Text);
-                    command.Parameters.AddWithValue("@Fuel", txtFuel.Text);
-                    command.Parameters.AddWithValue("@OwnerId", ownerId);
-                    command.Parameters.AddWithValue("@CaptainId", captainId);
-
-                    // Execute the SQL command
-                    command.ExecuteNonQuery();
-                    dgvReset();
-                }
-            }
+            AdminPanelController.VesselCreateController(txtInternationalNumber, txtCallSign, txtMarking, txtLength, txtWidth, txtTonnage, txtGas, txtEngine, txtFuel, ownerId, captainId);
+            UpdateVesselsDataGridView(dgvVessel);
         }
 
         private void cmbOwners_DropDown(object sender, EventArgs e)
@@ -195,20 +164,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             DialogResult result = MessageBox.Show("Are you sure you want to delete this vessel?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                // Delete the vessel from the database
-                using (SqlConnection connection = new SqlConnection(Program.connectionString))
-                {
-                    connection.Open();
-
-                    SqlCommand deleteCommand = new SqlCommand("DELETE FROM [Vessel] WHERE VesselID = @VesselId", connection);
-                    deleteCommand.Parameters.AddWithValue("@VesselId", vesselId);
-                    deleteCommand.ExecuteNonQuery();
-
-                    connection.Close();
-                }
-
-                // Refresh the DataGridView
-                dgvReset();
+                AdminPanelController.VesselDeleteController(vesselId);
+                UpdateVesselsDataGridView(dgvVessel);
             }
         }
 
@@ -238,29 +195,10 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             string engine = txtEngine.Text.Trim();
             string fuel = txtFuel.Text.Trim();
 
-            // Update the vessel in the database
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                SqlCommand updateCommand = new SqlCommand("UPDATE [Vessel] SET InternationalNumber = @InternationalNumber, CallSign = @CallSign, Marking = @Marking, Length = @Length, Width = @Width, Tonnage = @Tonnage, Gas = @Gas, Engine = @Engine, Fuel = @Fuel WHERE VesselID = @VesselId", connection);
-                updateCommand.Parameters.AddWithValue("@InternationalNumber", internationalNumber);
-                updateCommand.Parameters.AddWithValue("@CallSign", callSign);
-                updateCommand.Parameters.AddWithValue("@Marking", marking);
-                updateCommand.Parameters.AddWithValue("@Length", length);
-                updateCommand.Parameters.AddWithValue("@Width", width);
-                updateCommand.Parameters.AddWithValue("@Tonnage", tonnage);
-                updateCommand.Parameters.AddWithValue("@Gas", gas);
-                updateCommand.Parameters.AddWithValue("@Engine", engine);
-                updateCommand.Parameters.AddWithValue("@Fuel", fuel);
-                updateCommand.Parameters.AddWithValue("@VesselId", vesselId);
-                updateCommand.ExecuteNonQuery();
-
-                connection.Close();
-            }
+            AdminPanelController.VesselEditController(internationalNumber, callSign, marking, length, width, tonnage, gas, engine, fuel, vesselId);
 
             // Refresh the DataGridView
-            dgvReset();
+            UpdateVesselsDataGridView(dgvVessel);
         }
     }
 }

@@ -1,10 +1,12 @@
-﻿using System;
+﻿using FisheriesAgency.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,11 +29,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 }
             }
             dgvFisheriesAgencyDB.DataSource = dt;
-        }
-        private void dgvReset()
-        {
-            UpdateMembersDataGridView(dgvMember);
-            dgvMember.Refresh();
         }
         public frmMember()
         {
@@ -63,38 +60,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 MessageBox.Show("Please fill all spaces");
             }
 
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                // Check if the name already exists in the database
-                string checkSql = "SELECT COUNT(*) FROM Member WHERE Name = @Name";
-                using (SqlCommand checkCommand = new SqlCommand(checkSql, connection))
-                {
-                    checkCommand.Parameters.AddWithValue("@Name", name);
-                    int count = (int)checkCommand.ExecuteScalar();
-                    if (count > 0)
-                    {
-                        MessageBox.Show("Name already exists");
-                        return;
-                    }
-                }
-
-                // Create a SQL INSERT statement with parameter placeholders
-                string sql = "INSERT INTO Member (Name, Address) VALUES (@Name, @Address)";
-
-                // Create a SqlCommand object with the SQL statement and connection
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    // Set the parameter values from the text boxes
-                    command.Parameters.AddWithValue("@Name", txtName.Text);
-                    command.Parameters.AddWithValue("@Address", txtAddress.Text);
-
-                    // Execute the SQL command
-                    command.ExecuteNonQuery();
-                }
-                dgvReset();
-            }
+            AdminPanelController.MemberCreateController(name, address);
+            UpdateMembersDataGridView(dgvMember);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -108,33 +75,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 DialogResult result = MessageBox.Show("Are you sure you want to delete this member?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    using (SqlConnection connection = new SqlConnection(Program.connectionString))
-                    {
-                        connection.Open();
-
-                        string sql = "DELETE FROM Member WHERE Name = @Name AND Address = @Address";
-
-                        using (SqlCommand command = new SqlCommand(sql, connection))
-                        {
-                            command.Parameters.AddWithValue("@Name", name);
-                            command.Parameters.AddWithValue("@Address", address);
-
-
-                            int rowsAffected = command.ExecuteNonQuery();
-
-                            if (rowsAffected > 0)
-                            {
-                                // Clear the text boxes
-                                txtName.Text = string.Empty;
-                                txtAddress.Text = string.Empty;
-                                dgvReset();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Owner not found or deletion failed.");
-                            }
-                        }
-                    }
+                    AdminPanelController.MemberDeleteController(name, address);
+                    UpdateMembersDataGridView(dgvMember);
                 }
             }
             else
@@ -156,29 +98,8 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             string newName = txtName.Text.Trim();
             string newAddress = txtAddress.Text.Trim();
 
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                SqlCommand checkCommand = new SqlCommand("SELECT COUNT(*) FROM [Member] WHERE Name = @Name AND Address <> @Address", connection);
-                checkCommand.Parameters.AddWithValue("@Name", newName);
-                checkCommand.Parameters.AddWithValue("@Address", newAddress);
-                checkCommand.Parameters.AddWithValue("@MemberId", memberId);
-            }
-
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                SqlCommand updateCommand = new SqlCommand("UPDATE [Member] SET Name = @Name, Address = @Address WHERE MemberId = @MemberId", connection);
-                updateCommand.Parameters.AddWithValue("@Name", newName);
-                updateCommand.Parameters.AddWithValue("@Address", newAddress);
-                updateCommand.Parameters.AddWithValue("@MemberId", memberId);
-                updateCommand.ExecuteNonQuery();
-
-                connection.Close();
-            }
-            dgvReset();
+            AdminPanelController.MemberEditController(newName, newAddress, memberId);
+            UpdateMembersDataGridView(dgvMember);
         }
     }
 }

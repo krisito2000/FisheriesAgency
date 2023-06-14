@@ -40,6 +40,7 @@
             // btnBestCatchForTheYear
             // 
             btnBestCatchForTheYear.BackColor = Color.DimGray;
+            btnBestCatchForTheYear.Cursor = Cursors.Hand;
             btnBestCatchForTheYear.FlatStyle = FlatStyle.Popup;
             btnBestCatchForTheYear.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnBestCatchForTheYear.ForeColor = Color.Aqua;
@@ -54,6 +55,7 @@
             // btnGetPermits
             // 
             btnGetPermits.BackColor = Color.DimGray;
+            btnGetPermits.Cursor = Cursors.Hand;
             btnGetPermits.FlatStyle = FlatStyle.Popup;
             btnGetPermits.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnGetPermits.ForeColor = Color.Aqua;
@@ -99,6 +101,7 @@
             // 
             txtMonths.BackColor = Color.Black;
             txtMonths.BorderStyle = BorderStyle.None;
+            txtMonths.Cursor = Cursors.IBeam;
             txtMonths.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtMonths.ForeColor = Color.White;
             txtMonths.Location = new Point(206, 66);
@@ -119,6 +122,7 @@
             Controls.Add(btnGetPermits);
             Controls.Add(lblMonths);
             Name = "frmOther";
+            Opacity = 0.93D;
             Text = "Other";
             ((System.ComponentModel.ISupportInitialize)dgvOther).EndInit();
             ResumeLayout(false);
