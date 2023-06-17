@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FisheriesAgency.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -74,6 +75,45 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             {
                 MessageBox.Show("Error retrieving leaderboard: " + ex.Message);
             }
+        }
+        //Get Permits
+        private void btnGetPermits_MouseEnter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnGetPermits);
+        }
+
+        private void btnGetPermits_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnGetPermits);
+        }
+        private void btnGetPermits_Enter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnGetPermits);
+        }
+        private void btnGetPermits_Leave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnGetPermits);
+        }
+
+        //Years Catch
+        private void btnBestCatchForTheYear_MouseEnter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnBestCatchForTheYear);
+        }
+
+        private void btnBestCatchForTheYear_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnBestCatchForTheYear);
+        }
+
+        private void btnBestCatchForTheYear_Enter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnBestCatchForTheYear);
+        }
+
+        private void btnBestCatchForTheYear_Leave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnBestCatchForTheYear);
         }
     }
 }

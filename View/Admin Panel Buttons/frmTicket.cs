@@ -15,6 +15,7 @@ using static FisheriesAgency.View.Admin_Panel_Buttons.frmTicket;
 using FisheriesAgency.Model;
 using FisheriesAgency.Controller;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using FisheriesAgency.Utils;
 
 namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
@@ -25,7 +26,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection(Program.connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT TicketID, StartDate, EndDate, Price, IsPensioner, IsDisabled, TelkDecisionNum FROM [Ticket]", con))
+                using (SqlCommand cmd = new SqlCommand("SELECT TicketID, UserId, StartDate, EndDate, Price, IsPensioner, IsDisabled, TelkDecisionNum FROM [Ticket]", con))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
@@ -177,6 +178,67 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
         private void cmbMember_DropDown(object sender, EventArgs e)
         {
             cmbMember.ForeColor = Color.Aqua;
+        }
+
+        // Create
+        private void btnCreate_MouseEnter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnCreate);
+        }
+
+        private void btnCreate_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnCreate);
+        }
+
+        private void btnCreate_Enter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnCreate);
+        }
+
+        private void btnCreate_Leave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnCreate);
+        }
+        // Delete
+        private void btnDelete_MouseEnter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnDelete);
+        }
+
+        private void btnDelete_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnDelete);
+        }
+
+        private void btnDelete_Enter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnDelete);
+        }
+
+        private void btnDelete_Leave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnDelete);
+        }
+        // Edit
+        private void btnEdit_MouseEnter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnEdit);
+        }
+
+        private void btnEdit_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnEdit);
+        }
+
+        private void btnEdit_Enter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnEdit);
+        }
+
+        private void btnEdit_Leave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnEdit);
         }
     }
 }

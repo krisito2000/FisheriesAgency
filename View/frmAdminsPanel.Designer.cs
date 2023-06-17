@@ -72,10 +72,14 @@
             btnUsers.Location = new Point(46, 85);
             btnUsers.Name = "btnUsers";
             btnUsers.Size = new Size(94, 33);
-            btnUsers.TabIndex = 19;
+            btnUsers.TabIndex = 0;
             btnUsers.Text = "Users";
             btnUsers.UseVisualStyleBackColor = false;
             btnUsers.Click += btnUsers_Click;
+            btnUsers.Enter += btnUsers_Enter;
+            btnUsers.Leave += btnUsers_Leave;
+            btnUsers.MouseEnter += btnUsers_MouseEnter;
+            btnUsers.MouseLeave += btnUsers_MouseLeave;
             // 
             // btnFishingPermits
             // 
@@ -87,10 +91,14 @@
             btnFishingPermits.Location = new Point(245, 85);
             btnFishingPermits.Name = "btnFishingPermits";
             btnFishingPermits.Size = new Size(94, 33);
-            btnFishingPermits.TabIndex = 20;
+            btnFishingPermits.TabIndex = 2;
             btnFishingPermits.Text = "Permits";
             btnFishingPermits.UseVisualStyleBackColor = false;
             btnFishingPermits.Click += btnFishingPermits_Click;
+            btnFishingPermits.Enter += btnFishingPermits_Enter;
+            btnFishingPermits.Leave += btnFishingPermits_Leave;
+            btnFishingPermits.MouseEnter += btnFishingPermits_MouseEnter;
+            btnFishingPermits.MouseLeave += btnFishingPermits_MouseLeave;
             // 
             // btnVessels
             // 
@@ -102,10 +110,14 @@
             btnVessels.Location = new Point(146, 85);
             btnVessels.Name = "btnVessels";
             btnVessels.Size = new Size(94, 33);
-            btnVessels.TabIndex = 21;
+            btnVessels.TabIndex = 1;
             btnVessels.Text = "Vessels";
             btnVessels.UseVisualStyleBackColor = false;
             btnVessels.Click += btnVessels_Click;
+            btnVessels.Enter += btnVessels_Enter;
+            btnVessels.Leave += btnVessels_Leave;
+            btnVessels.MouseEnter += btnVessels_MouseEnter;
+            btnVessels.MouseLeave += btnVessels_MouseLeave;
             // 
             // btnTickets
             // 
@@ -117,10 +129,14 @@
             btnTickets.Location = new Point(345, 85);
             btnTickets.Name = "btnTickets";
             btnTickets.Size = new Size(94, 33);
-            btnTickets.TabIndex = 22;
+            btnTickets.TabIndex = 3;
             btnTickets.Text = "Tickets";
             btnTickets.UseVisualStyleBackColor = false;
             btnTickets.Click += btnTickets_Click;
+            btnTickets.Enter += btnTickets_Enter;
+            btnTickets.Leave += btnTickets_Leave;
+            btnTickets.MouseEnter += btnTickets_MouseEnter;
+            btnTickets.MouseLeave += btnTickets_MouseLeave;
             // 
             // btnLogout
             // 
@@ -132,10 +148,14 @@
             btnLogout.Location = new Point(195, 214);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(94, 33);
-            btnLogout.TabIndex = 25;
+            btnLogout.TabIndex = 11;
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
+            btnLogout.Enter += btnLogout_Enter;
+            btnLogout.Leave += btnLogout_Leave;
+            btnLogout.MouseEnter += btnLogout_MouseEnter;
+            btnLogout.MouseLeave += btnLogout_MouseLeave;
             // 
             // btnCaptains
             // 
@@ -147,10 +167,14 @@
             btnCaptains.Location = new Point(48, 126);
             btnCaptains.Name = "btnCaptains";
             btnCaptains.Size = new Size(94, 33);
-            btnCaptains.TabIndex = 26;
+            btnCaptains.TabIndex = 4;
             btnCaptains.Text = "Captains";
             btnCaptains.UseVisualStyleBackColor = false;
             btnCaptains.Click += btnCaptains_Click;
+            btnCaptains.Enter += btnCaptains_Enter;
+            btnCaptains.Leave += btnCaptains_Leave;
+            btnCaptains.MouseEnter += btnCaptains_MouseEnter;
+            btnCaptains.MouseLeave += btnCaptains_MouseLeave;
             // 
             // btnCatches
             // 
@@ -162,10 +186,14 @@
             btnCatches.Location = new Point(146, 126);
             btnCatches.Name = "btnCatches";
             btnCatches.Size = new Size(94, 33);
-            btnCatches.TabIndex = 27;
+            btnCatches.TabIndex = 5;
             btnCatches.Text = "Catches";
             btnCatches.UseVisualStyleBackColor = false;
             btnCatches.Click += btnCatches_Click;
+            btnCatches.Enter += btnCatches_Enter;
+            btnCatches.Leave += btnCatches_Leave;
+            btnCatches.MouseEnter += btnCatches_MouseEnter;
+            btnCatches.MouseLeave += btnCatches_MouseLeave;
             // 
             // btnTrips
             // 
@@ -177,10 +205,14 @@
             btnTrips.Location = new Point(245, 126);
             btnTrips.Name = "btnTrips";
             btnTrips.Size = new Size(94, 33);
-            btnTrips.TabIndex = 28;
+            btnTrips.TabIndex = 6;
             btnTrips.Text = "Trips";
             btnTrips.UseVisualStyleBackColor = false;
             btnTrips.Click += btnTrips_Click;
+            btnTrips.Enter += btnTrips_Enter;
+            btnTrips.Leave += btnTrips_Leave;
+            btnTrips.MouseEnter += btnTrips_MouseEnter;
+            btnTrips.MouseLeave += btnTrips_MouseLeave;
             // 
             // btnInspector
             // 
@@ -192,10 +224,14 @@
             btnInspector.Location = new Point(344, 126);
             btnInspector.Name = "btnInspector";
             btnInspector.Size = new Size(94, 33);
-            btnInspector.TabIndex = 29;
+            btnInspector.TabIndex = 7;
             btnInspector.Text = "Inspector";
             btnInspector.UseVisualStyleBackColor = false;
             btnInspector.Click += btnInspector_Click;
+            btnInspector.Enter += btnInspector_Enter;
+            btnInspector.Leave += btnInspector_Leave;
+            btnInspector.MouseEnter += btnInspector_MouseEnter;
+            btnInspector.MouseLeave += btnInspector_MouseLeave;
             // 
             // btnMembers
             // 
@@ -207,10 +243,14 @@
             btnMembers.Location = new Point(95, 165);
             btnMembers.Name = "btnMembers";
             btnMembers.Size = new Size(94, 33);
-            btnMembers.TabIndex = 30;
+            btnMembers.TabIndex = 8;
             btnMembers.Text = "Members";
             btnMembers.UseVisualStyleBackColor = false;
             btnMembers.Click += btnMembers_Click;
+            btnMembers.Enter += btnMembers_Enter;
+            btnMembers.Leave += btnMembers_Leave;
+            btnMembers.MouseEnter += btnMembers_MouseEnter;
+            btnMembers.MouseLeave += btnMembers_MouseLeave;
             // 
             // btnOwners
             // 
@@ -222,10 +262,14 @@
             btnOwners.Location = new Point(194, 165);
             btnOwners.Name = "btnOwners";
             btnOwners.Size = new Size(94, 33);
-            btnOwners.TabIndex = 31;
+            btnOwners.TabIndex = 9;
             btnOwners.Text = "Owners";
             btnOwners.UseVisualStyleBackColor = false;
             btnOwners.Click += btnOwners_Click;
+            btnOwners.Enter += btnOwners_Enter;
+            btnOwners.Leave += btnOwners_Leave;
+            btnOwners.MouseEnter += btnOwners_MouseEnter;
+            btnOwners.MouseLeave += btnOwners_MouseLeave;
             // 
             // btnOther
             // 
@@ -237,10 +281,14 @@
             btnOther.Location = new Point(294, 165);
             btnOther.Name = "btnOther";
             btnOther.Size = new Size(94, 33);
-            btnOther.TabIndex = 32;
+            btnOther.TabIndex = 10;
             btnOther.Text = "Other";
             btnOther.UseVisualStyleBackColor = false;
             btnOther.Click += btnOther_Click;
+            btnOther.Enter += btnOther_Enter;
+            btnOther.Leave += btnOther_Leave;
+            btnOther.MouseEnter += btnOther_MouseEnter;
+            btnOther.MouseLeave += btnOther_MouseLeave;
             // 
             // frmAdminsPanel
             // 

@@ -118,5 +118,245 @@ namespace FisheriesAgency.View
                 this.Close();
             }
         }
+        // Users
+        private void btnUsers_MouseEnter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnUsers);
+        }
+
+        private void btnUsers_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnUsers);
+        }
+
+        private void btnUsers_Enter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnUsers);
+        }
+        private void btnUsers_Leave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnUsers);
+        }
+        // Vessels
+        private void btnVessels_MouseEnter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnVessels);
+        }
+
+        private void btnVessels_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnVessels);
+        }
+
+        private void btnVessels_Enter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnVessels);
+        }
+
+        private void btnVessels_Leave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnVessels);
+        }
+        // Permits
+        private void btnFishingPermits_MouseEnter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnFishingPermits);
+        }
+
+        private void btnFishingPermits_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnFishingPermits);
+        }
+
+        private void btnFishingPermits_Enter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnFishingPermits);
+        }
+
+        private void btnFishingPermits_Leave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnFishingPermits);
+        }
+        // Tickets
+
+        private void btnTickets_MouseEnter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnTickets);
+        }
+
+        private void btnTickets_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnTickets);
+        }
+
+        private void btnTickets_Enter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnTickets);
+        }
+
+        private void btnTickets_Leave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnTickets);
+        }
+        //Captains
+        private void btnCaptains_MouseEnter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnCaptains);
+        }
+
+        private void btnCaptains_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnCaptains);
+        }
+
+        private void btnCaptains_Enter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnCaptains);
+        }
+
+        private void btnCaptains_Leave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnCaptains);
+        }
+        //Cataches
+
+        private void btnCatches_MouseEnter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnCatches);
+        }
+
+        private void btnCatches_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnCatches);
+        }
+
+        private void btnCatches_Enter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnCatches);
+        }
+
+        private void btnCatches_Leave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnCatches);
+        }
+        //Trips
+        private void btnTrips_MouseEnter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnTrips);
+        }
+
+        private void btnTrips_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnTrips);
+        }
+
+        private void btnTrips_Enter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnTrips);
+        }
+
+        private void btnTrips_Leave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnTrips);
+        }
+        //Inspector
+        private void btnInspector_MouseEnter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnInspector);
+        }
+
+        private void btnInspector_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnInspector);
+        }
+
+        private void btnInspector_Enter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnInspector);
+        }
+
+        private void btnInspector_Leave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnInspector);
+        }
+        //Members
+        private void btnMembers_MouseEnter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnMembers);
+        }
+
+        private void btnMembers_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnMembers);
+        }
+
+        private void btnMembers_Enter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnMembers);
+        }
+
+        private void btnMembers_Leave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnMembers);
+        }
+        //Owners
+        private void btnOwners_MouseEnter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnOwners);
+        }
+
+        private void btnOwners_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnOwners);
+        }
+
+        private void btnOwners_Enter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnOwners);
+        }
+
+        private void btnOwners_Leave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnOwners);
+        }
+        //Other
+        private void btnOther_MouseEnter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnOther);
+        }
+
+        private void btnOther_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnOther);
+        }
+
+        private void btnOther_Enter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnOther);
+        }
+        private void btnOther_Leave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnOther);
+        }
+        //Logout
+        private void btnLogout_MouseEnter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnLogout);
+        }
+
+        private void btnLogout_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnLogout);
+        }
+
+        private void btnLogout_Enter(object sender, EventArgs e)
+        {
+            btnMouse.btnEnter(btnLogout);
+        }
+
+        private void btnLogout_Leave(object sender, EventArgs e)
+        {
+            btnMouse.btnLeave(btnLogout);
+        }
     }
 }

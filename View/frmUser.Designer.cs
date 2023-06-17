@@ -29,72 +29,106 @@
         private void InitializeComponent()
         {
             btnLogout = new Button();
-            dgvInformation = new DataGridView();
-            cmbTables = new ComboBox();
-            btnTicket = new Button();
-            ((System.ComponentModel.ISupportInitialize)dgvInformation).BeginInit();
+            dgvTickets = new DataGridView();
+            btnMyTickets = new Button();
+            btnStore = new Button();
+            lblTickets = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvTickets).BeginInit();
             SuspendLayout();
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(275, 293);
+            btnLogout.BackColor = Color.DimGray;
+            btnLogout.Cursor = Cursors.Hand;
+            btnLogout.FlatStyle = FlatStyle.Popup;
+            btnLogout.ForeColor = Color.Aqua;
+            btnLogout.Location = new Point(70, 214);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(64, 28);
             btnLogout.TabIndex = 12;
             btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
             // 
-            // dgvInformation
+            // dgvTickets
             // 
-            dgvInformation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvInformation.Location = new Point(312, 66);
-            dgvInformation.Name = "dgvInformation";
-            dgvInformation.RowTemplate.Height = 25;
-            dgvInformation.Size = new Size(325, 192);
-            dgvInformation.TabIndex = 14;
+            dgvTickets.BackgroundColor = Color.Aqua;
+            dgvTickets.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTickets.Location = new Point(215, 87);
+            dgvTickets.Name = "dgvTickets";
+            dgvTickets.RowTemplate.Height = 25;
+            dgvTickets.Size = new Size(325, 192);
+            dgvTickets.TabIndex = 14;
+            dgvTickets.CellClick += dgvTickets_CellClick;
             // 
-            // cmbTables
+            // btnMyTickets
             // 
-            cmbTables.FormattingEnabled = true;
-            cmbTables.Location = new Point(91, 138);
-            cmbTables.Name = "cmbTables";
-            cmbTables.Size = new Size(121, 23);
-            cmbTables.TabIndex = 15;
-            cmbTables.Text = "Select a table";
+            btnMyTickets.BackColor = Color.DimGray;
+            btnMyTickets.Cursor = Cursors.Hand;
+            btnMyTickets.FlatStyle = FlatStyle.Popup;
+            btnMyTickets.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnMyTickets.ForeColor = Color.Aqua;
+            btnMyTickets.Location = new Point(50, 156);
+            btnMyTickets.Name = "btnMyTickets";
+            btnMyTickets.Size = new Size(106, 32);
+            btnMyTickets.TabIndex = 17;
+            btnMyTickets.Text = "My Tickets";
+            btnMyTickets.UseVisualStyleBackColor = false;
+            btnMyTickets.Click += btnMyTickets_Click;
             // 
-            // btnTicket
+            // btnStore
             // 
-            btnTicket.Location = new Point(91, 201);
-            btnTicket.Name = "btnTicket";
-            btnTicket.Size = new Size(121, 28);
-            btnTicket.TabIndex = 16;
-            btnTicket.Text = "Create a ticket";
-            btnTicket.UseVisualStyleBackColor = true;
+            btnStore.BackColor = Color.DimGray;
+            btnStore.Cursor = Cursors.Hand;
+            btnStore.FlatStyle = FlatStyle.Popup;
+            btnStore.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnStore.ForeColor = Color.Aqua;
+            btnStore.Location = new Point(50, 112);
+            btnStore.Name = "btnStore";
+            btnStore.Size = new Size(106, 32);
+            btnStore.TabIndex = 18;
+            btnStore.Text = "Store";
+            btnStore.UseVisualStyleBackColor = false;
+            btnStore.Click += btnStore_Click;
+            // 
+            // lblTickets
+            // 
+            lblTickets.AutoSize = true;
+            lblTickets.Font = new Font("Segoe UI", 26F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTickets.ForeColor = Color.Aqua;
+            lblTickets.Location = new Point(323, 24);
+            lblTickets.Name = "lblTickets";
+            lblTickets.Size = new Size(107, 47);
+            lblTickets.TabIndex = 19;
+            lblTickets.Text = "Store";
             // 
             // frmUser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(663, 353);
-            Controls.Add(btnTicket);
-            Controls.Add(cmbTables);
-            Controls.Add(dgvInformation);
+            BackColor = Color.Black;
+            ClientSize = new Size(588, 302);
+            Controls.Add(lblTickets);
+            Controls.Add(btnStore);
+            Controls.Add(btnMyTickets);
+            Controls.Add(dgvTickets);
             Controls.Add(btnLogout);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             Name = "frmUser";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User";
-            ((System.ComponentModel.ISupportInitialize)dgvInformation).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTickets).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button btnLogout;
-        private DataGridView dgvInformation;
-        private ComboBox cmbTables;
-        private Button btnTicket;
+        private DataGridView dgvTickets;
+        private Button btnMyTickets;
+        private Button btnStore;
+        private Label lblTickets;
     }
 }

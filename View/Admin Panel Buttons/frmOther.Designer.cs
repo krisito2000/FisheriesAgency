@@ -51,6 +51,10 @@
             btnBestCatchForTheYear.Text = "Years Catch";
             btnBestCatchForTheYear.UseVisualStyleBackColor = false;
             btnBestCatchForTheYear.Click += btnBestCatchForTheYear_Click;
+            btnBestCatchForTheYear.Enter += btnBestCatchForTheYear_Enter;
+            btnBestCatchForTheYear.Leave += btnBestCatchForTheYear_Leave;
+            btnBestCatchForTheYear.MouseEnter += btnBestCatchForTheYear_MouseEnter;
+            btnBestCatchForTheYear.MouseLeave += btnBestCatchForTheYear_MouseLeave;
             // 
             // btnGetPermits
             // 
@@ -66,6 +70,10 @@
             btnGetPermits.Text = "Permits";
             btnGetPermits.UseVisualStyleBackColor = false;
             btnGetPermits.Click += btnGetPermits_Click;
+            btnGetPermits.Enter += btnGetPermits_Enter;
+            btnGetPermits.Leave += btnGetPermits_Leave;
+            btnGetPermits.MouseEnter += btnGetPermits_MouseEnter;
+            btnGetPermits.MouseLeave += btnGetPermits_MouseLeave;
             // 
             // lblMonths
             // 

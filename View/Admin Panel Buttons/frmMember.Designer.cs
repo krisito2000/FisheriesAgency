@@ -55,6 +55,10 @@
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = false;
             btnEdit.Click += btnEdit_Click;
+            btnEdit.Enter += btnEdit_Enter;
+            btnEdit.Leave += btnEdit_Leave;
+            btnEdit.MouseEnter += btnEdit_MouseEnter;
+            btnEdit.MouseLeave += btnEdit_MouseLeave;
             // 
             // lbIAddress
             // 
@@ -95,6 +99,10 @@
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
+            btnDelete.Enter += btnDelete_Enter;
+            btnDelete.Leave += btnDelete_Leave;
+            btnDelete.MouseEnter += btnDelete_MouseEnter;
+            btnDelete.MouseLeave += btnDelete_MouseLeave;
             // 
             // btnCreate
             // 
@@ -110,6 +118,10 @@
             btnCreate.Text = "Create ";
             btnCreate.UseVisualStyleBackColor = false;
             btnCreate.Click += btnCreate_Click;
+            btnCreate.Enter += btnCreate_Enter;
+            btnCreate.Leave += btnCreate_Leave;
+            btnCreate.MouseEnter += btnCreate_MouseEnter;
+            btnCreate.MouseLeave += btnCreate_MouseLeave;
             // 
             // dgvMember
             // 
