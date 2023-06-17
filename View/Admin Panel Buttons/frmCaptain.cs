@@ -56,7 +56,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             {
                 MessageBox.Show("Please fill all spaces");
             }
-            else 
+            else
             {
                 AdminPanelController.CaptainCreateController(txtName, txtAddress);
             }

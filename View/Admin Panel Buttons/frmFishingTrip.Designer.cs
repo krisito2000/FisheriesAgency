@@ -57,7 +57,7 @@
             lblTripStart.BackColor = SystemColors.ActiveCaptionText;
             lblTripStart.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblTripStart.ForeColor = Color.Aqua;
-            lblTripStart.Location = new Point(77, 46);
+            lblTripStart.Location = new Point(90, 32);
             lblTripStart.Name = "lblTripStart";
             lblTripStart.Size = new Size(79, 21);
             lblTripStart.TabIndex = 64;
@@ -69,7 +69,7 @@
             lblTripEnd.BackColor = SystemColors.ActiveCaptionText;
             lblTripEnd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblTripEnd.ForeColor = Color.Aqua;
-            lblTripEnd.Location = new Point(88, 80);
+            lblTripEnd.Location = new Point(101, 66);
             lblTripEnd.Name = "lblTripEnd";
             lblTripEnd.Size = new Size(72, 21);
             lblTripEnd.TabIndex = 65;
@@ -81,7 +81,7 @@
             lblCatchAmount.BackColor = SystemColors.ActiveCaptionText;
             lblCatchAmount.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblCatchAmount.ForeColor = Color.Aqua;
-            lblCatchAmount.Location = new Point(37, 117);
+            lblCatchAmount.Location = new Point(50, 103);
             lblCatchAmount.Name = "lblCatchAmount";
             lblCatchAmount.Size = new Size(119, 21);
             lblCatchAmount.TabIndex = 66;
@@ -95,10 +95,10 @@
             dtpTripStart.CalendarTitleForeColor = Color.Aqua;
             dtpTripStart.CalendarTrailingForeColor = Color.Aqua;
             dtpTripStart.Cursor = Cursors.Hand;
-            dtpTripStart.Location = new Point(192, 48);
+            dtpTripStart.Location = new Point(205, 34);
             dtpTripStart.Name = "dtpTripStart";
             dtpTripStart.Size = new Size(213, 23);
-            dtpTripStart.TabIndex = 75;
+            dtpTripStart.TabIndex = 0;
             // 
             // dtpTripEnd
             // 
@@ -108,10 +108,10 @@
             dtpTripEnd.CalendarTitleForeColor = Color.Aqua;
             dtpTripEnd.CalendarTrailingForeColor = Color.Aqua;
             dtpTripEnd.Cursor = Cursors.Hand;
-            dtpTripEnd.Location = new Point(192, 82);
+            dtpTripEnd.Location = new Point(205, 68);
             dtpTripEnd.Name = "dtpTripEnd";
             dtpTripEnd.Size = new Size(213, 23);
-            dtpTripEnd.TabIndex = 76;
+            dtpTripEnd.TabIndex = 1;
             // 
             // btnEdit
             // 
@@ -120,10 +120,10 @@
             btnEdit.FlatStyle = FlatStyle.Popup;
             btnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnEdit.ForeColor = Color.Aqua;
-            btnEdit.Location = new Point(149, 236);
+            btnEdit.Location = new Point(162, 222);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(95, 30);
-            btnEdit.TabIndex = 80;
+            btnEdit.TabIndex = 6;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = false;
             btnEdit.Click += btnEdit_Click;
@@ -135,10 +135,10 @@
             btnDelete.FlatStyle = FlatStyle.Popup;
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.Aqua;
-            btnDelete.Location = new Point(98, 200);
+            btnDelete.Location = new Point(111, 186);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(95, 30);
-            btnDelete.TabIndex = 79;
+            btnDelete.TabIndex = 5;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
@@ -150,10 +150,10 @@
             btnCreate.FlatStyle = FlatStyle.Popup;
             btnCreate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCreate.ForeColor = Color.Aqua;
-            btnCreate.Location = new Point(198, 200);
+            btnCreate.Location = new Point(211, 186);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(95, 30);
-            btnCreate.TabIndex = 78;
+            btnCreate.TabIndex = 4;
             btnCreate.Text = "Create ";
             btnCreate.UseVisualStyleBackColor = false;
             btnCreate.Click += btnCreate_Click;
@@ -162,12 +162,12 @@
             // 
             dgvTrip.BackgroundColor = Color.Aqua;
             dgvTrip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTrip.Location = new Point(429, 59);
+            dgvTrip.Location = new Point(442, 45);
             dgvTrip.Name = "dgvTrip";
             dgvTrip.RowHeadersWidth = 51;
             dgvTrip.RowTemplate.Height = 25;
             dgvTrip.Size = new Size(453, 171);
-            dgvTrip.TabIndex = 81;
+            dgvTrip.TabIndex = 7;
             dgvTrip.CellClick += dgvTrip_CellClick;
             // 
             // cbVessels
@@ -178,17 +178,17 @@
             cbVessels.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cbVessels.ForeColor = Color.Aqua;
             cbVessels.FormattingEnabled = true;
-            cbVessels.Location = new Point(140, 162);
+            cbVessels.Location = new Point(153, 148);
             cbVessels.Name = "cbVessels";
             cbVessels.Size = new Size(121, 23);
-            cbVessels.TabIndex = 82;
+            cbVessels.TabIndex = 3;
             cbVessels.Text = "Vessels";
             cbVessels.DropDown += cbVessels_DropDown;
             // 
             // pnlUsernametxt
             // 
             pnlUsernametxt.BackColor = Color.Aqua;
-            pnlUsernametxt.Location = new Point(192, 138);
+            pnlUsernametxt.Location = new Point(205, 124);
             pnlUsernametxt.Name = "pnlUsernametxt";
             pnlUsernametxt.Size = new Size(213, 1);
             pnlUsernametxt.TabIndex = 84;
@@ -200,10 +200,10 @@
             txtCatchAmount.Cursor = Cursors.IBeam;
             txtCatchAmount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtCatchAmount.ForeColor = Color.White;
-            txtCatchAmount.Location = new Point(192, 117);
+            txtCatchAmount.Location = new Point(205, 103);
             txtCatchAmount.Name = "txtCatchAmount";
             txtCatchAmount.Size = new Size(213, 22);
-            txtCatchAmount.TabIndex = 83;
+            txtCatchAmount.TabIndex = 2;
             // 
             // frmFishingTrip
             // 
@@ -223,7 +223,9 @@
             Controls.Add(lblCatchAmount);
             Controls.Add(lblTripEnd);
             Controls.Add(lblTripStart);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "frmFishingTrip";
             Opacity = 0.93D;
             Text = "Fishing Trips";

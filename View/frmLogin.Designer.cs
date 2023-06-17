@@ -50,7 +50,7 @@
             txtUsername.BorderStyle = BorderStyle.None;
             txtUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtUsername.ForeColor = Color.White;
-            txtUsername.Location = new Point(204, 129);
+            txtUsername.Location = new Point(158, 99);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(106, 22);
             txtUsername.TabIndex = 0;
@@ -62,7 +62,7 @@
             txtPassword.BorderStyle = BorderStyle.None;
             txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtPassword.ForeColor = Color.White;
-            txtPassword.Location = new Point(206, 187);
+            txtPassword.Location = new Point(160, 157);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(106, 22);
             txtPassword.TabIndex = 1;
@@ -76,7 +76,7 @@
             lblUsername.BackColor = Color.Transparent;
             lblUsername.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblUsername.ForeColor = Color.Aqua;
-            lblUsername.Location = new Point(108, 129);
+            lblUsername.Location = new Point(62, 99);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(87, 21);
             lblUsername.TabIndex = 2;
@@ -87,7 +87,7 @@
             lblPassword.AutoSize = true;
             lblPassword.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblPassword.ForeColor = Color.Aqua;
-            lblPassword.Location = new Point(110, 187);
+            lblPassword.Location = new Point(64, 157);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(82, 21);
             lblPassword.TabIndex = 3;
@@ -100,10 +100,10 @@
             btnLogin.FlatStyle = FlatStyle.Popup;
             btnLogin.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogin.ForeColor = Color.Aqua;
-            btnLogin.Location = new Point(118, 257);
+            btnLogin.Location = new Point(72, 227);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(194, 53);
-            btnLogin.TabIndex = 4;
+            btnLogin.TabIndex = 3;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
@@ -120,10 +120,10 @@
             btnRegister.FlatStyle = FlatStyle.Popup;
             btnRegister.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btnRegister.ForeColor = Color.Aqua;
-            btnRegister.Location = new Point(175, 378);
+            btnRegister.Location = new Point(129, 348);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(80, 28);
-            btnRegister.TabIndex = 5;
+            btnRegister.TabIndex = 4;
             btnRegister.Text = "Register";
             btnRegister.UseVisualStyleBackColor = false;
             btnRegister.Click += btnRegister_Click;
@@ -139,7 +139,7 @@
             lblRegisterNow.BackColor = Color.Transparent;
             lblRegisterNow.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblRegisterNow.ForeColor = Color.Aqua;
-            lblRegisterNow.Location = new Point(119, 337);
+            lblRegisterNow.Location = new Point(73, 307);
             lblRegisterNow.Name = "lblRegisterNow";
             lblRegisterNow.Size = new Size(193, 21);
             lblRegisterNow.TabIndex = 6;
@@ -152,10 +152,10 @@
             btnViewPassword.BackgroundImageLayout = ImageLayout.Stretch;
             btnViewPassword.Cursor = Cursors.Hand;
             btnViewPassword.FlatStyle = FlatStyle.Popup;
-            btnViewPassword.Location = new Point(318, 185);
+            btnViewPassword.Location = new Point(274, 155);
             btnViewPassword.Name = "btnViewPassword";
             btnViewPassword.Size = new Size(27, 27);
-            btnViewPassword.TabIndex = 7;
+            btnViewPassword.TabIndex = 2;
             btnViewPassword.UseVisualStyleBackColor = false;
             btnViewPassword.Click += btnViewPassword_Click;
             btnViewPassword.KeyDown += btnViewPassword_KeyDown;
@@ -167,7 +167,7 @@
             lblLogin.BackColor = Color.Transparent;
             lblLogin.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
             lblLogin.ForeColor = Color.Aqua;
-            lblLogin.Location = new Point(175, 45);
+            lblLogin.Location = new Point(129, 30);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(89, 37);
             lblLogin.TabIndex = 8;
@@ -176,7 +176,7 @@
             // pnlUsernametxt
             // 
             pnlUsernametxt.BackColor = Color.Aqua;
-            pnlUsernametxt.Location = new Point(204, 150);
+            pnlUsernametxt.Location = new Point(158, 120);
             pnlUsernametxt.Name = "pnlUsernametxt";
             pnlUsernametxt.Size = new Size(106, 1);
             pnlUsernametxt.TabIndex = 9;
@@ -184,7 +184,7 @@
             // panel2
             // 
             panel2.BackColor = Color.Aqua;
-            panel2.Location = new Point(206, 209);
+            panel2.Location = new Point(160, 179);
             panel2.Name = "panel2";
             panel2.Size = new Size(106, 1);
             panel2.TabIndex = 10;
@@ -203,9 +203,9 @@
             pnlBackground.Controls.Add(lblUsername);
             pnlBackground.Controls.Add(txtPassword);
             pnlBackground.Controls.Add(txtUsername);
-            pnlBackground.Location = new Point(-22, -16);
+            pnlBackground.Location = new Point(1, 3);
             pnlBackground.Name = "pnlBackground";
-            pnlBackground.Size = new Size(460, 504);
+            pnlBackground.Size = new Size(347, 415);
             pnlBackground.TabIndex = 8;
             // 
             // frmLogin
@@ -213,11 +213,12 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(384, 434);
+            ClientSize = new Size(347, 407);
             Controls.Add(pnlBackground);
             Cursor = Cursors.Hand;
             FormBorderStyle = FormBorderStyle.FixedDialog;
             HelpButton = true;
+            MaximizeBox = false;
             Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";

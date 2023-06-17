@@ -45,10 +45,10 @@
             btnEdit.FlatStyle = FlatStyle.Popup;
             btnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnEdit.ForeColor = Color.Aqua;
-            btnEdit.Location = new Point(143, 195);
+            btnEdit.Location = new Point(143, 193);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(95, 30);
-            btnEdit.TabIndex = 58;
+            btnEdit.TabIndex = 4;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = false;
             btnEdit.Click += btnEdit_Click;
@@ -58,7 +58,7 @@
             lblInspectorDate.AutoSize = true;
             lblInspectorDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblInspectorDate.ForeColor = Color.Aqua;
-            lblInspectorDate.Location = new Point(38, 40);
+            lblInspectorDate.Location = new Point(38, 38);
             lblInspectorDate.Name = "lblInspectorDate";
             lblInspectorDate.Size = new Size(117, 21);
             lblInspectorDate.TabIndex = 56;
@@ -71,10 +71,10 @@
             btnDelete.FlatStyle = FlatStyle.Popup;
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.Aqua;
-            btnDelete.Location = new Point(92, 150);
+            btnDelete.Location = new Point(92, 148);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(95, 30);
-            btnDelete.TabIndex = 53;
+            btnDelete.TabIndex = 3;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
@@ -86,10 +86,10 @@
             btnCreate.FlatStyle = FlatStyle.Popup;
             btnCreate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCreate.ForeColor = Color.Aqua;
-            btnCreate.Location = new Point(193, 150);
+            btnCreate.Location = new Point(193, 148);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(95, 30);
-            btnCreate.TabIndex = 52;
+            btnCreate.TabIndex = 2;
             btnCreate.Text = "Create ";
             btnCreate.UseVisualStyleBackColor = false;
             btnCreate.Click += btnCreate_Click;
@@ -98,12 +98,12 @@
             // 
             dgvInspector.BackgroundColor = Color.Aqua;
             dgvInspector.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvInspector.Location = new Point(349, 90);
+            dgvInspector.Location = new Point(349, 84);
             dgvInspector.Name = "dgvInspector";
             dgvInspector.RowHeadersWidth = 51;
             dgvInspector.RowTemplate.Height = 25;
             dgvInspector.Size = new Size(338, 150);
-            dgvInspector.TabIndex = 61;
+            dgvInspector.TabIndex = 5;
             dgvInspector.CellClick += dgvInspector_CellClick;
             // 
             // dtpInspectorDate
@@ -114,10 +114,10 @@
             dtpInspectorDate.CalendarTitleForeColor = Color.Aqua;
             dtpInspectorDate.CalendarTrailingForeColor = Color.Aqua;
             dtpInspectorDate.Cursor = Cursors.Hand;
-            dtpInspectorDate.Location = new Point(178, 41);
+            dtpInspectorDate.Location = new Point(178, 39);
             dtpInspectorDate.Name = "dtpInspectorDate";
             dtpInspectorDate.Size = new Size(216, 23);
-            dtpInspectorDate.TabIndex = 75;
+            dtpInspectorDate.TabIndex = 0;
             // 
             // cmbVessels
             // 
@@ -127,10 +127,10 @@
             cmbVessels.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cmbVessels.ForeColor = Color.Aqua;
             cmbVessels.FormattingEnabled = true;
-            cmbVessels.Location = new Point(133, 100);
+            cmbVessels.Location = new Point(133, 98);
             cmbVessels.Name = "cmbVessels";
             cmbVessels.Size = new Size(121, 23);
-            cmbVessels.TabIndex = 76;
+            cmbVessels.TabIndex = 1;
             cmbVessels.Text = "Vessels";
             cmbVessels.DropDown += cmbVessels_DropDown;
             // 
@@ -139,7 +139,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(729, 273);
+            ClientSize = new Size(724, 263);
             Controls.Add(cmbVessels);
             Controls.Add(dtpInspectorDate);
             Controls.Add(dgvInspector);
@@ -147,6 +147,8 @@
             Controls.Add(lblInspectorDate);
             Controls.Add(btnDelete);
             Controls.Add(btnCreate);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "frmInspector";
             Opacity = 0.93D;
             Text = "Inspectors";

@@ -48,10 +48,10 @@
             btnEdit.FlatStyle = FlatStyle.Popup;
             btnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnEdit.ForeColor = Color.Aqua;
-            btnEdit.Location = new Point(123, 182);
+            btnEdit.Location = new Point(104, 165);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(95, 30);
-            btnEdit.TabIndex = 30;
+            btnEdit.TabIndex = 4;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = false;
             btnEdit.Click += btnEdit_Click;
@@ -63,7 +63,7 @@
             lblAddress.FlatStyle = FlatStyle.System;
             lblAddress.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblAddress.ForeColor = Color.Aqua;
-            lblAddress.Location = new Point(80, 100);
+            lblAddress.Location = new Point(61, 83);
             lblAddress.Name = "lblAddress";
             lblAddress.Size = new Size(70, 21);
             lblAddress.TabIndex = 29;
@@ -75,7 +75,7 @@
             lblName.BackColor = SystemColors.ActiveCaptionText;
             lblName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblName.ForeColor = Color.Aqua;
-            lblName.Location = new Point(75, 53);
+            lblName.Location = new Point(56, 36);
             lblName.Name = "lblName";
             lblName.Size = new Size(56, 21);
             lblName.TabIndex = 28;
@@ -88,10 +88,10 @@
             btnDelete.FlatStyle = FlatStyle.Popup;
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.Aqua;
-            btnDelete.Location = new Point(74, 146);
+            btnDelete.Location = new Point(55, 129);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(95, 30);
-            btnDelete.TabIndex = 25;
+            btnDelete.TabIndex = 3;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
@@ -103,10 +103,10 @@
             btnCreate.FlatStyle = FlatStyle.Popup;
             btnCreate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCreate.ForeColor = Color.Aqua;
-            btnCreate.Location = new Point(178, 146);
+            btnCreate.Location = new Point(159, 129);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(95, 30);
-            btnCreate.TabIndex = 24;
+            btnCreate.TabIndex = 2;
             btnCreate.Text = "Create ";
             btnCreate.UseVisualStyleBackColor = false;
             btnCreate.Click += btnCreate_Click;
@@ -115,18 +115,18 @@
             // 
             dgvCaptain.BackgroundColor = Color.Aqua;
             dgvCaptain.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCaptain.Location = new Point(380, 51);
+            dgvCaptain.Location = new Point(327, 36);
             dgvCaptain.Name = "dgvCaptain";
             dgvCaptain.RowHeadersWidth = 51;
             dgvCaptain.RowTemplate.Height = 25;
             dgvCaptain.Size = new Size(283, 150);
-            dgvCaptain.TabIndex = 33;
+            dgvCaptain.TabIndex = 5;
             dgvCaptain.CellClick += dgvCaptain_CellClick;
             // 
             // pnlUsernametxt
             // 
             pnlUsernametxt.BackColor = Color.Aqua;
-            pnlUsernametxt.Location = new Point(168, 74);
+            pnlUsernametxt.Location = new Point(149, 57);
             pnlUsernametxt.Name = "pnlUsernametxt";
             pnlUsernametxt.Size = new Size(106, 1);
             pnlUsernametxt.TabIndex = 81;
@@ -138,15 +138,15 @@
             txtName.Cursor = Cursors.IBeam;
             txtName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtName.ForeColor = Color.White;
-            txtName.Location = new Point(168, 53);
+            txtName.Location = new Point(149, 36);
             txtName.Name = "txtName";
             txtName.Size = new Size(106, 22);
-            txtName.TabIndex = 80;
+            txtName.TabIndex = 0;
             // 
             // panel1
             // 
             panel1.BackColor = Color.Aqua;
-            panel1.Location = new Point(167, 121);
+            panel1.Location = new Point(148, 104);
             panel1.Name = "panel1";
             panel1.Size = new Size(106, 1);
             panel1.TabIndex = 83;
@@ -158,17 +158,17 @@
             txtAddress.Cursor = Cursors.IBeam;
             txtAddress.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtAddress.ForeColor = Color.White;
-            txtAddress.Location = new Point(167, 100);
+            txtAddress.Location = new Point(148, 83);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(106, 22);
-            txtAddress.TabIndex = 82;
+            txtAddress.TabIndex = 1;
             // 
             // frmCaptain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(719, 247);
+            ClientSize = new Size(665, 230);
             Controls.Add(panel1);
             Controls.Add(txtAddress);
             Controls.Add(pnlUsernametxt);
@@ -179,6 +179,8 @@
             Controls.Add(lblName);
             Controls.Add(btnDelete);
             Controls.Add(btnCreate);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "frmCaptain";
             Opacity = 0.93D;
             Text = "Captains";

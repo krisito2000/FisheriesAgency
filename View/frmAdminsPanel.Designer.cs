@@ -56,7 +56,7 @@
             lblTables.BackColor = SystemColors.ActiveCaptionText;
             lblTables.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             lblTables.ForeColor = Color.Aqua;
-            lblTables.Location = new Point(203, 30);
+            lblTables.Location = new Point(203, 32);
             lblTables.Name = "lblTables";
             lblTables.Size = new Size(85, 32);
             lblTables.TabIndex = 18;
@@ -69,7 +69,7 @@
             btnUsers.FlatStyle = FlatStyle.Popup;
             btnUsers.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnUsers.ForeColor = Color.Aqua;
-            btnUsers.Location = new Point(48, 82);
+            btnUsers.Location = new Point(46, 85);
             btnUsers.Name = "btnUsers";
             btnUsers.Size = new Size(94, 33);
             btnUsers.TabIndex = 19;
@@ -84,7 +84,7 @@
             btnFishingPermits.FlatStyle = FlatStyle.Popup;
             btnFishingPermits.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnFishingPermits.ForeColor = Color.Aqua;
-            btnFishingPermits.Location = new Point(245, 82);
+            btnFishingPermits.Location = new Point(245, 85);
             btnFishingPermits.Name = "btnFishingPermits";
             btnFishingPermits.Size = new Size(94, 33);
             btnFishingPermits.TabIndex = 20;
@@ -99,7 +99,7 @@
             btnVessels.FlatStyle = FlatStyle.Popup;
             btnVessels.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnVessels.ForeColor = Color.Aqua;
-            btnVessels.Location = new Point(146, 82);
+            btnVessels.Location = new Point(146, 85);
             btnVessels.Name = "btnVessels";
             btnVessels.Size = new Size(94, 33);
             btnVessels.TabIndex = 21;
@@ -114,7 +114,7 @@
             btnTickets.FlatStyle = FlatStyle.Popup;
             btnTickets.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnTickets.ForeColor = Color.Aqua;
-            btnTickets.Location = new Point(344, 82);
+            btnTickets.Location = new Point(345, 85);
             btnTickets.Name = "btnTickets";
             btnTickets.Size = new Size(94, 33);
             btnTickets.TabIndex = 22;
@@ -129,9 +129,9 @@
             btnLogout.FlatStyle = FlatStyle.Popup;
             btnLogout.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogout.ForeColor = Color.Aqua;
-            btnLogout.Location = new Point(194, 214);
+            btnLogout.Location = new Point(195, 214);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(94, 36);
+            btnLogout.Size = new Size(94, 33);
             btnLogout.TabIndex = 25;
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = false;
@@ -144,7 +144,7 @@
             btnCaptains.FlatStyle = FlatStyle.Popup;
             btnCaptains.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnCaptains.ForeColor = Color.Aqua;
-            btnCaptains.Location = new Point(48, 123);
+            btnCaptains.Location = new Point(48, 126);
             btnCaptains.Name = "btnCaptains";
             btnCaptains.Size = new Size(94, 33);
             btnCaptains.TabIndex = 26;
@@ -159,7 +159,7 @@
             btnCatches.FlatStyle = FlatStyle.Popup;
             btnCatches.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnCatches.ForeColor = Color.Aqua;
-            btnCatches.Location = new Point(146, 123);
+            btnCatches.Location = new Point(146, 126);
             btnCatches.Name = "btnCatches";
             btnCatches.Size = new Size(94, 33);
             btnCatches.TabIndex = 27;
@@ -174,7 +174,7 @@
             btnTrips.FlatStyle = FlatStyle.Popup;
             btnTrips.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnTrips.ForeColor = Color.Aqua;
-            btnTrips.Location = new Point(245, 123);
+            btnTrips.Location = new Point(245, 126);
             btnTrips.Name = "btnTrips";
             btnTrips.Size = new Size(94, 33);
             btnTrips.TabIndex = 28;
@@ -189,7 +189,7 @@
             btnInspector.FlatStyle = FlatStyle.Popup;
             btnInspector.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnInspector.ForeColor = Color.Aqua;
-            btnInspector.Location = new Point(344, 123);
+            btnInspector.Location = new Point(344, 126);
             btnInspector.Name = "btnInspector";
             btnInspector.Size = new Size(94, 33);
             btnInspector.TabIndex = 29;
@@ -204,7 +204,7 @@
             btnMembers.FlatStyle = FlatStyle.Popup;
             btnMembers.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnMembers.ForeColor = Color.Aqua;
-            btnMembers.Location = new Point(95, 162);
+            btnMembers.Location = new Point(95, 165);
             btnMembers.Name = "btnMembers";
             btnMembers.Size = new Size(94, 33);
             btnMembers.TabIndex = 30;
@@ -219,7 +219,7 @@
             btnOwners.FlatStyle = FlatStyle.Popup;
             btnOwners.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnOwners.ForeColor = Color.Aqua;
-            btnOwners.Location = new Point(194, 162);
+            btnOwners.Location = new Point(194, 165);
             btnOwners.Name = "btnOwners";
             btnOwners.Size = new Size(94, 33);
             btnOwners.TabIndex = 31;
@@ -234,7 +234,7 @@
             btnOther.FlatStyle = FlatStyle.Popup;
             btnOther.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             btnOther.ForeColor = Color.Aqua;
-            btnOther.Location = new Point(294, 162);
+            btnOther.Location = new Point(294, 165);
             btnOther.Name = "btnOther";
             btnOther.Size = new Size(94, 33);
             btnOther.TabIndex = 32;
@@ -261,9 +261,10 @@
             Controls.Add(btnFishingPermits);
             Controls.Add(btnUsers);
             Controls.Add(lblTables);
-            MinimizeBox = false;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "frmAdminsPanel";
-            StartPosition = FormStartPosition.CenterParent;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Admin Panel";
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
             ResumeLayout(false);

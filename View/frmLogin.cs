@@ -2,15 +2,38 @@ using System.Data.SqlClient;
 using FisheriesAgency.Properties;
 using FisheriesAgency.Utils;
 using FisheriesAgency.View;
+using Microsoft.VisualBasic.ApplicationServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace FisheriesAgency
 {
+
     public partial class frmLogin : Form
     {
+        public int UserID { get; private set; }
+
         public frmLogin()
         {
             InitializeComponent();
+        }
+        private int GetUserID(string username)
+        {
+            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT UserID FROM [User] WHERE Username = @username", connection);
+                command.Parameters.AddWithValue("@username", username);
+
+                connection.Open();
+                object userIDObj = command.ExecuteScalar();
+                connection.Close();
+
+                if (userIDObj != null && userIDObj != DBNull.Value)
+                {
+                    return (int)userIDObj;
+                }
+
+                return -1; // Return -1 if the user ID is not found
+            }
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -60,8 +83,11 @@ namespace FisheriesAgency
                         }
                         else
                         {
+                            int userID = GetUserID(username); // Add this method to retrieve the user ID
+
                             this.Hide();
                             frmUser frmUser = new frmUser();
+                            frmUser.UserID = userID; // Pass the user ID to the frmUser form
                             frmUser.ShowDialog();
                         }
                         this.Show();
@@ -74,7 +100,6 @@ namespace FisheriesAgency
             }
         }
 
-        //Making password visible
 
         private void btnViewPassword_Click(object sender, EventArgs e)
         {
@@ -216,4 +241,5 @@ namespace FisheriesAgency
             }
         }
     }
+
 }

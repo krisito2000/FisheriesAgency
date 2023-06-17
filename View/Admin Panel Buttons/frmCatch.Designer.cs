@@ -49,10 +49,10 @@
             btnEdit.FlatStyle = FlatStyle.Popup;
             btnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnEdit.ForeColor = Color.Aqua;
-            btnEdit.Location = new Point(120, 217);
+            btnEdit.Location = new Point(109, 204);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(95, 30);
-            btnEdit.TabIndex = 37;
+            btnEdit.TabIndex = 5;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = false;
             btnEdit.Click += btnEdit_Click;
@@ -64,7 +64,7 @@
             lblQuantity.FlatStyle = FlatStyle.System;
             lblQuantity.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblQuantity.ForeColor = Color.Aqua;
-            lblQuantity.Location = new Point(72, 91);
+            lblQuantity.Location = new Point(61, 78);
             lblQuantity.Name = "lblQuantity";
             lblQuantity.Size = new Size(77, 21);
             lblQuantity.TabIndex = 36;
@@ -76,7 +76,7 @@
             lblWeight.BackColor = SystemColors.ActiveCaptionText;
             lblWeight.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblWeight.ForeColor = Color.Aqua;
-            lblWeight.Location = new Point(67, 44);
+            lblWeight.Location = new Point(56, 31);
             lblWeight.Name = "lblWeight";
             lblWeight.Size = new Size(66, 21);
             lblWeight.TabIndex = 35;
@@ -89,10 +89,10 @@
             btnDelete.FlatStyle = FlatStyle.Popup;
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.Aqua;
-            btnDelete.Location = new Point(67, 174);
+            btnDelete.Location = new Point(56, 161);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(95, 30);
-            btnDelete.TabIndex = 32;
+            btnDelete.TabIndex = 4;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
@@ -104,10 +104,10 @@
             btnCreate.FlatStyle = FlatStyle.Popup;
             btnCreate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCreate.ForeColor = Color.Aqua;
-            btnCreate.Location = new Point(170, 174);
+            btnCreate.Location = new Point(159, 161);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(95, 30);
-            btnCreate.TabIndex = 31;
+            btnCreate.TabIndex = 3;
             btnCreate.Text = "Create ";
             btnCreate.UseVisualStyleBackColor = false;
             btnCreate.Click += btnCreate_Click;
@@ -116,12 +116,12 @@
             // 
             dgvCatch.BackgroundColor = Color.Aqua;
             dgvCatch.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCatch.Location = new Point(322, 54);
+            dgvCatch.Location = new Point(311, 46);
             dgvCatch.Name = "dgvCatch";
             dgvCatch.RowHeadersWidth = 51;
             dgvCatch.RowTemplate.Height = 25;
             dgvCatch.Size = new Size(353, 150);
-            dgvCatch.TabIndex = 38;
+            dgvCatch.TabIndex = 6;
             dgvCatch.CellClick += dgvCatch_CellClick;
             // 
             // cmbTrip
@@ -132,17 +132,17 @@
             cmbTrip.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cmbTrip.ForeColor = Color.Aqua;
             cmbTrip.FormattingEnabled = true;
-            cmbTrip.Location = new Point(85, 135);
+            cmbTrip.Location = new Point(74, 122);
             cmbTrip.Name = "cmbTrip";
             cmbTrip.Size = new Size(167, 23);
-            cmbTrip.TabIndex = 79;
+            cmbTrip.TabIndex = 2;
             cmbTrip.Text = "Select Trip";
             cmbTrip.DropDown += cmbTrip_DropDown;
             // 
             // pnlUsernametxt
             // 
             pnlUsernametxt.BackColor = Color.Aqua;
-            pnlUsernametxt.Location = new Point(160, 65);
+            pnlUsernametxt.Location = new Point(149, 52);
             pnlUsernametxt.Name = "pnlUsernametxt";
             pnlUsernametxt.Size = new Size(106, 1);
             pnlUsernametxt.TabIndex = 86;
@@ -154,15 +154,15 @@
             txtWeight.Cursor = Cursors.IBeam;
             txtWeight.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtWeight.ForeColor = Color.White;
-            txtWeight.Location = new Point(160, 44);
+            txtWeight.Location = new Point(149, 31);
             txtWeight.Name = "txtWeight";
             txtWeight.Size = new Size(106, 22);
-            txtWeight.TabIndex = 85;
+            txtWeight.TabIndex = 0;
             // 
             // panel1
             // 
             panel1.BackColor = Color.Aqua;
-            panel1.Location = new Point(159, 112);
+            panel1.Location = new Point(148, 99);
             panel1.Name = "panel1";
             panel1.Size = new Size(106, 1);
             panel1.TabIndex = 88;
@@ -174,17 +174,17 @@
             txtQuantity.Cursor = Cursors.IBeam;
             txtQuantity.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtQuantity.ForeColor = Color.White;
-            txtQuantity.Location = new Point(159, 91);
+            txtQuantity.Location = new Point(148, 78);
             txtQuantity.Name = "txtQuantity";
             txtQuantity.Size = new Size(106, 22);
-            txtQuantity.TabIndex = 87;
+            txtQuantity.TabIndex = 1;
             // 
             // frmCatch
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(721, 280);
+            ClientSize = new Size(721, 265);
             Controls.Add(panel1);
             Controls.Add(txtQuantity);
             Controls.Add(pnlUsernametxt);
@@ -196,6 +196,8 @@
             Controls.Add(lblWeight);
             Controls.Add(btnDelete);
             Controls.Add(btnCreate);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "frmCatch";
             Opacity = 0.93D;
             Text = "Catches";

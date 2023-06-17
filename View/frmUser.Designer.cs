@@ -81,7 +81,10 @@
             Controls.Add(cmbTables);
             Controls.Add(dgvInformation);
             Controls.Add(btnLogout);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "frmUser";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "User";
             ((System.ComponentModel.ISupportInitialize)dgvInformation).EndInit();
             ResumeLayout(false);

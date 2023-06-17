@@ -71,7 +71,7 @@
             lblTonnage.FlatStyle = FlatStyle.System;
             lblTonnage.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblTonnage.ForeColor = Color.Aqua;
-            lblTonnage.Location = new Point(81, 211);
+            lblTonnage.Location = new Point(81, 216);
             lblTonnage.Name = "lblTonnage";
             lblTonnage.Size = new Size(76, 21);
             lblTonnage.TabIndex = 88;
@@ -83,7 +83,7 @@
             lblWidth.BackColor = SystemColors.ActiveCaptionText;
             lblWidth.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblWidth.ForeColor = Color.Aqua;
-            lblWidth.Location = new Point(92, 173);
+            lblWidth.Location = new Point(92, 178);
             lblWidth.Name = "lblWidth";
             lblWidth.Size = new Size(57, 21);
             lblWidth.TabIndex = 87;
@@ -96,7 +96,7 @@
             lblLength.FlatStyle = FlatStyle.System;
             lblLength.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblLength.ForeColor = Color.Aqua;
-            lblLength.Location = new Point(92, 137);
+            lblLength.Location = new Point(92, 142);
             lblLength.Name = "lblLength";
             lblLength.Size = new Size(63, 21);
             lblLength.TabIndex = 84;
@@ -108,7 +108,7 @@
             lblMarking.BackColor = SystemColors.ActiveCaptionText;
             lblMarking.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblMarking.ForeColor = Color.Aqua;
-            lblMarking.Location = new Point(81, 101);
+            lblMarking.Location = new Point(81, 106);
             lblMarking.Name = "lblMarking";
             lblMarking.Size = new Size(74, 21);
             lblMarking.TabIndex = 83;
@@ -121,10 +121,10 @@
             btnEdit.FlatStyle = FlatStyle.Popup;
             btnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnEdit.ForeColor = Color.Aqua;
-            btnEdit.Location = new Point(484, 277);
+            btnEdit.Location = new Point(484, 281);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(95, 30);
-            btnEdit.TabIndex = 80;
+            btnEdit.TabIndex = 13;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = false;
             btnEdit.Click += btnEdit_Click;
@@ -136,7 +136,7 @@
             lbICallSign.FlatStyle = FlatStyle.System;
             lbICallSign.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lbICallSign.ForeColor = Color.Aqua;
-            lbICallSign.Location = new Point(81, 64);
+            lbICallSign.Location = new Point(81, 69);
             lbICallSign.Name = "lbICallSign";
             lbICallSign.Size = new Size(73, 21);
             lbICallSign.TabIndex = 79;
@@ -148,7 +148,7 @@
             lblInternationalNumber.BackColor = SystemColors.ActiveCaptionText;
             lblInternationalNumber.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblInternationalNumber.ForeColor = Color.Aqua;
-            lblInternationalNumber.Location = new Point(55, 32);
+            lblInternationalNumber.Location = new Point(55, 37);
             lblInternationalNumber.Name = "lblInternationalNumber";
             lblInternationalNumber.Size = new Size(94, 21);
             lblInternationalNumber.TabIndex = 78;
@@ -161,10 +161,10 @@
             btnDelete.FlatStyle = FlatStyle.Popup;
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.Aqua;
-            btnDelete.Location = new Point(433, 229);
+            btnDelete.Location = new Point(433, 233);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(95, 30);
-            btnDelete.TabIndex = 75;
+            btnDelete.TabIndex = 12;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
@@ -176,10 +176,10 @@
             btnCreate.FlatStyle = FlatStyle.Popup;
             btnCreate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCreate.ForeColor = Color.Aqua;
-            btnCreate.Location = new Point(534, 229);
+            btnCreate.Location = new Point(534, 233);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(95, 30);
-            btnCreate.TabIndex = 74;
+            btnCreate.TabIndex = 11;
             btnCreate.Text = "Create ";
             btnCreate.UseVisualStyleBackColor = false;
             btnCreate.Click += btnCreate_Click;
@@ -188,12 +188,12 @@
             // 
             dgvVessel.BackgroundColor = Color.Aqua;
             dgvVessel.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvVessel.Location = new Point(306, 37);
+            dgvVessel.Location = new Point(306, 41);
             dgvVessel.Name = "dgvVessel";
             dgvVessel.RowHeadersWidth = 51;
             dgvVessel.RowTemplate.Height = 25;
             dgvVessel.Size = new Size(443, 164);
-            dgvVessel.TabIndex = 89;
+            dgvVessel.TabIndex = 14;
             dgvVessel.CellClick += dgvVessel_CellClick;
             // 
             // lblGas
@@ -203,7 +203,7 @@
             lblGas.FlatStyle = FlatStyle.System;
             lblGas.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblGas.ForeColor = Color.Aqua;
-            lblGas.Location = new Point(107, 253);
+            lblGas.Location = new Point(107, 258);
             lblGas.Name = "lblGas";
             lblGas.Size = new Size(37, 21);
             lblGas.TabIndex = 91;
@@ -216,7 +216,7 @@
             lblEngine.FlatStyle = FlatStyle.System;
             lblEngine.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblEngine.ForeColor = Color.Aqua;
-            lblEngine.Location = new Point(86, 290);
+            lblEngine.Location = new Point(86, 295);
             lblEngine.Name = "lblEngine";
             lblEngine.Size = new Size(63, 21);
             lblEngine.TabIndex = 93;
@@ -229,7 +229,7 @@
             lblFuel.FlatStyle = FlatStyle.System;
             lblFuel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblFuel.ForeColor = Color.Aqua;
-            lblFuel.Location = new Point(102, 330);
+            lblFuel.Location = new Point(102, 335);
             lblFuel.Name = "lblFuel";
             lblFuel.Size = new Size(42, 21);
             lblFuel.TabIndex = 95;
@@ -244,10 +244,10 @@
             cmbOwners.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cmbOwners.ForeColor = Color.Aqua;
             cmbOwners.FormattingEnabled = true;
-            cmbOwners.Location = new Point(350, 328);
+            cmbOwners.Location = new Point(350, 332);
             cmbOwners.Name = "cmbOwners";
             cmbOwners.Size = new Size(121, 23);
-            cmbOwners.TabIndex = 96;
+            cmbOwners.TabIndex = 9;
             cmbOwners.Text = "Owners";
             cmbOwners.DropDown += cmbOwners_DropDown;
             // 
@@ -259,17 +259,17 @@
             cmbCaptains.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cmbCaptains.ForeColor = Color.Aqua;
             cmbCaptains.FormattingEnabled = true;
-            cmbCaptains.Location = new Point(588, 328);
+            cmbCaptains.Location = new Point(588, 332);
             cmbCaptains.Name = "cmbCaptains";
             cmbCaptains.Size = new Size(121, 23);
-            cmbCaptains.TabIndex = 97;
+            cmbCaptains.TabIndex = 10;
             cmbCaptains.Text = "Captains";
             cmbCaptains.DropDown += cmbCaptains_DropDown;
             // 
             // pnlUsernametxt
             // 
             pnlUsernametxt.BackColor = Color.Aqua;
-            pnlUsernametxt.Location = new Point(162, 52);
+            pnlUsernametxt.Location = new Point(162, 57);
             pnlUsernametxt.Name = "pnlUsernametxt";
             pnlUsernametxt.Size = new Size(106, 1);
             pnlUsernametxt.TabIndex = 99;
@@ -281,15 +281,15 @@
             txtInternationalNumber.Cursor = Cursors.IBeam;
             txtInternationalNumber.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtInternationalNumber.ForeColor = Color.White;
-            txtInternationalNumber.Location = new Point(162, 31);
+            txtInternationalNumber.Location = new Point(162, 36);
             txtInternationalNumber.Name = "txtInternationalNumber";
             txtInternationalNumber.Size = new Size(106, 22);
-            txtInternationalNumber.TabIndex = 98;
+            txtInternationalNumber.TabIndex = 0;
             // 
             // panel1
             // 
             panel1.BackColor = Color.Aqua;
-            panel1.Location = new Point(162, 85);
+            panel1.Location = new Point(162, 90);
             panel1.Name = "panel1";
             panel1.Size = new Size(106, 1);
             panel1.TabIndex = 101;
@@ -301,15 +301,15 @@
             txtCallSign.Cursor = Cursors.IBeam;
             txtCallSign.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtCallSign.ForeColor = Color.White;
-            txtCallSign.Location = new Point(162, 64);
+            txtCallSign.Location = new Point(162, 69);
             txtCallSign.Name = "txtCallSign";
             txtCallSign.Size = new Size(106, 22);
-            txtCallSign.TabIndex = 100;
+            txtCallSign.TabIndex = 1;
             // 
             // panel2
             // 
             panel2.BackColor = Color.Aqua;
-            panel2.Location = new Point(162, 122);
+            panel2.Location = new Point(162, 127);
             panel2.Name = "panel2";
             panel2.Size = new Size(106, 1);
             panel2.TabIndex = 103;
@@ -321,15 +321,15 @@
             txtMarking.Cursor = Cursors.IBeam;
             txtMarking.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtMarking.ForeColor = Color.White;
-            txtMarking.Location = new Point(162, 101);
+            txtMarking.Location = new Point(162, 106);
             txtMarking.Name = "txtMarking";
             txtMarking.Size = new Size(106, 22);
-            txtMarking.TabIndex = 102;
+            txtMarking.TabIndex = 2;
             // 
             // panel3
             // 
             panel3.BackColor = Color.Aqua;
-            panel3.Location = new Point(162, 200);
+            panel3.Location = new Point(162, 205);
             panel3.Name = "panel3";
             panel3.Size = new Size(106, 1);
             panel3.TabIndex = 105;
@@ -341,15 +341,15 @@
             txtWidth.Cursor = Cursors.IBeam;
             txtWidth.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtWidth.ForeColor = Color.White;
-            txtWidth.Location = new Point(162, 179);
+            txtWidth.Location = new Point(162, 184);
             txtWidth.Name = "txtWidth";
             txtWidth.Size = new Size(106, 22);
-            txtWidth.TabIndex = 104;
+            txtWidth.TabIndex = 4;
             // 
             // panel4
             // 
             panel4.BackColor = Color.Aqua;
-            panel4.Location = new Point(162, 232);
+            panel4.Location = new Point(162, 237);
             panel4.Name = "panel4";
             panel4.Size = new Size(106, 1);
             panel4.TabIndex = 107;
@@ -361,15 +361,15 @@
             txtTonnage.Cursor = Cursors.IBeam;
             txtTonnage.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtTonnage.ForeColor = Color.White;
-            txtTonnage.Location = new Point(162, 211);
+            txtTonnage.Location = new Point(162, 216);
             txtTonnage.Name = "txtTonnage";
             txtTonnage.Size = new Size(106, 22);
-            txtTonnage.TabIndex = 106;
+            txtTonnage.TabIndex = 5;
             // 
             // panel5
             // 
             panel5.BackColor = Color.Aqua;
-            panel5.Location = new Point(162, 157);
+            panel5.Location = new Point(162, 162);
             panel5.Name = "panel5";
             panel5.Size = new Size(106, 1);
             panel5.TabIndex = 109;
@@ -381,15 +381,15 @@
             txtLength.Cursor = Cursors.IBeam;
             txtLength.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtLength.ForeColor = Color.White;
-            txtLength.Location = new Point(162, 136);
+            txtLength.Location = new Point(162, 141);
             txtLength.Name = "txtLength";
             txtLength.Size = new Size(106, 22);
-            txtLength.TabIndex = 108;
+            txtLength.TabIndex = 3;
             // 
             // panel6
             // 
             panel6.BackColor = Color.Aqua;
-            panel6.Location = new Point(162, 274);
+            panel6.Location = new Point(162, 279);
             panel6.Name = "panel6";
             panel6.Size = new Size(106, 1);
             panel6.TabIndex = 111;
@@ -401,15 +401,15 @@
             txtGas.Cursor = Cursors.IBeam;
             txtGas.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtGas.ForeColor = Color.White;
-            txtGas.Location = new Point(162, 253);
+            txtGas.Location = new Point(162, 258);
             txtGas.Name = "txtGas";
             txtGas.Size = new Size(106, 22);
-            txtGas.TabIndex = 110;
+            txtGas.TabIndex = 6;
             // 
             // panel7
             // 
             panel7.BackColor = Color.Aqua;
-            panel7.Location = new Point(162, 311);
+            panel7.Location = new Point(162, 316);
             panel7.Name = "panel7";
             panel7.Size = new Size(106, 1);
             panel7.TabIndex = 113;
@@ -421,15 +421,15 @@
             txtEngine.Cursor = Cursors.IBeam;
             txtEngine.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtEngine.ForeColor = Color.White;
-            txtEngine.Location = new Point(162, 290);
+            txtEngine.Location = new Point(162, 295);
             txtEngine.Name = "txtEngine";
             txtEngine.Size = new Size(106, 22);
-            txtEngine.TabIndex = 112;
+            txtEngine.TabIndex = 7;
             // 
             // panel8
             // 
             panel8.BackColor = Color.Aqua;
-            panel8.Location = new Point(162, 354);
+            panel8.Location = new Point(162, 359);
             panel8.Name = "panel8";
             panel8.Size = new Size(106, 1);
             panel8.TabIndex = 115;
@@ -441,10 +441,10 @@
             txtFuel.Cursor = Cursors.IBeam;
             txtFuel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtFuel.ForeColor = Color.White;
-            txtFuel.Location = new Point(162, 333);
+            txtFuel.Location = new Point(162, 338);
             txtFuel.Name = "txtFuel";
             txtFuel.Size = new Size(106, 22);
-            txtFuel.TabIndex = 114;
+            txtFuel.TabIndex = 8;
             // 
             // frmVessel
             // 
@@ -485,6 +485,9 @@
             Controls.Add(lblInternationalNumber);
             Controls.Add(btnDelete);
             Controls.Add(btnCreate);
+            Cursor = Cursors.Default;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "frmVessel";
             Opacity = 0.93D;
             Text = "Vessels";

@@ -54,10 +54,10 @@
             btnEdit.FlatStyle = FlatStyle.Popup;
             btnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnEdit.ForeColor = Color.Aqua;
-            btnEdit.Location = new Point(167, 312);
+            btnEdit.Location = new Point(158, 296);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(95, 30);
-            btnEdit.TabIndex = 37;
+            btnEdit.TabIndex = 7;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = false;
             btnEdit.Click += btnEdit_Click;
@@ -68,7 +68,7 @@
             lbIssueDate.FlatStyle = FlatStyle.System;
             lbIssueDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lbIssueDate.ForeColor = Color.Aqua;
-            lbIssueDate.Location = new Point(102, 92);
+            lbIssueDate.Location = new Point(93, 76);
             lbIssueDate.Name = "lbIssueDate";
             lbIssueDate.Size = new Size(88, 21);
             lbIssueDate.TabIndex = 36;
@@ -79,7 +79,7 @@
             lblPermitNumber.AutoSize = true;
             lblPermitNumber.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblPermitNumber.ForeColor = Color.Aqua;
-            lblPermitNumber.Location = new Point(73, 47);
+            lblPermitNumber.Location = new Point(64, 31);
             lblPermitNumber.Name = "lblPermitNumber";
             lblPermitNumber.Size = new Size(128, 21);
             lblPermitNumber.TabIndex = 35;
@@ -92,10 +92,10 @@
             btnDelete.FlatStyle = FlatStyle.Popup;
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.Aqua;
-            btnDelete.Location = new Point(117, 276);
+            btnDelete.Location = new Point(108, 260);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(95, 30);
-            btnDelete.TabIndex = 32;
+            btnDelete.TabIndex = 6;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
@@ -107,10 +107,10 @@
             btnCreate.FlatStyle = FlatStyle.Popup;
             btnCreate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCreate.ForeColor = Color.Aqua;
-            btnCreate.Location = new Point(218, 276);
+            btnCreate.Location = new Point(209, 260);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(95, 30);
-            btnCreate.TabIndex = 31;
+            btnCreate.TabIndex = 5;
             btnCreate.Text = "Create ";
             btnCreate.UseVisualStyleBackColor = false;
             btnCreate.Click += btnCreate_Click;
@@ -119,12 +119,12 @@
             // 
             dgvPermit.BackgroundColor = Color.Aqua;
             dgvPermit.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPermit.Location = new Point(436, 80);
+            dgvPermit.Location = new Point(428, 80);
             dgvPermit.Name = "dgvPermit";
             dgvPermit.RowHeadersWidth = 51;
             dgvPermit.RowTemplate.Height = 25;
             dgvPermit.Size = new Size(356, 159);
-            dgvPermit.TabIndex = 38;
+            dgvPermit.TabIndex = 8;
             dgvPermit.CellClick += dgvPermit_CellClick;
             // 
             // lblExpirationDate
@@ -132,7 +132,7 @@
             lblExpirationDate.AutoSize = true;
             lblExpirationDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblExpirationDate.ForeColor = Color.Aqua;
-            lblExpirationDate.Location = new Point(73, 146);
+            lblExpirationDate.Location = new Point(64, 130);
             lblExpirationDate.Name = "lblExpirationDate";
             lblExpirationDate.Size = new Size(129, 21);
             lblExpirationDate.TabIndex = 39;
@@ -144,7 +144,7 @@
             lblEquipment.FlatStyle = FlatStyle.System;
             lblEquipment.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblEquipment.ForeColor = Color.Aqua;
-            lblEquipment.Location = new Point(98, 198);
+            lblEquipment.Location = new Point(89, 182);
             lblEquipment.Name = "lblEquipment";
             lblEquipment.Size = new Size(94, 21);
             lblEquipment.TabIndex = 41;
@@ -158,10 +158,10 @@
             dtpIssueDate.CalendarTitleForeColor = Color.Aqua;
             dtpIssueDate.CalendarTrailingForeColor = Color.Aqua;
             dtpIssueDate.Cursor = Cursors.Hand;
-            dtpIssueDate.Location = new Point(218, 93);
+            dtpIssueDate.Location = new Point(209, 77);
             dtpIssueDate.Name = "dtpIssueDate";
             dtpIssueDate.Size = new Size(134, 23);
-            dtpIssueDate.TabIndex = 43;
+            dtpIssueDate.TabIndex = 1;
             // 
             // dtpExpirationDate
             // 
@@ -171,10 +171,10 @@
             dtpExpirationDate.CalendarTitleForeColor = Color.Aqua;
             dtpExpirationDate.CalendarTrailingForeColor = Color.Aqua;
             dtpExpirationDate.Cursor = Cursors.Hand;
-            dtpExpirationDate.Location = new Point(218, 148);
+            dtpExpirationDate.Location = new Point(209, 132);
             dtpExpirationDate.Name = "dtpExpirationDate";
             dtpExpirationDate.Size = new Size(134, 23);
-            dtpExpirationDate.TabIndex = 44;
+            dtpExpirationDate.TabIndex = 2;
             // 
             // sqlCommand1
             // 
@@ -191,17 +191,17 @@
             cmbVessels.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cmbVessels.ForeColor = Color.Aqua;
             cmbVessels.FormattingEnabled = true;
-            cmbVessels.Location = new Point(167, 232);
+            cmbVessels.Location = new Point(148, 216);
             cmbVessels.Name = "cmbVessels";
             cmbVessels.Size = new Size(121, 23);
-            cmbVessels.TabIndex = 77;
+            cmbVessels.TabIndex = 4;
             cmbVessels.Text = "Vessels";
             cmbVessels.DropDown += cmbVessels_DropDown;
             // 
             // pnlUsernametxt
             // 
             pnlUsernametxt.BackColor = Color.Aqua;
-            pnlUsernametxt.Location = new Point(218, 67);
+            pnlUsernametxt.Location = new Point(209, 51);
             pnlUsernametxt.Name = "pnlUsernametxt";
             pnlUsernametxt.Size = new Size(134, 1);
             pnlUsernametxt.TabIndex = 79;
@@ -213,15 +213,15 @@
             txtPermitNumber.Cursor = Cursors.IBeam;
             txtPermitNumber.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtPermitNumber.ForeColor = Color.White;
-            txtPermitNumber.Location = new Point(218, 46);
+            txtPermitNumber.Location = new Point(209, 30);
             txtPermitNumber.Name = "txtPermitNumber";
             txtPermitNumber.Size = new Size(134, 22);
-            txtPermitNumber.TabIndex = 78;
+            txtPermitNumber.TabIndex = 0;
             // 
             // panel1
             // 
             panel1.BackColor = Color.Aqua;
-            panel1.Location = new Point(218, 218);
+            panel1.Location = new Point(209, 202);
             panel1.Name = "panel1";
             panel1.Size = new Size(134, 1);
             panel1.TabIndex = 81;
@@ -233,10 +233,10 @@
             txtEquipment.Cursor = Cursors.IBeam;
             txtEquipment.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtEquipment.ForeColor = Color.White;
-            txtEquipment.Location = new Point(218, 197);
+            txtEquipment.Location = new Point(209, 181);
             txtEquipment.Name = "txtEquipment";
             txtEquipment.Size = new Size(134, 22);
-            txtEquipment.TabIndex = 80;
+            txtEquipment.TabIndex = 3;
             // 
             // frmFishingPermit
             // 
@@ -259,6 +259,8 @@
             Controls.Add(lblPermitNumber);
             Controls.Add(btnDelete);
             Controls.Add(btnCreate);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "frmFishingPermit";
             Opacity = 0.93D;
             Text = "Fishing Permits";

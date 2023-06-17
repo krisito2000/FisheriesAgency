@@ -2,7 +2,7 @@ namespace FisheriesAgency
 {
     internal static class Program
     {
-        private static string? getDBPath = Directory.GetParent(Directory.GetParent(Path.GetDirectoryName(Environment.CurrentDirectory)).ToString()).ToString();
+        private static string getDBPath = Directory.GetParent(Directory.GetParent(Path.GetDirectoryName(Environment.CurrentDirectory) ?? string.Empty)?.ToString() ?? string.Empty)?.ToString() ?? string.Empty;
         public static string connectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={getDBPath}\\Controller\\FisheriesAgencyDB.mdf;Integrated Security=True";
 
         [STAThread]

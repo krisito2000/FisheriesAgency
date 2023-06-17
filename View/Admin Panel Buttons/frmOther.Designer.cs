@@ -44,10 +44,10 @@
             btnBestCatchForTheYear.FlatStyle = FlatStyle.Popup;
             btnBestCatchForTheYear.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnBestCatchForTheYear.ForeColor = Color.Aqua;
-            btnBestCatchForTheYear.Location = new Point(224, 325);
+            btnBestCatchForTheYear.Location = new Point(229, 313);
             btnBestCatchForTheYear.Name = "btnBestCatchForTheYear";
             btnBestCatchForTheYear.Size = new Size(86, 30);
-            btnBestCatchForTheYear.TabIndex = 27;
+            btnBestCatchForTheYear.TabIndex = 2;
             btnBestCatchForTheYear.Text = "Years Catch";
             btnBestCatchForTheYear.UseVisualStyleBackColor = false;
             btnBestCatchForTheYear.Click += btnBestCatchForTheYear_Click;
@@ -59,10 +59,10 @@
             btnGetPermits.FlatStyle = FlatStyle.Popup;
             btnGetPermits.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnGetPermits.ForeColor = Color.Aqua;
-            btnGetPermits.Location = new Point(103, 60);
+            btnGetPermits.Location = new Point(122, 48);
             btnGetPermits.Name = "btnGetPermits";
             btnGetPermits.Size = new Size(81, 33);
-            btnGetPermits.TabIndex = 26;
+            btnGetPermits.TabIndex = 1;
             btnGetPermits.Text = "Permits";
             btnGetPermits.UseVisualStyleBackColor = false;
             btnGetPermits.Click += btnGetPermits_Click;
@@ -72,7 +72,7 @@
             lblMonths.AutoSize = true;
             lblMonths.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             lblMonths.ForeColor = Color.Aqua;
-            lblMonths.Location = new Point(302, 59);
+            lblMonths.Location = new Point(321, 47);
             lblMonths.Name = "lblMonths";
             lblMonths.Size = new Size(102, 30);
             lblMonths.TabIndex = 25;
@@ -82,7 +82,7 @@
             // 
             dgvOther.BackgroundColor = Color.Aqua;
             dgvOther.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOther.Location = new Point(58, 127);
+            dgvOther.Location = new Point(51, 115);
             dgvOther.Name = "dgvOther";
             dgvOther.RowHeadersWidth = 51;
             dgvOther.RowTemplate.Height = 25;
@@ -92,7 +92,7 @@
             // pnlUsernametxt
             // 
             pnlUsernametxt.BackColor = Color.Aqua;
-            pnlUsernametxt.Location = new Point(206, 87);
+            pnlUsernametxt.Location = new Point(225, 75);
             pnlUsernametxt.Name = "pnlUsernametxt";
             pnlUsernametxt.Size = new Size(90, 1);
             pnlUsernametxt.TabIndex = 92;
@@ -104,23 +104,25 @@
             txtMonths.Cursor = Cursors.IBeam;
             txtMonths.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtMonths.ForeColor = Color.White;
-            txtMonths.Location = new Point(206, 66);
+            txtMonths.Location = new Point(225, 54);
             txtMonths.Name = "txtMonths";
             txtMonths.Size = new Size(90, 22);
-            txtMonths.TabIndex = 91;
+            txtMonths.TabIndex = 0;
             // 
             // frmOther
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(565, 391);
+            ClientSize = new Size(545, 375);
             Controls.Add(pnlUsernametxt);
             Controls.Add(txtMonths);
             Controls.Add(dgvOther);
             Controls.Add(btnBestCatchForTheYear);
             Controls.Add(btnGetPermits);
             Controls.Add(lblMonths);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "frmOther";
             Opacity = 0.93D;
             Text = "Other";
