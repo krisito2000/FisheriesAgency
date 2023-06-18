@@ -195,6 +195,7 @@
             MaximizeBox = false;
             Name = "frmOwner";
             Opacity = 0.93D;
+            ShowInTaskbar = false;
             Text = "Owners";
             ((System.ComponentModel.ISupportInitialize)dgvOwner).EndInit();
             ResumeLayout(false);

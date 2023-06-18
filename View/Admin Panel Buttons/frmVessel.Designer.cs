@@ -501,6 +501,7 @@
             MaximizeBox = false;
             Name = "frmVessel";
             Opacity = 0.93D;
+            ShowInTaskbar = false;
             Text = "Vessels";
             ((System.ComponentModel.ISupportInitialize)dgvVessel).EndInit();
             ResumeLayout(false);

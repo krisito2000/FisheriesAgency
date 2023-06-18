@@ -193,6 +193,7 @@
             MaximizeBox = false;
             Name = "frmMember";
             Opacity = 0.93D;
+            ShowInTaskbar = false;
             Text = "Members";
             ((System.ComponentModel.ISupportInitialize)dgvMember).EndInit();
             ResumeLayout(false);

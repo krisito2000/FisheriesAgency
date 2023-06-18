@@ -15,25 +15,10 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
     public partial class frmCaptain : Form
     {
-        private static void UpdateCaptainsDataGridView(DataGridView dgvFisheriesAgencyDB)
-        {
-            DataTable dt = new DataTable();
-            using (SqlConnection con = new SqlConnection(Program.connectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT CaptainId, Name, Address FROM [Captain]", con))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                    {
-                        sda.Fill(dt);
-                    }
-                }
-            }
-            dgvFisheriesAgencyDB.DataSource = dt;
-        }
         public frmCaptain()
         {
             InitializeComponent();
-            UpdateCaptainsDataGridView(dgvCaptain);
+            AdminPanelController.UpdateCaptainsDataGridView(dgvCaptain);
         }
 
         private void dgvCaptain_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -61,7 +46,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             {
                 AdminPanelController.CaptainCreateController(txtName, txtAddress);
             }
-            UpdateCaptainsDataGridView(dgvCaptain);
+            AdminPanelController.UpdateCaptainsDataGridView(dgvCaptain);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -77,7 +62,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             if (result == DialogResult.Yes)
             {
                 AdminPanelController.CaptainDeleteController(txtName, txtAddress);
-                UpdateCaptainsDataGridView(dgvCaptain);
+                AdminPanelController.UpdateCaptainsDataGridView(dgvCaptain);
             }
         }
 
@@ -92,7 +77,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             {
                 AdminPanelController.CaptainEditController(txtName, txtAddress, dgvCaptain);
             }
-            UpdateCaptainsDataGridView(dgvCaptain);
+            AdminPanelController.UpdateCaptainsDataGridView(dgvCaptain);
         }
 
         // Create

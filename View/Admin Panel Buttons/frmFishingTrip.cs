@@ -19,47 +19,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
     public partial class frmFishingTrip : Form
     {
-        private static void UpdateTripsDataGridView(DataGridView dgvFisheriesAgencyDB)
-        {
-            DataTable dt = new DataTable();
-            using (SqlConnection con = new SqlConnection(Program.connectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT TripId, TripStart, TripEnd, CatchAmount FROM [FishingTrip]", con))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                    {
-                        sda.Fill(dt);
-                    }
-                }
-            }
-            dgvFisheriesAgencyDB.DataSource = dt;
-        }
         public frmFishingTrip()
         {
             InitializeComponent();
-            UpdateTripsDataGridView(dgvTrip);
-
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                string sql = "SELECT VesselId, InternationalNumber FROM Vessel";
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            int vesselId = reader.GetInt32(0);
-                            string internationalNumber = reader.GetString(1);
-
-                            // Add the vessel to the ComboBox items and store the ID as the item value
-                            cbVessels.Items.Add(new ComboBoxVessel(internationalNumber, vesselId));
-                        }
-                    }
-                }
-            }
+            AdminPanelController.UpdateTripsDataGridView(dgvTrip);
+            ComboBoxController.VesselController(cmbVessels);
         }
 
         private void dgvTrip_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -78,7 +42,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            ComboBoxVessel selectedVessel = (ComboBoxVessel)cbVessels.SelectedItem;
+            ComboBoxVessel selectedVessel = (ComboBoxVessel)cmbVessels.SelectedItem;
 
             if (selectedVessel != null)
             {
@@ -92,40 +56,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
                 string query = "INSERT INTO [FishingTrip] (TripStart, TripEnd, CatchAmount, VesselId) VALUES (@TripStart, @TripEnd, @CatchAmount, @VesselId)";
 
-                using (SqlConnection connection = new SqlConnection(Program.connectionString))
-                {
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@TripStart", dtpTripStart.Value.Date);
-                        command.Parameters.AddWithValue("@TripEnd", dtpTripEnd.Value.Date);
-                        command.Parameters.AddWithValue("@CatchAmount", txtCatchAmount.Text);
-                        command.Parameters.AddWithValue("@VesselId", vesselId);
-
-                        try
-                        {
-                            connection.Open();
-                            int rowsAffected = command.ExecuteNonQuery();
-                            if (rowsAffected > 0)
-                            {
-                                UpdateTripsDataGridView(dgvTrip);
-                            }
-                            else
-                            {
-                                // Insert failed
-                                MessageBox.Show("Failed to create fishing trip.");
-                            }
-                        }
-                        catch (SqlException ex)
-                        {
-                            // Handle SQL exception
-                            MessageBox.Show("An error occurred: " + ex.Message);
-                        }
-                    }
-                }
+                AdminPanelController.TripCreateController(dgvTrip, query, dtpTripStart, dtpTripEnd, txtCatchAmount, vesselId);
             }
             else
             {
-                cbVessels.ForeColor = Color.Red;
+                cmbVessels.ForeColor = Color.Red;
                 MessageBox.Show("Invalid vessel selection!");
             }
 
@@ -145,7 +80,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             if (result == DialogResult.Yes)
             {
                 AdminPanelController.TripDeleteController(tripId);
-                UpdateTripsDataGridView(dgvTrip);
+                AdminPanelController.UpdateTripsDataGridView(dgvTrip);
             }
         }
 
@@ -172,12 +107,12 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             AdminPanelController.TripEditController(newTripStart, newTripEnd, newCatch, tripId);
 
             // Refresh the DataGridView to reflect the updated data
-            UpdateTripsDataGridView(dgvTrip);
+            AdminPanelController.UpdateTripsDataGridView(dgvTrip);
         }
 
         private void cbVessels_DropDown(object sender, EventArgs e)
         {
-            cbVessels.ForeColor = Color.Aqua;
+            cmbVessels.ForeColor = Color.Aqua;
         }
 
         // Create

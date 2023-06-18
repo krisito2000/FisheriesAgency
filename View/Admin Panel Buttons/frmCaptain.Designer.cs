@@ -195,6 +195,7 @@
             MaximizeBox = false;
             Name = "frmCaptain";
             Opacity = 0.93D;
+            ShowInTaskbar = false;
             Text = "Captains";
             ((System.ComponentModel.ISupportInitialize)dgvCaptain).EndInit();
             ResumeLayout(false);

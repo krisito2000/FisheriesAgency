@@ -16,48 +16,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
     public partial class frmInspector : Form
     {
-        private static void UpdateInspectorDataGridView(DataGridView dgvInspector)
-        {
-            DataTable dt = new DataTable();
-            using (SqlConnection con = new SqlConnection(Program.connectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT InspectorId, InspectorDate, VesselId FROM [Inspector]", con))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                    {
-                        sda.Fill(dt);
-                    }
-                }
-            }
-            dgvInspector.DataSource = dt;
-        }
-
         public frmInspector()
         {
             InitializeComponent();
-            UpdateInspectorDataGridView(dgvInspector);
-
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                string sql = "SELECT VesselId, InternationalNumber FROM Vessel";
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            int vesselId = reader.GetInt32(0);
-                            string internationalNumber = reader.GetString(1);
-
-                            // Add the vessel to the ComboBox items and store the ID as the item value
-                            cmbVessels.Items.Add(new ComboBoxVessel(internationalNumber, vesselId));
-                        }
-                    }
-                }
-            }
+            AdminPanelController.UpdateInspectorDataGridView(dgvInspector);
+            ComboBoxController.VesselController(cmbVessels);
         }
 
         private void dgvInspector_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -101,7 +64,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
             AdminPanelController.InspectorCreateController(inspectorDate, vesselId);
 
-            UpdateInspectorDataGridView(dgvInspector);
+            AdminPanelController.UpdateInspectorDataGridView(dgvInspector);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -118,7 +81,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             if (result == DialogResult.Yes)
             {
                 AdminPanelController.InspectorDeleteController(inspectorId);
-                UpdateInspectorDataGridView(dgvInspector);
+                AdminPanelController.UpdateInspectorDataGridView(dgvInspector);
             }
         }
 
@@ -139,7 +102,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
             AdminPanelController.InspectorEditController(inspectorDate, vesselId, inspectorId);
 
-            UpdateInspectorDataGridView(dgvInspector);
+            AdminPanelController.UpdateInspectorDataGridView(dgvInspector);
         }
 
         private void cmbVessels_DropDown(object sender, EventArgs e)

@@ -12,51 +12,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
     public partial class frmCatch : Form
     {
-        private static void UpdateCatchesDataGridView(DataGridView dgvCatch)
-        {
-            DataTable dt = new DataTable();
-            using (SqlConnection con = new SqlConnection(Program.connectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT CatchId, Weight, Quantity FROM [Catch]", con))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                    {
-                        sda.Fill(dt);
-                    }
-                }
-            }
-            dgvCatch.DataSource = dt;
-        }
-
         public frmCatch()
         {
             InitializeComponent();
-            UpdateCatchesDataGridView(dgvCatch);
-
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                string sql = "SELECT TripId, VesselId FROM [FishingTrip]";
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            int tripId = reader.GetInt32(0);
-                            int vesselId = reader.GetInt32(1);
-
-                            // Create a new trip object
-                            ComboBoxTrip trip = new ComboBoxTrip(tripId, vesselId);
-
-                            // Add the trip to the combo box
-                            cmbTrip.Items.Add(trip);
-                        }
-                    }
-                }
-            }
+            AdminPanelController.UpdateCatchesDataGridView(dgvCatch);
+            ComboBoxController.TripController(cmbTrip);
         }
 
         private void dgvCatch_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -92,7 +52,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                     try
                     {
                         AdminPanelController.CatchCreateController(weight, quantity, tripId);
-                        UpdateCatchesDataGridView(dgvCatch);
+                        AdminPanelController.UpdateCatchesDataGridView(dgvCatch);
                     }
                     catch (Exception ex)
                     {
@@ -159,7 +119,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             int tripId = selectedTrip.TripId;
 
             AdminPanelController.CatchEditController(tripId, weight, quantity, catchId);
-            UpdateCatchesDataGridView(dgvCatch);
+            AdminPanelController.UpdateCatchesDataGridView(dgvCatch);
         }
 
         private void cmbTrip_DropDown(object sender, EventArgs e)

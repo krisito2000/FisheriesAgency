@@ -8,7 +8,6 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace FisheriesAgency
 {
-
     public partial class frmLogin : Form
     {
         public int UserID { get; private set; }
@@ -31,55 +30,22 @@ namespace FisheriesAgency
 
             if (username == string.Empty && password == string.Empty)
             {
+                txtUsername.Focus();
                 MessageBox.Show("Please enter your username and password");
             }
             else if (username == string.Empty)
             {
+                txtUsername.Focus();
                 MessageBox.Show("Please enter your username");
             }
             else if (password == string.Empty)
             {
+                txtPassword.Focus();
                 MessageBox.Show("Please enter your password");
             }
             else
             {
-                using (SqlConnection connection = new SqlConnection(Program.connectionString))
-                {
-                    SqlCommand command = new SqlCommand("SELECT isAdministrator FROM [User] WHERE Username = @username AND Password = @password", connection);
-
-                    command.Parameters.AddWithValue("@username", username);
-                    command.Parameters.AddWithValue("@password", password);
-
-                    connection.Open();
-                    object isAdminObj = command.ExecuteScalar();
-                    connection.Close();
-
-                    if (isAdminObj != null && isAdminObj != DBNull.Value)
-                    {
-                        bool isAdmin = (bool)isAdminObj;
-                        if (isAdmin)
-                        {
-                            txtPassword.Text = null;
-                            this.Hide();
-                            frmAdminsPanel frmAdminsPanel = new frmAdminsPanel();
-                            frmAdminsPanel.ShowDialog();
-                        }
-                        else
-                        {
-                            int userID = LoginController.GetUserIDController(username);
-                            txtPassword.Text = null;
-                            this.Hide();
-                            frmUser frmUser = new frmUser();
-                            frmUser.UserID = userID; // Pass the user ID to the frmUser form
-                            frmUser.ShowDialog();
-                        }
-                        this.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid username or password. Please try again.");
-                    }
-                }
+                LoginController.UserLoginController(this, username, password, txtPassword);
             }
         }
 
@@ -128,6 +94,8 @@ namespace FisheriesAgency
         }
         private void txtUsername_KeyDown(object sender, KeyEventArgs e)
         {
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
             if (e.KeyCode == Keys.Up)
             {
                 btnRegister.Focus();
@@ -148,13 +116,15 @@ namespace FisheriesAgency
                 }
                 else
                 {
-                    btnLogin.Focus();
+                    LoginController.UserLoginController(this, username, password, txtPassword);
                 }
             }
         }
 
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
             if (e.KeyCode == Keys.Up)
             {
                 txtUsername.Focus();
@@ -175,7 +145,7 @@ namespace FisheriesAgency
                 }
                 else
                 {
-                    btnLogin.Focus();
+                    LoginController.UserLoginController(this, username, password, txtPassword);
                 }
             }
         }
@@ -206,6 +176,7 @@ namespace FisheriesAgency
             {
                 btnViewPassword.Focus();
             }
+
             else if (e.KeyCode == Keys.Down)
             {
                 btnRegister.Focus();

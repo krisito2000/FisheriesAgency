@@ -228,6 +228,7 @@
             MaximizeBox = false;
             Name = "frmUser";
             Opacity = 0.93D;
+            ShowInTaskbar = false;
             Text = "Users";
             ((System.ComponentModel.ISupportInitialize)dgvUser).EndInit();
             ResumeLayout(false);

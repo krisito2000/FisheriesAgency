@@ -21,50 +21,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
     public partial class frmTicket : Form
     {
-        private static void UpdateTicketsDataGridView(DataGridView dgvFisheriesAgencyDB)
-        {
-            DataTable dt = new DataTable();
-            using (SqlConnection con = new SqlConnection(Program.connectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT TicketID, UserId, StartDate, EndDate, Price, IsPensioner, IsDisabled, TelkDecisionNum FROM [Ticket]", con))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                    {
-                        sda.Fill(dt);
-                    }
-                }
-            }
-            dgvFisheriesAgencyDB.DataSource = dt;
-        }
         public frmTicket()
         {
             InitializeComponent();
-            UpdateTicketsDataGridView(dgvTicket);
-
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                string sql = "SELECT MemberId, Name FROM Member";
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            int memberId = reader.GetInt32(0);
-                            string name = reader.GetString(1);
-
-                            // Create a new Member object
-                            ComboBoxMember member = new ComboBoxMember(memberId, name);
-
-                            // Add the member to the combo box
-                            cmbMember.Items.Add(member);
-                        }
-                    }
-                }
-            }
+            AdminPanelController.UpdateTicketsDataGridView(dgvTicket);
+            ComboBoxController.MemberController(cmbMember);
         }
 
         private void dgvTicket_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -114,7 +75,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
                 AdminPanelController.TicketCreateController(memberId, dtpStartDate, dtpEndDate, txtPrice, cbIsPensioner, cbIsDisabled, txtTelk);
 
-                UpdateTicketsDataGridView(dgvTicket);
+                AdminPanelController.UpdateTicketsDataGridView(dgvTicket);
             }
             else
             {
@@ -137,7 +98,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
                 // Remove the selected row from the DataGridView
                 dgvTicket.Rows.Remove(selectedRow);
-                UpdateTicketsDataGridView(dgvTicket);
+                AdminPanelController.UpdateTicketsDataGridView(dgvTicket);
 
             }
             else
@@ -172,7 +133,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             AdminPanelController.TicketEditController(newStartDate, newEndDate, newPrice, newIsPensioner, newIsDisabled, ticketId);
 
             // Refresh the DataGridView to reflect the updated data
-            UpdateTicketsDataGridView(dgvTicket);
+            AdminPanelController.UpdateTicketsDataGridView(dgvTicket);
         }
 
         private void cmbMember_DropDown(object sender, EventArgs e)

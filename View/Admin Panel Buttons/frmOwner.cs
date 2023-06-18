@@ -17,25 +17,10 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
     public partial class frmOwner : Form
     {
-        private static void UpdateOwnersDataGridView(DataGridView dgvFisheriesAgencyDB)
-        {
-            DataTable dt = new DataTable();
-            using (SqlConnection con = new SqlConnection(Program.connectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT OwnerID, name, address FROM [Owner]", con))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                    {
-                        sda.Fill(dt);
-                    }
-                }
-            }
-            dgvFisheriesAgencyDB.DataSource = dt;
-        }
         public frmOwner()
         {
             InitializeComponent();
-            UpdateOwnersDataGridView(dgvOwner);
+            AdminPanelController.UpdateOwnersDataGridView(dgvOwner);
         }
 
         private void dgvOwner_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -64,7 +49,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
 
             AdminPanelController.OwnerCreateController(name, address);
-            UpdateOwnersDataGridView(dgvOwner);
+            AdminPanelController.UpdateOwnersDataGridView(dgvOwner);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -75,7 +60,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(address))
             {
                 AdminPanelController.OwnerDeleteController(name, address);
-                UpdateOwnersDataGridView(dgvOwner);
+                AdminPanelController.UpdateOwnersDataGridView(dgvOwner);
             }
             else
             {
@@ -97,7 +82,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             string newAddress = txtAddress.Text.Trim();
 
             AdminPanelController.OwnerEditController(newName, newAddress, ownerId);
-            UpdateOwnersDataGridView(dgvOwner);
+            AdminPanelController.UpdateOwnersDataGridView(dgvOwner);
         }
         // Create
         private void btnCreate_MouseEnter(object sender, EventArgs e)

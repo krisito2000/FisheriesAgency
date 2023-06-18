@@ -275,6 +275,7 @@
             MaximizeBox = false;
             Name = "frmFishingPermit";
             Opacity = 0.93D;
+            ShowInTaskbar = false;
             Text = "Fishing Permits";
             ((System.ComponentModel.ISupportInitialize)dgvPermit).EndInit();
             ResumeLayout(false);

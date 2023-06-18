@@ -212,6 +212,7 @@
             MaximizeBox = false;
             Name = "frmCatch";
             Opacity = 0.93D;
+            ShowInTaskbar = false;
             Text = "Catches";
             ((System.ComponentModel.ISupportInitialize)dgvCatch).EndInit();
             ResumeLayout(false);

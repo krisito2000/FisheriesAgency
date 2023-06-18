@@ -15,25 +15,10 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
     public partial class frmUser : Form
     {
-        private static void UpdateUsersDataGridView(DataGridView dgvFisheriesAgencyDB)
-        {
-            DataTable dt = new DataTable();
-            using (SqlConnection con = new SqlConnection(Program.connectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT UserID, Username, Password, isAdministrator FROM [User]", con))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                    {
-                        sda.Fill(dt);
-                    }
-                }
-            }
-            dgvFisheriesAgencyDB.DataSource = dt;
-        }
         public frmUser()
         {
             InitializeComponent();
-            UpdateUsersDataGridView(dgvUser);
+            AdminPanelController.UpdateUsersDataGridView(dgvUser);
         }
 
         private void btnViewPassword_Click(object sender, EventArgs e)
@@ -77,52 +62,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
                 MessageBox.Show("Please fill all spaces");
                 return;
             }
-
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                string selectSql = "SELECT COUNT(*) FROM [User] WHERE Username = @username";
-                string insertSql = "INSERT INTO [User] (Username, Password, isAdministrator) VALUES (@username, @password, @admin)";
-
-                using (SqlCommand selectCommand = new SqlCommand(selectSql, connection))
-                using (SqlCommand insertCommand = new SqlCommand(insertSql, connection))
-                {
-                    selectCommand.Parameters.AddWithValue("@username", username);
-                    insertCommand.Parameters.AddWithValue("@username", username);
-                    insertCommand.Parameters.AddWithValue("@password", password);
-                    insertCommand.Parameters.AddWithValue("@admin", admin);
-
-                    try
-                    {
-                        connection.Open();
-
-                        int count = (int)selectCommand.ExecuteScalar();
-                        if (count > 0)
-                        {
-                            MessageBox.Show($"Username \"{username}\" already exists. Please choose a different username.");
-                        }
-                        else
-                        {
-                            int result = insertCommand.ExecuteNonQuery();
-                            if (result > 0)
-                            {
-                                UpdateUsersDataGridView(dgvUser);
-                            }
-                            else
-                            {
-                                MessageBox.Show("Registration failed. Please try again.");
-                            }
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("An error occurred while registering the user. Please try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    finally
-                    {
-                        connection.Close();
-                    }
-                }
-            }
+            AdminPanelController.UserCreateController(username, password, admin, dgvUser);
         }
 
         //Delete button is working but it does not refresh the table
@@ -140,7 +80,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             if (result == DialogResult.Yes)
             {
                 AdminPanelController.UserDeleteController(userId);
-                UpdateUsersDataGridView(dgvUser);
+                AdminPanelController.UpdateUsersDataGridView(dgvUser);
             }
         }
 
@@ -154,7 +94,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
 
             AdminPanelController.UserEditController(txtUsername, txtPassword, cbAdmin, dgvUser);
-            UpdateUsersDataGridView(dgvUser);
+            AdminPanelController.UpdateUsersDataGridView(dgvUser);
         }
 
         // Create

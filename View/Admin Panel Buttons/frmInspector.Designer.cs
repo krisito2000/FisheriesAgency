@@ -163,6 +163,7 @@
             MaximizeBox = false;
             Name = "frmInspector";
             Opacity = 0.93D;
+            ShowInTaskbar = false;
             Text = "Inspectors";
             ((System.ComponentModel.ISupportInitialize)dgvInspector).EndInit();
             ResumeLayout(false);

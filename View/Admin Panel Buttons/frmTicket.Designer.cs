@@ -290,6 +290,7 @@
             MaximizeBox = false;
             Name = "frmTicket";
             Opacity = 0.93D;
+            ShowInTaskbar = false;
             Text = "Tickets";
             ((System.ComponentModel.ISupportInitialize)dgvTicket).EndInit();
             ResumeLayout(false);

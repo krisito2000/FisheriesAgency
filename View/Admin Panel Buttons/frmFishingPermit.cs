@@ -18,48 +18,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
     public partial class frmFishingPermit : Form
     {
-        private static void UpdatePermitsDataGridView(DataGridView dgvPermits)
-        {
-            DataTable dt = new DataTable();
-            using (SqlConnection con = new SqlConnection(Program.connectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT PermitId, PermitNumber, IssueDate, ExpirationDate, Equipment, VesselId FROM [FishingPermit]", con))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                    {
-                        sda.Fill(dt);
-                    }
-                }
-            }
-            dgvPermits.DataSource = dt;
-        }
-
         public frmFishingPermit()
         {
             InitializeComponent();
-            UpdatePermitsDataGridView(dgvPermit);
-
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                string sql = "SELECT VesselId, InternationalNumber FROM [Vessel]";
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            int vesselId = reader.GetInt32(0);
-                            string intNum = reader.GetString(1);
-
-                            // Add the name to the ComboBox items and store the ID as the item value
-                            cmbVessels.Items.Add(new ComboBoxVessel(intNum, vesselId));
-                        }
-                    }
-                }
-            }
+            AdminPanelController.UpdatePermitsDataGridView(dgvPermit);
+            ComboBoxController.VesselController(cmbVessels);
         }
 
         private void cmbVessels_DropDown(object sender, EventArgs e)
@@ -106,7 +69,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             int vesselId = selectedVessel.VesselId;
 
             AdminPanelController.PermitsCreateController(txtPermitNumber, dtpIssueDate, dtpExpirationDate, txtEquipment, vesselId);
-            UpdatePermitsDataGridView(dgvPermit);
+            AdminPanelController.UpdatePermitsDataGridView(dgvPermit);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -123,7 +86,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             if (result == DialogResult.Yes)
             {
                 AdminPanelController.PermitsDeleteController(permitId);
-                UpdatePermitsDataGridView(dgvPermit);
+                AdminPanelController.UpdatePermitsDataGridView(dgvPermit);
             }
         }
 
@@ -146,7 +109,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             int vesselId = (int)selectedVessel.VesselId;
 
             AdminPanelController.PermitsEditController(permitNumber, issueDate, expirationDate, equipment, vesselId, permitId);
-            UpdatePermitsDataGridView(dgvPermit);
+            AdminPanelController.UpdatePermitsDataGridView(dgvPermit);
         }
 
         // Create

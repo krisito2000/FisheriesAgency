@@ -133,6 +133,7 @@
             MaximizeBox = false;
             Name = "frmOther";
             Opacity = 0.93D;
+            ShowInTaskbar = false;
             Text = "Other";
             ((System.ComponentModel.ISupportInitialize)dgvOther).EndInit();
             ResumeLayout(false);

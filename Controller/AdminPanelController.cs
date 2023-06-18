@@ -10,7 +10,11 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using FisheriesAgency.View;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using System.Data;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace FisheriesAgency.Controller
 {
@@ -19,6 +23,69 @@ namespace FisheriesAgency.Controller
         //
         // User form
         //
+        public static void UpdateUsersDataGridView(DataGridView dgvFisheriesAgencyDB)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(Program.connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT UserID, Username, Password, isAdministrator FROM [User]", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        sda.Fill(dt);
+                    }
+                }
+            }
+            dgvFisheriesAgencyDB.DataSource = dt;
+        }
+        public static void UserCreateController(string username, string password, bool admin, DataGridView dgvUser)
+        {
+            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            {
+                string selectSql = "SELECT COUNT(*) FROM [User] WHERE Username = @username";
+                string insertSql = "INSERT INTO [User] (Username, Password, isAdministrator) VALUES (@username, @password, @admin)";
+
+                using (SqlCommand selectCommand = new SqlCommand(selectSql, connection))
+                using (SqlCommand insertCommand = new SqlCommand(insertSql, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("@username", username);
+                    insertCommand.Parameters.AddWithValue("@username", username);
+                    insertCommand.Parameters.AddWithValue("@password", password);
+                    insertCommand.Parameters.AddWithValue("@admin", admin);
+
+                    try
+                    {
+                        connection.Open();
+
+                        int count = (int)selectCommand.ExecuteScalar();
+                        if (count > 0)
+                        {
+                            MessageBox.Show($"Username \"{username}\" already exists. Please choose a different username.");
+                        }
+                        else
+                        {
+                            int result = insertCommand.ExecuteNonQuery();
+                            if (result > 0)
+                            {
+                                UpdateUsersDataGridView(dgvUser);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Creation failed. Please try again.");
+                            }
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("An error occurred while registering the user. Please try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+        }
         public static void UserDeleteController(int userId)
         {
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
@@ -73,6 +140,21 @@ namespace FisheriesAgency.Controller
         //
         // Vessel form
         //
+        public static void UpdateVesselsDataGridView(DataGridView dgvFisheriesAgencyDB)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(Program.connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT VesselID, InternationalNumber, CallSign, Marking, Length, Width, Tonnage, Gas, Engine, Fuel FROM [Vessel]", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        sda.Fill(dt);
+                    }
+                }
+            }
+            dgvFisheriesAgencyDB.DataSource = dt;
+        }
         public static void VesselCreateController(TextBox txtInternationalNumber, TextBox txtCallSign, TextBox txtMarking, TextBox txtLength, TextBox txtWidth, TextBox txtTonnage, TextBox txtGas, TextBox txtEngine, TextBox txtFuel, int ownerId, int captainId)
         {
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
@@ -144,6 +226,21 @@ namespace FisheriesAgency.Controller
         //
         // Permits form
         //
+        public static void UpdatePermitsDataGridView(DataGridView dgvPermits)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(Program.connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT PermitId, PermitNumber, IssueDate, ExpirationDate, Equipment, VesselId FROM [FishingPermit]", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        sda.Fill(dt);
+                    }
+                }
+            }
+            dgvPermits.DataSource = dt;
+        }
         public static void PermitsCreateController(TextBox txtPermitNumber, DateTimePicker dtpIssueDate, DateTimePicker dtpExpirationDate, TextBox txtEquipment, int vesselId)
         {
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
@@ -208,6 +305,21 @@ namespace FisheriesAgency.Controller
         //
         // Ticket form
         //
+        public static void UpdateTicketsDataGridView(DataGridView dgvFisheriesAgencyDB)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(Program.connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT TicketID, UserId, StartDate, EndDate, Price, IsPensioner, IsDisabled, TelkDecisionNum FROM [Ticket]", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        sda.Fill(dt);
+                    }
+                }
+            }
+            dgvFisheriesAgencyDB.DataSource = dt;
+        }
         public static void TicketCreateController(int memberId, DateTimePicker dtpStartDate, DateTimePicker dtpEndDate, TextBox txtPrice, CheckBox cbIsPensioner, CheckBox cbIsDisabled, TextBox txtTelk)
         {
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
@@ -272,6 +384,21 @@ namespace FisheriesAgency.Controller
         //
         // Captain form
         //
+        public static void UpdateCaptainsDataGridView(DataGridView dgvFisheriesAgencyDB)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(Program.connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT CaptainId, Name, Address FROM [Captain]", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        sda.Fill(dt);
+                    }
+                }
+            }
+            dgvFisheriesAgencyDB.DataSource = dt;
+        }
         public static void CaptainCreateController(TextBox txtName, TextBox txtAddress)
         {
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
@@ -370,6 +497,21 @@ namespace FisheriesAgency.Controller
         //
         // Catch form
         //
+        public static void UpdateCatchesDataGridView(DataGridView dgvCatch)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(Program.connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT CatchId, Weight, Quantity FROM [Catch]", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        sda.Fill(dt);
+                    }
+                }
+            }
+            dgvCatch.DataSource = dt;
+        }
         public static void CatchCreateController(string weight, string quantity, int tripId)
         {
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
@@ -431,6 +573,54 @@ namespace FisheriesAgency.Controller
         //
         // Trip form
         //
+        public static void UpdateTripsDataGridView(DataGridView dgvFisheriesAgencyDB)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(Program.connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT TripId, TripStart, TripEnd, CatchAmount FROM [FishingTrip]", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        sda.Fill(dt);
+                    }
+                }
+            }
+            dgvFisheriesAgencyDB.DataSource = dt;
+        }
+        public static void TripCreateController(DataGridView dgvTrip, string query, DateTimePicker dtpTripStart, DateTimePicker dtpTripEnd, TextBox txtCatchAmount, int vesselId)
+        {
+            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@TripStart", dtpTripStart.Value.Date);
+                    command.Parameters.AddWithValue("@TripEnd", dtpTripEnd.Value.Date);
+                    command.Parameters.AddWithValue("@CatchAmount", txtCatchAmount.Text);
+                    command.Parameters.AddWithValue("@VesselId", vesselId);
+
+                    try
+                    {
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            UpdateTripsDataGridView(dgvTrip);
+                        }
+                        else
+                        {
+                            // Insert failed
+                            MessageBox.Show("Failed to create fishing trip.");
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        // Handle SQL exception
+                        MessageBox.Show("An error occurred: " + ex.Message);
+                    }
+                }
+            }
+        }
         public static void TripDeleteController(int tripId)
         {
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
@@ -466,6 +656,21 @@ namespace FisheriesAgency.Controller
         //
         // Inspector form
         //
+        public static void UpdateInspectorDataGridView(DataGridView dgvInspector)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(Program.connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT InspectorId, InspectorDate, VesselId FROM [Inspector]", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        sda.Fill(dt);
+                    }
+                }
+            }
+            dgvInspector.DataSource = dt;
+        }
         public static void InspectorCreateController(DateTime inspectorDate, int vesselId)
         {
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
@@ -522,6 +727,21 @@ namespace FisheriesAgency.Controller
         //
         // Member form
         //
+        public static void UpdateMembersDataGridView(DataGridView dgvFisheriesAgencyDB)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(Program.connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT MemberId, Name, Address FROM [Member]", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        sda.Fill(dt);
+                    }
+                }
+            }
+            dgvFisheriesAgencyDB.DataSource = dt;
+        }
         public static void MemberCreateController(string name, string address)
         {
             using (SqlConnection connection = new SqlConnection(Program.connectionString))
@@ -613,6 +833,21 @@ namespace FisheriesAgency.Controller
         //
         // Owner form
         //
+        public static void UpdateOwnersDataGridView(DataGridView dgvFisheriesAgencyDB)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(Program.connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT OwnerID, name, address FROM [Owner]", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        sda.Fill(dt);
+                    }
+                }
+            }
+            dgvFisheriesAgencyDB.DataSource = dt;
+        }
         public static void OwnerCreateController(string name, string address)
         {
             using (SqlConnection connection = new SqlConnection(Program.connectionString))

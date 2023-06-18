@@ -21,7 +21,7 @@ namespace FisheriesAgency.View
 
     public partial class frmAdminsPanel : Form
     {
-        private static List<Form> openForms = new List<Form>();
+        public static List<Form> openForms = new List<Form>();
 
         public frmAdminsPanel()
         {
@@ -108,13 +108,13 @@ namespace FisheriesAgency.View
             DialogResult logout = MessageBox.Show("Are you sure you want to logout?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (logout == DialogResult.Yes)
             {
-                foreach (Form form in openForms)
+                openForms.ForEach(form =>
                 {
                     if (form != this)
                     {
                         form.Close();
                     }
-                }
+                });
                 this.Close();
             }
         }

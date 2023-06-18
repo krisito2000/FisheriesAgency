@@ -17,73 +17,12 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
     public partial class frmVessel : Form
     {
-        private static void UpdateVesselsDataGridView(DataGridView dgvFisheriesAgencyDB)
-        {
-            DataTable dt = new DataTable();
-            using (SqlConnection con = new SqlConnection(Program.connectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT VesselID, InternationalNumber, CallSign, Marking, Length, Width, Tonnage, Gas, Engine, Fuel FROM [Vessel]", con))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                    {
-                        sda.Fill(dt);
-                    }
-                }
-            }
-            dgvFisheriesAgencyDB.DataSource = dt;
-        }
-
         public frmVessel()
         {
             InitializeComponent();
-            UpdateVesselsDataGridView(dgvVessel);
-
-
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                string sql = "SELECT OwnerId, Name FROM Owner";
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            int ownerId = reader.GetInt32(0);
-                            string name = reader.GetString(1);
-
-                            // Add the name to the ComboBox items and store the ID as the item value
-                            cmbOwners.Items.Add(new ComboBoxModel.ComboBoxOwner(name, ownerId));
-                        }
-                    }
-                }
-            }
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
-            {
-                connection.Open();
-
-                string sql = "SELECT CaptainId, Name FROM Captain";
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            int captainId = reader.GetInt32(0);
-                            string name = reader.GetString(1);
-
-
-                            // Add the name to the ComboBox items and store the ID as the item value
-                            cmbCaptains.Items.Add(new ComboBoxCaptain(name, captainId));
-                        }
-                    }
-                }
-            }
-
-
+            AdminPanelController.UpdateVesselsDataGridView(dgvVessel);
+            ComboBoxController.OwnerController(cmbOwners);
+            ComboBoxController.CaptainController(cmbCaptains);
         }
 
         private void dgvVessel_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -91,7 +30,6 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvVessel.Rows[e.RowIndex];
-
 
                 string internationalNumber = row.Cells["InternationalNumber"].Value?.ToString()?.Trim() ?? string.Empty;
                 string callSign = row.Cells["CallSign"].Value?.ToString()?.Trim() ?? string.Empty;
@@ -137,7 +75,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             int captainId = selectedCaptain.CaptainId;
 
             AdminPanelController.VesselCreateController(txtInternationalNumber, txtCallSign, txtMarking, txtLength, txtWidth, txtTonnage, txtGas, txtEngine, txtFuel, ownerId, captainId);
-            UpdateVesselsDataGridView(dgvVessel);
+            AdminPanelController.UpdateVesselsDataGridView(dgvVessel);
         }
 
         private void cmbOwners_DropDown(object sender, EventArgs e)
@@ -166,7 +104,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             if (result == DialogResult.Yes)
             {
                 AdminPanelController.VesselDeleteController(vesselId);
-                UpdateVesselsDataGridView(dgvVessel);
+                AdminPanelController.UpdateVesselsDataGridView(dgvVessel);
             }
         }
 
@@ -199,7 +137,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             AdminPanelController.VesselEditController(internationalNumber, callSign, marking, length, width, tonnage, gas, engine, fuel, vesselId);
 
             // Refresh the DataGridView
-            UpdateVesselsDataGridView(dgvVessel);
+            AdminPanelController.UpdateVesselsDataGridView(dgvVessel);
         }
         // Create
         private void btnCreate_MouseEnter(object sender, EventArgs e)

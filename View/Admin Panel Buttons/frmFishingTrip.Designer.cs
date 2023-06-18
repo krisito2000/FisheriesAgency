@@ -38,7 +38,7 @@
             btnDelete = new Button();
             btnCreate = new Button();
             dgvTrip = new DataGridView();
-            cbVessels = new ComboBox();
+            cmbVessels = new ComboBox();
             pnlUsernametxt = new Panel();
             txtCatchAmount = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvTrip).BeginInit();
@@ -182,20 +182,20 @@
             dgvTrip.TabIndex = 7;
             dgvTrip.CellClick += dgvTrip_CellClick;
             // 
-            // cbVessels
+            // cmbVessels
             // 
-            cbVessels.BackColor = Color.Gray;
-            cbVessels.Cursor = Cursors.Hand;
-            cbVessels.FlatStyle = FlatStyle.Popup;
-            cbVessels.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            cbVessels.ForeColor = Color.Aqua;
-            cbVessels.FormattingEnabled = true;
-            cbVessels.Location = new Point(153, 148);
-            cbVessels.Name = "cbVessels";
-            cbVessels.Size = new Size(121, 23);
-            cbVessels.TabIndex = 3;
-            cbVessels.Text = "Vessels";
-            cbVessels.DropDown += cbVessels_DropDown;
+            cmbVessels.BackColor = Color.Gray;
+            cmbVessels.Cursor = Cursors.Hand;
+            cmbVessels.FlatStyle = FlatStyle.Popup;
+            cmbVessels.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            cmbVessels.ForeColor = Color.Aqua;
+            cmbVessels.FormattingEnabled = true;
+            cmbVessels.Location = new Point(153, 148);
+            cmbVessels.Name = "cmbVessels";
+            cmbVessels.Size = new Size(121, 23);
+            cmbVessels.TabIndex = 3;
+            cmbVessels.Text = "Vessels";
+            cmbVessels.DropDown += cbVessels_DropDown;
             // 
             // pnlUsernametxt
             // 
@@ -225,7 +225,7 @@
             ClientSize = new Size(945, 285);
             Controls.Add(pnlUsernametxt);
             Controls.Add(txtCatchAmount);
-            Controls.Add(cbVessels);
+            Controls.Add(cmbVessels);
             Controls.Add(dgvTrip);
             Controls.Add(btnEdit);
             Controls.Add(btnDelete);
@@ -240,6 +240,7 @@
             MaximizeBox = false;
             Name = "frmFishingTrip";
             Opacity = 0.93D;
+            ShowInTaskbar = false;
             Text = "Fishing Trips";
             ((System.ComponentModel.ISupportInitialize)dgvTrip).EndInit();
             ResumeLayout(false);
@@ -258,7 +259,7 @@
         private Button btnDelete;
         private Button btnCreate;
         private DataGridView dgvTrip;
-        private ComboBox cbVessels;
+        private ComboBox cmbVessels;
         private Panel pnlUsernametxt;
         private TextBox txtCatchAmount;
     }

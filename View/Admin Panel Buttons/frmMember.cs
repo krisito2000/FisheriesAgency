@@ -16,25 +16,10 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 {
     public partial class frmMember : Form
     {
-        private static void UpdateMembersDataGridView(DataGridView dgvFisheriesAgencyDB)
-        {
-            DataTable dt = new DataTable();
-            using (SqlConnection con = new SqlConnection(Program.connectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT MemberId, Name, Address FROM [Member]", con))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                    {
-                        sda.Fill(dt);
-                    }
-                }
-            }
-            dgvFisheriesAgencyDB.DataSource = dt;
-        }
         public frmMember()
         {
             InitializeComponent();
-            UpdateMembersDataGridView(dgvMember);
+            AdminPanelController.UpdateMembersDataGridView(dgvMember);
         }
 
         private void dgvMember_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -62,7 +47,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             }
 
             AdminPanelController.MemberCreateController(name, address);
-            UpdateMembersDataGridView(dgvMember);
+            AdminPanelController.UpdateMembersDataGridView(dgvMember);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -72,12 +57,11 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
 
             if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(address))
             {
-
                 DialogResult result = MessageBox.Show("Are you sure you want to delete this member?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     AdminPanelController.MemberDeleteController(name, address);
-                    UpdateMembersDataGridView(dgvMember);
+                    AdminPanelController.UpdateMembersDataGridView(dgvMember);
                 }
             }
             else
@@ -100,7 +84,7 @@ namespace FisheriesAgency.View.Admin_Panel_Buttons
             string newAddress = txtAddress.Text.Trim();
 
             AdminPanelController.MemberEditController(newName, newAddress, memberId);
-            UpdateMembersDataGridView(dgvMember);
+            AdminPanelController.UpdateMembersDataGridView(dgvMember);
         }
 
         // Create
