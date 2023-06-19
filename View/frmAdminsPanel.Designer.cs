@@ -283,6 +283,7 @@
             AutoSize = true;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(485, 238);
+            ControlBox = false;
             Controls.Add(btnOther);
             Controls.Add(btnOwners);
             Controls.Add(btnMembers);

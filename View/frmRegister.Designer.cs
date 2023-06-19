@@ -191,6 +191,7 @@
             btnViewPassword.TabIndex = 3;
             btnViewPassword.UseVisualStyleBackColor = false;
             btnViewPassword.Click += btnViewPassword_Click;
+            btnViewPassword.KeyDown += btnViewPassword_KeyDown;
             // 
             // panel2
             // 

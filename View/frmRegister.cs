@@ -12,14 +12,18 @@ using FisheriesAgency.Controller;
 using System.Data.SqlClient;
 using System.ComponentModel.Design;
 using FisheriesAgency.Utils;
+using System.ComponentModel.DataAnnotations;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace FisheriesAgency.View
 {
     public partial class frmRegister : Form
     {
+        private ValidationModel model;
         public frmRegister()
         {
             InitializeComponent();
+            model = new ValidationModel();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -38,78 +42,60 @@ namespace FisheriesAgency.View
             string password = txtPassword.Text;
             string confirmPassword = txtConfirmPassword.Text;
 
-            if (string.IsNullOrWhiteSpace(username) && string.IsNullOrWhiteSpace(password) && string.IsNullOrWhiteSpace(confirmPassword))
+            model.Username = txtUsername.Text.Trim();
+            model.Password = txtPassword.Text;
+            model.ConfirmPassword = txtConfirmPassword.Text;
+
+            var validationContext = new ValidationContext(model, null, null);
+            var validationResults = new List<ValidationResult>();
+
+            if (!Validator.TryValidateObject(model, validationContext, validationResults, true))
             {
-                MessageBox.Show("Please enter your username, password and confirm password");
+                string errorMessage = string.Join("\n", validationResults.Select(r => r.ErrorMessage));
+                MessageBox.Show(errorMessage);
+                return;
             }
-            else if (string.IsNullOrWhiteSpace(username) && string.IsNullOrWhiteSpace(password))
+            try
             {
-                MessageBox.Show("Please enter your username and password");
-            }
-            else if (string.IsNullOrWhiteSpace(username) && string.IsNullOrWhiteSpace(confirmPassword))
-            {
-                MessageBox.Show("Please enter your username and confirm password");
-            }
-            else if (string.IsNullOrWhiteSpace(username))
-            {
-                MessageBox.Show("Please enter your username");
-            }
-            else if (string.IsNullOrWhiteSpace(password))
-            {
-                MessageBox.Show("Please enter your password");
-            }
-            else if (string.IsNullOrWhiteSpace(confirmPassword))
-            {
-                MessageBox.Show("Please enter your confirm password");
-            }
-            else if (password != confirmPassword)
-            {
-                MessageBox.Show("Your password and confirm password must be the same");
-            }
-            else
-            {
-                try
+                using (SqlConnection connection = new SqlConnection(Program.connectionString))
                 {
-                    using (SqlConnection connection = new SqlConnection(Program.connectionString))
+                    connection.Open();
+                    string selectSql = "SELECT COUNT(*) FROM [User] WHERE Username = @username";
+                    using (SqlCommand selectCommand = new SqlCommand(selectSql, connection))
                     {
-                        connection.Open();
-                        string selectSql = "SELECT COUNT(*) FROM [User] WHERE Username = @username";
-                        using (SqlCommand selectCommand = new SqlCommand(selectSql, connection))
+                        selectCommand.Parameters.AddWithValue("@username", username);
+                        int count = (int)selectCommand.ExecuteScalar();
+                        if (count > 0)
                         {
-                            selectCommand.Parameters.AddWithValue("@username", username);
-                            int count = (int)selectCommand.ExecuteScalar();
-                            if (count > 0)
+                            txtUsername.Focus();
+                            txtUsername.Text = string.Empty;
+                            MessageBox.Show($"Username \"{username}\" already exists. Please choose a different username.");
+                        }
+                        else
+                        {
+                            string insertSql = "INSERT INTO [User] (Username, Password) VALUES (@username, @password)";
+                            using (SqlCommand insertCommand = new SqlCommand(insertSql, connection))
                             {
-                                txtUsername.Focus();
-                                txtUsername.Text = string.Empty;
-                                MessageBox.Show($"Username \"{username}\" already exists. Please choose a different username.");
-                            }
-                            else
-                            {
-                                string insertSql = "INSERT INTO [User] (Username, Password) VALUES (@username, @password)";
-                                using (SqlCommand insertCommand = new SqlCommand(insertSql, connection))
+                                insertCommand.Parameters.AddWithValue("@username", username);
+                                insertCommand.Parameters.AddWithValue("@password", password);
+                                int result = insertCommand.ExecuteNonQuery();
+                                if (result > 0)
                                 {
-                                    insertCommand.Parameters.AddWithValue("@username", username);
-                                    insertCommand.Parameters.AddWithValue("@password", password);
-                                    int result = insertCommand.ExecuteNonQuery();
-                                    if (result > 0)
-                                    {
-                                        this.Close();
-                                        MessageBox.Show("Registration successful!");
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Registration failed. Please try again.");
-                                    }
+                                    this.Close();
+                                    MessageBox.Show("Registration successful!");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Registration failed. Please try again.");
                                 }
                             }
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occurred while registering user: {ex.Message}");
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while registering user: {ex.Message}");
             }
         }
         private void btnRegister_MouseEnter(object sender, EventArgs e)
